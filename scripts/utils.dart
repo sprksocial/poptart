@@ -8,7 +8,7 @@ import 'dart:io';
 
 // Package imports:
 import 'package:github/github.dart';
-import 'package:lexicon/lexicon.dart';
+import 'package:poptart_lexicon/parser.dart';
 
 // Project imports:
 import 'shared/config.dart';
@@ -32,15 +32,10 @@ class OptimizedUtils {
   // Constants
   static const String pubspecFileName = 'pubspec.yaml';
   static const String moderationResourcesPath =
-      'packages/bluesky/test/src/moderation/suite/data';
+      'packages/poptart_lexicon/test/src/moderation/suite/data';
   static const String moderationDefinitionsPath =
-      'packages/bluesky/lib/src/moderation/definitions';
-  static const List<String> lexiconsRoot = [
-    'com/atproto',
-    'app/bsky',
-    'chat/bsky',
-    'tools/ozone',
-  ];
+      'packages/poptart_lexicon/lib/src/moderation/definitions';
+  static final List<String> lexiconsRoot = _loadLexiconRootsFromManifest();
   static final RepositorySlug officialRepositorySlug = RepositorySlug(
     'bluesky-social',
     'atproto',
@@ -263,6 +258,7 @@ class OptimizedUtils {
     final buffer = StringBuffer()
       ..writeln('// coverage:ignore-file')
       ..writeln('// ignore_for_file: type=lint')
+      ..writeln('// ignore_for_file: unused_import, duplicate_import, unnecessary_cast')
       ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
       ..writeln()
       ..writeln(
@@ -414,7 +410,7 @@ File getPackagePubspec(String packageName) =>
 @Deprecated('Use OptimizedUtils.getLexiconDocs() instead')
 List<LexiconDoc> get lexiconDocs {
   final docs = <LexiconDoc>[];
-  const roots = ['com/atproto', 'app/bsky', 'chat/bsky', 'tools/ozone'];
+  final roots = _loadLexiconRootsFromManifest();
 
   for (final root in roots) {
     final directory = Directory('lexicons/$root');
@@ -439,6 +435,22 @@ List<LexiconDoc> get lexiconDocs {
   }
 
   return docs;
+}
+
+List<String> _loadLexiconRootsFromManifest() {
+  final file = File('lexicons/manifest.yaml');
+  if (!file.existsSync()) {
+    return const ['com/atproto', 'app/bsky', 'chat/bsky', 'tools/ozone'];
+  }
+
+  final roots = <String>[];
+  for (final rawLine in const LineSplitter().convert(file.readAsStringSync())) {
+    final line = rawLine.trim();
+    if (!line.startsWith('- ') || line.startsWith('- name:')) continue;
+    roots.add(line.substring(2).trim().replaceAll('.', '/'));
+  }
+
+  return roots;
 }
 
 @Deprecated('Use OptimizedUtils.getFileHeader() instead')

@@ -3,11 +3,12 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'dart:isolate';
 
 // Package imports:
-import 'package:lex_gen/lex_gen.dart';
+import 'package:poptart_lex_gen/poptart_lex_gen.dart';
 
 // Project imports:
 import 'shared/base_script.dart';
@@ -17,14 +18,7 @@ import 'shared/error_handler.dart';
 import 'shared/logger.dart';
 import 'shared/progress_reporter.dart';
 
-const _lexiconServices = <String>[
-  'com.atproto',
-  'app.bsky',
-  'chat.bsky',
-  'tools.ozone',
-];
-
-const _lexiconPackages = <String>['atproto', 'bluesky'];
+const _lexiconManifestPath = 'lexicons/manifest.yaml';
 
 /// Optimized code generation script using BaseScript infrastructure.
 class GenCodesScript extends BaseScript {
@@ -297,32 +291,99 @@ LexGenConfig _buildLexGenConfig({
   required String lexiconsPath,
   required String packagesPath,
 }) {
+  final manifest = _LexiconManifest.load(_lexiconManifestPath);
+
   return LexGenConfig(
-    services: _lexiconServices,
-    packages: _lexiconPackages,
+    services: manifest.services,
+    packages: manifest.packages.map((e) => e.name).toList(),
     docsProvider: lexiconDocsProviderFromPaths([lexiconsPath]),
     serviceRuleConfig: LexServiceRuleConfig(
-      namespaceRules: [
-        LexiconNamespaceRule(
-          prefixes: ['com.atproto.'],
-          homeDir: '$packagesPath/atproto/lib/src/services/codegen',
-          exportCodegenPath: 'package:atproto/src/services/codegen',
-          servicePackagePath: 'package:atproto',
-          rootPackageName: 'atproto',
-        ),
-        LexiconNamespaceRule(
-          prefixes: ['app.bsky.', 'chat.bsky.', 'tools.ozone.'],
-          homeDir: '$packagesPath/bluesky/lib/src/services/codegen',
-          exportCodegenPath: 'package:bluesky/src/services/codegen',
-          servicePackagePath: 'package:bluesky',
-          rootPackageName: 'bluesky',
-        ),
-      ],
+      namespaceRules: manifest.packages
+          .map(
+            (package) => LexiconNamespaceRule(
+              prefixes: package.roots,
+              homeDir: '$packagesPath/${package.name}/lib/src/services/codegen',
+              exportCodegenPath:
+                  'package:${package.name}/src/services/codegen',
+              servicePackagePath: 'package:${package.name}',
+              rootPackageName: package.name,
+            ),
+          )
+          .toList(),
     ),
     commandRuleConfig: LexCommandRuleConfig(
-      homeDir: '$packagesPath/bluesky_cli/lib/src/commands/codegen',
+      homeDir: '$packagesPath/poptart_cli/lib/src/commands/codegen',
     ),
   );
+}
+
+final class _LexiconManifest {
+  final List<_LexiconPackage> packages;
+
+  const _LexiconManifest({required this.packages});
+
+  List<String> get services => packages
+      .expand((package) => package.roots)
+      .map((root) => root.split('.').take(2).join('.'))
+      .toSet()
+      .toList();
+
+  static _LexiconManifest load(final String path) {
+    final file = File(path);
+    if (!file.existsSync()) {
+      throw StateError('Lexicon manifest does not exist: $path');
+    }
+
+    final packages = <_LexiconPackage>[];
+    String? currentName;
+    final roots = <String>[];
+
+    void flush() {
+      if (currentName == null) return;
+      if (roots.isEmpty) {
+        throw FormatException('Package $currentName has no roots in $path');
+      }
+      packages.add(
+        _LexiconPackage(name: currentName!, roots: List.unmodifiable(roots)),
+      );
+      currentName = null;
+      roots.clear();
+    }
+
+    for (final rawLine in const LineSplitter().convert(file.readAsStringSync())) {
+      final line = rawLine.trim();
+      if (line.isEmpty || line.startsWith('#') || line == 'packages:') {
+        continue;
+      }
+      if (line.startsWith('- name:')) {
+        flush();
+        currentName = line.substring('- name:'.length).trim();
+        continue;
+      }
+      if (line == 'roots:') continue;
+      if (line.startsWith('- ')) {
+        if (currentName == null) {
+          throw FormatException('Root declared before package name in $path');
+        }
+        roots.add(line.substring(2).trim());
+      }
+    }
+
+    flush();
+
+    if (packages.isEmpty) {
+      throw FormatException('No packages found in lexicon manifest: $path');
+    }
+
+    return _LexiconManifest(packages: List.unmodifiable(packages));
+  }
+}
+
+final class _LexiconPackage {
+  final String name;
+  final List<String> roots;
+
+  const _LexiconPackage({required this.name, required this.roots});
 }
 
 /// Main entry point for the script.

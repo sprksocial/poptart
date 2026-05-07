@@ -1,0 +1,31 @@
+name: poptart_multiformats
+resolution: workspace
+description: Core library for parsing IPFS-related things. This package is mainly used by https://atprotodart.com packages.
+version: 0.1.0
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+funding:
+  - https://github.com/sponsors/myConsciousness
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+topics:
+  - ipfs
+  - atproto
+  - bluesky
+  - cid
+
+dependencies:
+  base_codecs: ^1.0.1
+  crypto: ^3.0.6
+  dart_multihash: ^1.0.1
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.2
+  import_sorter:
+    git:
+      url: https://github.com/myConsciousness/import_sorter.git
+      ref: fix/monorepo-pub-workspaces

@@ -1,0 +1,36 @@
+name: poptart_did_plc
+resolution: workspace
+description: High-performance, independent DID PLC Directory client with caching, streaming, and batch processing for Dart/Flutter applications.
+version: 0.1.0
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+funding:
+  - https://github.com/sponsors/myConsciousness
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+topics:
+  - did
+  - plc
+  - identity
+  - decentralized
+  - atproto
+
+dependencies:
+  http: ^1.4.0
+  crypto: ^3.0.3
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.2
+  build_runner: ^2.5.4
+  json_serializable: ^6.9.5
+  freezed: ^3.2.0
+  import_sorter:
+    git:
+      url: https://github.com/myConsciousness/import_sorter.git
+      ref: fix/monorepo-pub-workspaces

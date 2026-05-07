@@ -1,0 +1,31 @@
+name: poptart_lexicon
+resolution: workspace
+description: Lexicon parser, generated protocol clients, and generated types for AT Protocol ecosystem lexicons.
+version: 0.1.0
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+funding:
+  - https://github.com/sponsors/myConsciousness
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  characters: ^1.4.1
+  poptart_core: ^0.1.0
+  poptart_primitives: ^0.1.0
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  poptart_test: ^0.1.0
+  lints: ^6.0.0
+  test: ^1.26.2
+  build_runner: ^2.5.4
+  json_serializable: ^6.9.5
+  freezed: ^3.2.0
+  import_sorter:
+    git:
+      url: https://github.com/myConsciousness/import_sorter.git
+      ref: fix/monorepo-pub-workspaces

@@ -48,9 +48,6 @@ linter:
     - prefer_typing_uninitialized_variables
     - unnecessary_brace_in_string_interps
     
-    # Documentation - important for public APIs
-    - package_api_docs
-    
     # Import organization - relaxed to info level
     - prefer_relative_imports
     

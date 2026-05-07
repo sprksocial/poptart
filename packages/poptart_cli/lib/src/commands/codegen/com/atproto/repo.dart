@@ -1,0 +1,46 @@
+// Copyright (c) 2023-2026, Shinya Kato.
+// All rights reserved. Use of this source code is governed by a
+// BSD-style license that can be found in the LICENSE file.
+
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+
+import 'package:args/command_runner.dart';
+
+import 'repo/apply_writes.dart';
+import 'repo/create_record.dart';
+import 'repo/delete_record.dart';
+import 'repo/describe_repo.dart';
+import 'repo/get_record.dart';
+import 'repo/list_missing_blobs.dart';
+import 'repo/list_records.dart';
+import 'repo/put_record.dart';
+
+
+// **************************************************************************
+// LexGenerator
+// **************************************************************************
+
+
+final class ComAtprotoRepoCommand extends Command<void>  {
+  ComAtprotoRepoCommand() {
+    addSubcommand(ApplyWritesCommand());
+addSubcommand(CreateRecordCommand());
+addSubcommand(DeleteRecordCommand());
+addSubcommand(DescribeRepoCommand());
+addSubcommand(GetRecordCommand());
+addSubcommand(ListMissingBlobsCommand());
+addSubcommand(ListRecordsCommand());
+addSubcommand(PutRecordCommand());
+
+  }
+
+  @override
+  String get name => "com-atproto-repo";
+
+  @override
+  String get description => "Provides commands for com.atproto.repo.*";
+}

@@ -151,9 +151,6 @@ class ScriptConfig {
   /// Path to packages directory
   final String packagesPath;
 
-  /// Path to website directory
-  final String websitePath;
-
   /// Path to bin directory
   final String binPath;
 
@@ -178,7 +175,6 @@ class ScriptConfig {
   const ScriptConfig({
     required this.lexiconsPath,
     required this.packagesPath,
-    required this.websitePath,
     required this.binPath,
     this.packageMappings = const {},
     this.networkConfig = const NetworkConfig(),
@@ -193,7 +189,6 @@ class ScriptConfig {
     return ScriptConfig(
       lexiconsPath: json['lexiconsPath'] as String? ?? 'lexicons',
       packagesPath: json['packagesPath'] as String? ?? 'packages',
-      websitePath: json['websitePath'] as String? ?? 'website',
       binPath: json['binPath'] as String? ?? 'scripts',
       packageMappings: Map<String, String>.from(
         json['packageMappings'] as Map<String, dynamic>? ?? {},
@@ -215,7 +210,6 @@ class ScriptConfig {
     return {
       'lexiconsPath': lexiconsPath,
       'packagesPath': packagesPath,
-      'websitePath': websitePath,
       'binPath': binPath,
       'packageMappings': packageMappings,
       'networkConfig': networkConfig.toJson(),
@@ -234,7 +228,6 @@ class ScriptConfig {
     final pathsToCheck = [
       ('lexiconsPath', lexiconsPath),
       ('packagesPath', packagesPath),
-      ('websitePath', websitePath),
       ('binPath', binPath),
     ];
 

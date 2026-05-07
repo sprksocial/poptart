@@ -1,0 +1,33 @@
+// Package imports:
+import 'package:test/test.dart';
+
+// Project imports:
+import 'package:poptart_xrpc/src/entities/rate_limit.dart';
+import 'package:poptart_xrpc/src/http_method.dart';
+import 'package:poptart_xrpc/src/http_status.dart';
+import 'package:poptart_xrpc/src/xrpc/exception/internal_server_error_exception.dart';
+import 'package:poptart_xrpc/src/xrpc/xrpc_error.dart';
+import 'package:poptart_xrpc/src/xrpc/xrpc_request.dart';
+import 'package:poptart_xrpc/src/xrpc/xrpc_response.dart';
+
+void main() {
+  test('.toString', () {
+    final exception = InternalServerErrorException(
+      XRPCResponse<XRPCError>(
+        headers: {'test': 'test'},
+        status: HttpStatus.internalServerError,
+        request: XRPCRequest(
+          method: HttpMethod.get,
+          url: Uri.https('bsky.social'),
+        ),
+        rateLimit: RateLimit.unlimited(),
+        data: XRPCError(error: 'error', message: 'error'),
+      ),
+    );
+
+    expect(
+      exception.toString(),
+      'InternalServerErrorException: GET https://bsky.social 500 error',
+    );
+  });
+}

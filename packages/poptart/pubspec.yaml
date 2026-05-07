@@ -1,0 +1,23 @@
+name: poptart
+resolution: workspace
+version: 0.1.0
+description: Batteries-included Dart and Flutter SDK for AT Protocol, broad Lexicon APIs, OAuth, and core Poptart packages.
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  poptart_core: ^0.1.0
+  poptart_lexicon: ^0.1.0
+  poptart_oauth: ^0.1.0
+  poptart_primitives: ^0.1.0
+
+topics:
+  - atproto
+  - bluesky
+  - oauth
+  - xrpc
+  - lexicon

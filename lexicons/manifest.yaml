@@ -1,0 +1,7 @@
+packages:
+  - name: poptart_lexicon
+    roots:
+      - com.atproto.
+      - app.bsky.
+      - chat.bsky.
+      - tools.ozone.

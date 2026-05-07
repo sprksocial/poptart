@@ -17,7 +17,6 @@ The main configuration file that defines default settings for all scripts.
 {
   "lexiconsPath": "lexicons",
   "packagesPath": "packages", 
-  "websitePath": "website",
   "binPath": "bin",
   "packageMappings": {
     "package_name": "relative/path/to/package"
@@ -47,7 +46,6 @@ You can override configuration values using environment variables:
 
 - `SCRIPT_LEXICONS_PATH` - Override lexicons path
 - `SCRIPT_PACKAGES_PATH` - Override packages path
-- `SCRIPT_WEBSITE_PATH` - Override website path
 - `SCRIPT_BIN_PATH` - Override bin path
 - `SCRIPT_MAX_RETRIES` - Override network max retries
 - `SCRIPT_INITIAL_DELAY_MS` - Override network initial delay

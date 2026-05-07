@@ -9,11 +9,7 @@ import 'dart:io';
 import 'shared/shared.dart';
 import 'utils.dart';
 
-/// Configuration for package lexicon mappings.
-const packages = {
-  'atproto': ['com.atproto'],
-  'bluesky': ['app.bsky', 'chat.bsky', 'tools.ozone'],
-};
+const _lexiconManifestPath = 'lexicons/manifest.yaml';
 
 const _idsFileName = 'ids.g.dart';
 const _nsidsFileName = 'nsids.g.dart';
@@ -58,15 +54,16 @@ class GenLexiconIdsScript extends BaseScript {
     }
 
     logger.info('Found ${fields.length} lexicon fields');
+    final packages = _LexiconManifest.load(_lexiconManifestPath).packages;
+
     progress.startOperation('Generating package files', packages.length);
 
     // Generate files for each package in parallel
     final fileContents = <String, String>{};
     var processedPackages = 0;
 
-    for (final entry in packages.entries) {
-      final packageName = entry.key;
-      final lexicons = entry.value;
+    for (final package in packages) {
+      final packageName = package.name;
 
       progress.updateProgress(
         processedPackages,
@@ -76,7 +73,7 @@ class GenLexiconIdsScript extends BaseScript {
       try {
         final packageFiles = await _generatePackageFiles(
           packageName,
-          lexicons,
+          package.roots,
           fields,
         );
 
@@ -117,7 +114,6 @@ class GenLexiconIdsScript extends BaseScript {
     return const ScriptConfig(
       lexiconsPath: 'lexicons',
       packagesPath: 'packages',
-      websitePath: 'website',
       binPath: 'bin',
     );
   }
@@ -308,7 +304,7 @@ class GenLexiconIdsScript extends BaseScript {
       ..writeln(header)
       ..writeln()
       ..writeln('// Package imports:')
-      ..writeln("import 'package:atproto_core/atproto_core.dart';")
+      ..writeln("import 'package:poptart_core/poptart_core.dart';")
       ..writeln()
       ..writeln('// Project imports:')
       ..writeln("import '$_idsFileName' as ids;");
@@ -338,6 +334,71 @@ class GenLexiconIdsScript extends BaseScript {
   /// Converts the first character to uppercase.
   String _toFirstUpperCase(String value) =>
       value.substring(0, 1).toUpperCase() + value.substring(1);
+}
+
+final class _LexiconManifest {
+  final List<_LexiconPackage> packages;
+
+  const _LexiconManifest({required this.packages});
+
+  static _LexiconManifest load(final String path) {
+    final file = File(path);
+    if (!file.existsSync()) {
+      throw StateError('Lexicon manifest does not exist: $path');
+    }
+
+    final packages = <_LexiconPackage>[];
+    String? currentName;
+    final roots = <String>[];
+
+    void flush() {
+      if (currentName == null) return;
+      if (roots.isEmpty) {
+        throw FormatException('Package $currentName has no roots in $path');
+      }
+      packages.add(
+        _LexiconPackage(name: currentName!, roots: List.unmodifiable(roots)),
+      );
+      currentName = null;
+      roots.clear();
+    }
+
+    for (final rawLine in const LineSplitter().convert(
+      file.readAsStringSync(),
+    )) {
+      final line = rawLine.trim();
+      if (line.isEmpty || line.startsWith('#') || line == 'packages:') {
+        continue;
+      }
+      if (line.startsWith('- name:')) {
+        flush();
+        currentName = line.substring('- name:'.length).trim();
+        continue;
+      }
+      if (line == 'roots:') continue;
+      if (line.startsWith('- ')) {
+        if (currentName == null) {
+          throw FormatException('Root declared before package name in $path');
+        }
+        roots.add(line.substring(2).trim());
+      }
+    }
+
+    flush();
+
+    if (packages.isEmpty) {
+      throw FormatException('No packages found in lexicon manifest: $path');
+    }
+
+    return _LexiconManifest(packages: List.unmodifiable(packages));
+  }
+}
+
+final class _LexiconPackage {
+  final String name;
+  final List<String> roots;
+
+  const _LexiconPackage({required this.name, required this.roots});
 }
 
 /// Represents a lexicon field with name and value.

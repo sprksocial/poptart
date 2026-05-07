@@ -1,0 +1,38 @@
+name: poptart_cli
+resolution: workspace
+description: A powerful CLI tool that allows Bluesky Social's APIs to be executed from the command line powered by Dart language.
+version: 0.1.0
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+funding:
+  - https://github.com/sponsors/myConsciousness
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+executables:
+  poptart:
+
+topics:
+  - atproto
+  - bluesky
+  - api
+  - cli
+
+dependencies:
+  poptart_xrpc: ^0.1.0
+  poptart_primitives: ^0.1.0
+  ansi_styles: ^0.3.1
+  args: ^2.7.0
+  cli_launcher: ^0.3.1
+  cli_util: ^0.4.2
+  poptart_bluesky_text: ^0.1.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.2
+  import_sorter:
+    git:
+      url: https://github.com/myConsciousness/import_sorter.git
+      ref: fix/monorepo-pub-workspaces

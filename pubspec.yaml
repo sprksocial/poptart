@@ -1,27 +1,30 @@
-name: atproto_dart
+name: poptart_workspace
 publish_to: none
 
 environment:
   sdk: ">=3.8.0 <4.0.0"
 
 workspace:
-  - packages/at_primitives
-  - packages/atproto
-  - packages/atproto_core
-  - packages/atproto_oauth
-  - packages/atproto_test
-  - packages/bluesky
-  - packages/bluesky_cli
-  - packages/bluesky_text
-  - packages/did_plc
-  - packages/lex_gen
-  - packages/lexicon
-  - packages/multiformats
-  - packages/xrpc
+  - packages/poptart
+  - packages/poptart_core
+  - packages/poptart_oauth
+  - packages/poptart_test
+  - packages/poptart_bluesky_text
+  - packages/poptart_cli
+  - packages/poptart_did_plc
+  - packages/poptart_lex_gen
+  - packages/poptart_lexicon
+  - packages/poptart_multiformats
+  - packages/poptart_primitives
+  - packages/poptart_xrpc
 
 dependencies:
   github: ^9.12.0
   http: ^1.4.0
+  poptart_lex_gen:
+    path: packages/poptart_lex_gen
+  poptart_lexicon:
+    path: packages/poptart_lexicon
   pubspec: ^2.3.0
   test: ^1.26.2
 
@@ -39,7 +42,7 @@ melos:
       run: |
         melos get
         melos build
-      description: Set up the atproto.dart project when cloned. Run `dart pub get` and `dart run build_runner build` in all Dart packages.
+      description: Set up the Poptart project when cloned. Run `dart pub get` and `dart run build_runner build` in all Dart packages.
 
     get:
       run: melos exec -c 20 -- \
@@ -69,7 +72,7 @@ melos:
       description: Run `dart run build_runner build` in all packages.
 
     test:
-      run: melos exec --ignore="atproto_test,atproto_oauth,lex_gen" -- dart test
+      run: melos exec --ignore="poptart_test,poptart_oauth,poptart_lex_gen" -- dart test
       description: Run all Dart tests in this project.
       flutter: false
       dir-exists: test
@@ -86,16 +89,11 @@ melos:
         dart run ./scripts/gen_lexicon_docs.dart
         dart run ./scripts/gen_lexicon_ids.dart
         dart run ./scripts/gen_codes.dart
-        cd packages/atproto
+        cd packages/poptart_lexicon
         dart run build_runner build --delete-conflicting-outputs
         dart fix --apply
-        cd ../../packages/bluesky
-        dart run build_runner build --delete-conflicting-outputs
-        dart fix --apply
-        cd ../../packages/bluesky_cli
+        cd ../../packages/poptart_cli
         dart fix --apply
         cd ../../
         melos fmt
-        dart run ./scripts/gen_lexicon_matrix.dart
-        dart run ./scripts/gen_supported_api_matrix.dart
-      description: Generate code for atproto and blueksy based on lexicons.
+      description: Generate Poptart code from manifest-driven lexicons.

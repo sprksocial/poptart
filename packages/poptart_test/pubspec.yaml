@@ -1,0 +1,20 @@
+name: poptart_test
+resolution: workspace
+description: This package provides core reusable and useful functionality for testing atproto based packages.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  test: ^1.26.2
+  poptart_core: ^0.1.0
+  http: ^1.4.0
+  universal_io: ^2.2.2
+
+dev_dependencies:
+  lints: ^6.0.0
+  import_sorter:
+    git:
+      url: https://github.com/myConsciousness/import_sorter.git
+      ref: fix/monorepo-pub-workspaces

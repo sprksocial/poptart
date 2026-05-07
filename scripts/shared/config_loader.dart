@@ -120,7 +120,6 @@ class ConfigLoader {
     return ScriptConfig(
       lexiconsPath: '$projectRoot/lexicons',
       packagesPath: '$projectRoot/packages',
-      websitePath: '$projectRoot/website',
       binPath: '$projectRoot/scripts',
       packageMappings: _getDefaultPackageMappings(projectRoot),
       cacheDirectory: '$projectRoot/.dart_tool/scripts_cache',
@@ -192,7 +191,6 @@ class ConfigLoader {
     return ScriptConfig(
       lexiconsPath: env['SCRIPT_LEXICONS_PATH'] ?? config.lexiconsPath,
       packagesPath: env['SCRIPT_PACKAGES_PATH'] ?? config.packagesPath,
-      websitePath: env['SCRIPT_WEBSITE_PATH'] ?? config.websitePath,
       binPath: env['SCRIPT_BIN_PATH'] ?? config.binPath,
       packageMappings: config.packageMappings,
       networkConfig: NetworkConfig(
@@ -294,7 +292,6 @@ class ConfigLoader {
           overrideJson['lexiconsPath'] as String? ?? base.lexiconsPath,
       packagesPath:
           overrideJson['packagesPath'] as String? ?? base.packagesPath,
-      websitePath: overrideJson['websitePath'] as String? ?? base.websitePath,
       binPath: overrideJson['binPath'] as String? ?? base.binPath,
       packageMappings: packageMappings,
       networkConfig: networkConfig,
