@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Package imports:
-import 'package:poptart_lexicon/core.dart';
+import '../../../core.dart';
 
 // Project imports:
 import '../../../app_bsky_embed_images.dart' show EmbedImagesImage;

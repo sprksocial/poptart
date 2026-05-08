@@ -5,7 +5,7 @@
 // Package imports:
 
 // Package imports:
-import 'package:poptart_lexicon/com_atproto_label_defs.dart';
+import '../../../../com_atproto_label_defs.dart';
 
 // Project imports:
 import '../../decision.dart';

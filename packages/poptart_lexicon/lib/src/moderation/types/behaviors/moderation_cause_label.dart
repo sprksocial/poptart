@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Package imports:
-import 'package:poptart_lexicon/com_atproto_label_defs.dart';
+import '../../../../com_atproto_label_defs.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 // Project imports:

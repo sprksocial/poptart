@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Package imports:
-import 'package:poptart_lexicon/com_atproto_repo_strongref.dart';
+import '../../../com_atproto_repo_strongref.dart';
 
 // Project imports:
 import '../../../app_bsky_feed_post.dart' show UFeedPostEmbed;

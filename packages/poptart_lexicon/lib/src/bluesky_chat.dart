@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Package imports:
-import 'package:poptart_lexicon/poptart_atproto.dart' as atp;
+import '../../../../poptart_atproto.dart' as atp;
 import 'package:poptart_core/poptart_core.dart' as core;
 import 'package:poptart_core/poptart_oauth.dart' as oauth;
 

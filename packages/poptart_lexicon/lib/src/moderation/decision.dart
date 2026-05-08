@@ -3,8 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 // Package imports:
-import 'package:poptart_lexicon/com_atproto_label_defs.dart'
-    hide KnownLabelValue;
+import '../../../../com_atproto_label_defs.dart' hide KnownLabelValue;
 
 // Project imports:
 import '../services/codegen/app/bsky/graph/defs/list_view_basic.dart';

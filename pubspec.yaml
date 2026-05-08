@@ -1,4 +1,6 @@
 name: poptart_workspace
+description: Workspace tooling and package orchestration for the Poptart Dart packages.
+version: 0.1.0
 publish_to: none
 
 environment:
@@ -21,10 +23,8 @@ workspace:
 dependencies:
   github: ^9.12.0
   http: ^1.4.0
-  poptart_lex_gen:
-    path: packages/poptart_lex_gen
-  poptart_lexicon:
-    path: packages/poptart_lexicon
+  poptart_lex_gen: ^0.1.0
+  poptart_lexicon: ^0.1.0
   pubspec: ^2.3.0
   test: ^1.26.2
 

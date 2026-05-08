@@ -127,8 +127,8 @@ class ErrorHandler {
       operation: 'network request',
       url: url,
       metadata: {
-        if (attemptNumber != null) 'attempt': attemptNumber,
-        if (maxAttempts != null) 'maxAttempts': maxAttempts,
+        'attempt': ?attemptNumber,
+        'maxAttempts': ?maxAttempts,
         ...?metadata,
       },
     );
@@ -174,7 +174,7 @@ class ErrorHandler {
       operation: context ?? 'validation',
       filePath: filePath,
       metadata: {
-        if (expectedFormat != null) 'expectedFormat': expectedFormat,
+        'expectedFormat': ?expectedFormat,
         if (actualValue != null) 'actualValue': actualValue.toString(),
         ...?metadata,
       },
@@ -241,10 +241,7 @@ class ErrorHandler {
   }) {
     final context = ErrorContext(
       operation: operation,
-      metadata: {
-        if (currentMemoryUsage != null) 'memoryUsage': currentMemoryUsage,
-        ...?metadata,
-      },
+      metadata: {'memoryUsage': ?currentMemoryUsage, ...?metadata},
     );
 
     final detailedError = _createDetailedMemoryError(error, context);
@@ -273,10 +270,7 @@ class ErrorHandler {
     final context = ErrorContext(
       operation: 'configuration loading',
       filePath: configPath,
-      metadata: {
-        if (expectedSchema != null) 'expectedSchema': expectedSchema,
-        ...?metadata,
-      },
+      metadata: {'expectedSchema': ?expectedSchema, ...?metadata},
     );
 
     final detailedError = _createDetailedConfigurationError(error, context);
@@ -307,8 +301,8 @@ class ErrorHandler {
       operation: 'dependency validation',
       metadata: {
         'dependency': dependency,
-        if (requiredVersion != null) 'requiredVersion': requiredVersion,
-        if (actualVersion != null) 'actualVersion': actualVersion,
+        'requiredVersion': ?requiredVersion,
+        'actualVersion': ?actualVersion,
         ...?metadata,
       },
     );
@@ -343,9 +337,9 @@ class ErrorHandler {
       operation: 'content parsing',
       filePath: filePath,
       metadata: {
-        if (expectedFormat != null) 'expectedFormat': expectedFormat,
-        if (lineNumber != null) 'lineNumber': lineNumber,
-        if (columnNumber != null) 'columnNumber': columnNumber,
+        'expectedFormat': ?expectedFormat,
+        'lineNumber': ?lineNumber,
+        'columnNumber': ?columnNumber,
         'contentLength': content.length,
         ...?metadata,
       },

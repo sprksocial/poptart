@@ -5,7 +5,7 @@
 // ignore_for_file: invalid_annotation_target
 
 // Package imports:
-import 'package:poptart_lexicon/com_atproto_label_defs.dart';
+import '../../../com_atproto_label_defs.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
