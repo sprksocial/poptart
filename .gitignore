@@ -136,5 +136,10 @@ app.*.symbols
 
 coverage.lcov
 
+# Docus docs site
+docs/.nuxt/
+docs/.output/
+docs/node_modules/
+
 # Kiro IDE
 .kiro

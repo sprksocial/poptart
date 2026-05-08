@@ -1,7 +1,10 @@
 name: poptart_workspace
 description: Workspace tooling and package orchestration for the Poptart Dart packages.
 version: 0.1.0
-publish_to: none
+publish_to: https://sprk.so
+homepage: https://github.com/sprksocial/poptart
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
 
 environment:
   sdk: ">=3.8.0 <4.0.0"
@@ -46,7 +49,7 @@ melos:
 
     get:
       run: melos exec -c 20 -- \
-            dart pub get
+        dart pub get
       description: Run `dart pub get` command in all packages.
 
     analyze:
