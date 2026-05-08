@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/searchAccounts/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/searchAccounts/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/searchAccounts/descriptor.dart';

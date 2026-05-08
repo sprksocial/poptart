@@ -16,3 +16,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/defs/acco
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/defs/repo_ref.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/defs/repo_blob_ref.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/defs/threat_signature.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/defs/descriptor.dart';

@@ -24,3 +24,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/draft/defs/draft_e
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/draft/defs/draft_embed_video.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/draft/defs/draft_embed_external.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/draft/defs/draft_embed_record.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/draft/defs/descriptor.dart';

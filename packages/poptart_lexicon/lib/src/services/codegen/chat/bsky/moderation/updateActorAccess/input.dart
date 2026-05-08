@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,46 +21,48 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class ModerationUpdateActorAccessInput
-    with _$ModerationUpdateActorAccessInput {
-  static const knownProps = <String>['actor', 'allowAccess', 'ref'];
+abstract class ModerationUpdateActorAccessInput with _$ModerationUpdateActorAccessInput {
+  static const knownProps = <String>['actor', 'allowAccess', 'ref', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ModerationUpdateActorAccessInput({
     required String actor,
-    required bool allowAccess,
-    String? ref,
+required bool allowAccess,
+String? ref,
 
     Map<String, dynamic>? $unknown,
   }) = _ModerationUpdateActorAccessInput;
 
-  factory ModerationUpdateActorAccessInput.fromJson(
-    Map<String, Object?> json,
-  ) => _$ModerationUpdateActorAccessInputFromJson(json);
+  factory ModerationUpdateActorAccessInput.fromJson(Map<String, Object?> json) => _$ModerationUpdateActorAccessInputFromJson(json);
 }
 
-extension ModerationUpdateActorAccessInputExtension
-    on ModerationUpdateActorAccessInput {
-  bool get isAllowAccess => allowAccess;
-  bool get isNotAllowAccess => !isAllowAccess;
-  bool get hasRef => ref != null;
-  bool get hasNotRef => !hasRef;
+extension ModerationUpdateActorAccessInputExtension on ModerationUpdateActorAccessInput {
+bool get isAllowAccess => allowAccess;
+bool get isNotAllowAccess => !isAllowAccess;
+bool get hasRef => ref != null;
+bool get hasNotRef => !hasRef;
+
 }
+
 
 final class ModerationUpdateActorAccessInputConverter
-    extends
-        JsonConverter<ModerationUpdateActorAccessInput, Map<String, dynamic>> {
+    extends JsonConverter<ModerationUpdateActorAccessInput, Map<String, dynamic>> {
   const ModerationUpdateActorAccessInputConverter();
 
   @override
   ModerationUpdateActorAccessInput fromJson(Map<String, dynamic> json) {
-    return ModerationUpdateActorAccessInput.fromJson(
-      translate(json, ModerationUpdateActorAccessInput.knownProps),
-    );
+    return ModerationUpdateActorAccessInput.fromJson(translate(
+      json,
+      ModerationUpdateActorAccessInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ModerationUpdateActorAccessInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ModerationUpdateActorAccessInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

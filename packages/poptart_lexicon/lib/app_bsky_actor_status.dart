@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/status/main.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/status/union_main_embed.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/status/main_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/status/descriptor.dart';

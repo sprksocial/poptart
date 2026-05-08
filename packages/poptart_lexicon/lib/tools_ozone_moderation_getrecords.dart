@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getRecords/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getRecords/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getRecords/union_main_records.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getRecords/descriptor.dart';

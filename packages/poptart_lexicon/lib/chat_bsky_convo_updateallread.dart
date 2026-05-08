@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/updateAllRead/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/updateAllRead/main_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/updateAllRead/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/updateAllRead/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'profile_associated_germ_show_button_to.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ProfileAssociatedGermShowButtonTo
-    with _$ProfileAssociatedGermShowButtonTo {
+abstract class ProfileAssociatedGermShowButtonTo with _$ProfileAssociatedGermShowButtonTo {
   const ProfileAssociatedGermShowButtonTo._();
 
   const factory ProfileAssociatedGermShowButtonTo.knownValue({
@@ -35,29 +36,23 @@ abstract class ProfileAssociatedGermShowButtonTo
     if (value == null) return null;
     final knownValue = KnownProfileAssociatedGermShowButtonTo.valueOf(value);
 
-    return knownValue != null
-        ? ProfileAssociatedGermShowButtonTo.knownValue(data: knownValue)
-        : ProfileAssociatedGermShowButtonTo.unknown(data: value);
+    return knownValue != null ? ProfileAssociatedGermShowButtonTo.knownValue(data: knownValue) : ProfileAssociatedGermShowButtonTo.unknown(data: value);
   }
 
-  String toJson() =>
-      const ProfileAssociatedGermShowButtonToConverter().toJson(this);
+  String toJson() => const ProfileAssociatedGermShowButtonToConverter().toJson(this);
 }
 
-extension ProfileAssociatedGermShowButtonToExtension
-    on ProfileAssociatedGermShowButtonTo {
-  bool get isKnownValue =>
-      isA<ProfileAssociatedGermShowButtonToKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownProfileAssociatedGermShowButtonTo? get knownValue =>
-      isKnownValue ? data as KnownProfileAssociatedGermShowButtonTo : null;
-  bool get isUnknown => isA<ProfileAssociatedGermShowButtonToUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension ProfileAssociatedGermShowButtonToExtension on ProfileAssociatedGermShowButtonTo {
+  bool get isKnownValue => isA<ProfileAssociatedGermShowButtonToKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownProfileAssociatedGermShowButtonTo? get knownValue => isKnownValue ? data as KnownProfileAssociatedGermShowButtonTo : null;
+bool get isUnknown => isA<ProfileAssociatedGermShowButtonToUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ProfileAssociatedGermShowButtonToConverter
-    extends JsonConverter<ProfileAssociatedGermShowButtonTo, String> {
+final class ProfileAssociatedGermShowButtonToConverter extends JsonConverter<ProfileAssociatedGermShowButtonTo, String> {
   const ProfileAssociatedGermShowButtonToConverter();
 
   @override
@@ -75,15 +70,18 @@ final class ProfileAssociatedGermShowButtonToConverter
   }
 
   @override
-  String toJson(ProfileAssociatedGermShowButtonTo object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ProfileAssociatedGermShowButtonTo object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownProfileAssociatedGermShowButtonTo implements Serializable {
+enum KnownProfileAssociatedGermShowButtonTo implements Serializable{
   @JsonValue('usersIFollow')
-  usersIFollow('usersIFollow'),
-  @JsonValue('everyone')
-  everyone('everyone');
+usersIFollow('usersIFollow'),
+@JsonValue('everyone')
+everyone('everyone'),
+  ;
 
   @override
   final String value;

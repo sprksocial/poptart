@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/revokeVerifications/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/revokeVerifications/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/revokeVerifications/revoke_error.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/revokeVerifications/descriptor.dart';

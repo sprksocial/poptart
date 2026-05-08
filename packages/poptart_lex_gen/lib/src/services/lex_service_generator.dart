@@ -98,9 +98,12 @@ final class _LexServiceGenerator {
   List<LexiconDoc> _filterLexicons(final List<LexiconDoc> docs) {
     return docs.where((lexicon) {
       final id = lexicon.id.toString();
-      final service = id.split('.').sublist(0, 2).join('.');
-
-      return services.contains(service);
+      return services.any((root) {
+        final normalized = root.endsWith('.')
+            ? root.substring(0, root.length - 1)
+            : root;
+        return id == normalized || id.startsWith('$normalized.');
+      });
     }).toList();
   }
 
@@ -113,7 +116,7 @@ final class _LexServiceGenerator {
       if (!_isApi(doc)) continue;
       if (rule.isDeprecated(doc.description)) continue;
 
-      final key = doc.id.toString().split('.').sublist(0, 3).join('.');
+      final key = doc.id.toString();
 
       if (result.containsKey(key)) {
         result[key]!.add(doc);

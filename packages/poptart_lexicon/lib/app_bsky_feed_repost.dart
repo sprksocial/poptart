@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/repost/main.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/repost/descriptor.dart';

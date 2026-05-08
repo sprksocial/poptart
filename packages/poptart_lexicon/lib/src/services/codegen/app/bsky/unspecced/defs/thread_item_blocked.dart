@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../app/bsky/feed/defs/blocked_author.dart';
+import '../../feed/defs/blocked_author.dart';
+
 
 part 'thread_item_blocked.freezed.dart';
 part 'thread_item_blocked.g.dart';
@@ -20,9 +22,11 @@ part 'thread_item_blocked.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ThreadItemBlocked with _$ThreadItemBlocked {
-  static const knownProps = <String>['author'];
+  static const knownProps = <String>['author', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ThreadItemBlocked({
@@ -32,14 +36,17 @@ abstract class ThreadItemBlocked with _$ThreadItemBlocked {
     Map<String, dynamic>? $unknown,
   }) = _ThreadItemBlocked;
 
-  factory ThreadItemBlocked.fromJson(Map<String, Object?> json) =>
-      _$ThreadItemBlockedFromJson(json);
+  factory ThreadItemBlocked.fromJson(Map<String, Object?> json) => _$ThreadItemBlockedFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.unspecced.defs#threadItemBlocked';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.unspecced.defs#threadItemBlocked'
+;
 }
+
+}
+
+
 
 final class ThreadItemBlockedConverter
     extends JsonConverter<ThreadItemBlocked, Map<String, dynamic>> {
@@ -47,12 +54,15 @@ final class ThreadItemBlockedConverter
 
   @override
   ThreadItemBlocked fromJson(Map<String, dynamic> json) {
-    return ThreadItemBlocked.fromJson(
-      translate(json, ThreadItemBlocked.knownProps),
-    );
+    return ThreadItemBlocked.fromJson(translate(
+      json,
+      ThreadItemBlocked.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ThreadItemBlocked object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ThreadItemBlocked object) => untranslate(
+        object.toJson(),
+      );
 }
+

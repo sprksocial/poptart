@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'account_hosting_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class AccountHostingStatus with _$AccountHostingStatus {
   const AccountHostingStatus._();
@@ -26,16 +28,15 @@ abstract class AccountHostingStatus with _$AccountHostingStatus {
     required KnownAccountHostingStatus data,
   }) = AccountHostingStatusKnownValue;
 
-  const factory AccountHostingStatus.unknown({required String data}) =
-      AccountHostingStatusUnknown;
+  const factory AccountHostingStatus.unknown({
+    required String data,
+  }) = AccountHostingStatusUnknown;
 
   static AccountHostingStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownAccountHostingStatus.valueOf(value);
 
-    return knownValue != null
-        ? AccountHostingStatus.knownValue(data: knownValue)
-        : AccountHostingStatus.unknown(data: value);
+    return knownValue != null ? AccountHostingStatus.knownValue(data: knownValue) : AccountHostingStatus.unknown(data: value);
   }
 
   String toJson() => const AccountHostingStatusConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class AccountHostingStatus with _$AccountHostingStatus {
 
 extension AccountHostingStatusExtension on AccountHostingStatus {
   bool get isKnownValue => isA<AccountHostingStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownAccountHostingStatus? get knownValue =>
-      isKnownValue ? data as KnownAccountHostingStatus : null;
-  bool get isUnknown => isA<AccountHostingStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownAccountHostingStatus? get knownValue => isKnownValue ? data as KnownAccountHostingStatus : null;
+bool get isUnknown => isA<AccountHostingStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class AccountHostingStatusConverter
-    extends JsonConverter<AccountHostingStatus, String> {
+final class AccountHostingStatusConverter extends JsonConverter<AccountHostingStatus, String> {
   const AccountHostingStatusConverter();
 
   @override
@@ -70,21 +70,24 @@ final class AccountHostingStatusConverter
   }
 
   @override
-  String toJson(AccountHostingStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(AccountHostingStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownAccountHostingStatus implements Serializable {
+enum KnownAccountHostingStatus implements Serializable{
   @JsonValue('takendown')
-  takendown('takendown'),
-  @JsonValue('suspended')
-  suspended('suspended'),
-  @JsonValue('deleted')
-  deleted('deleted'),
-  @JsonValue('deactivated')
-  deactivated('deactivated'),
-  @JsonValue('unknown')
-  unknown('unknown');
+takendown('takendown'),
+@JsonValue('suspended')
+suspended('suspended'),
+@JsonValue('deleted')
+deleted('deleted'),
+@JsonValue('deactivated')
+deactivated('deactivated'),
+@JsonValue('unknown')
+unknown('unknown'),
+  ;
 
   @override
   final String value;

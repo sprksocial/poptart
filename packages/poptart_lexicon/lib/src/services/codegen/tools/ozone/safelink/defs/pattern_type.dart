@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,23 +19,24 @@ part 'pattern_type.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class PatternType with _$PatternType {
   const PatternType._();
 
-  const factory PatternType.knownValue({required KnownPatternType data}) =
-      PatternTypeKnownValue;
+  const factory PatternType.knownValue({
+    required KnownPatternType data,
+  }) = PatternTypeKnownValue;
 
-  const factory PatternType.unknown({required String data}) =
-      PatternTypeUnknown;
+  const factory PatternType.unknown({
+    required String data,
+  }) = PatternTypeUnknown;
 
   static PatternType? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownPatternType.valueOf(value);
 
-    return knownValue != null
-        ? PatternType.knownValue(data: knownValue)
-        : PatternType.unknown(data: value);
+    return knownValue != null ? PatternType.knownValue(data: knownValue) : PatternType.unknown(data: value);
   }
 
   String toJson() => const PatternTypeConverter().toJson(this);
@@ -42,12 +44,12 @@ abstract class PatternType with _$PatternType {
 
 extension PatternTypeExtension on PatternType {
   bool get isKnownValue => isA<PatternTypeKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownPatternType? get knownValue =>
-      isKnownValue ? data as KnownPatternType : null;
-  bool get isUnknown => isA<PatternTypeUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownPatternType? get knownValue => isKnownValue ? data as KnownPatternType : null;
+bool get isUnknown => isA<PatternTypeUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
 final class PatternTypeConverter extends JsonConverter<PatternType, String> {
@@ -68,15 +70,18 @@ final class PatternTypeConverter extends JsonConverter<PatternType, String> {
   }
 
   @override
-  String toJson(PatternType object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(PatternType object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownPatternType implements Serializable {
+enum KnownPatternType implements Serializable{
   @JsonValue('domain')
-  domain('domain'),
-  @JsonValue('url')
-  url('url');
+domain('domain'),
+@JsonValue('url')
+url('url'),
+  ;
 
   @override
   final String value;

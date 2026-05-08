@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/getBookmarks/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/getBookmarks/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/getBookmarks/descriptor.dart';

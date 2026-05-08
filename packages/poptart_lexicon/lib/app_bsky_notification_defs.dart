@@ -20,3 +20,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/defs/
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/defs/preferences.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/defs/activity_subscription.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/defs/subject_activity_subscription.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/defs/descriptor.dart';

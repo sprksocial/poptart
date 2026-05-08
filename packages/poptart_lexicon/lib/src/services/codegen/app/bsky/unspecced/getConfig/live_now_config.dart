@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'live_now_config.freezed.dart';
 part 'live_now_config.g.dart';
@@ -18,27 +21,32 @@ part 'live_now_config.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class LiveNowConfig with _$LiveNowConfig {
-  static const knownProps = <String>['did', 'domains'];
+  static const knownProps = <String>['did', 'domains', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory LiveNowConfig({
     @Default('app.bsky.unspecced.getConfig#liveNowConfig') String $type,
     required String did,
-    required List<String> domains,
+required List<String> domains,
 
     Map<String, dynamic>? $unknown,
   }) = _LiveNowConfig;
 
-  factory LiveNowConfig.fromJson(Map<String, Object?> json) =>
-      _$LiveNowConfigFromJson(json);
+  factory LiveNowConfig.fromJson(Map<String, Object?> json) => _$LiveNowConfigFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.unspecced.getConfig#liveNowConfig';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.unspecced.getConfig#liveNowConfig'
+;
 }
+
+}
+
+
 
 final class LiveNowConfigConverter
     extends JsonConverter<LiveNowConfig, Map<String, dynamic>> {
@@ -46,10 +54,15 @@ final class LiveNowConfigConverter
 
   @override
   LiveNowConfig fromJson(Map<String, dynamic> json) {
-    return LiveNowConfig.fromJson(translate(json, LiveNowConfig.knownProps));
+    return LiveNowConfig.fromJson(translate(
+      json,
+      LiveNowConfig.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(LiveNowConfig object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(LiveNowConfig object) => untranslate(
+        object.toJson(),
+      );
 }
+

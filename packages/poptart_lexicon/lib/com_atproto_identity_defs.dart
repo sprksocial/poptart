@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/identity/defs/identity_info.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/identity/defs/descriptor.dart';

@@ -2,6 +2,9 @@
 
 import 'package:poptart_lexicon/core.dart';
 import 'package:poptart_lexicon/app_bsky_richtext_facet.dart';
+import 'package:poptart_lexicon/app_bsky_feed_post.dart';
+import 'package:poptart_lexicon/com_atproto_repo_createrecord.dart'
+    as create_record;
 import 'package:poptart_lexicon/poptart_lexicon.dart' as bsky;
 import 'package:poptart_bluesky_text/poptart_bluesky_text.dart';
 
@@ -35,12 +38,23 @@ Future<void> main() async {
     print(text.entities);
 
     //! And you can easily integrate with bluesky package!
-    final bluesky = bsky.Bluesky.fromSession(await _session);
+    final session = await _session;
+    final bluesky = bsky.Bluesky.fromSession(session);
     final facets = await text.entities.toFacets();
 
-    await bluesky.feed.post.create(
-      text: text.value,
-      facets: facets.map(RichtextFacet.fromJson).toList(),
+    await bluesky.call(
+      create_record.methodDescriptor,
+      input: create_record.RepoCreateRecordInput(
+        repo: session.did,
+        collection: 'app.bsky.feed.post',
+        record: const FeedPostRecordConverter().toJson(
+          FeedPostRecord(
+            text: text.value,
+            facets: facets.map(RichtextFacet.fromJson).toList(),
+            createdAt: DateTime.now(),
+          ),
+        ),
+      ),
     );
   }
 }

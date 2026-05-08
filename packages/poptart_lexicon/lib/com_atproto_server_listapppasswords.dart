@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/listAppPasswords/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/listAppPasswords/app_password.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/listAppPasswords/descriptor.dart';

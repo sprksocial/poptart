@@ -27,3 +27,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/defs/age
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/defs/age_assurance_state_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/defs/age_assurance_event.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/defs/age_assurance_event_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/defs/descriptor.dart';

@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getActorMetadata/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getActorMetadata/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getActorMetadata/metadata.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getActorMetadata/descriptor.dart';

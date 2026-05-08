@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListsWith
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListsWithMembership/main_purposes.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListsWithMembership/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListsWithMembership/list_with_membership.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListsWithMembership/descriptor.dart';

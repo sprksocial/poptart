@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'account_event_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class AccountEventStatus with _$AccountEventStatus {
   const AccountEventStatus._();
@@ -26,16 +28,15 @@ abstract class AccountEventStatus with _$AccountEventStatus {
     required KnownAccountEventStatus data,
   }) = AccountEventStatusKnownValue;
 
-  const factory AccountEventStatus.unknown({required String data}) =
-      AccountEventStatusUnknown;
+  const factory AccountEventStatus.unknown({
+    required String data,
+  }) = AccountEventStatusUnknown;
 
   static AccountEventStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownAccountEventStatus.valueOf(value);
 
-    return knownValue != null
-        ? AccountEventStatus.knownValue(data: knownValue)
-        : AccountEventStatus.unknown(data: value);
+    return knownValue != null ? AccountEventStatus.knownValue(data: knownValue) : AccountEventStatus.unknown(data: value);
   }
 
   String toJson() => const AccountEventStatusConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class AccountEventStatus with _$AccountEventStatus {
 
 extension AccountEventStatusExtension on AccountEventStatus {
   bool get isKnownValue => isA<AccountEventStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownAccountEventStatus? get knownValue =>
-      isKnownValue ? data as KnownAccountEventStatus : null;
-  bool get isUnknown => isA<AccountEventStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownAccountEventStatus? get knownValue => isKnownValue ? data as KnownAccountEventStatus : null;
+bool get isUnknown => isA<AccountEventStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class AccountEventStatusConverter
-    extends JsonConverter<AccountEventStatus, String> {
+final class AccountEventStatusConverter extends JsonConverter<AccountEventStatus, String> {
   const AccountEventStatusConverter();
 
   @override
@@ -70,23 +70,26 @@ final class AccountEventStatusConverter
   }
 
   @override
-  String toJson(AccountEventStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(AccountEventStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownAccountEventStatus implements Serializable {
+enum KnownAccountEventStatus implements Serializable{
   @JsonValue('unknown')
-  unknown('unknown'),
-  @JsonValue('deactivated')
-  deactivated('deactivated'),
-  @JsonValue('deleted')
-  deleted('deleted'),
-  @JsonValue('takendown')
-  takendown('takendown'),
-  @JsonValue('suspended')
-  suspended('suspended'),
-  @JsonValue('tombstoned')
-  tombstoned('tombstoned');
+unknown('unknown'),
+@JsonValue('deactivated')
+deactivated('deactivated'),
+@JsonValue('deleted')
+deleted('deleted'),
+@JsonValue('takendown')
+takendown('takendown'),
+@JsonValue('suspended')
+suspended('suspended'),
+@JsonValue('tombstoned')
+tombstoned('tombstoned'),
+  ;
 
   @override
   final String value;

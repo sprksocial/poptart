@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/deleteAccount/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/deleteAccount/descriptor.dart';

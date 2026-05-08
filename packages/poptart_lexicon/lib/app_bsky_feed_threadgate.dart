@@ -17,3 +17,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/threadgate/me
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/threadgate/follower_rule.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/threadgate/following_rule.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/threadgate/list_rule.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/threadgate/descriptor.dart';

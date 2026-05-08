@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,22 +19,24 @@ part 'label_value.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class LabelValue with _$LabelValue {
   const LabelValue._();
 
-  const factory LabelValue.knownValue({required KnownLabelValue data}) =
-      LabelValueKnownValue;
+  const factory LabelValue.knownValue({
+    required KnownLabelValue data,
+  }) = LabelValueKnownValue;
 
-  const factory LabelValue.unknown({required String data}) = LabelValueUnknown;
+  const factory LabelValue.unknown({
+    required String data,
+  }) = LabelValueUnknown;
 
   static LabelValue? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownLabelValue.valueOf(value);
 
-    return knownValue != null
-        ? LabelValue.knownValue(data: knownValue)
-        : LabelValue.unknown(data: value);
+    return knownValue != null ? LabelValue.knownValue(data: knownValue) : LabelValue.unknown(data: value);
   }
 
   String toJson() => const LabelValueConverter().toJson(this);
@@ -41,12 +44,12 @@ abstract class LabelValue with _$LabelValue {
 
 extension LabelValueExtension on LabelValue {
   bool get isKnownValue => isA<LabelValueKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownLabelValue? get knownValue =>
-      isKnownValue ? data as KnownLabelValue : null;
-  bool get isUnknown => isA<LabelValueUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownLabelValue? get knownValue => isKnownValue ? data as KnownLabelValue : null;
+bool get isUnknown => isA<LabelValueUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
 final class LabelValueConverter extends JsonConverter<LabelValue, String> {
@@ -67,27 +70,30 @@ final class LabelValueConverter extends JsonConverter<LabelValue, String> {
   }
 
   @override
-  String toJson(LabelValue object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(LabelValue object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownLabelValue implements Serializable {
+enum KnownLabelValue implements Serializable{
   @JsonValue('!hide')
-  hide('!hide'),
-  @JsonValue('!warn')
-  warn('!warn'),
-  @JsonValue('!no-unauthenticated')
-  noUnauthenticated('!no-unauthenticated'),
-  @JsonValue('porn')
-  porn('porn'),
-  @JsonValue('sexual')
-  sexual('sexual'),
-  @JsonValue('nudity')
-  nudity('nudity'),
-  @JsonValue('graphic-media')
-  graphicMedia('graphic-media'),
-  @JsonValue('bot')
-  bot('bot');
+hide('!hide'),
+@JsonValue('!warn')
+warn('!warn'),
+@JsonValue('!no-unauthenticated')
+noUnauthenticated('!no-unauthenticated'),
+@JsonValue('porn')
+porn('porn'),
+@JsonValue('sexual')
+sexual('sexual'),
+@JsonValue('nudity')
+nudity('nudity'),
+@JsonValue('graphic-media')
+graphicMedia('graphic-media'),
+@JsonValue('bot')
+bot('bot'),
+  ;
 
   @override
   final String value;

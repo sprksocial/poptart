@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,23 +19,24 @@ part 'event_access.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class EventAccess with _$EventAccess {
   const EventAccess._();
 
-  const factory EventAccess.knownValue({required KnownEventAccess data}) =
-      EventAccessKnownValue;
+  const factory EventAccess.knownValue({
+    required KnownEventAccess data,
+  }) = EventAccessKnownValue;
 
-  const factory EventAccess.unknown({required String data}) =
-      EventAccessUnknown;
+  const factory EventAccess.unknown({
+    required String data,
+  }) = EventAccessUnknown;
 
   static EventAccess? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownEventAccess.valueOf(value);
 
-    return knownValue != null
-        ? EventAccess.knownValue(data: knownValue)
-        : EventAccess.unknown(data: value);
+    return knownValue != null ? EventAccess.knownValue(data: knownValue) : EventAccess.unknown(data: value);
   }
 
   String toJson() => const EventAccessConverter().toJson(this);
@@ -42,12 +44,12 @@ abstract class EventAccess with _$EventAccess {
 
 extension EventAccessExtension on EventAccess {
   bool get isKnownValue => isA<EventAccessKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownEventAccess? get knownValue =>
-      isKnownValue ? data as KnownEventAccess : null;
-  bool get isUnknown => isA<EventAccessUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownEventAccess? get knownValue => isKnownValue ? data as KnownEventAccess : null;
+bool get isUnknown => isA<EventAccessUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
 final class EventAccessConverter extends JsonConverter<EventAccess, String> {
@@ -68,19 +70,22 @@ final class EventAccessConverter extends JsonConverter<EventAccess, String> {
   }
 
   @override
-  String toJson(EventAccess object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(EventAccess object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownEventAccess implements Serializable {
+enum KnownEventAccess implements Serializable{
   @JsonValue('unknown')
-  unknown('unknown'),
-  @JsonValue('none')
-  none('none'),
-  @JsonValue('safe')
-  safe('safe'),
-  @JsonValue('full')
-  full('full');
+unknown('unknown'),
+@JsonValue('none')
+none('none'),
+@JsonValue('safe')
+safe('safe'),
+@JsonValue('full')
+full('full'),
+  ;
 
   @override
   final String value;

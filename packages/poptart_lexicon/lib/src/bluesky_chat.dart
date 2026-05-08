@@ -7,11 +7,6 @@ import 'package:poptart_lexicon/poptart_atproto.dart' as atp;
 import 'package:poptart_core/poptart_core.dart' as core;
 import 'package:poptart_core/poptart_oauth.dart' as oauth;
 
-// Project imports:
-import 'services/codegen/chat/bsky/actor_service.dart';
-import 'services/codegen/chat/bsky/convo_service.dart';
-import 'services/codegen/chat/bsky/moderation_service.dart';
-
 const _kBskyChatProxyHeaders = <String, String>{
   'atproto-proxy': 'did:web:api.bsky.chat#bsky_chat',
 };
@@ -110,25 +105,17 @@ sealed class BlueskyChat {
   /// Defaults to `bsky.network`.
   String get relayService;
 
-  /// Returns the actor service.
-  /// This service represents `chat.bsky.actor.*`.
-  ActorService get actor;
-
-  /// Returns the convo service.
-  /// This service represents `chat.bsky.convo.*`.
-  ConvoService get convo;
-
-  /// Returns the moderation service.
-  /// This service represents `chat.bsky.moderation.*`.
-  ModerationService get moderation;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  });
 }
 
 final class _BlueskyChat implements BlueskyChat {
-  _BlueskyChat(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      convo = ConvoService(ctx),
-      moderation = ModerationService(ctx),
-      _ctx = ctx;
+  _BlueskyChat(this._ctx, this.atproto);
 
   final core.ServiceContext _ctx;
 
@@ -148,11 +135,17 @@ final class _BlueskyChat implements BlueskyChat {
   final atp.ATProto atproto;
 
   @override
-  final ActorService actor;
-
-  @override
-  final ConvoService convo;
-
-  @override
-  final ModerationService moderation;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  }) async => await _ctx.call(
+    method,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    input: input,
+  );
 }

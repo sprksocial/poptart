@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/updateRule/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/updateRule/descriptor.dart';

@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListMutes/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListMutes/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getListMutes/descriptor.dart';

@@ -20,3 +20,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/defs/list_pu
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/defs/list_viewer_state.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/defs/not_found_actor.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/defs/relationship.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/defs/descriptor.dart';

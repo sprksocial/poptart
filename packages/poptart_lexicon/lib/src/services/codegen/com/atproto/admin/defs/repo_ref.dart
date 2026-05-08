@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'repo_ref.freezed.dart';
 part 'repo_ref.g.dart';
@@ -18,9 +21,11 @@ part 'repo_ref.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class RepoRef with _$RepoRef {
-  static const knownProps = <String>['did'];
+  static const knownProps = <String>['did', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory RepoRef({
@@ -30,14 +35,17 @@ abstract class RepoRef with _$RepoRef {
     Map<String, dynamic>? $unknown,
   }) = _RepoRef;
 
-  factory RepoRef.fromJson(Map<String, Object?> json) =>
-      _$RepoRefFromJson(json);
+  factory RepoRef.fromJson(Map<String, Object?> json) => _$RepoRefFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'com.atproto.admin.defs#repoRef';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'com.atproto.admin.defs#repoRef'
+;
 }
+
+}
+
+
 
 final class RepoRefConverter
     extends JsonConverter<RepoRef, Map<String, dynamic>> {
@@ -45,9 +53,15 @@ final class RepoRefConverter
 
   @override
   RepoRef fromJson(Map<String, dynamic> json) {
-    return RepoRef.fromJson(translate(json, RepoRef.knownProps));
+    return RepoRef.fromJson(translate(
+      json,
+      RepoRef.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(RepoRef object) => untranslate(object.toJson());
+  Map<String, dynamic> toJson(RepoRef object) => untranslate(
+        object.toJson(),
+      );
 }
+

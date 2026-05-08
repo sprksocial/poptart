@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getLatestCommit/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getLatestCommit/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getLatestCommit/descriptor.dart';

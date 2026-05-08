@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_sort_direction.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class SafelinkQueryEventsSortDirection
-    with _$SafelinkQueryEventsSortDirection {
+abstract class SafelinkQueryEventsSortDirection with _$SafelinkQueryEventsSortDirection {
   const SafelinkQueryEventsSortDirection._();
 
   const factory SafelinkQueryEventsSortDirection.knownValue({
@@ -35,29 +36,23 @@ abstract class SafelinkQueryEventsSortDirection
     if (value == null) return null;
     final knownValue = KnownSafelinkQueryEventsSortDirection.valueOf(value);
 
-    return knownValue != null
-        ? SafelinkQueryEventsSortDirection.knownValue(data: knownValue)
-        : SafelinkQueryEventsSortDirection.unknown(data: value);
+    return knownValue != null ? SafelinkQueryEventsSortDirection.knownValue(data: knownValue) : SafelinkQueryEventsSortDirection.unknown(data: value);
   }
 
-  String toJson() =>
-      const SafelinkQueryEventsSortDirectionConverter().toJson(this);
+  String toJson() => const SafelinkQueryEventsSortDirectionConverter().toJson(this);
 }
 
-extension SafelinkQueryEventsSortDirectionExtension
-    on SafelinkQueryEventsSortDirection {
-  bool get isKnownValue =>
-      isA<SafelinkQueryEventsSortDirectionKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownSafelinkQueryEventsSortDirection? get knownValue =>
-      isKnownValue ? data as KnownSafelinkQueryEventsSortDirection : null;
-  bool get isUnknown => isA<SafelinkQueryEventsSortDirectionUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension SafelinkQueryEventsSortDirectionExtension on SafelinkQueryEventsSortDirection {
+  bool get isKnownValue => isA<SafelinkQueryEventsSortDirectionKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownSafelinkQueryEventsSortDirection? get knownValue => isKnownValue ? data as KnownSafelinkQueryEventsSortDirection : null;
+bool get isUnknown => isA<SafelinkQueryEventsSortDirectionUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class SafelinkQueryEventsSortDirectionConverter
-    extends JsonConverter<SafelinkQueryEventsSortDirection, String> {
+final class SafelinkQueryEventsSortDirectionConverter extends JsonConverter<SafelinkQueryEventsSortDirection, String> {
   const SafelinkQueryEventsSortDirectionConverter();
 
   @override
@@ -75,15 +70,18 @@ final class SafelinkQueryEventsSortDirectionConverter
   }
 
   @override
-  String toJson(SafelinkQueryEventsSortDirection object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(SafelinkQueryEventsSortDirection object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownSafelinkQueryEventsSortDirection implements Serializable {
+enum KnownSafelinkQueryEventsSortDirection implements Serializable{
   @JsonValue('asc')
-  asc('asc'),
-  @JsonValue('desc')
-  desc('desc');
+asc('asc'),
+@JsonValue('desc')
+desc('desc'),
+  ;
 
   @override
   final String value;

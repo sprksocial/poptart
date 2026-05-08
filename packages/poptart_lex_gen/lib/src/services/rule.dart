@@ -33,13 +33,11 @@ String getLexObjectName(
   final List<String> mainVariants,
 ) {
   if (defName == 'main') {
-    final parts = lexiconId.split('.');
-    return parts.sublist(2, 4).map(toFirstUpperCase).join();
+    return _lexiconNameParts(lexiconId).map(toFirstUpperCase).join();
   }
 
   if (defName == 'record') {
-    final parts = lexiconId.split('.');
-    return parts.sublist(2, 4).map(toFirstUpperCase).join() +
+    return _lexiconNameParts(lexiconId).map(toFirstUpperCase).join() +
         toFirstUpperCase(defName);
   }
 
@@ -48,9 +46,7 @@ String getLexObjectName(
   }
 
   if (mainVariants.contains(lexiconId)) {
-    final parts = lexiconId.split('.');
-
-    return parts.sublist(2, 4).map(toFirstUpperCase).join() +
+    return _lexiconNameParts(lexiconId).map(toFirstUpperCase).join() +
         toFirstUpperCase(defName);
   }
 
@@ -174,7 +170,7 @@ String _getFileDir(final String lexiconId) {
 }
 
 String getFileDirForService(final String lexiconId) {
-  return lexiconId.split('.').sublist(0, 2).join('/');
+  return lexiconId.split('.').join('/');
 }
 
 String getLexObjectNameFromRef(
@@ -232,7 +228,7 @@ String getLexObjectPackagePathFromRefForService(
   final String ref,
 ) {
   if (ref.startsWith('#')) {
-    final relativePath = lexiconId.split('.').sublist(2).join('/');
+    final relativePath = _getFileDir(lexiconId);
     final defName = ref.substring(1);
     return '$relativePath/${getLexObjectFileName(defName)}.dart';
   }
@@ -240,10 +236,10 @@ String getLexObjectPackagePathFromRefForService(
   if (_isInTheSamePackage(lexiconId, ref)) {
     if (ref.contains('#')) {
       final parts = ref.split('#');
-      final relativePath = parts.first.split('.').sublist(2).join('/');
+      final relativePath = _getFileDir(parts.first);
       return '$relativePath/${getLexObjectFileName(parts[1])}.dart';
     } else {
-      final relativePath = ref.split('.').sublist(2).join('/');
+      final relativePath = _getFileDir(ref);
       return '$relativePath/${getLexObjectFileName('main')}.dart';
     }
   } else {
@@ -272,12 +268,8 @@ String getPackageRelativePath(final String lexiconId, final String ref) {
   if (ref.startsWith('#')) return '.';
 
   if (_isInTheSamePackage(lexiconId, ref)) {
-    if (ref.contains('#')) {
-      final parts = ref.split('#');
-      return '../../../../${_getFileDir(parts[0])}';
-    } else {
-      return '../../../../${_getFileDir(ref)}';
-    }
+    final refLexiconId = ref.contains('#') ? ref.split('#').first : ref;
+    return _relativeDir(_getFileDir(lexiconId), _getFileDir(refLexiconId));
   } else {
     if (ref.contains('#')) {
       final lexiconId = ref.split('#').first;
@@ -288,17 +280,31 @@ String getPackageRelativePath(final String lexiconId, final String ref) {
   }
 }
 
-bool _isInTheSamePackage(final String lexiconId, final String ref) {
-  if (ref.startsWith('#')) return true;
-  return _getServiceFromLexiconId(lexiconId) == _getServiceFromLexiconId(ref);
+String _relativeDir(final String fromDir, final String toDir) {
+  final from = fromDir.split('/').where((e) => e.isNotEmpty).toList();
+  final to = toDir.split('/').where((e) => e.isNotEmpty).toList();
+
+  var shared = 0;
+  while (shared < from.length &&
+      shared < to.length &&
+      from[shared] == to[shared]) {
+    shared++;
+  }
+
+  final up = List.filled(from.length - shared, '..');
+  final down = to.sublist(shared);
+  final parts = [...up, ...down];
+  return parts.isEmpty ? '.' : parts.join('/');
 }
 
-String _getServiceFromLexiconId(final String lexiconId) {
-  return lexiconId.split('.').sublist(0, 2).join('.');
+bool _isInTheSamePackage(final String lexiconId, final String ref) {
+  if (ref.startsWith('#')) return true;
+  final refLexiconId = ref.contains('#') ? ref.split('#').first : ref;
+  return getRootPackageName(lexiconId) == getRootPackageName(refLexiconId);
 }
 
 String getRecordTypeName(final String lexiconId) {
-  return lexiconId.split('.').sublist(2).map(toFirstUpperCase).join();
+  return _lexiconNameParts(lexiconId).map(toFirstUpperCase).join();
 }
 
 String getRootPackageName(final String lexiconId) {
@@ -311,11 +317,13 @@ LexiconNamespaceRule _getNamespaceRule(final String lexiconId) {
     throw StateError('Lex service rule config is not set');
   }
 
-  for (final rule in config.namespaceRules) {
-    if (rule.matches(lexiconId)) {
-      return rule;
-    }
-  }
+  final matches =
+      config.namespaceRules.where((rule) => rule.matches(lexiconId)).toList()
+        ..sort(
+          (a, b) => b.longestPrefix.length.compareTo(a.longestPrefix.length),
+        );
+
+  if (matches.isNotEmpty) return matches.first;
 
   throw ArgumentError('Unsupported lexicon ID: $lexiconId');
 }
@@ -325,7 +333,7 @@ String getPackageName(final String lexiconId) {
 }
 
 String getServiceName(final String lexiconId) {
-  return lexiconId.split('.')[2];
+  return _lexiconNameParts(lexiconId).first;
 }
 
 String getServiceApiName(final String lexiconId) {
@@ -340,9 +348,7 @@ String getLexObjectAbsolutePathForService(
   final String lexiconId,
   final String fileName,
 ) {
-  final parts = lexiconId.split('.');
-  final root = parts.sublist(0, 2).join('/');
-  return '${_getHomeDirForExport(lexiconId)}/$root/$fileName.dart';
+  return '${_getHomeDirForExport(lexiconId)}/${_getFileDir(lexiconId)}/$fileName.dart';
 }
 
 String getLexKnownValuesElementName(
@@ -382,6 +388,12 @@ String getLexKnownValuesElementName(
 
 String getNamespaceIdForApi(final String lexiconId) {
   return toFirstLowerCase(lexiconId.split('.').map(toFirstUpperCase).join());
+}
+
+List<String> _lexiconNameParts(final String lexiconId) {
+  final parts = lexiconId.split('.');
+  if (parts.length <= 2) return parts;
+  return parts.sublist(2);
 }
 
 LexUserType? getRelatedDocFromRef(final String? ref) {

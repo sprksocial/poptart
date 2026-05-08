@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,25 +21,26 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class ContactSendNotificationInput
-    with _$ContactSendNotificationInput {
-  static const knownProps = <String>['from', 'to'];
+abstract class ContactSendNotificationInput with _$ContactSendNotificationInput {
+  static const knownProps = <String>['from', 'to', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ContactSendNotificationInput({
     /// The DID of who this notification comes from.
-    required String from,
-
-    /// The DID of who this notification should go to.
-    required String to,
+required String from,
+/// The DID of who this notification should go to.
+required String to,
 
     Map<String, dynamic>? $unknown,
   }) = _ContactSendNotificationInput;
 
-  factory ContactSendNotificationInput.fromJson(Map<String, Object?> json) =>
-      _$ContactSendNotificationInputFromJson(json);
+  factory ContactSendNotificationInput.fromJson(Map<String, Object?> json) => _$ContactSendNotificationInputFromJson(json);
 }
+
+
 
 final class ContactSendNotificationInputConverter
     extends JsonConverter<ContactSendNotificationInput, Map<String, dynamic>> {
@@ -44,12 +48,15 @@ final class ContactSendNotificationInputConverter
 
   @override
   ContactSendNotificationInput fromJson(Map<String, dynamic> json) {
-    return ContactSendNotificationInput.fromJson(
-      translate(json, ContactSendNotificationInput.knownProps),
-    );
+    return ContactSendNotificationInput.fromJson(translate(
+      json,
+      ContactSendNotificationInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ContactSendNotificationInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ContactSendNotificationInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

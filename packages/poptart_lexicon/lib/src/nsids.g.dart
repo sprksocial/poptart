@@ -35,7 +35,9 @@ const appBskyActorPutPreferences = NSID(ids.appBskyActorPutPreferences);
 const appBskyActorSearchActors = NSID(ids.appBskyActorSearchActors);
 
 /// `app.bsky.actor.searchActorsTypeahead`
-const appBskyActorSearchActorsTypeahead = NSID(ids.appBskyActorSearchActorsTypeahead);
+const appBskyActorSearchActorsTypeahead = NSID(
+  ids.appBskyActorSearchActorsTypeahead,
+);
 
 /// `app.bsky.actor.status`
 const appBskyActorStatus = NSID(ids.appBskyActorStatus);
@@ -80,7 +82,9 @@ const appBskyContactRemoveData = NSID(ids.appBskyContactRemoveData);
 const appBskyContactSendNotification = NSID(ids.appBskyContactSendNotification);
 
 /// `app.bsky.contact.startPhoneVerification`
-const appBskyContactStartPhoneVerification = NSID(ids.appBskyContactStartPhoneVerification);
+const appBskyContactStartPhoneVerification = NSID(
+  ids.appBskyContactStartPhoneVerification,
+);
 
 /// `app.bsky.contact.verifyPhone`
 const appBskyContactVerifyPhone = NSID(ids.appBskyContactVerifyPhone);
@@ -107,7 +111,9 @@ const appBskyEmbedExternalExternal = NSID(ids.appBskyEmbedExternalExternal);
 const appBskyEmbedExternalView = NSID(ids.appBskyEmbedExternalView);
 
 /// `app.bsky.embed.external#viewExternal`
-const appBskyEmbedExternalViewExternal = NSID(ids.appBskyEmbedExternalViewExternal);
+const appBskyEmbedExternalViewExternal = NSID(
+  ids.appBskyEmbedExternalViewExternal,
+);
 
 /// `app.bsky.embed.images`
 const appBskyEmbedImages = NSID(ids.appBskyEmbedImages);
@@ -143,7 +149,9 @@ const appBskyEmbedRecordViewRecord = NSID(ids.appBskyEmbedRecordViewRecord);
 const appBskyEmbedRecordWithMedia = NSID(ids.appBskyEmbedRecordWithMedia);
 
 /// `app.bsky.embed.recordWithMedia#view`
-const appBskyEmbedRecordWithMediaView = NSID(ids.appBskyEmbedRecordWithMediaView);
+const appBskyEmbedRecordWithMediaView = NSID(
+  ids.appBskyEmbedRecordWithMediaView,
+);
 
 /// `app.bsky.embed.video`
 const appBskyEmbedVideo = NSID(ids.appBskyEmbedVideo);
@@ -155,13 +163,19 @@ const appBskyEmbedVideoCaption = NSID(ids.appBskyEmbedVideoCaption);
 const appBskyEmbedVideoView = NSID(ids.appBskyEmbedVideoView);
 
 /// `app.bsky.feed.describeFeedGenerator`
-const appBskyFeedDescribeFeedGenerator = NSID(ids.appBskyFeedDescribeFeedGenerator);
+const appBskyFeedDescribeFeedGenerator = NSID(
+  ids.appBskyFeedDescribeFeedGenerator,
+);
 
 /// `app.bsky.feed.describeFeedGenerator#feed`
-const appBskyFeedDescribeFeedGeneratorFeed = NSID(ids.appBskyFeedDescribeFeedGeneratorFeed);
+const appBskyFeedDescribeFeedGeneratorFeed = NSID(
+  ids.appBskyFeedDescribeFeedGeneratorFeed,
+);
 
 /// `app.bsky.feed.describeFeedGenerator#links`
-const appBskyFeedDescribeFeedGeneratorLinks = NSID(ids.appBskyFeedDescribeFeedGeneratorLinks);
+const appBskyFeedDescribeFeedGeneratorLinks = NSID(
+  ids.appBskyFeedDescribeFeedGeneratorLinks,
+);
 
 /// `app.bsky.feed.generator`
 const appBskyFeedGenerator = NSID(ids.appBskyFeedGenerator);
@@ -248,16 +262,22 @@ const appBskyFeedSendInteractions = NSID(ids.appBskyFeedSendInteractions);
 const appBskyFeedThreadgate = NSID(ids.appBskyFeedThreadgate);
 
 /// `app.bsky.feed.threadgate#followerRule`
-const appBskyFeedThreadgateFollowerRule = NSID(ids.appBskyFeedThreadgateFollowerRule);
+const appBskyFeedThreadgateFollowerRule = NSID(
+  ids.appBskyFeedThreadgateFollowerRule,
+);
 
 /// `app.bsky.feed.threadgate#followingRule`
-const appBskyFeedThreadgateFollowingRule = NSID(ids.appBskyFeedThreadgateFollowingRule);
+const appBskyFeedThreadgateFollowingRule = NSID(
+  ids.appBskyFeedThreadgateFollowingRule,
+);
 
 /// `app.bsky.feed.threadgate#listRule`
 const appBskyFeedThreadgateListRule = NSID(ids.appBskyFeedThreadgateListRule);
 
 /// `app.bsky.feed.threadgate#mentionRule`
-const appBskyFeedThreadgateMentionRule = NSID(ids.appBskyFeedThreadgateMentionRule);
+const appBskyFeedThreadgateMentionRule = NSID(
+  ids.appBskyFeedThreadgateMentionRule,
+);
 
 /// `app.bsky.graph.block`
 const appBskyGraphBlock = NSID(ids.appBskyGraphBlock);
@@ -266,7 +286,9 @@ const appBskyGraphBlock = NSID(ids.appBskyGraphBlock);
 const appBskyGraphFollow = NSID(ids.appBskyGraphFollow);
 
 /// `app.bsky.graph.getActorStarterPacks`
-const appBskyGraphGetActorStarterPacks = NSID(ids.appBskyGraphGetActorStarterPacks);
+const appBskyGraphGetActorStarterPacks = NSID(
+  ids.appBskyGraphGetActorStarterPacks,
+);
 
 /// `app.bsky.graph.getBlocks`
 const appBskyGraphGetBlocks = NSID(ids.appBskyGraphGetBlocks);
@@ -293,10 +315,14 @@ const appBskyGraphGetListMutes = NSID(ids.appBskyGraphGetListMutes);
 const appBskyGraphGetLists = NSID(ids.appBskyGraphGetLists);
 
 /// `app.bsky.graph.getListsWithMembership`
-const appBskyGraphGetListsWithMembership = NSID(ids.appBskyGraphGetListsWithMembership);
+const appBskyGraphGetListsWithMembership = NSID(
+  ids.appBskyGraphGetListsWithMembership,
+);
 
 /// `app.bsky.graph.getListsWithMembership#listWithMembership`
-const appBskyGraphGetListsWithMembershipListWithMembership = NSID(ids.appBskyGraphGetListsWithMembershipListWithMembership);
+const appBskyGraphGetListsWithMembershipListWithMembership = NSID(
+  ids.appBskyGraphGetListsWithMembershipListWithMembership,
+);
 
 /// `app.bsky.graph.getMutes`
 const appBskyGraphGetMutes = NSID(ids.appBskyGraphGetMutes);
@@ -311,13 +337,19 @@ const appBskyGraphGetStarterPack = NSID(ids.appBskyGraphGetStarterPack);
 const appBskyGraphGetStarterPacks = NSID(ids.appBskyGraphGetStarterPacks);
 
 /// `app.bsky.graph.getStarterPacksWithMembership`
-const appBskyGraphGetStarterPacksWithMembership = NSID(ids.appBskyGraphGetStarterPacksWithMembership);
+const appBskyGraphGetStarterPacksWithMembership = NSID(
+  ids.appBskyGraphGetStarterPacksWithMembership,
+);
 
 /// `app.bsky.graph.getStarterPacksWithMembership#starterPackWithMembership`
-const appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership = NSID(ids.appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership);
+const appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership = NSID(
+  ids.appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership,
+);
 
 /// `app.bsky.graph.getSuggestedFollowsByActor`
-const appBskyGraphGetSuggestedFollowsByActor = NSID(ids.appBskyGraphGetSuggestedFollowsByActor);
+const appBskyGraphGetSuggestedFollowsByActor = NSID(
+  ids.appBskyGraphGetSuggestedFollowsByActor,
+);
 
 /// `app.bsky.graph.list`
 const appBskyGraphList = NSID(ids.appBskyGraphList);
@@ -344,7 +376,9 @@ const appBskyGraphSearchStarterPacks = NSID(ids.appBskyGraphSearchStarterPacks);
 const appBskyGraphStarterpack = NSID(ids.appBskyGraphStarterpack);
 
 /// `app.bsky.graph.starterpack#feedItem`
-const appBskyGraphStarterpackFeedItem = NSID(ids.appBskyGraphStarterpackFeedItem);
+const appBskyGraphStarterpackFeedItem = NSID(
+  ids.appBskyGraphStarterpackFeedItem,
+);
 
 /// `app.bsky.graph.unmuteActor`
 const appBskyGraphUnmuteActor = NSID(ids.appBskyGraphUnmuteActor);
@@ -368,34 +402,54 @@ const appBskyLabelerService = NSID(ids.appBskyLabelerService);
 const appBskyNotificationDeclaration = NSID(ids.appBskyNotificationDeclaration);
 
 /// `app.bsky.notification.getPreferences`
-const appBskyNotificationGetPreferences = NSID(ids.appBskyNotificationGetPreferences);
+const appBskyNotificationGetPreferences = NSID(
+  ids.appBskyNotificationGetPreferences,
+);
 
 /// `app.bsky.notification.getUnreadCount`
-const appBskyNotificationGetUnreadCount = NSID(ids.appBskyNotificationGetUnreadCount);
+const appBskyNotificationGetUnreadCount = NSID(
+  ids.appBskyNotificationGetUnreadCount,
+);
 
 /// `app.bsky.notification.listActivitySubscriptions`
-const appBskyNotificationListActivitySubscriptions = NSID(ids.appBskyNotificationListActivitySubscriptions);
+const appBskyNotificationListActivitySubscriptions = NSID(
+  ids.appBskyNotificationListActivitySubscriptions,
+);
 
 /// `app.bsky.notification.listNotifications`
-const appBskyNotificationListNotifications = NSID(ids.appBskyNotificationListNotifications);
+const appBskyNotificationListNotifications = NSID(
+  ids.appBskyNotificationListNotifications,
+);
 
 /// `app.bsky.notification.listNotifications#notification`
-const appBskyNotificationListNotificationsNotification = NSID(ids.appBskyNotificationListNotificationsNotification);
+const appBskyNotificationListNotificationsNotification = NSID(
+  ids.appBskyNotificationListNotificationsNotification,
+);
 
 /// `app.bsky.notification.putActivitySubscription`
-const appBskyNotificationPutActivitySubscription = NSID(ids.appBskyNotificationPutActivitySubscription);
+const appBskyNotificationPutActivitySubscription = NSID(
+  ids.appBskyNotificationPutActivitySubscription,
+);
 
 /// `app.bsky.notification.putPreferences`
-const appBskyNotificationPutPreferences = NSID(ids.appBskyNotificationPutPreferences);
+const appBskyNotificationPutPreferences = NSID(
+  ids.appBskyNotificationPutPreferences,
+);
 
 /// `app.bsky.notification.putPreferencesV2`
-const appBskyNotificationPutPreferencesV2 = NSID(ids.appBskyNotificationPutPreferencesV2);
+const appBskyNotificationPutPreferencesV2 = NSID(
+  ids.appBskyNotificationPutPreferencesV2,
+);
 
 /// `app.bsky.notification.registerPush`
-const appBskyNotificationRegisterPush = NSID(ids.appBskyNotificationRegisterPush);
+const appBskyNotificationRegisterPush = NSID(
+  ids.appBskyNotificationRegisterPush,
+);
 
 /// `app.bsky.notification.unregisterPush`
-const appBskyNotificationUnregisterPush = NSID(ids.appBskyNotificationUnregisterPush);
+const appBskyNotificationUnregisterPush = NSID(
+  ids.appBskyNotificationUnregisterPush,
+);
 
 /// `app.bsky.notification.updateSeen`
 const appBskyNotificationUpdateSeen = NSID(ids.appBskyNotificationUpdateSeen);
@@ -416,88 +470,140 @@ const appBskyRichtextFacetMention = NSID(ids.appBskyRichtextFacetMention);
 const appBskyRichtextFacetTag = NSID(ids.appBskyRichtextFacetTag);
 
 /// `app.bsky.unspecced.getAgeAssuranceState`
-const appBskyUnspeccedGetAgeAssuranceState = NSID(ids.appBskyUnspeccedGetAgeAssuranceState);
+const appBskyUnspeccedGetAgeAssuranceState = NSID(
+  ids.appBskyUnspeccedGetAgeAssuranceState,
+);
 
 /// `app.bsky.unspecced.getConfig`
 const appBskyUnspeccedGetConfig = NSID(ids.appBskyUnspeccedGetConfig);
 
 /// `app.bsky.unspecced.getConfig#liveNowConfig`
-const appBskyUnspeccedGetConfigLiveNowConfig = NSID(ids.appBskyUnspeccedGetConfigLiveNowConfig);
+const appBskyUnspeccedGetConfigLiveNowConfig = NSID(
+  ids.appBskyUnspeccedGetConfigLiveNowConfig,
+);
 
 /// `app.bsky.unspecced.getOnboardingSuggestedStarterPacks`
-const appBskyUnspeccedGetOnboardingSuggestedStarterPacks = NSID(ids.appBskyUnspeccedGetOnboardingSuggestedStarterPacks);
+const appBskyUnspeccedGetOnboardingSuggestedStarterPacks = NSID(
+  ids.appBskyUnspeccedGetOnboardingSuggestedStarterPacks,
+);
 
 /// `app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton`
-const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton = NSID(ids.appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton);
+const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton = NSID(
+  ids.appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton,
+);
 
 /// `app.bsky.unspecced.getOnboardingSuggestedUsersSkeleton`
-const appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton = NSID(ids.appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton);
+const appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton = NSID(
+  ids.appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton,
+);
 
 /// `app.bsky.unspecced.getPopularFeedGenerators`
-const appBskyUnspeccedGetPopularFeedGenerators = NSID(ids.appBskyUnspeccedGetPopularFeedGenerators);
+const appBskyUnspeccedGetPopularFeedGenerators = NSID(
+  ids.appBskyUnspeccedGetPopularFeedGenerators,
+);
 
 /// `app.bsky.unspecced.getPostThreadOtherV2`
-const appBskyUnspeccedGetPostThreadOtherV2 = NSID(ids.appBskyUnspeccedGetPostThreadOtherV2);
+const appBskyUnspeccedGetPostThreadOtherV2 = NSID(
+  ids.appBskyUnspeccedGetPostThreadOtherV2,
+);
 
 /// `app.bsky.unspecced.getPostThreadOtherV2#threadItem`
-const appBskyUnspeccedGetPostThreadOtherV2ThreadItem = NSID(ids.appBskyUnspeccedGetPostThreadOtherV2ThreadItem);
+const appBskyUnspeccedGetPostThreadOtherV2ThreadItem = NSID(
+  ids.appBskyUnspeccedGetPostThreadOtherV2ThreadItem,
+);
 
 /// `app.bsky.unspecced.getPostThreadV2`
-const appBskyUnspeccedGetPostThreadV2 = NSID(ids.appBskyUnspeccedGetPostThreadV2);
+const appBskyUnspeccedGetPostThreadV2 = NSID(
+  ids.appBskyUnspeccedGetPostThreadV2,
+);
 
 /// `app.bsky.unspecced.getPostThreadV2#threadItem`
-const appBskyUnspeccedGetPostThreadV2ThreadItem = NSID(ids.appBskyUnspeccedGetPostThreadV2ThreadItem);
+const appBskyUnspeccedGetPostThreadV2ThreadItem = NSID(
+  ids.appBskyUnspeccedGetPostThreadV2ThreadItem,
+);
 
 /// `app.bsky.unspecced.getSuggestedFeeds`
-const appBskyUnspeccedGetSuggestedFeeds = NSID(ids.appBskyUnspeccedGetSuggestedFeeds);
+const appBskyUnspeccedGetSuggestedFeeds = NSID(
+  ids.appBskyUnspeccedGetSuggestedFeeds,
+);
 
 /// `app.bsky.unspecced.getSuggestedFeedsSkeleton`
-const appBskyUnspeccedGetSuggestedFeedsSkeleton = NSID(ids.appBskyUnspeccedGetSuggestedFeedsSkeleton);
+const appBskyUnspeccedGetSuggestedFeedsSkeleton = NSID(
+  ids.appBskyUnspeccedGetSuggestedFeedsSkeleton,
+);
 
 /// `app.bsky.unspecced.getSuggestedOnboardingUsers`
-const appBskyUnspeccedGetSuggestedOnboardingUsers = NSID(ids.appBskyUnspeccedGetSuggestedOnboardingUsers);
+const appBskyUnspeccedGetSuggestedOnboardingUsers = NSID(
+  ids.appBskyUnspeccedGetSuggestedOnboardingUsers,
+);
 
 /// `app.bsky.unspecced.getSuggestedStarterPacks`
-const appBskyUnspeccedGetSuggestedStarterPacks = NSID(ids.appBskyUnspeccedGetSuggestedStarterPacks);
+const appBskyUnspeccedGetSuggestedStarterPacks = NSID(
+  ids.appBskyUnspeccedGetSuggestedStarterPacks,
+);
 
 /// `app.bsky.unspecced.getSuggestedStarterPacksSkeleton`
-const appBskyUnspeccedGetSuggestedStarterPacksSkeleton = NSID(ids.appBskyUnspeccedGetSuggestedStarterPacksSkeleton);
+const appBskyUnspeccedGetSuggestedStarterPacksSkeleton = NSID(
+  ids.appBskyUnspeccedGetSuggestedStarterPacksSkeleton,
+);
 
 /// `app.bsky.unspecced.getSuggestedUsers`
-const appBskyUnspeccedGetSuggestedUsers = NSID(ids.appBskyUnspeccedGetSuggestedUsers);
+const appBskyUnspeccedGetSuggestedUsers = NSID(
+  ids.appBskyUnspeccedGetSuggestedUsers,
+);
 
 /// `app.bsky.unspecced.getSuggestedUsersSkeleton`
-const appBskyUnspeccedGetSuggestedUsersSkeleton = NSID(ids.appBskyUnspeccedGetSuggestedUsersSkeleton);
+const appBskyUnspeccedGetSuggestedUsersSkeleton = NSID(
+  ids.appBskyUnspeccedGetSuggestedUsersSkeleton,
+);
 
 /// `app.bsky.unspecced.getSuggestionsSkeleton`
-const appBskyUnspeccedGetSuggestionsSkeleton = NSID(ids.appBskyUnspeccedGetSuggestionsSkeleton);
+const appBskyUnspeccedGetSuggestionsSkeleton = NSID(
+  ids.appBskyUnspeccedGetSuggestionsSkeleton,
+);
 
 /// `app.bsky.unspecced.getTaggedSuggestions`
-const appBskyUnspeccedGetTaggedSuggestions = NSID(ids.appBskyUnspeccedGetTaggedSuggestions);
+const appBskyUnspeccedGetTaggedSuggestions = NSID(
+  ids.appBskyUnspeccedGetTaggedSuggestions,
+);
 
 /// `app.bsky.unspecced.getTaggedSuggestions#suggestion`
-const appBskyUnspeccedGetTaggedSuggestionsSuggestion = NSID(ids.appBskyUnspeccedGetTaggedSuggestionsSuggestion);
+const appBskyUnspeccedGetTaggedSuggestionsSuggestion = NSID(
+  ids.appBskyUnspeccedGetTaggedSuggestionsSuggestion,
+);
 
 /// `app.bsky.unspecced.getTrendingTopics`
-const appBskyUnspeccedGetTrendingTopics = NSID(ids.appBskyUnspeccedGetTrendingTopics);
+const appBskyUnspeccedGetTrendingTopics = NSID(
+  ids.appBskyUnspeccedGetTrendingTopics,
+);
 
 /// `app.bsky.unspecced.getTrends`
 const appBskyUnspeccedGetTrends = NSID(ids.appBskyUnspeccedGetTrends);
 
 /// `app.bsky.unspecced.getTrendsSkeleton`
-const appBskyUnspeccedGetTrendsSkeleton = NSID(ids.appBskyUnspeccedGetTrendsSkeleton);
+const appBskyUnspeccedGetTrendsSkeleton = NSID(
+  ids.appBskyUnspeccedGetTrendsSkeleton,
+);
 
 /// `app.bsky.unspecced.initAgeAssurance`
-const appBskyUnspeccedInitAgeAssurance = NSID(ids.appBskyUnspeccedInitAgeAssurance);
+const appBskyUnspeccedInitAgeAssurance = NSID(
+  ids.appBskyUnspeccedInitAgeAssurance,
+);
 
 /// `app.bsky.unspecced.searchActorsSkeleton`
-const appBskyUnspeccedSearchActorsSkeleton = NSID(ids.appBskyUnspeccedSearchActorsSkeleton);
+const appBskyUnspeccedSearchActorsSkeleton = NSID(
+  ids.appBskyUnspeccedSearchActorsSkeleton,
+);
 
 /// `app.bsky.unspecced.searchPostsSkeleton`
-const appBskyUnspeccedSearchPostsSkeleton = NSID(ids.appBskyUnspeccedSearchPostsSkeleton);
+const appBskyUnspeccedSearchPostsSkeleton = NSID(
+  ids.appBskyUnspeccedSearchPostsSkeleton,
+);
 
 /// `app.bsky.unspecced.searchStarterPacksSkeleton`
-const appBskyUnspeccedSearchStarterPacksSkeleton = NSID(ids.appBskyUnspeccedSearchStarterPacksSkeleton);
+const appBskyUnspeccedSearchStarterPacksSkeleton = NSID(
+  ids.appBskyUnspeccedSearchStarterPacksSkeleton,
+);
 
 /// `app.bsky.video.getJobStatus`
 const appBskyVideoGetJobStatus = NSID(ids.appBskyVideoGetJobStatus);
@@ -524,16 +630,22 @@ const chatBskyConvoAcceptConvo = NSID(ids.chatBskyConvoAcceptConvo);
 const chatBskyConvoAddReaction = NSID(ids.chatBskyConvoAddReaction);
 
 /// `chat.bsky.convo.deleteMessageForSelf`
-const chatBskyConvoDeleteMessageForSelf = NSID(ids.chatBskyConvoDeleteMessageForSelf);
+const chatBskyConvoDeleteMessageForSelf = NSID(
+  ids.chatBskyConvoDeleteMessageForSelf,
+);
 
 /// `chat.bsky.convo.getConvo`
 const chatBskyConvoGetConvo = NSID(ids.chatBskyConvoGetConvo);
 
 /// `chat.bsky.convo.getConvoAvailability`
-const chatBskyConvoGetConvoAvailability = NSID(ids.chatBskyConvoGetConvoAvailability);
+const chatBskyConvoGetConvoAvailability = NSID(
+  ids.chatBskyConvoGetConvoAvailability,
+);
 
 /// `chat.bsky.convo.getConvoForMembers`
-const chatBskyConvoGetConvoForMembers = NSID(ids.chatBskyConvoGetConvoForMembers);
+const chatBskyConvoGetConvoForMembers = NSID(
+  ids.chatBskyConvoGetConvoForMembers,
+);
 
 /// `chat.bsky.convo.getLog`
 const chatBskyConvoGetLog = NSID(ids.chatBskyConvoGetLog);
@@ -560,7 +672,9 @@ const chatBskyConvoSendMessage = NSID(ids.chatBskyConvoSendMessage);
 const chatBskyConvoSendMessageBatch = NSID(ids.chatBskyConvoSendMessageBatch);
 
 /// `chat.bsky.convo.sendMessageBatch#batchItem`
-const chatBskyConvoSendMessageBatchBatchItem = NSID(ids.chatBskyConvoSendMessageBatchBatchItem);
+const chatBskyConvoSendMessageBatchBatchItem = NSID(
+  ids.chatBskyConvoSendMessageBatchBatchItem,
+);
 
 /// `chat.bsky.convo.unmuteConvo`
 const chatBskyConvoUnmuteConvo = NSID(ids.chatBskyConvoUnmuteConvo);
@@ -572,28 +686,42 @@ const chatBskyConvoUpdateAllRead = NSID(ids.chatBskyConvoUpdateAllRead);
 const chatBskyConvoUpdateRead = NSID(ids.chatBskyConvoUpdateRead);
 
 /// `chat.bsky.moderation.getActorMetadata`
-const chatBskyModerationGetActorMetadata = NSID(ids.chatBskyModerationGetActorMetadata);
+const chatBskyModerationGetActorMetadata = NSID(
+  ids.chatBskyModerationGetActorMetadata,
+);
 
 /// `chat.bsky.moderation.getActorMetadata#metadata`
-const chatBskyModerationGetActorMetadataMetadata = NSID(ids.chatBskyModerationGetActorMetadataMetadata);
+const chatBskyModerationGetActorMetadataMetadata = NSID(
+  ids.chatBskyModerationGetActorMetadataMetadata,
+);
 
 /// `chat.bsky.moderation.getMessageContext`
-const chatBskyModerationGetMessageContext = NSID(ids.chatBskyModerationGetMessageContext);
+const chatBskyModerationGetMessageContext = NSID(
+  ids.chatBskyModerationGetMessageContext,
+);
 
 /// `chat.bsky.moderation.updateActorAccess`
-const chatBskyModerationUpdateActorAccess = NSID(ids.chatBskyModerationUpdateActorAccess);
+const chatBskyModerationUpdateActorAccess = NSID(
+  ids.chatBskyModerationUpdateActorAccess,
+);
 
 /// `com.atproto.admin.deleteAccount`
 const comAtprotoAdminDeleteAccount = NSID(ids.comAtprotoAdminDeleteAccount);
 
 /// `com.atproto.admin.disableAccountInvites`
-const comAtprotoAdminDisableAccountInvites = NSID(ids.comAtprotoAdminDisableAccountInvites);
+const comAtprotoAdminDisableAccountInvites = NSID(
+  ids.comAtprotoAdminDisableAccountInvites,
+);
 
 /// `com.atproto.admin.disableInviteCodes`
-const comAtprotoAdminDisableInviteCodes = NSID(ids.comAtprotoAdminDisableInviteCodes);
+const comAtprotoAdminDisableInviteCodes = NSID(
+  ids.comAtprotoAdminDisableInviteCodes,
+);
 
 /// `com.atproto.admin.enableAccountInvites`
-const comAtprotoAdminEnableAccountInvites = NSID(ids.comAtprotoAdminEnableAccountInvites);
+const comAtprotoAdminEnableAccountInvites = NSID(
+  ids.comAtprotoAdminEnableAccountInvites,
+);
 
 /// `com.atproto.admin.getAccountInfo`
 const comAtprotoAdminGetAccountInfo = NSID(ids.comAtprotoAdminGetAccountInfo);
@@ -605,7 +733,9 @@ const comAtprotoAdminGetAccountInfos = NSID(ids.comAtprotoAdminGetAccountInfos);
 const comAtprotoAdminGetInviteCodes = NSID(ids.comAtprotoAdminGetInviteCodes);
 
 /// `com.atproto.admin.getSubjectStatus`
-const comAtprotoAdminGetSubjectStatus = NSID(ids.comAtprotoAdminGetSubjectStatus);
+const comAtprotoAdminGetSubjectStatus = NSID(
+  ids.comAtprotoAdminGetSubjectStatus,
+);
 
 /// `com.atproto.admin.searchAccounts`
 const comAtprotoAdminSearchAccounts = NSID(ids.comAtprotoAdminSearchAccounts);
@@ -614,43 +744,67 @@ const comAtprotoAdminSearchAccounts = NSID(ids.comAtprotoAdminSearchAccounts);
 const comAtprotoAdminSendEmail = NSID(ids.comAtprotoAdminSendEmail);
 
 /// `com.atproto.admin.updateAccountEmail`
-const comAtprotoAdminUpdateAccountEmail = NSID(ids.comAtprotoAdminUpdateAccountEmail);
+const comAtprotoAdminUpdateAccountEmail = NSID(
+  ids.comAtprotoAdminUpdateAccountEmail,
+);
 
 /// `com.atproto.admin.updateAccountHandle`
-const comAtprotoAdminUpdateAccountHandle = NSID(ids.comAtprotoAdminUpdateAccountHandle);
+const comAtprotoAdminUpdateAccountHandle = NSID(
+  ids.comAtprotoAdminUpdateAccountHandle,
+);
 
 /// `com.atproto.admin.updateAccountPassword`
-const comAtprotoAdminUpdateAccountPassword = NSID(ids.comAtprotoAdminUpdateAccountPassword);
+const comAtprotoAdminUpdateAccountPassword = NSID(
+  ids.comAtprotoAdminUpdateAccountPassword,
+);
 
 /// `com.atproto.admin.updateAccountSigningKey`
-const comAtprotoAdminUpdateAccountSigningKey = NSID(ids.comAtprotoAdminUpdateAccountSigningKey);
+const comAtprotoAdminUpdateAccountSigningKey = NSID(
+  ids.comAtprotoAdminUpdateAccountSigningKey,
+);
 
 /// `com.atproto.admin.updateSubjectStatus`
-const comAtprotoAdminUpdateSubjectStatus = NSID(ids.comAtprotoAdminUpdateSubjectStatus);
+const comAtprotoAdminUpdateSubjectStatus = NSID(
+  ids.comAtprotoAdminUpdateSubjectStatus,
+);
 
 /// `com.atproto.identity.getRecommendedDidCredentials`
-const comAtprotoIdentityGetRecommendedDidCredentials = NSID(ids.comAtprotoIdentityGetRecommendedDidCredentials);
+const comAtprotoIdentityGetRecommendedDidCredentials = NSID(
+  ids.comAtprotoIdentityGetRecommendedDidCredentials,
+);
 
 /// `com.atproto.identity.refreshIdentity`
-const comAtprotoIdentityRefreshIdentity = NSID(ids.comAtprotoIdentityRefreshIdentity);
+const comAtprotoIdentityRefreshIdentity = NSID(
+  ids.comAtprotoIdentityRefreshIdentity,
+);
 
 /// `com.atproto.identity.requestPlcOperationSignature`
-const comAtprotoIdentityRequestPlcOperationSignature = NSID(ids.comAtprotoIdentityRequestPlcOperationSignature);
+const comAtprotoIdentityRequestPlcOperationSignature = NSID(
+  ids.comAtprotoIdentityRequestPlcOperationSignature,
+);
 
 /// `com.atproto.identity.resolveDid`
 const comAtprotoIdentityResolveDid = NSID(ids.comAtprotoIdentityResolveDid);
 
 /// `com.atproto.identity.resolveHandle`
-const comAtprotoIdentityResolveHandle = NSID(ids.comAtprotoIdentityResolveHandle);
+const comAtprotoIdentityResolveHandle = NSID(
+  ids.comAtprotoIdentityResolveHandle,
+);
 
 /// `com.atproto.identity.resolveIdentity`
-const comAtprotoIdentityResolveIdentity = NSID(ids.comAtprotoIdentityResolveIdentity);
+const comAtprotoIdentityResolveIdentity = NSID(
+  ids.comAtprotoIdentityResolveIdentity,
+);
 
 /// `com.atproto.identity.signPlcOperation`
-const comAtprotoIdentitySignPlcOperation = NSID(ids.comAtprotoIdentitySignPlcOperation);
+const comAtprotoIdentitySignPlcOperation = NSID(
+  ids.comAtprotoIdentitySignPlcOperation,
+);
 
 /// `com.atproto.identity.submitPlcOperation`
-const comAtprotoIdentitySubmitPlcOperation = NSID(ids.comAtprotoIdentitySubmitPlcOperation);
+const comAtprotoIdentitySubmitPlcOperation = NSID(
+  ids.comAtprotoIdentitySubmitPlcOperation,
+);
 
 /// `com.atproto.identity.updateHandle`
 const comAtprotoIdentityUpdateHandle = NSID(ids.comAtprotoIdentityUpdateHandle);
@@ -662,43 +816,65 @@ const comAtprotoLabelQueryLabels = NSID(ids.comAtprotoLabelQueryLabels);
 const comAtprotoLabelSubscribeLabels = NSID(ids.comAtprotoLabelSubscribeLabels);
 
 /// `com.atproto.label.subscribeLabels#info`
-const comAtprotoLabelSubscribeLabelsInfo = NSID(ids.comAtprotoLabelSubscribeLabelsInfo);
+const comAtprotoLabelSubscribeLabelsInfo = NSID(
+  ids.comAtprotoLabelSubscribeLabelsInfo,
+);
 
 /// `com.atproto.label.subscribeLabels#labels`
-const comAtprotoLabelSubscribeLabelsLabels = NSID(ids.comAtprotoLabelSubscribeLabelsLabels);
+const comAtprotoLabelSubscribeLabelsLabels = NSID(
+  ids.comAtprotoLabelSubscribeLabelsLabels,
+);
 
 /// `com.atproto.lexicon.resolveLexicon`
-const comAtprotoLexiconResolveLexicon = NSID(ids.comAtprotoLexiconResolveLexicon);
+const comAtprotoLexiconResolveLexicon = NSID(
+  ids.comAtprotoLexiconResolveLexicon,
+);
 
 /// `com.atproto.lexicon.schema`
 const comAtprotoLexiconSchema = NSID(ids.comAtprotoLexiconSchema);
 
 /// `com.atproto.moderation.createReport`
-const comAtprotoModerationCreateReport = NSID(ids.comAtprotoModerationCreateReport);
+const comAtprotoModerationCreateReport = NSID(
+  ids.comAtprotoModerationCreateReport,
+);
 
 /// `com.atproto.moderation.createReport#modTool`
-const comAtprotoModerationCreateReportModTool = NSID(ids.comAtprotoModerationCreateReportModTool);
+const comAtprotoModerationCreateReportModTool = NSID(
+  ids.comAtprotoModerationCreateReportModTool,
+);
 
 /// `com.atproto.repo.applyWrites`
 const comAtprotoRepoApplyWrites = NSID(ids.comAtprotoRepoApplyWrites);
 
 /// `com.atproto.repo.applyWrites#create`
-const comAtprotoRepoApplyWritesCreate = NSID(ids.comAtprotoRepoApplyWritesCreate);
+const comAtprotoRepoApplyWritesCreate = NSID(
+  ids.comAtprotoRepoApplyWritesCreate,
+);
 
 /// `com.atproto.repo.applyWrites#createResult`
-const comAtprotoRepoApplyWritesCreateResult = NSID(ids.comAtprotoRepoApplyWritesCreateResult);
+const comAtprotoRepoApplyWritesCreateResult = NSID(
+  ids.comAtprotoRepoApplyWritesCreateResult,
+);
 
 /// `com.atproto.repo.applyWrites#delete`
-const comAtprotoRepoApplyWritesDelete = NSID(ids.comAtprotoRepoApplyWritesDelete);
+const comAtprotoRepoApplyWritesDelete = NSID(
+  ids.comAtprotoRepoApplyWritesDelete,
+);
 
 /// `com.atproto.repo.applyWrites#deleteResult`
-const comAtprotoRepoApplyWritesDeleteResult = NSID(ids.comAtprotoRepoApplyWritesDeleteResult);
+const comAtprotoRepoApplyWritesDeleteResult = NSID(
+  ids.comAtprotoRepoApplyWritesDeleteResult,
+);
 
 /// `com.atproto.repo.applyWrites#update`
-const comAtprotoRepoApplyWritesUpdate = NSID(ids.comAtprotoRepoApplyWritesUpdate);
+const comAtprotoRepoApplyWritesUpdate = NSID(
+  ids.comAtprotoRepoApplyWritesUpdate,
+);
 
 /// `com.atproto.repo.applyWrites#updateResult`
-const comAtprotoRepoApplyWritesUpdateResult = NSID(ids.comAtprotoRepoApplyWritesUpdateResult);
+const comAtprotoRepoApplyWritesUpdateResult = NSID(
+  ids.comAtprotoRepoApplyWritesUpdateResult,
+);
 
 /// `com.atproto.repo.createRecord`
 const comAtprotoRepoCreateRecord = NSID(ids.comAtprotoRepoCreateRecord);
@@ -719,13 +895,17 @@ const comAtprotoRepoImportRepo = NSID(ids.comAtprotoRepoImportRepo);
 const comAtprotoRepoListMissingBlobs = NSID(ids.comAtprotoRepoListMissingBlobs);
 
 /// `com.atproto.repo.listMissingBlobs#recordBlob`
-const comAtprotoRepoListMissingBlobsRecordBlob = NSID(ids.comAtprotoRepoListMissingBlobsRecordBlob);
+const comAtprotoRepoListMissingBlobsRecordBlob = NSID(
+  ids.comAtprotoRepoListMissingBlobsRecordBlob,
+);
 
 /// `com.atproto.repo.listRecords`
 const comAtprotoRepoListRecords = NSID(ids.comAtprotoRepoListRecords);
 
 /// `com.atproto.repo.listRecords#record`
-const comAtprotoRepoListRecordsRecord = NSID(ids.comAtprotoRepoListRecordsRecord);
+const comAtprotoRepoListRecordsRecord = NSID(
+  ids.comAtprotoRepoListRecordsRecord,
+);
 
 /// `com.atproto.repo.putRecord`
 const comAtprotoRepoPutRecord = NSID(ids.comAtprotoRepoPutRecord);
@@ -737,10 +917,14 @@ const comAtprotoRepoStrongRef = NSID(ids.comAtprotoRepoStrongRef);
 const comAtprotoRepoUploadBlob = NSID(ids.comAtprotoRepoUploadBlob);
 
 /// `com.atproto.server.activateAccount`
-const comAtprotoServerActivateAccount = NSID(ids.comAtprotoServerActivateAccount);
+const comAtprotoServerActivateAccount = NSID(
+  ids.comAtprotoServerActivateAccount,
+);
 
 /// `com.atproto.server.checkAccountStatus`
-const comAtprotoServerCheckAccountStatus = NSID(ids.comAtprotoServerCheckAccountStatus);
+const comAtprotoServerCheckAccountStatus = NSID(
+  ids.comAtprotoServerCheckAccountStatus,
+);
 
 /// `com.atproto.server.confirmEmail`
 const comAtprotoServerConfirmEmail = NSID(ids.comAtprotoServerConfirmEmail);
@@ -749,25 +933,37 @@ const comAtprotoServerConfirmEmail = NSID(ids.comAtprotoServerConfirmEmail);
 const comAtprotoServerCreateAccount = NSID(ids.comAtprotoServerCreateAccount);
 
 /// `com.atproto.server.createAppPassword`
-const comAtprotoServerCreateAppPassword = NSID(ids.comAtprotoServerCreateAppPassword);
+const comAtprotoServerCreateAppPassword = NSID(
+  ids.comAtprotoServerCreateAppPassword,
+);
 
 /// `com.atproto.server.createAppPassword#appPassword`
-const comAtprotoServerCreateAppPasswordAppPassword = NSID(ids.comAtprotoServerCreateAppPasswordAppPassword);
+const comAtprotoServerCreateAppPasswordAppPassword = NSID(
+  ids.comAtprotoServerCreateAppPasswordAppPassword,
+);
 
 /// `com.atproto.server.createInviteCode`
-const comAtprotoServerCreateInviteCode = NSID(ids.comAtprotoServerCreateInviteCode);
+const comAtprotoServerCreateInviteCode = NSID(
+  ids.comAtprotoServerCreateInviteCode,
+);
 
 /// `com.atproto.server.createInviteCodes`
-const comAtprotoServerCreateInviteCodes = NSID(ids.comAtprotoServerCreateInviteCodes);
+const comAtprotoServerCreateInviteCodes = NSID(
+  ids.comAtprotoServerCreateInviteCodes,
+);
 
 /// `com.atproto.server.createInviteCodes#accountCodes`
-const comAtprotoServerCreateInviteCodesAccountCodes = NSID(ids.comAtprotoServerCreateInviteCodesAccountCodes);
+const comAtprotoServerCreateInviteCodesAccountCodes = NSID(
+  ids.comAtprotoServerCreateInviteCodesAccountCodes,
+);
 
 /// `com.atproto.server.createSession`
 const comAtprotoServerCreateSession = NSID(ids.comAtprotoServerCreateSession);
 
 /// `com.atproto.server.deactivateAccount`
-const comAtprotoServerDeactivateAccount = NSID(ids.comAtprotoServerDeactivateAccount);
+const comAtprotoServerDeactivateAccount = NSID(
+  ids.comAtprotoServerDeactivateAccount,
+);
 
 /// `com.atproto.server.deleteAccount`
 const comAtprotoServerDeleteAccount = NSID(ids.comAtprotoServerDeleteAccount);
@@ -779,13 +975,19 @@ const comAtprotoServerDeleteSession = NSID(ids.comAtprotoServerDeleteSession);
 const comAtprotoServerDescribeServer = NSID(ids.comAtprotoServerDescribeServer);
 
 /// `com.atproto.server.describeServer#contact`
-const comAtprotoServerDescribeServerContact = NSID(ids.comAtprotoServerDescribeServerContact);
+const comAtprotoServerDescribeServerContact = NSID(
+  ids.comAtprotoServerDescribeServerContact,
+);
 
 /// `com.atproto.server.describeServer#links`
-const comAtprotoServerDescribeServerLinks = NSID(ids.comAtprotoServerDescribeServerLinks);
+const comAtprotoServerDescribeServerLinks = NSID(
+  ids.comAtprotoServerDescribeServerLinks,
+);
 
 /// `com.atproto.server.getAccountInviteCodes`
-const comAtprotoServerGetAccountInviteCodes = NSID(ids.comAtprotoServerGetAccountInviteCodes);
+const comAtprotoServerGetAccountInviteCodes = NSID(
+  ids.comAtprotoServerGetAccountInviteCodes,
+);
 
 /// `com.atproto.server.getServiceAuth`
 const comAtprotoServerGetServiceAuth = NSID(ids.comAtprotoServerGetServiceAuth);
@@ -794,34 +996,50 @@ const comAtprotoServerGetServiceAuth = NSID(ids.comAtprotoServerGetServiceAuth);
 const comAtprotoServerGetSession = NSID(ids.comAtprotoServerGetSession);
 
 /// `com.atproto.server.listAppPasswords`
-const comAtprotoServerListAppPasswords = NSID(ids.comAtprotoServerListAppPasswords);
+const comAtprotoServerListAppPasswords = NSID(
+  ids.comAtprotoServerListAppPasswords,
+);
 
 /// `com.atproto.server.listAppPasswords#appPassword`
-const comAtprotoServerListAppPasswordsAppPassword = NSID(ids.comAtprotoServerListAppPasswordsAppPassword);
+const comAtprotoServerListAppPasswordsAppPassword = NSID(
+  ids.comAtprotoServerListAppPasswordsAppPassword,
+);
 
 /// `com.atproto.server.refreshSession`
 const comAtprotoServerRefreshSession = NSID(ids.comAtprotoServerRefreshSession);
 
 /// `com.atproto.server.requestAccountDelete`
-const comAtprotoServerRequestAccountDelete = NSID(ids.comAtprotoServerRequestAccountDelete);
+const comAtprotoServerRequestAccountDelete = NSID(
+  ids.comAtprotoServerRequestAccountDelete,
+);
 
 /// `com.atproto.server.requestEmailConfirmation`
-const comAtprotoServerRequestEmailConfirmation = NSID(ids.comAtprotoServerRequestEmailConfirmation);
+const comAtprotoServerRequestEmailConfirmation = NSID(
+  ids.comAtprotoServerRequestEmailConfirmation,
+);
 
 /// `com.atproto.server.requestEmailUpdate`
-const comAtprotoServerRequestEmailUpdate = NSID(ids.comAtprotoServerRequestEmailUpdate);
+const comAtprotoServerRequestEmailUpdate = NSID(
+  ids.comAtprotoServerRequestEmailUpdate,
+);
 
 /// `com.atproto.server.requestPasswordReset`
-const comAtprotoServerRequestPasswordReset = NSID(ids.comAtprotoServerRequestPasswordReset);
+const comAtprotoServerRequestPasswordReset = NSID(
+  ids.comAtprotoServerRequestPasswordReset,
+);
 
 /// `com.atproto.server.reserveSigningKey`
-const comAtprotoServerReserveSigningKey = NSID(ids.comAtprotoServerReserveSigningKey);
+const comAtprotoServerReserveSigningKey = NSID(
+  ids.comAtprotoServerReserveSigningKey,
+);
 
 /// `com.atproto.server.resetPassword`
 const comAtprotoServerResetPassword = NSID(ids.comAtprotoServerResetPassword);
 
 /// `com.atproto.server.revokeAppPassword`
-const comAtprotoServerRevokeAppPassword = NSID(ids.comAtprotoServerRevokeAppPassword);
+const comAtprotoServerRevokeAppPassword = NSID(
+  ids.comAtprotoServerRevokeAppPassword,
+);
 
 /// `com.atproto.server.updateEmail`
 const comAtprotoServerUpdateEmail = NSID(ids.comAtprotoServerUpdateEmail);
@@ -866,10 +1084,14 @@ const comAtprotoSyncListHostsHost = NSID(ids.comAtprotoSyncListHostsHost);
 const comAtprotoSyncListRepos = NSID(ids.comAtprotoSyncListRepos);
 
 /// `com.atproto.sync.listReposByCollection`
-const comAtprotoSyncListReposByCollection = NSID(ids.comAtprotoSyncListReposByCollection);
+const comAtprotoSyncListReposByCollection = NSID(
+  ids.comAtprotoSyncListReposByCollection,
+);
 
 /// `com.atproto.sync.listReposByCollection#repo`
-const comAtprotoSyncListReposByCollectionRepo = NSID(ids.comAtprotoSyncListReposByCollectionRepo);
+const comAtprotoSyncListReposByCollectionRepo = NSID(
+  ids.comAtprotoSyncListReposByCollectionRepo,
+);
 
 /// `com.atproto.sync.listRepos#repo`
 const comAtprotoSyncListReposRepo = NSID(ids.comAtprotoSyncListReposRepo);
@@ -884,37 +1106,59 @@ const comAtprotoSyncRequestCrawl = NSID(ids.comAtprotoSyncRequestCrawl);
 const comAtprotoSyncSubscribeRepos = NSID(ids.comAtprotoSyncSubscribeRepos);
 
 /// `com.atproto.sync.subscribeRepos#account`
-const comAtprotoSyncSubscribeReposAccount = NSID(ids.comAtprotoSyncSubscribeReposAccount);
+const comAtprotoSyncSubscribeReposAccount = NSID(
+  ids.comAtprotoSyncSubscribeReposAccount,
+);
 
 /// `com.atproto.sync.subscribeRepos#commit`
-const comAtprotoSyncSubscribeReposCommit = NSID(ids.comAtprotoSyncSubscribeReposCommit);
+const comAtprotoSyncSubscribeReposCommit = NSID(
+  ids.comAtprotoSyncSubscribeReposCommit,
+);
 
 /// `com.atproto.sync.subscribeRepos#identity`
-const comAtprotoSyncSubscribeReposIdentity = NSID(ids.comAtprotoSyncSubscribeReposIdentity);
+const comAtprotoSyncSubscribeReposIdentity = NSID(
+  ids.comAtprotoSyncSubscribeReposIdentity,
+);
 
 /// `com.atproto.sync.subscribeRepos#info`
-const comAtprotoSyncSubscribeReposInfo = NSID(ids.comAtprotoSyncSubscribeReposInfo);
+const comAtprotoSyncSubscribeReposInfo = NSID(
+  ids.comAtprotoSyncSubscribeReposInfo,
+);
 
 /// `com.atproto.sync.subscribeRepos#repoOp`
-const comAtprotoSyncSubscribeReposRepoOp = NSID(ids.comAtprotoSyncSubscribeReposRepoOp);
+const comAtprotoSyncSubscribeReposRepoOp = NSID(
+  ids.comAtprotoSyncSubscribeReposRepoOp,
+);
 
 /// `com.atproto.sync.subscribeRepos#sync`
-const comAtprotoSyncSubscribeReposSync = NSID(ids.comAtprotoSyncSubscribeReposSync);
+const comAtprotoSyncSubscribeReposSync = NSID(
+  ids.comAtprotoSyncSubscribeReposSync,
+);
 
 /// `com.atproto.temp.addReservedHandle`
-const comAtprotoTempAddReservedHandle = NSID(ids.comAtprotoTempAddReservedHandle);
+const comAtprotoTempAddReservedHandle = NSID(
+  ids.comAtprotoTempAddReservedHandle,
+);
 
 /// `com.atproto.temp.checkHandleAvailability`
-const comAtprotoTempCheckHandleAvailability = NSID(ids.comAtprotoTempCheckHandleAvailability);
+const comAtprotoTempCheckHandleAvailability = NSID(
+  ids.comAtprotoTempCheckHandleAvailability,
+);
 
 /// `com.atproto.temp.checkHandleAvailability#resultAvailable`
-const comAtprotoTempCheckHandleAvailabilityResultAvailable = NSID(ids.comAtprotoTempCheckHandleAvailabilityResultAvailable);
+const comAtprotoTempCheckHandleAvailabilityResultAvailable = NSID(
+  ids.comAtprotoTempCheckHandleAvailabilityResultAvailable,
+);
 
 /// `com.atproto.temp.checkHandleAvailability#resultUnavailable`
-const comAtprotoTempCheckHandleAvailabilityResultUnavailable = NSID(ids.comAtprotoTempCheckHandleAvailabilityResultUnavailable);
+const comAtprotoTempCheckHandleAvailabilityResultUnavailable = NSID(
+  ids.comAtprotoTempCheckHandleAvailabilityResultUnavailable,
+);
 
 /// `com.atproto.temp.checkHandleAvailability#suggestion`
-const comAtprotoTempCheckHandleAvailabilitySuggestion = NSID(ids.comAtprotoTempCheckHandleAvailabilitySuggestion);
+const comAtprotoTempCheckHandleAvailabilitySuggestion = NSID(
+  ids.comAtprotoTempCheckHandleAvailabilitySuggestion,
+);
 
 /// `com.atproto.temp.checkSignupQueue`
 const comAtprotoTempCheckSignupQueue = NSID(ids.comAtprotoTempCheckSignupQueue);
@@ -926,64 +1170,102 @@ const comAtprotoTempDereferenceScope = NSID(ids.comAtprotoTempDereferenceScope);
 const comAtprotoTempFetchLabels = NSID(ids.comAtprotoTempFetchLabels);
 
 /// `com.atproto.temp.requestPhoneVerification`
-const comAtprotoTempRequestPhoneVerification = NSID(ids.comAtprotoTempRequestPhoneVerification);
+const comAtprotoTempRequestPhoneVerification = NSID(
+  ids.comAtprotoTempRequestPhoneVerification,
+);
 
 /// `com.atproto.temp.revokeAccountCredentials`
-const comAtprotoTempRevokeAccountCredentials = NSID(ids.comAtprotoTempRevokeAccountCredentials);
+const comAtprotoTempRevokeAccountCredentials = NSID(
+  ids.comAtprotoTempRevokeAccountCredentials,
+);
 
 /// `tools.ozone.communication.createTemplate`
-const toolsOzoneCommunicationCreateTemplate = NSID(ids.toolsOzoneCommunicationCreateTemplate);
+const toolsOzoneCommunicationCreateTemplate = NSID(
+  ids.toolsOzoneCommunicationCreateTemplate,
+);
 
 /// `tools.ozone.communication.deleteTemplate`
-const toolsOzoneCommunicationDeleteTemplate = NSID(ids.toolsOzoneCommunicationDeleteTemplate);
+const toolsOzoneCommunicationDeleteTemplate = NSID(
+  ids.toolsOzoneCommunicationDeleteTemplate,
+);
 
 /// `tools.ozone.communication.listTemplates`
-const toolsOzoneCommunicationListTemplates = NSID(ids.toolsOzoneCommunicationListTemplates);
+const toolsOzoneCommunicationListTemplates = NSID(
+  ids.toolsOzoneCommunicationListTemplates,
+);
 
 /// `tools.ozone.communication.updateTemplate`
-const toolsOzoneCommunicationUpdateTemplate = NSID(ids.toolsOzoneCommunicationUpdateTemplate);
+const toolsOzoneCommunicationUpdateTemplate = NSID(
+  ids.toolsOzoneCommunicationUpdateTemplate,
+);
 
 /// `tools.ozone.hosting.getAccountHistory`
-const toolsOzoneHostingGetAccountHistory = NSID(ids.toolsOzoneHostingGetAccountHistory);
+const toolsOzoneHostingGetAccountHistory = NSID(
+  ids.toolsOzoneHostingGetAccountHistory,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#accountCreated`
-const toolsOzoneHostingGetAccountHistoryAccountCreated = NSID(ids.toolsOzoneHostingGetAccountHistoryAccountCreated);
+const toolsOzoneHostingGetAccountHistoryAccountCreated = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryAccountCreated,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#emailConfirmed`
-const toolsOzoneHostingGetAccountHistoryEmailConfirmed = NSID(ids.toolsOzoneHostingGetAccountHistoryEmailConfirmed);
+const toolsOzoneHostingGetAccountHistoryEmailConfirmed = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryEmailConfirmed,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#emailUpdated`
-const toolsOzoneHostingGetAccountHistoryEmailUpdated = NSID(ids.toolsOzoneHostingGetAccountHistoryEmailUpdated);
+const toolsOzoneHostingGetAccountHistoryEmailUpdated = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryEmailUpdated,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#event`
-const toolsOzoneHostingGetAccountHistoryEvent = NSID(ids.toolsOzoneHostingGetAccountHistoryEvent);
+const toolsOzoneHostingGetAccountHistoryEvent = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryEvent,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#handleUpdated`
-const toolsOzoneHostingGetAccountHistoryHandleUpdated = NSID(ids.toolsOzoneHostingGetAccountHistoryHandleUpdated);
+const toolsOzoneHostingGetAccountHistoryHandleUpdated = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryHandleUpdated,
+);
 
 /// `tools.ozone.hosting.getAccountHistory#passwordUpdated`
-const toolsOzoneHostingGetAccountHistoryPasswordUpdated = NSID(ids.toolsOzoneHostingGetAccountHistoryPasswordUpdated);
+const toolsOzoneHostingGetAccountHistoryPasswordUpdated = NSID(
+  ids.toolsOzoneHostingGetAccountHistoryPasswordUpdated,
+);
 
 /// `tools.ozone.moderation.cancelScheduledActions`
-const toolsOzoneModerationCancelScheduledActions = NSID(ids.toolsOzoneModerationCancelScheduledActions);
+const toolsOzoneModerationCancelScheduledActions = NSID(
+  ids.toolsOzoneModerationCancelScheduledActions,
+);
 
 /// `tools.ozone.moderation.cancelScheduledActions#cancellationResults`
-const toolsOzoneModerationCancelScheduledActionsCancellationResults = NSID(ids.toolsOzoneModerationCancelScheduledActionsCancellationResults);
+const toolsOzoneModerationCancelScheduledActionsCancellationResults = NSID(
+  ids.toolsOzoneModerationCancelScheduledActionsCancellationResults,
+);
 
 /// `tools.ozone.moderation.cancelScheduledActions#failedCancellation`
-const toolsOzoneModerationCancelScheduledActionsFailedCancellation = NSID(ids.toolsOzoneModerationCancelScheduledActionsFailedCancellation);
+const toolsOzoneModerationCancelScheduledActionsFailedCancellation = NSID(
+  ids.toolsOzoneModerationCancelScheduledActionsFailedCancellation,
+);
 
 /// `tools.ozone.moderation.emitEvent`
 const toolsOzoneModerationEmitEvent = NSID(ids.toolsOzoneModerationEmitEvent);
 
 /// `tools.ozone.moderation.getAccountTimeline`
-const toolsOzoneModerationGetAccountTimeline = NSID(ids.toolsOzoneModerationGetAccountTimeline);
+const toolsOzoneModerationGetAccountTimeline = NSID(
+  ids.toolsOzoneModerationGetAccountTimeline,
+);
 
 /// `tools.ozone.moderation.getAccountTimeline#timelineItem`
-const toolsOzoneModerationGetAccountTimelineTimelineItem = NSID(ids.toolsOzoneModerationGetAccountTimelineTimelineItem);
+const toolsOzoneModerationGetAccountTimelineTimelineItem = NSID(
+  ids.toolsOzoneModerationGetAccountTimelineTimelineItem,
+);
 
 /// `tools.ozone.moderation.getAccountTimeline#timelineItemSummary`
-const toolsOzoneModerationGetAccountTimelineTimelineItemSummary = NSID(ids.toolsOzoneModerationGetAccountTimelineTimelineItemSummary);
+const toolsOzoneModerationGetAccountTimelineTimelineItemSummary = NSID(
+  ids.toolsOzoneModerationGetAccountTimelineTimelineItemSummary,
+);
 
 /// `tools.ozone.moderation.getEvent`
 const toolsOzoneModerationGetEvent = NSID(ids.toolsOzoneModerationGetEvent);
@@ -998,40 +1280,62 @@ const toolsOzoneModerationGetRecords = NSID(ids.toolsOzoneModerationGetRecords);
 const toolsOzoneModerationGetRepo = NSID(ids.toolsOzoneModerationGetRepo);
 
 /// `tools.ozone.moderation.getReporterStats`
-const toolsOzoneModerationGetReporterStats = NSID(ids.toolsOzoneModerationGetReporterStats);
+const toolsOzoneModerationGetReporterStats = NSID(
+  ids.toolsOzoneModerationGetReporterStats,
+);
 
 /// `tools.ozone.moderation.getRepos`
 const toolsOzoneModerationGetRepos = NSID(ids.toolsOzoneModerationGetRepos);
 
 /// `tools.ozone.moderation.getSubjects`
-const toolsOzoneModerationGetSubjects = NSID(ids.toolsOzoneModerationGetSubjects);
+const toolsOzoneModerationGetSubjects = NSID(
+  ids.toolsOzoneModerationGetSubjects,
+);
 
 /// `tools.ozone.moderation.listScheduledActions`
-const toolsOzoneModerationListScheduledActions = NSID(ids.toolsOzoneModerationListScheduledActions);
+const toolsOzoneModerationListScheduledActions = NSID(
+  ids.toolsOzoneModerationListScheduledActions,
+);
 
 /// `tools.ozone.moderation.queryEvents`
-const toolsOzoneModerationQueryEvents = NSID(ids.toolsOzoneModerationQueryEvents);
+const toolsOzoneModerationQueryEvents = NSID(
+  ids.toolsOzoneModerationQueryEvents,
+);
 
 /// `tools.ozone.moderation.queryStatuses`
-const toolsOzoneModerationQueryStatuses = NSID(ids.toolsOzoneModerationQueryStatuses);
+const toolsOzoneModerationQueryStatuses = NSID(
+  ids.toolsOzoneModerationQueryStatuses,
+);
 
 /// `tools.ozone.moderation.scheduleAction`
-const toolsOzoneModerationScheduleAction = NSID(ids.toolsOzoneModerationScheduleAction);
+const toolsOzoneModerationScheduleAction = NSID(
+  ids.toolsOzoneModerationScheduleAction,
+);
 
 /// `tools.ozone.moderation.scheduleAction#failedScheduling`
-const toolsOzoneModerationScheduleActionFailedScheduling = NSID(ids.toolsOzoneModerationScheduleActionFailedScheduling);
+const toolsOzoneModerationScheduleActionFailedScheduling = NSID(
+  ids.toolsOzoneModerationScheduleActionFailedScheduling,
+);
 
 /// `tools.ozone.moderation.scheduleAction#scheduledActionResults`
-const toolsOzoneModerationScheduleActionScheduledActionResults = NSID(ids.toolsOzoneModerationScheduleActionScheduledActionResults);
+const toolsOzoneModerationScheduleActionScheduledActionResults = NSID(
+  ids.toolsOzoneModerationScheduleActionScheduledActionResults,
+);
 
 /// `tools.ozone.moderation.scheduleAction#schedulingConfig`
-const toolsOzoneModerationScheduleActionSchedulingConfig = NSID(ids.toolsOzoneModerationScheduleActionSchedulingConfig);
+const toolsOzoneModerationScheduleActionSchedulingConfig = NSID(
+  ids.toolsOzoneModerationScheduleActionSchedulingConfig,
+);
 
 /// `tools.ozone.moderation.scheduleAction#takedown`
-const toolsOzoneModerationScheduleActionTakedown = NSID(ids.toolsOzoneModerationScheduleActionTakedown);
+const toolsOzoneModerationScheduleActionTakedown = NSID(
+  ids.toolsOzoneModerationScheduleActionTakedown,
+);
 
 /// `tools.ozone.moderation.searchRepos`
-const toolsOzoneModerationSearchRepos = NSID(ids.toolsOzoneModerationSearchRepos);
+const toolsOzoneModerationSearchRepos = NSID(
+  ids.toolsOzoneModerationSearchRepos,
+);
 
 /// `tools.ozone.safelink.addRule`
 const toolsOzoneSafelinkAddRule = NSID(ids.toolsOzoneSafelinkAddRule);
@@ -1052,10 +1356,14 @@ const toolsOzoneSafelinkUpdateRule = NSID(ids.toolsOzoneSafelinkUpdateRule);
 const toolsOzoneServerGetConfig = NSID(ids.toolsOzoneServerGetConfig);
 
 /// `tools.ozone.server.getConfig#serviceConfig`
-const toolsOzoneServerGetConfigServiceConfig = NSID(ids.toolsOzoneServerGetConfigServiceConfig);
+const toolsOzoneServerGetConfigServiceConfig = NSID(
+  ids.toolsOzoneServerGetConfigServiceConfig,
+);
 
 /// `tools.ozone.server.getConfig#viewerConfig`
-const toolsOzoneServerGetConfigViewerConfig = NSID(ids.toolsOzoneServerGetConfigViewerConfig);
+const toolsOzoneServerGetConfigViewerConfig = NSID(
+  ids.toolsOzoneServerGetConfigViewerConfig,
+);
 
 /// `tools.ozone.set.addValues`
 const toolsOzoneSetAddValues = NSID(ids.toolsOzoneSetAddValues);
@@ -1085,16 +1393,24 @@ const toolsOzoneSettingRemoveOptions = NSID(ids.toolsOzoneSettingRemoveOptions);
 const toolsOzoneSettingUpsertOption = NSID(ids.toolsOzoneSettingUpsertOption);
 
 /// `tools.ozone.signature.findCorrelation`
-const toolsOzoneSignatureFindCorrelation = NSID(ids.toolsOzoneSignatureFindCorrelation);
+const toolsOzoneSignatureFindCorrelation = NSID(
+  ids.toolsOzoneSignatureFindCorrelation,
+);
 
 /// `tools.ozone.signature.findRelatedAccounts`
-const toolsOzoneSignatureFindRelatedAccounts = NSID(ids.toolsOzoneSignatureFindRelatedAccounts);
+const toolsOzoneSignatureFindRelatedAccounts = NSID(
+  ids.toolsOzoneSignatureFindRelatedAccounts,
+);
 
 /// `tools.ozone.signature.findRelatedAccounts#relatedAccount`
-const toolsOzoneSignatureFindRelatedAccountsRelatedAccount = NSID(ids.toolsOzoneSignatureFindRelatedAccountsRelatedAccount);
+const toolsOzoneSignatureFindRelatedAccountsRelatedAccount = NSID(
+  ids.toolsOzoneSignatureFindRelatedAccountsRelatedAccount,
+);
 
 /// `tools.ozone.signature.searchAccounts`
-const toolsOzoneSignatureSearchAccounts = NSID(ids.toolsOzoneSignatureSearchAccounts);
+const toolsOzoneSignatureSearchAccounts = NSID(
+  ids.toolsOzoneSignatureSearchAccounts,
+);
 
 /// `tools.ozone.team.addMember`
 const toolsOzoneTeamAddMember = NSID(ids.toolsOzoneTeamAddMember);
@@ -1109,19 +1425,31 @@ const toolsOzoneTeamListMembers = NSID(ids.toolsOzoneTeamListMembers);
 const toolsOzoneTeamUpdateMember = NSID(ids.toolsOzoneTeamUpdateMember);
 
 /// `tools.ozone.verification.grantVerifications`
-const toolsOzoneVerificationGrantVerifications = NSID(ids.toolsOzoneVerificationGrantVerifications);
+const toolsOzoneVerificationGrantVerifications = NSID(
+  ids.toolsOzoneVerificationGrantVerifications,
+);
 
 /// `tools.ozone.verification.grantVerifications#grantError`
-const toolsOzoneVerificationGrantVerificationsGrantError = NSID(ids.toolsOzoneVerificationGrantVerificationsGrantError);
+const toolsOzoneVerificationGrantVerificationsGrantError = NSID(
+  ids.toolsOzoneVerificationGrantVerificationsGrantError,
+);
 
 /// `tools.ozone.verification.grantVerifications#verificationInput`
-const toolsOzoneVerificationGrantVerificationsVerificationInput = NSID(ids.toolsOzoneVerificationGrantVerificationsVerificationInput);
+const toolsOzoneVerificationGrantVerificationsVerificationInput = NSID(
+  ids.toolsOzoneVerificationGrantVerificationsVerificationInput,
+);
 
 /// `tools.ozone.verification.listVerifications`
-const toolsOzoneVerificationListVerifications = NSID(ids.toolsOzoneVerificationListVerifications);
+const toolsOzoneVerificationListVerifications = NSID(
+  ids.toolsOzoneVerificationListVerifications,
+);
 
 /// `tools.ozone.verification.revokeVerifications`
-const toolsOzoneVerificationRevokeVerifications = NSID(ids.toolsOzoneVerificationRevokeVerifications);
+const toolsOzoneVerificationRevokeVerifications = NSID(
+  ids.toolsOzoneVerificationRevokeVerifications,
+);
 
 /// `tools.ozone.verification.revokeVerifications#revokeError`
-const toolsOzoneVerificationRevokeVerificationsRevokeError = NSID(ids.toolsOzoneVerificationRevokeVerificationsRevokeError);
+const toolsOzoneVerificationRevokeVerificationsRevokeError = NSID(
+  ids.toolsOzoneVerificationRevokeVerificationsRevokeError,
+);

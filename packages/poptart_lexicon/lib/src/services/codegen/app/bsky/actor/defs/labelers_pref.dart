@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './labeler_pref_item.dart';
+
 
 part 'labelers_pref.freezed.dart';
 part 'labelers_pref.g.dart';
@@ -20,9 +22,11 @@ part 'labelers_pref.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class LabelersPref with _$LabelersPref {
-  static const knownProps = <String>['labelers'];
+  static const knownProps = <String>['labelers', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory LabelersPref({
@@ -32,14 +36,17 @@ abstract class LabelersPref with _$LabelersPref {
     Map<String, dynamic>? $unknown,
   }) = _LabelersPref;
 
-  factory LabelersPref.fromJson(Map<String, Object?> json) =>
-      _$LabelersPrefFromJson(json);
+  factory LabelersPref.fromJson(Map<String, Object?> json) => _$LabelersPrefFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.actor.defs#labelersPref';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.actor.defs#labelersPref'
+;
 }
+
+}
+
+
 
 final class LabelersPrefConverter
     extends JsonConverter<LabelersPref, Map<String, dynamic>> {
@@ -47,10 +54,15 @@ final class LabelersPrefConverter
 
   @override
   LabelersPref fromJson(Map<String, dynamic> json) {
-    return LabelersPref.fromJson(translate(json, LabelersPref.knownProps));
+    return LabelersPref.fromJson(translate(
+      json,
+      LabelersPref.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(LabelersPref object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(LabelersPref object) => untranslate(
+        object.toJson(),
+      );
 }
+

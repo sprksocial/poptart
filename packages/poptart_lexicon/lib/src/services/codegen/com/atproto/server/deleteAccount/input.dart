@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,22 +21,25 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ServerDeleteAccountInput with _$ServerDeleteAccountInput {
-  static const knownProps = <String>['did', 'password', 'token'];
+  static const knownProps = <String>['did', 'password', 'token', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ServerDeleteAccountInput({
     required String did,
-    required String password,
-    required String token,
+required String password,
+required String token,
 
     Map<String, dynamic>? $unknown,
   }) = _ServerDeleteAccountInput;
 
-  factory ServerDeleteAccountInput.fromJson(Map<String, Object?> json) =>
-      _$ServerDeleteAccountInputFromJson(json);
+  factory ServerDeleteAccountInput.fromJson(Map<String, Object?> json) => _$ServerDeleteAccountInputFromJson(json);
 }
+
+
 
 final class ServerDeleteAccountInputConverter
     extends JsonConverter<ServerDeleteAccountInput, Map<String, dynamic>> {
@@ -41,12 +47,15 @@ final class ServerDeleteAccountInputConverter
 
   @override
   ServerDeleteAccountInput fromJson(Map<String, dynamic> json) {
-    return ServerDeleteAccountInput.fromJson(
-      translate(json, ServerDeleteAccountInput.knownProps),
-    );
+    return ServerDeleteAccountInput.fromJson(translate(
+      json,
+      ServerDeleteAccountInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ServerDeleteAccountInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ServerDeleteAccountInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

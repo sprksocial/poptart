@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,44 +19,40 @@ part 'mod_event_takedown_target_services.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ModEventTakedownTargetServices
-    with _$ModEventTakedownTargetServices {
+abstract class ModEventTakedownTargetServices with _$ModEventTakedownTargetServices {
   const ModEventTakedownTargetServices._();
 
   const factory ModEventTakedownTargetServices.knownValue({
     required KnownModEventTakedownTargetServices data,
   }) = ModEventTakedownTargetServicesKnownValue;
 
-  const factory ModEventTakedownTargetServices.unknown({required String data}) =
-      ModEventTakedownTargetServicesUnknown;
+  const factory ModEventTakedownTargetServices.unknown({
+    required String data,
+  }) = ModEventTakedownTargetServicesUnknown;
 
   static ModEventTakedownTargetServices? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownModEventTakedownTargetServices.valueOf(value);
 
-    return knownValue != null
-        ? ModEventTakedownTargetServices.knownValue(data: knownValue)
-        : ModEventTakedownTargetServices.unknown(data: value);
+    return knownValue != null ? ModEventTakedownTargetServices.knownValue(data: knownValue) : ModEventTakedownTargetServices.unknown(data: value);
   }
 
-  String toJson() =>
-      const ModEventTakedownTargetServicesConverter().toJson(this);
+  String toJson() => const ModEventTakedownTargetServicesConverter().toJson(this);
 }
 
-extension ModEventTakedownTargetServicesExtension
-    on ModEventTakedownTargetServices {
+extension ModEventTakedownTargetServicesExtension on ModEventTakedownTargetServices {
   bool get isKnownValue => isA<ModEventTakedownTargetServicesKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownModEventTakedownTargetServices? get knownValue =>
-      isKnownValue ? data as KnownModEventTakedownTargetServices : null;
-  bool get isUnknown => isA<ModEventTakedownTargetServicesUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownModEventTakedownTargetServices? get knownValue => isKnownValue ? data as KnownModEventTakedownTargetServices : null;
+bool get isUnknown => isA<ModEventTakedownTargetServicesUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ModEventTakedownTargetServicesConverter
-    extends JsonConverter<ModEventTakedownTargetServices, String> {
+final class ModEventTakedownTargetServicesConverter extends JsonConverter<ModEventTakedownTargetServices, String> {
   const ModEventTakedownTargetServicesConverter();
 
   @override
@@ -73,15 +70,18 @@ final class ModEventTakedownTargetServicesConverter
   }
 
   @override
-  String toJson(ModEventTakedownTargetServices object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ModEventTakedownTargetServices object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownModEventTakedownTargetServices implements Serializable {
+enum KnownModEventTakedownTargetServices implements Serializable{
   @JsonValue('appview')
-  appview('appview'),
-  @JsonValue('pds')
-  pds('pds');
+appview('appview'),
+@JsonValue('pds')
+pds('pds'),
+  ;
 
   @override
   final String value;

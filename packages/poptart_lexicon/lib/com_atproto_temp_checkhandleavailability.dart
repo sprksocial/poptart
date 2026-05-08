@@ -17,3 +17,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/checkHandl
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/checkHandleAvailability/result_available.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/checkHandleAvailability/result_unavailable.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/checkHandleAvailability/suggestion.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/checkHandleAvailability/descriptor.dart';

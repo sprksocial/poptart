@@ -2,14 +2,19 @@
 // All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+// Package imports:
+import 'package:poptart_core/poptart_core.dart';
+
 // Project imports:
 import '../services/codegen/app/bsky/actor/defs/content_label_pref.dart';
 import '../services/codegen/app/bsky/actor/defs/muted_word.dart';
 import '../services/codegen/app/bsky/actor/defs/union_preferences.dart';
 import '../services/codegen/app/bsky/actor/getPreferences/output.dart';
 import '../services/codegen/app/bsky/labeler/defs/labeler_view_detailed.dart';
+import '../services/codegen/app/bsky/labeler/getServices/descriptor.dart'
+    as labeler_get_services;
+import '../services/codegen/app/bsky/labeler/getServices/input.dart';
 import '../services/codegen/app/bsky/labeler/getServices/union_main_views.dart';
-import '../services/codegen/app/bsky/labeler_service.dart';
 import 'types/behaviors/moderation_prefs.dart';
 import 'types/behaviors/moderation_prefs_labeler.dart';
 import 'types/const/labels.dart';
@@ -128,7 +133,7 @@ List<InterpretedLabelValueDefinition> getInterpretedLabelValueDefinitions(
       const [];
 }
 
-extension LabelerServiceExtension on LabelerService {
+extension LabelerServiceExtension on ServiceContext {
   Future<Map<String, List<InterpretedLabelValueDefinition>>>
   getLabelDefinitions(final ModerationPrefs prefs) async {
     final dids = <String>{
@@ -136,10 +141,10 @@ extension LabelerServiceExtension on LabelerService {
       ...prefs.labelers.map((e) => e.did),
     }.toList();
 
-    final labelers = await getServices(
-      dids: dids,
-      detailed: true,
-      $headers: getLabelerHeaders(prefs),
+    final labelers = await call(
+      labeler_get_services.methodDescriptor,
+      parameters: LabelerGetServicesInput(dids: dids, detailed: true),
+      headers: getLabelerHeaders(prefs),
     );
 
     final labelDefs = <String, List<InterpretedLabelValueDefinition>>{};

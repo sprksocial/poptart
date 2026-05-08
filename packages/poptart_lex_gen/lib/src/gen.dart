@@ -5,11 +5,8 @@
 // Project imports:
 import 'commands/lex_command_generator.dart';
 import 'commands/rule.dart' as command_rule;
+import 'build/lex_build_project.dart';
 import 'config.dart';
-import 'services/lex_service_generator.dart';
-import 'services/lex_tools_generator.dart';
-import 'services/lex_type_generator.dart';
-import 'services/rule.dart' as service_rule;
 import 'utils.dart';
 
 sealed class Gen {
@@ -27,15 +24,7 @@ final class ServiceGen implements Gen {
   void execute() {
     print(kLexGeneratorLogo);
 
-    final docs = config.docsProvider();
-
-    service_rule.setLexServiceRuleConfig(config.serviceRuleConfig);
-    service_rule.setLexiconDocs(docs);
-
-    final types = generateLexTypes(config.services, config.packages, docs);
-    generateLexServices(config.services, config.packages, types, docs);
-
-    generateLexTools(docs);
+    LexBuildProject.load(config).buildServices();
   }
 }
 

@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/gr
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/grantVerifications/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/grantVerifications/verification_input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/grantVerifications/grant_error.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/grantVerifications/descriptor.dart';

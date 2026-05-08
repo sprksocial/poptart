@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../app/bsky/contact/defs/match_and_contact_index.dart';
+import '../defs/match_and_contact_index.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,21 +22,23 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ContactImportContactsOutput with _$ContactImportContactsOutput {
-  static const knownProps = <String>['matchesAndContactIndexes'];
+  static const knownProps = <String>['matchesAndContactIndexes', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ContactImportContactsOutput({
-    @MatchAndContactIndexConverter()
-    required List<MatchAndContactIndex> matchesAndContactIndexes,
+    @MatchAndContactIndexConverter() required List<MatchAndContactIndex> matchesAndContactIndexes,
 
     Map<String, dynamic>? $unknown,
   }) = _ContactImportContactsOutput;
 
-  factory ContactImportContactsOutput.fromJson(Map<String, Object?> json) =>
-      _$ContactImportContactsOutputFromJson(json);
+  factory ContactImportContactsOutput.fromJson(Map<String, Object?> json) => _$ContactImportContactsOutputFromJson(json);
 }
+
+
 
 final class ContactImportContactsOutputConverter
     extends JsonConverter<ContactImportContactsOutput, Map<String, dynamic>> {
@@ -42,12 +46,15 @@ final class ContactImportContactsOutputConverter
 
   @override
   ContactImportContactsOutput fromJson(Map<String, dynamic> json) {
-    return ContactImportContactsOutput.fromJson(
-      translate(json, ContactImportContactsOutput.knownProps),
-    );
+    return ContactImportContactsOutput.fromJson(translate(
+      json,
+      ContactImportContactsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ContactImportContactsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ContactImportContactsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/defs/match_and_contact_index.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/defs/sync_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/defs/notification.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/defs/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,23 +19,24 @@ part 'event_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class EventStatus with _$EventStatus {
   const EventStatus._();
 
-  const factory EventStatus.knownValue({required KnownEventStatus data}) =
-      EventStatusKnownValue;
+  const factory EventStatus.knownValue({
+    required KnownEventStatus data,
+  }) = EventStatusKnownValue;
 
-  const factory EventStatus.unknown({required String data}) =
-      EventStatusUnknown;
+  const factory EventStatus.unknown({
+    required String data,
+  }) = EventStatusUnknown;
 
   static EventStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownEventStatus.valueOf(value);
 
-    return knownValue != null
-        ? EventStatus.knownValue(data: knownValue)
-        : EventStatus.unknown(data: value);
+    return knownValue != null ? EventStatus.knownValue(data: knownValue) : EventStatus.unknown(data: value);
   }
 
   String toJson() => const EventStatusConverter().toJson(this);
@@ -42,12 +44,12 @@ abstract class EventStatus with _$EventStatus {
 
 extension EventStatusExtension on EventStatus {
   bool get isKnownValue => isA<EventStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownEventStatus? get knownValue =>
-      isKnownValue ? data as KnownEventStatus : null;
-  bool get isUnknown => isA<EventStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownEventStatus? get knownValue => isKnownValue ? data as KnownEventStatus : null;
+bool get isUnknown => isA<EventStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
 final class EventStatusConverter extends JsonConverter<EventStatus, String> {
@@ -68,19 +70,22 @@ final class EventStatusConverter extends JsonConverter<EventStatus, String> {
   }
 
   @override
-  String toJson(EventStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(EventStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownEventStatus implements Serializable {
+enum KnownEventStatus implements Serializable{
   @JsonValue('unknown')
-  unknown('unknown'),
-  @JsonValue('pending')
-  pending('pending'),
-  @JsonValue('assured')
-  assured('assured'),
-  @JsonValue('blocked')
-  blocked('blocked');
+unknown('unknown'),
+@JsonValue('pending')
+pending('pending'),
+@JsonValue('assured')
+assured('assured'),
+@JsonValue('blocked')
+blocked('blocked'),
+  ;
 
   @override
   final String value;

@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/dismissMatch/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/dismissMatch/descriptor.dart';

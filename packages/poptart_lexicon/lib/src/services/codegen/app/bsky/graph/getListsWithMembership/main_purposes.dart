@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_purposes.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class GraphGetListsWithMembershipPurposes
-    with _$GraphGetListsWithMembershipPurposes {
+abstract class GraphGetListsWithMembershipPurposes with _$GraphGetListsWithMembershipPurposes {
   const GraphGetListsWithMembershipPurposes._();
 
   const factory GraphGetListsWithMembershipPurposes.knownValue({
@@ -35,29 +36,23 @@ abstract class GraphGetListsWithMembershipPurposes
     if (value == null) return null;
     final knownValue = KnownGraphGetListsWithMembershipPurposes.valueOf(value);
 
-    return knownValue != null
-        ? GraphGetListsWithMembershipPurposes.knownValue(data: knownValue)
-        : GraphGetListsWithMembershipPurposes.unknown(data: value);
+    return knownValue != null ? GraphGetListsWithMembershipPurposes.knownValue(data: knownValue) : GraphGetListsWithMembershipPurposes.unknown(data: value);
   }
 
-  String toJson() =>
-      const GraphGetListsWithMembershipPurposesConverter().toJson(this);
+  String toJson() => const GraphGetListsWithMembershipPurposesConverter().toJson(this);
 }
 
-extension GraphGetListsWithMembershipPurposesExtension
-    on GraphGetListsWithMembershipPurposes {
-  bool get isKnownValue =>
-      isA<GraphGetListsWithMembershipPurposesKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownGraphGetListsWithMembershipPurposes? get knownValue =>
-      isKnownValue ? data as KnownGraphGetListsWithMembershipPurposes : null;
-  bool get isUnknown => isA<GraphGetListsWithMembershipPurposesUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension GraphGetListsWithMembershipPurposesExtension on GraphGetListsWithMembershipPurposes {
+  bool get isKnownValue => isA<GraphGetListsWithMembershipPurposesKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownGraphGetListsWithMembershipPurposes? get knownValue => isKnownValue ? data as KnownGraphGetListsWithMembershipPurposes : null;
+bool get isUnknown => isA<GraphGetListsWithMembershipPurposesUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class GraphGetListsWithMembershipPurposesConverter
-    extends JsonConverter<GraphGetListsWithMembershipPurposes, String> {
+final class GraphGetListsWithMembershipPurposesConverter extends JsonConverter<GraphGetListsWithMembershipPurposes, String> {
   const GraphGetListsWithMembershipPurposesConverter();
 
   @override
@@ -75,15 +70,18 @@ final class GraphGetListsWithMembershipPurposesConverter
   }
 
   @override
-  String toJson(GraphGetListsWithMembershipPurposes object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(GraphGetListsWithMembershipPurposes object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownGraphGetListsWithMembershipPurposes implements Serializable {
+enum KnownGraphGetListsWithMembershipPurposes implements Serializable{
   @JsonValue('modlist')
-  modlist('modlist'),
-  @JsonValue('curatelist')
-  curatelist('curatelist');
+modlist('modlist'),
+@JsonValue('curatelist')
+curatelist('curatelist'),
+  ;
 
   @override
   final String value;
@@ -94,9 +92,7 @@ enum KnownGraphGetListsWithMembershipPurposes implements Serializable {
     return valueOf(value) != null;
   }
 
-  static KnownGraphGetListsWithMembershipPurposes? valueOf(
-    final String? value,
-  ) {
+  static KnownGraphGetListsWithMembershipPurposes? valueOf(final String? value) {
     if (value == null) return null;
 
     for (final v in values) {

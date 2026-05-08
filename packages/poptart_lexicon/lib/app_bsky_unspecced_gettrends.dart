@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTrends/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTrends/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTrends/descriptor.dart';

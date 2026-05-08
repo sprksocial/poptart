@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/unregisterPush/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/unregisterPush/main_platform.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/unregisterPush/descriptor.dart';

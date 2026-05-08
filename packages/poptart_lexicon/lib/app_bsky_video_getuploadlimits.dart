@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/video/getUploadLimits/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/video/getUploadLimits/descriptor.dart';

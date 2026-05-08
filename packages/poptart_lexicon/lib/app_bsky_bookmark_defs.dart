@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/defs/bookmark.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/defs/bookmark_view.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/defs/union_bookmark_view_item.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/defs/descriptor.dart';

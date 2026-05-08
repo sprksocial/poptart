@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/deleteBookmark/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/deleteBookmark/descriptor.dart';

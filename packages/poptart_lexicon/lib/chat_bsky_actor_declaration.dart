@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/actor/declaration/main.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/actor/declaration/main_allow_incoming.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/actor/declaration/descriptor.dart';

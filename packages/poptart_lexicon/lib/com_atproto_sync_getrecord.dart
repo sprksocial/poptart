@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRecord/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRecord/descriptor.dart';

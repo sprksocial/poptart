@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createAppPassword/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createAppPassword/app_password.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createAppPassword/descriptor.dart';

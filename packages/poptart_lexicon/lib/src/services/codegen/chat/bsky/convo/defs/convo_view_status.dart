@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'convo_view_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class ConvoViewStatus with _$ConvoViewStatus {
   const ConvoViewStatus._();
@@ -26,16 +28,15 @@ abstract class ConvoViewStatus with _$ConvoViewStatus {
     required KnownConvoViewStatus data,
   }) = ConvoViewStatusKnownValue;
 
-  const factory ConvoViewStatus.unknown({required String data}) =
-      ConvoViewStatusUnknown;
+  const factory ConvoViewStatus.unknown({
+    required String data,
+  }) = ConvoViewStatusUnknown;
 
   static ConvoViewStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownConvoViewStatus.valueOf(value);
 
-    return knownValue != null
-        ? ConvoViewStatus.knownValue(data: knownValue)
-        : ConvoViewStatus.unknown(data: value);
+    return knownValue != null ? ConvoViewStatus.knownValue(data: knownValue) : ConvoViewStatus.unknown(data: value);
   }
 
   String toJson() => const ConvoViewStatusConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class ConvoViewStatus with _$ConvoViewStatus {
 
 extension ConvoViewStatusExtension on ConvoViewStatus {
   bool get isKnownValue => isA<ConvoViewStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownConvoViewStatus? get knownValue =>
-      isKnownValue ? data as KnownConvoViewStatus : null;
-  bool get isUnknown => isA<ConvoViewStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownConvoViewStatus? get knownValue => isKnownValue ? data as KnownConvoViewStatus : null;
+bool get isUnknown => isA<ConvoViewStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ConvoViewStatusConverter
-    extends JsonConverter<ConvoViewStatus, String> {
+final class ConvoViewStatusConverter extends JsonConverter<ConvoViewStatus, String> {
   const ConvoViewStatusConverter();
 
   @override
@@ -70,15 +70,18 @@ final class ConvoViewStatusConverter
   }
 
   @override
-  String toJson(ConvoViewStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ConvoViewStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownConvoViewStatus implements Serializable {
+enum KnownConvoViewStatus implements Serializable{
   @JsonValue('request')
-  request('request'),
-  @JsonValue('accepted')
-  accepted('accepted');
+request('request'),
+@JsonValue('accepted')
+accepted('accepted'),
+  ;
 
   @override
   final String value;

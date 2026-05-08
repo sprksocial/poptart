@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listReposByCollection/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listReposByCollection/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listReposByCollection/repo.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listReposByCollection/descriptor.dart';

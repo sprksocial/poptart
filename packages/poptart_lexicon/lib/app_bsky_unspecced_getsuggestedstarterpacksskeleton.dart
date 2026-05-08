@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getSuggestedStarterPacksSkeleton/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getSuggestedStarterPacksSkeleton/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getSuggestedStarterPacksSkeleton/descriptor.dart';

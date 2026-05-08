@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/lexicon/schema/main.dart';
+import '../schema/main.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,27 +22,28 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class LexiconResolveLexiconOutput with _$LexiconResolveLexiconOutput {
-  static const knownProps = <String>['cid', 'schema', 'uri'];
+  static const knownProps = <String>['cid', 'schema', 'uri', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory LexiconResolveLexiconOutput({
     /// The CID of the lexicon schema record.
-    required String cid,
-
-    /// The resolved lexicon schema record.
-    @LexiconSchemaRecordConverter() required LexiconSchemaRecord schema,
-
-    /// The AT-URI of the lexicon schema record.
-    @AtUriConverter() required AtUri uri,
+required String cid,
+/// The resolved lexicon schema record.
+@LexiconSchemaRecordConverter() required LexiconSchemaRecord schema,
+/// The AT-URI of the lexicon schema record.
+@AtUriConverter() required AtUri uri,
 
     Map<String, dynamic>? $unknown,
   }) = _LexiconResolveLexiconOutput;
 
-  factory LexiconResolveLexiconOutput.fromJson(Map<String, Object?> json) =>
-      _$LexiconResolveLexiconOutputFromJson(json);
+  factory LexiconResolveLexiconOutput.fromJson(Map<String, Object?> json) => _$LexiconResolveLexiconOutputFromJson(json);
 }
+
+
 
 final class LexiconResolveLexiconOutputConverter
     extends JsonConverter<LexiconResolveLexiconOutput, Map<String, dynamic>> {
@@ -48,12 +51,15 @@ final class LexiconResolveLexiconOutputConverter
 
   @override
   LexiconResolveLexiconOutput fromJson(Map<String, dynamic> json) {
-    return LexiconResolveLexiconOutput.fromJson(
-      translate(json, LexiconResolveLexiconOutput.knownProps),
-    );
+    return LexiconResolveLexiconOutput.fromJson(translate(
+      json,
+      LexiconResolveLexiconOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(LexiconResolveLexiconOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(LexiconResolveLexiconOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

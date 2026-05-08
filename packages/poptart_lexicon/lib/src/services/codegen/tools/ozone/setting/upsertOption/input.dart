@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './main_scope.dart';
 import './main_manager_role.dart';
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -21,39 +23,34 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class SettingUpsertOptionInput with _$SettingUpsertOptionInput {
-  static const knownProps = <String>[
-    'key',
-    'scope',
-    'value',
-    'description',
-    'managerRole',
-  ];
+  static const knownProps = <String>['key', 'scope', 'value', 'description', 'managerRole', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory SettingUpsertOptionInput({
     required String key,
-    @SettingUpsertOptionScopeConverter()
-    required SettingUpsertOptionScope scope,
-    required Map<String, dynamic> value,
-    String? description,
-    @SettingUpsertOptionManagerRoleConverter()
-    SettingUpsertOptionManagerRole? managerRole,
+@SettingUpsertOptionScopeConverter() required SettingUpsertOptionScope scope,
+required Map<String, dynamic> value,
+String? description,
+@SettingUpsertOptionManagerRoleConverter() SettingUpsertOptionManagerRole? managerRole,
 
     Map<String, dynamic>? $unknown,
   }) = _SettingUpsertOptionInput;
 
-  factory SettingUpsertOptionInput.fromJson(Map<String, Object?> json) =>
-      _$SettingUpsertOptionInputFromJson(json);
+  factory SettingUpsertOptionInput.fromJson(Map<String, Object?> json) => _$SettingUpsertOptionInputFromJson(json);
 }
 
 extension SettingUpsertOptionInputExtension on SettingUpsertOptionInput {
-  bool get hasDescription => description != null;
-  bool get hasNotDescription => !hasDescription;
-  bool get hasManagerRole => managerRole != null;
-  bool get hasNotManagerRole => !hasManagerRole;
+bool get hasDescription => description != null;
+bool get hasNotDescription => !hasDescription;
+bool get hasManagerRole => managerRole != null;
+bool get hasNotManagerRole => !hasManagerRole;
+
 }
+
 
 final class SettingUpsertOptionInputConverter
     extends JsonConverter<SettingUpsertOptionInput, Map<String, dynamic>> {
@@ -61,12 +58,15 @@ final class SettingUpsertOptionInputConverter
 
   @override
   SettingUpsertOptionInput fromJson(Map<String, dynamic> json) {
-    return SettingUpsertOptionInput.fromJson(
-      translate(json, SettingUpsertOptionInput.knownProps),
-    );
+    return SettingUpsertOptionInput.fromJson(translate(
+      json,
+      SettingUpsertOptionInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(SettingUpsertOptionInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(SettingUpsertOptionInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

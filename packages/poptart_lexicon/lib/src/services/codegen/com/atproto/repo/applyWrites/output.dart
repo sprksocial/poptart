@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/repo/defs/commit_meta.dart';
+import '../defs/commit_meta.dart';
 import './union_main_results.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -21,26 +23,29 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class RepoApplyWritesOutput with _$RepoApplyWritesOutput {
-  static const knownProps = <String>['commit', 'results'];
+  static const knownProps = <String>['commit', 'results', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory RepoApplyWritesOutput({
     @CommitMetaConverter() CommitMeta? commit,
-    @URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results,
+@URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results,
 
     Map<String, dynamic>? $unknown,
   }) = _RepoApplyWritesOutput;
 
-  factory RepoApplyWritesOutput.fromJson(Map<String, Object?> json) =>
-      _$RepoApplyWritesOutputFromJson(json);
+  factory RepoApplyWritesOutput.fromJson(Map<String, Object?> json) => _$RepoApplyWritesOutputFromJson(json);
 }
 
 extension RepoApplyWritesOutputExtension on RepoApplyWritesOutput {
-  bool get hasCommit => commit != null;
-  bool get hasNotCommit => !hasCommit;
+bool get hasCommit => commit != null;
+bool get hasNotCommit => !hasCommit;
+
 }
+
 
 final class RepoApplyWritesOutputConverter
     extends JsonConverter<RepoApplyWritesOutput, Map<String, dynamic>> {
@@ -48,12 +53,15 @@ final class RepoApplyWritesOutputConverter
 
   @override
   RepoApplyWritesOutput fromJson(Map<String, dynamic> json) {
-    return RepoApplyWritesOutput.fromJson(
-      translate(json, RepoApplyWritesOutput.knownProps),
-    );
+    return RepoApplyWritesOutput.fromJson(translate(
+      json,
+      RepoApplyWritesOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(RepoApplyWritesOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(RepoApplyWritesOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/defs/label
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/defs/labeler_view_detailed.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/defs/labeler_viewer_state.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/defs/labeler_policies.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/defs/descriptor.dart';

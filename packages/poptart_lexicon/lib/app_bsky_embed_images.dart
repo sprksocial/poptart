@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/images/main.
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/images/image.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/images/view.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/images/view_image.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/images/descriptor.dart';

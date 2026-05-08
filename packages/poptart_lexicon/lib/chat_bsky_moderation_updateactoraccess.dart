@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/updateActorAccess/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/updateActorAccess/descriptor.dart';

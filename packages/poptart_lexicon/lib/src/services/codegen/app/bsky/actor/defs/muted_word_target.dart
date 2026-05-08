@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'muted_word_target.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class MutedWordTarget with _$MutedWordTarget {
   const MutedWordTarget._();
@@ -26,16 +28,15 @@ abstract class MutedWordTarget with _$MutedWordTarget {
     required KnownMutedWordTarget data,
   }) = MutedWordTargetKnownValue;
 
-  const factory MutedWordTarget.unknown({required String data}) =
-      MutedWordTargetUnknown;
+  const factory MutedWordTarget.unknown({
+    required String data,
+  }) = MutedWordTargetUnknown;
 
   static MutedWordTarget? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownMutedWordTarget.valueOf(value);
 
-    return knownValue != null
-        ? MutedWordTarget.knownValue(data: knownValue)
-        : MutedWordTarget.unknown(data: value);
+    return knownValue != null ? MutedWordTarget.knownValue(data: knownValue) : MutedWordTarget.unknown(data: value);
   }
 
   String toJson() => const MutedWordTargetConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class MutedWordTarget with _$MutedWordTarget {
 
 extension MutedWordTargetExtension on MutedWordTarget {
   bool get isKnownValue => isA<MutedWordTargetKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownMutedWordTarget? get knownValue =>
-      isKnownValue ? data as KnownMutedWordTarget : null;
-  bool get isUnknown => isA<MutedWordTargetUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownMutedWordTarget? get knownValue => isKnownValue ? data as KnownMutedWordTarget : null;
+bool get isUnknown => isA<MutedWordTargetUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class MutedWordTargetConverter
-    extends JsonConverter<MutedWordTarget, String> {
+final class MutedWordTargetConverter extends JsonConverter<MutedWordTarget, String> {
   const MutedWordTargetConverter();
 
   @override
@@ -70,15 +70,18 @@ final class MutedWordTargetConverter
   }
 
   @override
-  String toJson(MutedWordTarget object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(MutedWordTarget object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownMutedWordTarget implements Serializable {
+enum KnownMutedWordTarget implements Serializable{
   @JsonValue('content')
-  content('content'),
-  @JsonValue('tag')
-  tag('tag');
+content('content'),
+@JsonValue('tag')
+tag('tag'),
+  ;
 
   @override
   final String value;

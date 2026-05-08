@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './union_view_record.dart';
+
 
 part 'view.freezed.dart';
 part 'view.g.dart';
@@ -20,9 +22,11 @@ part 'view.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class EmbedRecordView with _$EmbedRecordView {
-  static const knownProps = <String>['record'];
+  static const knownProps = <String>['record', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory EmbedRecordView({
@@ -32,14 +36,17 @@ abstract class EmbedRecordView with _$EmbedRecordView {
     Map<String, dynamic>? $unknown,
   }) = _EmbedRecordView;
 
-  factory EmbedRecordView.fromJson(Map<String, Object?> json) =>
-      _$EmbedRecordViewFromJson(json);
+  factory EmbedRecordView.fromJson(Map<String, Object?> json) => _$EmbedRecordViewFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.embed.record#view';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.embed.record#view'
+;
 }
+
+}
+
+
 
 final class EmbedRecordViewConverter
     extends JsonConverter<EmbedRecordView, Map<String, dynamic>> {
@@ -47,12 +54,15 @@ final class EmbedRecordViewConverter
 
   @override
   EmbedRecordView fromJson(Map<String, dynamic> json) {
-    return EmbedRecordView.fromJson(
-      translate(json, EmbedRecordView.knownProps),
-    );
+    return EmbedRecordView.fromJson(translate(
+      json,
+      EmbedRecordView.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(EmbedRecordView object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(EmbedRecordView object) => untranslate(
+        object.toJson(),
+      );
 }
+

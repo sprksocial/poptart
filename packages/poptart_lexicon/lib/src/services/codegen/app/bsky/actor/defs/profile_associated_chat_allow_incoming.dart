@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'profile_associated_chat_allow_incoming.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ProfileAssociatedChatAllowIncoming
-    with _$ProfileAssociatedChatAllowIncoming {
+abstract class ProfileAssociatedChatAllowIncoming with _$ProfileAssociatedChatAllowIncoming {
   const ProfileAssociatedChatAllowIncoming._();
 
   const factory ProfileAssociatedChatAllowIncoming.knownValue({
@@ -35,29 +36,23 @@ abstract class ProfileAssociatedChatAllowIncoming
     if (value == null) return null;
     final knownValue = KnownProfileAssociatedChatAllowIncoming.valueOf(value);
 
-    return knownValue != null
-        ? ProfileAssociatedChatAllowIncoming.knownValue(data: knownValue)
-        : ProfileAssociatedChatAllowIncoming.unknown(data: value);
+    return knownValue != null ? ProfileAssociatedChatAllowIncoming.knownValue(data: knownValue) : ProfileAssociatedChatAllowIncoming.unknown(data: value);
   }
 
-  String toJson() =>
-      const ProfileAssociatedChatAllowIncomingConverter().toJson(this);
+  String toJson() => const ProfileAssociatedChatAllowIncomingConverter().toJson(this);
 }
 
-extension ProfileAssociatedChatAllowIncomingExtension
-    on ProfileAssociatedChatAllowIncoming {
-  bool get isKnownValue =>
-      isA<ProfileAssociatedChatAllowIncomingKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownProfileAssociatedChatAllowIncoming? get knownValue =>
-      isKnownValue ? data as KnownProfileAssociatedChatAllowIncoming : null;
-  bool get isUnknown => isA<ProfileAssociatedChatAllowIncomingUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension ProfileAssociatedChatAllowIncomingExtension on ProfileAssociatedChatAllowIncoming {
+  bool get isKnownValue => isA<ProfileAssociatedChatAllowIncomingKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownProfileAssociatedChatAllowIncoming? get knownValue => isKnownValue ? data as KnownProfileAssociatedChatAllowIncoming : null;
+bool get isUnknown => isA<ProfileAssociatedChatAllowIncomingUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ProfileAssociatedChatAllowIncomingConverter
-    extends JsonConverter<ProfileAssociatedChatAllowIncoming, String> {
+final class ProfileAssociatedChatAllowIncomingConverter extends JsonConverter<ProfileAssociatedChatAllowIncoming, String> {
   const ProfileAssociatedChatAllowIncomingConverter();
 
   @override
@@ -75,17 +70,20 @@ final class ProfileAssociatedChatAllowIncomingConverter
   }
 
   @override
-  String toJson(ProfileAssociatedChatAllowIncoming object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ProfileAssociatedChatAllowIncoming object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownProfileAssociatedChatAllowIncoming implements Serializable {
+enum KnownProfileAssociatedChatAllowIncoming implements Serializable{
   @JsonValue('all')
-  all('all'),
-  @JsonValue('none')
-  none('none'),
-  @JsonValue('following')
-  following('following');
+all('all'),
+@JsonValue('none')
+none('none'),
+@JsonValue('following')
+following('following'),
+  ;
 
   @override
   final String value;

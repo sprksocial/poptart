@@ -16,3 +16,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/subscribe
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/subscribeLabels/labels.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/subscribeLabels/info.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/subscribeLabels/info_name.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/subscribeLabels/descriptor.dart';

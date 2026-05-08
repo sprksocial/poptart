@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/createRecord/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/createRecord/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/createRecord/main_validation_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/createRecord/descriptor.dart';

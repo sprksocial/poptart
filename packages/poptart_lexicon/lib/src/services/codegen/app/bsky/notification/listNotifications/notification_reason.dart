@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'notification_reason.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class NotificationReason with _$NotificationReason {
   const NotificationReason._();
@@ -26,16 +28,15 @@ abstract class NotificationReason with _$NotificationReason {
     required KnownNotificationReason data,
   }) = NotificationReasonKnownValue;
 
-  const factory NotificationReason.unknown({required String data}) =
-      NotificationReasonUnknown;
+  const factory NotificationReason.unknown({
+    required String data,
+  }) = NotificationReasonUnknown;
 
   static NotificationReason? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownNotificationReason.valueOf(value);
 
-    return knownValue != null
-        ? NotificationReason.knownValue(data: knownValue)
-        : NotificationReason.unknown(data: value);
+    return knownValue != null ? NotificationReason.knownValue(data: knownValue) : NotificationReason.unknown(data: value);
   }
 
   String toJson() => const NotificationReasonConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class NotificationReason with _$NotificationReason {
 
 extension NotificationReasonExtension on NotificationReason {
   bool get isKnownValue => isA<NotificationReasonKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownNotificationReason? get knownValue =>
-      isKnownValue ? data as KnownNotificationReason : null;
-  bool get isUnknown => isA<NotificationReasonUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownNotificationReason? get knownValue => isKnownValue ? data as KnownNotificationReason : null;
+bool get isUnknown => isA<NotificationReasonUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class NotificationReasonConverter
-    extends JsonConverter<NotificationReason, String> {
+final class NotificationReasonConverter extends JsonConverter<NotificationReason, String> {
   const NotificationReasonConverter();
 
   @override
@@ -70,37 +70,40 @@ final class NotificationReasonConverter
   }
 
   @override
-  String toJson(NotificationReason object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(NotificationReason object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownNotificationReason implements Serializable {
+enum KnownNotificationReason implements Serializable{
   @JsonValue('like')
-  like('like'),
-  @JsonValue('repost')
-  repost('repost'),
-  @JsonValue('follow')
-  follow('follow'),
-  @JsonValue('mention')
-  mention('mention'),
-  @JsonValue('reply')
-  reply('reply'),
-  @JsonValue('quote')
-  quote('quote'),
-  @JsonValue('starterpack-joined')
-  starterpackJoined('starterpack-joined'),
-  @JsonValue('verified')
-  verified('verified'),
-  @JsonValue('unverified')
-  unverified('unverified'),
-  @JsonValue('like-via-repost')
-  likeViaRepost('like-via-repost'),
-  @JsonValue('repost-via-repost')
-  repostViaRepost('repost-via-repost'),
-  @JsonValue('subscribed-post')
-  subscribedPost('subscribed-post'),
-  @JsonValue('contact-match')
-  contactMatch('contact-match');
+like('like'),
+@JsonValue('repost')
+repost('repost'),
+@JsonValue('follow')
+follow('follow'),
+@JsonValue('mention')
+mention('mention'),
+@JsonValue('reply')
+reply('reply'),
+@JsonValue('quote')
+quote('quote'),
+@JsonValue('starterpack-joined')
+starterpackJoined('starterpack-joined'),
+@JsonValue('verified')
+verified('verified'),
+@JsonValue('unverified')
+unverified('unverified'),
+@JsonValue('like-via-repost')
+likeViaRepost('like-via-repost'),
+@JsonValue('repost-via-repost')
+repostViaRepost('repost-via-repost'),
+@JsonValue('subscribed-post')
+subscribedPost('subscribed-post'),
+@JsonValue('contact-match')
+contactMatch('contact-match'),
+  ;
 
   @override
   final String value;

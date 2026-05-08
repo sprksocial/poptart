@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../app/bsky/feed/defs/feed_view_post.dart';
+import '../defs/feed_view_post.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,26 +22,29 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class FeedGetFeedOutput with _$FeedGetFeedOutput {
-  static const knownProps = <String>['cursor', 'feed'];
+  static const knownProps = <String>['cursor', 'feed', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetFeedOutput({
     String? cursor,
-    @FeedViewPostConverter() required List<FeedViewPost> feed,
+@FeedViewPostConverter() required List<FeedViewPost> feed,
 
     Map<String, dynamic>? $unknown,
   }) = _FeedGetFeedOutput;
 
-  factory FeedGetFeedOutput.fromJson(Map<String, Object?> json) =>
-      _$FeedGetFeedOutputFromJson(json);
+  factory FeedGetFeedOutput.fromJson(Map<String, Object?> json) => _$FeedGetFeedOutputFromJson(json);
 }
 
 extension FeedGetFeedOutputExtension on FeedGetFeedOutput {
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class FeedGetFeedOutputConverter
     extends JsonConverter<FeedGetFeedOutput, Map<String, dynamic>> {
@@ -47,12 +52,15 @@ final class FeedGetFeedOutputConverter
 
   @override
   FeedGetFeedOutput fromJson(Map<String, dynamic> json) {
-    return FeedGetFeedOutput.fromJson(
-      translate(json, FeedGetFeedOutput.knownProps),
-    );
+    return FeedGetFeedOutput.fromJson(translate(
+      json,
+      FeedGetFeedOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(FeedGetFeedOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(FeedGetFeedOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

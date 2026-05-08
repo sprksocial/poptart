@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_sort_direction.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class SafelinkQueryRulesSortDirection
-    with _$SafelinkQueryRulesSortDirection {
+abstract class SafelinkQueryRulesSortDirection with _$SafelinkQueryRulesSortDirection {
   const SafelinkQueryRulesSortDirection._();
 
   const factory SafelinkQueryRulesSortDirection.knownValue({
@@ -35,28 +36,23 @@ abstract class SafelinkQueryRulesSortDirection
     if (value == null) return null;
     final knownValue = KnownSafelinkQueryRulesSortDirection.valueOf(value);
 
-    return knownValue != null
-        ? SafelinkQueryRulesSortDirection.knownValue(data: knownValue)
-        : SafelinkQueryRulesSortDirection.unknown(data: value);
+    return knownValue != null ? SafelinkQueryRulesSortDirection.knownValue(data: knownValue) : SafelinkQueryRulesSortDirection.unknown(data: value);
   }
 
-  String toJson() =>
-      const SafelinkQueryRulesSortDirectionConverter().toJson(this);
+  String toJson() => const SafelinkQueryRulesSortDirectionConverter().toJson(this);
 }
 
-extension SafelinkQueryRulesSortDirectionExtension
-    on SafelinkQueryRulesSortDirection {
+extension SafelinkQueryRulesSortDirectionExtension on SafelinkQueryRulesSortDirection {
   bool get isKnownValue => isA<SafelinkQueryRulesSortDirectionKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownSafelinkQueryRulesSortDirection? get knownValue =>
-      isKnownValue ? data as KnownSafelinkQueryRulesSortDirection : null;
-  bool get isUnknown => isA<SafelinkQueryRulesSortDirectionUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownSafelinkQueryRulesSortDirection? get knownValue => isKnownValue ? data as KnownSafelinkQueryRulesSortDirection : null;
+bool get isUnknown => isA<SafelinkQueryRulesSortDirectionUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class SafelinkQueryRulesSortDirectionConverter
-    extends JsonConverter<SafelinkQueryRulesSortDirection, String> {
+final class SafelinkQueryRulesSortDirectionConverter extends JsonConverter<SafelinkQueryRulesSortDirection, String> {
   const SafelinkQueryRulesSortDirectionConverter();
 
   @override
@@ -74,15 +70,18 @@ final class SafelinkQueryRulesSortDirectionConverter
   }
 
   @override
-  String toJson(SafelinkQueryRulesSortDirection object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(SafelinkQueryRulesSortDirection object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownSafelinkQueryRulesSortDirection implements Serializable {
+enum KnownSafelinkQueryRulesSortDirection implements Serializable{
   @JsonValue('asc')
-  asc('asc'),
-  @JsonValue('desc')
-  desc('desc');
+asc('asc'),
+@JsonValue('desc')
+desc('desc'),
+  ;
 
   @override
   final String value;

@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/acceptConvo/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/acceptConvo/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/acceptConvo/descriptor.dart';

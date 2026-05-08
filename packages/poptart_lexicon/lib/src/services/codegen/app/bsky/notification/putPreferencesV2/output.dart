@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../app/bsky/notification/defs/preferences.dart';
+import '../defs/preferences.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,10 +22,11 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class NotificationPutPreferencesV2Output
-    with _$NotificationPutPreferencesV2Output {
-  static const knownProps = <String>['preferences'];
+abstract class NotificationPutPreferencesV2Output with _$NotificationPutPreferencesV2Output {
+  static const knownProps = <String>['preferences', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory NotificationPutPreferencesV2Output({
@@ -32,27 +35,26 @@ abstract class NotificationPutPreferencesV2Output
     Map<String, dynamic>? $unknown,
   }) = _NotificationPutPreferencesV2Output;
 
-  factory NotificationPutPreferencesV2Output.fromJson(
-    Map<String, Object?> json,
-  ) => _$NotificationPutPreferencesV2OutputFromJson(json);
+  factory NotificationPutPreferencesV2Output.fromJson(Map<String, Object?> json) => _$NotificationPutPreferencesV2OutputFromJson(json);
 }
 
+
+
 final class NotificationPutPreferencesV2OutputConverter
-    extends
-        JsonConverter<
-          NotificationPutPreferencesV2Output,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<NotificationPutPreferencesV2Output, Map<String, dynamic>> {
   const NotificationPutPreferencesV2OutputConverter();
 
   @override
   NotificationPutPreferencesV2Output fromJson(Map<String, dynamic> json) {
-    return NotificationPutPreferencesV2Output.fromJson(
-      translate(json, NotificationPutPreferencesV2Output.knownProps),
-    );
+    return NotificationPutPreferencesV2Output.fromJson(translate(
+      json,
+      NotificationPutPreferencesV2Output.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(NotificationPutPreferencesV2Output object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(NotificationPutPreferencesV2Output object) => untranslate(
+        object.toJson(),
+      );
 }
+

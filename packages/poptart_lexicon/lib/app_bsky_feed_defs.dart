@@ -38,3 +38,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/defs/skeleton
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/defs/threadgate_view.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/defs/interaction.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/defs/interaction_event.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/feed/defs/descriptor.dart';

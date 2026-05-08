@@ -6,9 +6,6 @@
 import 'package:poptart_core/poptart_core.dart' as core;
 import 'package:poptart_core/poptart_oauth.dart' as oauth;
 
-// Project imports:
-import '../com_atproto_services.dart';
-
 /// Provides `com.atproto.*` services.
 sealed class ATProto {
   /// Returns the new instance of [ATProto].
@@ -107,42 +104,6 @@ sealed class ATProto {
   /// Defaults to `bsky.network`.
   String get relayService;
 
-  /// Returns the admin service.
-  /// This service represents `com.atproto.admin.*`.
-  AdminService get admin;
-
-  /// Returns the servers service.
-  /// This service represents `com.atproto.server.*`.
-  ServerService get server;
-
-  /// Returns the identity service.
-  /// This service represents `com.atproto.identity.*`.
-  IdentityService get identity;
-
-  /// Returns the repositories service.
-  /// This service represents `com.atproto.repo.*`.
-  RepoService get repo;
-
-  /// Returns the moderation service.
-  /// This service represents `com.atproto.moderation.*`.
-  ModerationService get moderation;
-
-  /// Returns the sync service.
-  /// This service represents `com.atproto.sync.*`.
-  SyncService get sync;
-
-  /// Returns the labels service.
-  /// This service represents `com.atproto.label.*`.
-  LabelService get label;
-
-  /// Returns the lexicon service.
-  /// This service represents `com.atproto.lexicon.*`.
-  LexiconService get lexicon;
-
-  /// Returns the temp service.
-  /// This service represents `com.atproto.temp.*`.
-  TempService get temp;
-
   /// Returns the result of executing [methodId] as GET communication.
   ///
   /// You can specify `Map<String, dynamic>`, `Uint8List`, or `EmptyData` as
@@ -185,20 +146,18 @@ sealed class ATProto {
     final dynamic body,
     final core.ResponseDataBuilder<T>? to,
   });
+
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  });
 }
 
 final class _ATProto implements ATProto {
-  _ATProto(final core.ServiceContext ctx)
-    : admin = AdminService(ctx),
-      server = ServerService(ctx),
-      identity = IdentityService(ctx),
-      repo = RepoService(ctx),
-      moderation = ModerationService(ctx),
-      sync = SyncService(ctx),
-      label = LabelService(ctx),
-      lexicon = LexiconService(ctx),
-      temp = TempService(ctx),
-      _ctx = ctx;
+  _ATProto(this._ctx);
 
   @override
   Map<String, String> get headers => _ctx.headers;
@@ -214,33 +173,6 @@ final class _ATProto implements ATProto {
 
   @override
   String get relayService => _ctx.relayService;
-
-  @override
-  final AdminService admin;
-
-  @override
-  final ServerService server;
-
-  @override
-  final IdentityService identity;
-
-  @override
-  final RepoService repo;
-
-  @override
-  final ModerationService moderation;
-
-  @override
-  final SyncService sync;
-
-  @override
-  final LabelService label;
-
-  @override
-  final LexiconService lexicon;
-
-  @override
-  final TempService temp;
 
   final core.ServiceContext _ctx;
 
@@ -276,5 +208,20 @@ final class _ATProto implements ATProto {
     parameters: parameters,
     body: body,
     to: to,
+  );
+
+  @override
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  }) async => await _ctx.call(
+    method,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    input: input,
   );
 }

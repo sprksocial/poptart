@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/strongRef/main.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/strongRef/descriptor.dart';

@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/server/getConfi
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/server/getConfig/service_config.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/server/getConfig/viewer_config.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/server/getConfig/viewer_config_role.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/server/getConfig/descriptor.dart';

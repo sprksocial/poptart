@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/disableAccountInvites/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/disableAccountInvites/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_subject_type.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ModerationQueryEventsSubjectType
-    with _$ModerationQueryEventsSubjectType {
+abstract class ModerationQueryEventsSubjectType with _$ModerationQueryEventsSubjectType {
   const ModerationQueryEventsSubjectType._();
 
   const factory ModerationQueryEventsSubjectType.knownValue({
@@ -35,29 +36,23 @@ abstract class ModerationQueryEventsSubjectType
     if (value == null) return null;
     final knownValue = KnownModerationQueryEventsSubjectType.valueOf(value);
 
-    return knownValue != null
-        ? ModerationQueryEventsSubjectType.knownValue(data: knownValue)
-        : ModerationQueryEventsSubjectType.unknown(data: value);
+    return knownValue != null ? ModerationQueryEventsSubjectType.knownValue(data: knownValue) : ModerationQueryEventsSubjectType.unknown(data: value);
   }
 
-  String toJson() =>
-      const ModerationQueryEventsSubjectTypeConverter().toJson(this);
+  String toJson() => const ModerationQueryEventsSubjectTypeConverter().toJson(this);
 }
 
-extension ModerationQueryEventsSubjectTypeExtension
-    on ModerationQueryEventsSubjectType {
-  bool get isKnownValue =>
-      isA<ModerationQueryEventsSubjectTypeKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownModerationQueryEventsSubjectType? get knownValue =>
-      isKnownValue ? data as KnownModerationQueryEventsSubjectType : null;
-  bool get isUnknown => isA<ModerationQueryEventsSubjectTypeUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension ModerationQueryEventsSubjectTypeExtension on ModerationQueryEventsSubjectType {
+  bool get isKnownValue => isA<ModerationQueryEventsSubjectTypeKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownModerationQueryEventsSubjectType? get knownValue => isKnownValue ? data as KnownModerationQueryEventsSubjectType : null;
+bool get isUnknown => isA<ModerationQueryEventsSubjectTypeUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ModerationQueryEventsSubjectTypeConverter
-    extends JsonConverter<ModerationQueryEventsSubjectType, String> {
+final class ModerationQueryEventsSubjectTypeConverter extends JsonConverter<ModerationQueryEventsSubjectType, String> {
   const ModerationQueryEventsSubjectTypeConverter();
 
   @override
@@ -75,15 +70,18 @@ final class ModerationQueryEventsSubjectTypeConverter
   }
 
   @override
-  String toJson(ModerationQueryEventsSubjectType object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ModerationQueryEventsSubjectType object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownModerationQueryEventsSubjectType implements Serializable {
+enum KnownModerationQueryEventsSubjectType implements Serializable{
   @JsonValue('account')
-  account('account'),
-  @JsonValue('record')
-  record('record');
+account('account'),
+@JsonValue('record')
+record('record'),
+  ;
 
   @override
   final String value;

@@ -16,3 +16,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/quer
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/queryStatuses/main_subject_type.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/queryStatuses/main_age_assurance_state.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/queryStatuses/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/queryStatuses/descriptor.dart';

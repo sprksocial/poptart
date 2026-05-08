@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/initAgeAssurance/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/initAgeAssurance/descriptor.dart';

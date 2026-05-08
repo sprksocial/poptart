@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'subject_status_view_age_assurance_state.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class SubjectStatusViewAgeAssuranceState
-    with _$SubjectStatusViewAgeAssuranceState {
+abstract class SubjectStatusViewAgeAssuranceState with _$SubjectStatusViewAgeAssuranceState {
   const SubjectStatusViewAgeAssuranceState._();
 
   const factory SubjectStatusViewAgeAssuranceState.knownValue({
@@ -35,29 +36,23 @@ abstract class SubjectStatusViewAgeAssuranceState
     if (value == null) return null;
     final knownValue = KnownSubjectStatusViewAgeAssuranceState.valueOf(value);
 
-    return knownValue != null
-        ? SubjectStatusViewAgeAssuranceState.knownValue(data: knownValue)
-        : SubjectStatusViewAgeAssuranceState.unknown(data: value);
+    return knownValue != null ? SubjectStatusViewAgeAssuranceState.knownValue(data: knownValue) : SubjectStatusViewAgeAssuranceState.unknown(data: value);
   }
 
-  String toJson() =>
-      const SubjectStatusViewAgeAssuranceStateConverter().toJson(this);
+  String toJson() => const SubjectStatusViewAgeAssuranceStateConverter().toJson(this);
 }
 
-extension SubjectStatusViewAgeAssuranceStateExtension
-    on SubjectStatusViewAgeAssuranceState {
-  bool get isKnownValue =>
-      isA<SubjectStatusViewAgeAssuranceStateKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownSubjectStatusViewAgeAssuranceState? get knownValue =>
-      isKnownValue ? data as KnownSubjectStatusViewAgeAssuranceState : null;
-  bool get isUnknown => isA<SubjectStatusViewAgeAssuranceStateUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension SubjectStatusViewAgeAssuranceStateExtension on SubjectStatusViewAgeAssuranceState {
+  bool get isKnownValue => isA<SubjectStatusViewAgeAssuranceStateKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownSubjectStatusViewAgeAssuranceState? get knownValue => isKnownValue ? data as KnownSubjectStatusViewAgeAssuranceState : null;
+bool get isUnknown => isA<SubjectStatusViewAgeAssuranceStateUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class SubjectStatusViewAgeAssuranceStateConverter
-    extends JsonConverter<SubjectStatusViewAgeAssuranceState, String> {
+final class SubjectStatusViewAgeAssuranceStateConverter extends JsonConverter<SubjectStatusViewAgeAssuranceState, String> {
   const SubjectStatusViewAgeAssuranceStateConverter();
 
   @override
@@ -75,21 +70,24 @@ final class SubjectStatusViewAgeAssuranceStateConverter
   }
 
   @override
-  String toJson(SubjectStatusViewAgeAssuranceState object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(SubjectStatusViewAgeAssuranceState object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownSubjectStatusViewAgeAssuranceState implements Serializable {
+enum KnownSubjectStatusViewAgeAssuranceState implements Serializable{
   @JsonValue('pending')
-  pending('pending'),
-  @JsonValue('assured')
-  assured('assured'),
-  @JsonValue('unknown')
-  unknown('unknown'),
-  @JsonValue('reset')
-  reset('reset'),
-  @JsonValue('blocked')
-  blocked('blocked');
+pending('pending'),
+@JsonValue('assured')
+assured('assured'),
+@JsonValue('unknown')
+unknown('unknown'),
+@JsonValue('reset')
+reset('reset'),
+@JsonValue('blocked')
+blocked('blocked'),
+  ;
 
   @override
   final String value;

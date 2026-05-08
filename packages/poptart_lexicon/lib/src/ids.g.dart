@@ -14,7 +14,8 @@ const appBskyActorDefs = 'app.bsky.actor.defs';
 const appBskyActorDefsAdultContentPref = 'app.bsky.actor.defs#adultContentPref';
 
 /// `app.bsky.actor.defs#bskyAppProgressGuide`
-const appBskyActorDefsBskyAppProgressGuide = 'app.bsky.actor.defs#bskyAppProgressGuide';
+const appBskyActorDefsBskyAppProgressGuide =
+    'app.bsky.actor.defs#bskyAppProgressGuide';
 
 /// `app.bsky.actor.defs#bskyAppStatePref`
 const appBskyActorDefsBskyAppStatePref = 'app.bsky.actor.defs#bskyAppStatePref';
@@ -44,7 +45,8 @@ const appBskyActorDefsLabelerPrefItem = 'app.bsky.actor.defs#labelerPrefItem';
 const appBskyActorDefsLabelersPref = 'app.bsky.actor.defs#labelersPref';
 
 /// `app.bsky.actor.defs#liveEventPreferences`
-const appBskyActorDefsLiveEventPreferences = 'app.bsky.actor.defs#liveEventPreferences';
+const appBskyActorDefsLiveEventPreferences =
+    'app.bsky.actor.defs#liveEventPreferences';
 
 /// `app.bsky.actor.defs#mutedWord`
 const appBskyActorDefsMutedWord = 'app.bsky.actor.defs#mutedWord';
@@ -59,25 +61,31 @@ const appBskyActorDefsMutedWordsPref = 'app.bsky.actor.defs#mutedWordsPref';
 const appBskyActorDefsNux = 'app.bsky.actor.defs#nux';
 
 /// `app.bsky.actor.defs#personalDetailsPref`
-const appBskyActorDefsPersonalDetailsPref = 'app.bsky.actor.defs#personalDetailsPref';
+const appBskyActorDefsPersonalDetailsPref =
+    'app.bsky.actor.defs#personalDetailsPref';
 
 /// `app.bsky.actor.defs#postInteractionSettingsPref`
-const appBskyActorDefsPostInteractionSettingsPref = 'app.bsky.actor.defs#postInteractionSettingsPref';
+const appBskyActorDefsPostInteractionSettingsPref =
+    'app.bsky.actor.defs#postInteractionSettingsPref';
 
 /// `app.bsky.actor.defs#preferences`
 const appBskyActorDefsPreferences = 'app.bsky.actor.defs#preferences';
 
 /// `app.bsky.actor.defs#profileAssociated`
-const appBskyActorDefsProfileAssociated = 'app.bsky.actor.defs#profileAssociated';
+const appBskyActorDefsProfileAssociated =
+    'app.bsky.actor.defs#profileAssociated';
 
 /// `app.bsky.actor.defs#profileAssociatedActivitySubscription`
-const appBskyActorDefsProfileAssociatedActivitySubscription = 'app.bsky.actor.defs#profileAssociatedActivitySubscription';
+const appBskyActorDefsProfileAssociatedActivitySubscription =
+    'app.bsky.actor.defs#profileAssociatedActivitySubscription';
 
 /// `app.bsky.actor.defs#profileAssociatedChat`
-const appBskyActorDefsProfileAssociatedChat = 'app.bsky.actor.defs#profileAssociatedChat';
+const appBskyActorDefsProfileAssociatedChat =
+    'app.bsky.actor.defs#profileAssociatedChat';
 
 /// `app.bsky.actor.defs#profileAssociatedGerm`
-const appBskyActorDefsProfileAssociatedGerm = 'app.bsky.actor.defs#profileAssociatedGerm';
+const appBskyActorDefsProfileAssociatedGerm =
+    'app.bsky.actor.defs#profileAssociatedGerm';
 
 /// `app.bsky.actor.defs#profileView`
 const appBskyActorDefsProfileView = 'app.bsky.actor.defs#profileView';
@@ -86,7 +94,8 @@ const appBskyActorDefsProfileView = 'app.bsky.actor.defs#profileView';
 const appBskyActorDefsProfileViewBasic = 'app.bsky.actor.defs#profileViewBasic';
 
 /// `app.bsky.actor.defs#profileViewDetailed`
-const appBskyActorDefsProfileViewDetailed = 'app.bsky.actor.defs#profileViewDetailed';
+const appBskyActorDefsProfileViewDetailed =
+    'app.bsky.actor.defs#profileViewDetailed';
 
 /// `app.bsky.actor.defs#savedFeed`
 const appBskyActorDefsSavedFeed = 'app.bsky.actor.defs#savedFeed';
@@ -104,10 +113,12 @@ const appBskyActorDefsStatusView = 'app.bsky.actor.defs#statusView';
 const appBskyActorDefsThreadViewPref = 'app.bsky.actor.defs#threadViewPref';
 
 /// `app.bsky.actor.defs#verificationPrefs`
-const appBskyActorDefsVerificationPrefs = 'app.bsky.actor.defs#verificationPrefs';
+const appBskyActorDefsVerificationPrefs =
+    'app.bsky.actor.defs#verificationPrefs';
 
 /// `app.bsky.actor.defs#verificationState`
-const appBskyActorDefsVerificationState = 'app.bsky.actor.defs#verificationState';
+const appBskyActorDefsVerificationState =
+    'app.bsky.actor.defs#verificationState';
 
 /// `app.bsky.actor.defs#verificationView`
 const appBskyActorDefsVerificationView = 'app.bsky.actor.defs#verificationView';
@@ -137,7 +148,8 @@ const appBskyActorPutPreferences = 'app.bsky.actor.putPreferences';
 const appBskyActorSearchActors = 'app.bsky.actor.searchActors';
 
 /// `app.bsky.actor.searchActorsTypeahead`
-const appBskyActorSearchActorsTypeahead = 'app.bsky.actor.searchActorsTypeahead';
+const appBskyActorSearchActorsTypeahead =
+    'app.bsky.actor.searchActorsTypeahead';
 
 /// `app.bsky.actor.status`
 const appBskyActorStatus = 'app.bsky.actor.status';
@@ -158,28 +170,36 @@ const appBskyAgeassuranceDefsAccess = 'app.bsky.ageassurance.defs#access';
 const appBskyAgeassuranceDefsConfig = 'app.bsky.ageassurance.defs#config';
 
 /// `app.bsky.ageassurance.defs#configRegion`
-const appBskyAgeassuranceDefsConfigRegion = 'app.bsky.ageassurance.defs#configRegion';
+const appBskyAgeassuranceDefsConfigRegion =
+    'app.bsky.ageassurance.defs#configRegion';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleDefault`
-const appBskyAgeassuranceDefsConfigRegionRuleDefault = 'app.bsky.ageassurance.defs#configRegionRuleDefault';
+const appBskyAgeassuranceDefsConfigRegionRuleDefault =
+    'app.bsky.ageassurance.defs#configRegionRuleDefault';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfAccountNewerThan`
-const appBskyAgeassuranceDefsConfigRegionRuleIfAccountNewerThan = 'app.bsky.ageassurance.defs#configRegionRuleIfAccountNewerThan';
+const appBskyAgeassuranceDefsConfigRegionRuleIfAccountNewerThan =
+    'app.bsky.ageassurance.defs#configRegionRuleIfAccountNewerThan';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan`
-const appBskyAgeassuranceDefsConfigRegionRuleIfAccountOlderThan = 'app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan';
+const appBskyAgeassuranceDefsConfigRegionRuleIfAccountOlderThan =
+    'app.bsky.ageassurance.defs#configRegionRuleIfAccountOlderThan';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfAssuredOverAge`
-const appBskyAgeassuranceDefsConfigRegionRuleIfAssuredOverAge = 'app.bsky.ageassurance.defs#configRegionRuleIfAssuredOverAge';
+const appBskyAgeassuranceDefsConfigRegionRuleIfAssuredOverAge =
+    'app.bsky.ageassurance.defs#configRegionRuleIfAssuredOverAge';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfAssuredUnderAge`
-const appBskyAgeassuranceDefsConfigRegionRuleIfAssuredUnderAge = 'app.bsky.ageassurance.defs#configRegionRuleIfAssuredUnderAge';
+const appBskyAgeassuranceDefsConfigRegionRuleIfAssuredUnderAge =
+    'app.bsky.ageassurance.defs#configRegionRuleIfAssuredUnderAge';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfDeclaredOverAge`
-const appBskyAgeassuranceDefsConfigRegionRuleIfDeclaredOverAge = 'app.bsky.ageassurance.defs#configRegionRuleIfDeclaredOverAge';
+const appBskyAgeassuranceDefsConfigRegionRuleIfDeclaredOverAge =
+    'app.bsky.ageassurance.defs#configRegionRuleIfDeclaredOverAge';
 
 /// `app.bsky.ageassurance.defs#configRegionRuleIfDeclaredUnderAge`
-const appBskyAgeassuranceDefsConfigRegionRuleIfDeclaredUnderAge = 'app.bsky.ageassurance.defs#configRegionRuleIfDeclaredUnderAge';
+const appBskyAgeassuranceDefsConfigRegionRuleIfDeclaredUnderAge =
+    'app.bsky.ageassurance.defs#configRegionRuleIfDeclaredUnderAge';
 
 /// `app.bsky.ageassurance.defs#event`
 const appBskyAgeassuranceDefsEvent = 'app.bsky.ageassurance.defs#event';
@@ -188,7 +208,8 @@ const appBskyAgeassuranceDefsEvent = 'app.bsky.ageassurance.defs#event';
 const appBskyAgeassuranceDefsState = 'app.bsky.ageassurance.defs#state';
 
 /// `app.bsky.ageassurance.defs#stateMetadata`
-const appBskyAgeassuranceDefsStateMetadata = 'app.bsky.ageassurance.defs#stateMetadata';
+const appBskyAgeassuranceDefsStateMetadata =
+    'app.bsky.ageassurance.defs#stateMetadata';
 
 /// `app.bsky.ageassurance.defs#status`
 const appBskyAgeassuranceDefsStatus = 'app.bsky.ageassurance.defs#status';
@@ -221,7 +242,8 @@ const appBskyBookmarkGetBookmarks = 'app.bsky.bookmark.getBookmarks';
 const appBskyContactDefs = 'app.bsky.contact.defs';
 
 /// `app.bsky.contact.defs#matchAndContactIndex`
-const appBskyContactDefsMatchAndContactIndex = 'app.bsky.contact.defs#matchAndContactIndex';
+const appBskyContactDefsMatchAndContactIndex =
+    'app.bsky.contact.defs#matchAndContactIndex';
 
 /// `app.bsky.contact.defs#notification`
 const appBskyContactDefsNotification = 'app.bsky.contact.defs#notification';
@@ -248,7 +270,8 @@ const appBskyContactRemoveData = 'app.bsky.contact.removeData';
 const appBskyContactSendNotification = 'app.bsky.contact.sendNotification';
 
 /// `app.bsky.contact.startPhoneVerification`
-const appBskyContactStartPhoneVerification = 'app.bsky.contact.startPhoneVerification';
+const appBskyContactStartPhoneVerification =
+    'app.bsky.contact.startPhoneVerification';
 
 /// `app.bsky.contact.verifyPhone`
 const appBskyContactVerifyPhone = 'app.bsky.contact.verifyPhone';
@@ -263,16 +286,19 @@ const appBskyDraftDefs = 'app.bsky.draft.defs';
 const appBskyDraftDefsDraft = 'app.bsky.draft.defs#draft';
 
 /// `app.bsky.draft.defs#draftEmbedCaption`
-const appBskyDraftDefsDraftEmbedCaption = 'app.bsky.draft.defs#draftEmbedCaption';
+const appBskyDraftDefsDraftEmbedCaption =
+    'app.bsky.draft.defs#draftEmbedCaption';
 
 /// `app.bsky.draft.defs#draftEmbedExternal`
-const appBskyDraftDefsDraftEmbedExternal = 'app.bsky.draft.defs#draftEmbedExternal';
+const appBskyDraftDefsDraftEmbedExternal =
+    'app.bsky.draft.defs#draftEmbedExternal';
 
 /// `app.bsky.draft.defs#draftEmbedImage`
 const appBskyDraftDefsDraftEmbedImage = 'app.bsky.draft.defs#draftEmbedImage';
 
 /// `app.bsky.draft.defs#draftEmbedLocalRef`
-const appBskyDraftDefsDraftEmbedLocalRef = 'app.bsky.draft.defs#draftEmbedLocalRef';
+const appBskyDraftDefsDraftEmbedLocalRef =
+    'app.bsky.draft.defs#draftEmbedLocalRef';
 
 /// `app.bsky.draft.defs#draftEmbedRecord`
 const appBskyDraftDefsDraftEmbedRecord = 'app.bsky.draft.defs#draftEmbedRecord';
@@ -371,7 +397,8 @@ const appBskyFeedDefsBlockedAuthor = 'app.bsky.feed.defs#blockedAuthor';
 const appBskyFeedDefsBlockedPost = 'app.bsky.feed.defs#blockedPost';
 
 /// `app.bsky.feed.defs#clickthroughAuthor`
-const appBskyFeedDefsClickthroughAuthor = 'app.bsky.feed.defs#clickthroughAuthor';
+const appBskyFeedDefsClickthroughAuthor =
+    'app.bsky.feed.defs#clickthroughAuthor';
 
 /// `app.bsky.feed.defs#clickthroughEmbed`
 const appBskyFeedDefsClickthroughEmbed = 'app.bsky.feed.defs#clickthroughEmbed';
@@ -380,10 +407,12 @@ const appBskyFeedDefsClickthroughEmbed = 'app.bsky.feed.defs#clickthroughEmbed';
 const appBskyFeedDefsClickthroughItem = 'app.bsky.feed.defs#clickthroughItem';
 
 /// `app.bsky.feed.defs#clickthroughReposter`
-const appBskyFeedDefsClickthroughReposter = 'app.bsky.feed.defs#clickthroughReposter';
+const appBskyFeedDefsClickthroughReposter =
+    'app.bsky.feed.defs#clickthroughReposter';
 
 /// `app.bsky.feed.defs#contentModeUnspecified`
-const appBskyFeedDefsContentModeUnspecified = 'app.bsky.feed.defs#contentModeUnspecified';
+const appBskyFeedDefsContentModeUnspecified =
+    'app.bsky.feed.defs#contentModeUnspecified';
 
 /// `app.bsky.feed.defs#contentModeVideo`
 const appBskyFeedDefsContentModeVideo = 'app.bsky.feed.defs#contentModeVideo';
@@ -395,7 +424,8 @@ const appBskyFeedDefsFeedViewPost = 'app.bsky.feed.defs#feedViewPost';
 const appBskyFeedDefsGeneratorView = 'app.bsky.feed.defs#generatorView';
 
 /// `app.bsky.feed.defs#generatorViewerState`
-const appBskyFeedDefsGeneratorViewerState = 'app.bsky.feed.defs#generatorViewerState';
+const appBskyFeedDefsGeneratorViewerState =
+    'app.bsky.feed.defs#generatorViewerState';
 
 /// `app.bsky.feed.defs#interaction`
 const appBskyFeedDefsInteraction = 'app.bsky.feed.defs#interaction';
@@ -446,7 +476,8 @@ const appBskyFeedDefsSkeletonFeedPost = 'app.bsky.feed.defs#skeletonFeedPost';
 const appBskyFeedDefsSkeletonReasonPin = 'app.bsky.feed.defs#skeletonReasonPin';
 
 /// `app.bsky.feed.defs#skeletonReasonRepost`
-const appBskyFeedDefsSkeletonReasonRepost = 'app.bsky.feed.defs#skeletonReasonRepost';
+const appBskyFeedDefsSkeletonReasonRepost =
+    'app.bsky.feed.defs#skeletonReasonRepost';
 
 /// `app.bsky.feed.defs#threadContext`
 const appBskyFeedDefsThreadContext = 'app.bsky.feed.defs#threadContext';
@@ -464,10 +495,12 @@ const appBskyFeedDefsViewerState = 'app.bsky.feed.defs#viewerState';
 const appBskyFeedDescribeFeedGenerator = 'app.bsky.feed.describeFeedGenerator';
 
 /// `app.bsky.feed.describeFeedGenerator#feed`
-const appBskyFeedDescribeFeedGeneratorFeed = 'app.bsky.feed.describeFeedGenerator#feed';
+const appBskyFeedDescribeFeedGeneratorFeed =
+    'app.bsky.feed.describeFeedGenerator#feed';
 
 /// `app.bsky.feed.describeFeedGenerator#links`
-const appBskyFeedDescribeFeedGeneratorLinks = 'app.bsky.feed.describeFeedGenerator#links';
+const appBskyFeedDescribeFeedGeneratorLinks =
+    'app.bsky.feed.describeFeedGenerator#links';
 
 /// `app.bsky.feed.generator`
 const appBskyFeedGenerator = 'app.bsky.feed.generator';
@@ -554,10 +587,12 @@ const appBskyFeedSendInteractions = 'app.bsky.feed.sendInteractions';
 const appBskyFeedThreadgate = 'app.bsky.feed.threadgate';
 
 /// `app.bsky.feed.threadgate#followerRule`
-const appBskyFeedThreadgateFollowerRule = 'app.bsky.feed.threadgate#followerRule';
+const appBskyFeedThreadgateFollowerRule =
+    'app.bsky.feed.threadgate#followerRule';
 
 /// `app.bsky.feed.threadgate#followingRule`
-const appBskyFeedThreadgateFollowingRule = 'app.bsky.feed.threadgate#followingRule';
+const appBskyFeedThreadgateFollowingRule =
+    'app.bsky.feed.threadgate#followingRule';
 
 /// `app.bsky.feed.threadgate#listRule`
 const appBskyFeedThreadgateListRule = 'app.bsky.feed.threadgate#listRule';
@@ -605,7 +640,8 @@ const appBskyGraphDefsRelationship = 'app.bsky.graph.defs#relationship';
 const appBskyGraphDefsStarterPackView = 'app.bsky.graph.defs#starterPackView';
 
 /// `app.bsky.graph.defs#starterPackViewBasic`
-const appBskyGraphDefsStarterPackViewBasic = 'app.bsky.graph.defs#starterPackViewBasic';
+const appBskyGraphDefsStarterPackViewBasic =
+    'app.bsky.graph.defs#starterPackViewBasic';
 
 /// `app.bsky.graph.follow`
 const appBskyGraphFollow = 'app.bsky.graph.follow';
@@ -638,10 +674,12 @@ const appBskyGraphGetListMutes = 'app.bsky.graph.getListMutes';
 const appBskyGraphGetLists = 'app.bsky.graph.getLists';
 
 /// `app.bsky.graph.getListsWithMembership`
-const appBskyGraphGetListsWithMembership = 'app.bsky.graph.getListsWithMembership';
+const appBskyGraphGetListsWithMembership =
+    'app.bsky.graph.getListsWithMembership';
 
 /// `app.bsky.graph.getListsWithMembership#listWithMembership`
-const appBskyGraphGetListsWithMembershipListWithMembership = 'app.bsky.graph.getListsWithMembership#listWithMembership';
+const appBskyGraphGetListsWithMembershipListWithMembership =
+    'app.bsky.graph.getListsWithMembership#listWithMembership';
 
 /// `app.bsky.graph.getMutes`
 const appBskyGraphGetMutes = 'app.bsky.graph.getMutes';
@@ -656,13 +694,16 @@ const appBskyGraphGetStarterPack = 'app.bsky.graph.getStarterPack';
 const appBskyGraphGetStarterPacks = 'app.bsky.graph.getStarterPacks';
 
 /// `app.bsky.graph.getStarterPacksWithMembership`
-const appBskyGraphGetStarterPacksWithMembership = 'app.bsky.graph.getStarterPacksWithMembership';
+const appBskyGraphGetStarterPacksWithMembership =
+    'app.bsky.graph.getStarterPacksWithMembership';
 
 /// `app.bsky.graph.getStarterPacksWithMembership#starterPackWithMembership`
-const appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership = 'app.bsky.graph.getStarterPacksWithMembership#starterPackWithMembership';
+const appBskyGraphGetStarterPacksWithMembershipStarterPackWithMembership =
+    'app.bsky.graph.getStarterPacksWithMembership#starterPackWithMembership';
 
 /// `app.bsky.graph.getSuggestedFollowsByActor`
-const appBskyGraphGetSuggestedFollowsByActor = 'app.bsky.graph.getSuggestedFollowsByActor';
+const appBskyGraphGetSuggestedFollowsByActor =
+    'app.bsky.graph.getSuggestedFollowsByActor';
 
 /// `app.bsky.graph.list`
 const appBskyGraphList = 'app.bsky.graph.list';
@@ -707,16 +748,19 @@ const appBskyGraphVerification = 'app.bsky.graph.verification';
 const appBskyLabelerDefs = 'app.bsky.labeler.defs';
 
 /// `app.bsky.labeler.defs#labelerPolicies`
-const appBskyLabelerDefsLabelerPolicies = 'app.bsky.labeler.defs#labelerPolicies';
+const appBskyLabelerDefsLabelerPolicies =
+    'app.bsky.labeler.defs#labelerPolicies';
 
 /// `app.bsky.labeler.defs#labelerView`
 const appBskyLabelerDefsLabelerView = 'app.bsky.labeler.defs#labelerView';
 
 /// `app.bsky.labeler.defs#labelerViewDetailed`
-const appBskyLabelerDefsLabelerViewDetailed = 'app.bsky.labeler.defs#labelerViewDetailed';
+const appBskyLabelerDefsLabelerViewDetailed =
+    'app.bsky.labeler.defs#labelerViewDetailed';
 
 /// `app.bsky.labeler.defs#labelerViewerState`
-const appBskyLabelerDefsLabelerViewerState = 'app.bsky.labeler.defs#labelerViewerState';
+const appBskyLabelerDefsLabelerViewerState =
+    'app.bsky.labeler.defs#labelerViewerState';
 
 /// `app.bsky.labeler.getServices`
 const appBskyLabelerGetServices = 'app.bsky.labeler.getServices';
@@ -731,55 +775,71 @@ const appBskyNotificationDeclaration = 'app.bsky.notification.declaration';
 const appBskyNotificationDefs = 'app.bsky.notification.defs';
 
 /// `app.bsky.notification.defs#activitySubscription`
-const appBskyNotificationDefsActivitySubscription = 'app.bsky.notification.defs#activitySubscription';
+const appBskyNotificationDefsActivitySubscription =
+    'app.bsky.notification.defs#activitySubscription';
 
 /// `app.bsky.notification.defs#chatPreference`
-const appBskyNotificationDefsChatPreference = 'app.bsky.notification.defs#chatPreference';
+const appBskyNotificationDefsChatPreference =
+    'app.bsky.notification.defs#chatPreference';
 
 /// `app.bsky.notification.defs#filterablePreference`
-const appBskyNotificationDefsFilterablePreference = 'app.bsky.notification.defs#filterablePreference';
+const appBskyNotificationDefsFilterablePreference =
+    'app.bsky.notification.defs#filterablePreference';
 
 /// `app.bsky.notification.defs#preference`
-const appBskyNotificationDefsPreference = 'app.bsky.notification.defs#preference';
+const appBskyNotificationDefsPreference =
+    'app.bsky.notification.defs#preference';
 
 /// `app.bsky.notification.defs#preferences`
-const appBskyNotificationDefsPreferences = 'app.bsky.notification.defs#preferences';
+const appBskyNotificationDefsPreferences =
+    'app.bsky.notification.defs#preferences';
 
 /// `app.bsky.notification.defs#recordDeleted`
-const appBskyNotificationDefsRecordDeleted = 'app.bsky.notification.defs#recordDeleted';
+const appBskyNotificationDefsRecordDeleted =
+    'app.bsky.notification.defs#recordDeleted';
 
 /// `app.bsky.notification.defs#subjectActivitySubscription`
-const appBskyNotificationDefsSubjectActivitySubscription = 'app.bsky.notification.defs#subjectActivitySubscription';
+const appBskyNotificationDefsSubjectActivitySubscription =
+    'app.bsky.notification.defs#subjectActivitySubscription';
 
 /// `app.bsky.notification.getPreferences`
-const appBskyNotificationGetPreferences = 'app.bsky.notification.getPreferences';
+const appBskyNotificationGetPreferences =
+    'app.bsky.notification.getPreferences';
 
 /// `app.bsky.notification.getUnreadCount`
-const appBskyNotificationGetUnreadCount = 'app.bsky.notification.getUnreadCount';
+const appBskyNotificationGetUnreadCount =
+    'app.bsky.notification.getUnreadCount';
 
 /// `app.bsky.notification.listActivitySubscriptions`
-const appBskyNotificationListActivitySubscriptions = 'app.bsky.notification.listActivitySubscriptions';
+const appBskyNotificationListActivitySubscriptions =
+    'app.bsky.notification.listActivitySubscriptions';
 
 /// `app.bsky.notification.listNotifications`
-const appBskyNotificationListNotifications = 'app.bsky.notification.listNotifications';
+const appBskyNotificationListNotifications =
+    'app.bsky.notification.listNotifications';
 
 /// `app.bsky.notification.listNotifications#notification`
-const appBskyNotificationListNotificationsNotification = 'app.bsky.notification.listNotifications#notification';
+const appBskyNotificationListNotificationsNotification =
+    'app.bsky.notification.listNotifications#notification';
 
 /// `app.bsky.notification.putActivitySubscription`
-const appBskyNotificationPutActivitySubscription = 'app.bsky.notification.putActivitySubscription';
+const appBskyNotificationPutActivitySubscription =
+    'app.bsky.notification.putActivitySubscription';
 
 /// `app.bsky.notification.putPreferences`
-const appBskyNotificationPutPreferences = 'app.bsky.notification.putPreferences';
+const appBskyNotificationPutPreferences =
+    'app.bsky.notification.putPreferences';
 
 /// `app.bsky.notification.putPreferencesV2`
-const appBskyNotificationPutPreferencesV2 = 'app.bsky.notification.putPreferencesV2';
+const appBskyNotificationPutPreferencesV2 =
+    'app.bsky.notification.putPreferencesV2';
 
 /// `app.bsky.notification.registerPush`
 const appBskyNotificationRegisterPush = 'app.bsky.notification.registerPush';
 
 /// `app.bsky.notification.unregisterPush`
-const appBskyNotificationUnregisterPush = 'app.bsky.notification.unregisterPush';
+const appBskyNotificationUnregisterPush =
+    'app.bsky.notification.unregisterPush';
 
 /// `app.bsky.notification.updateSeen`
 const appBskyNotificationUpdateSeen = 'app.bsky.notification.updateSeen';
@@ -803,124 +863,159 @@ const appBskyRichtextFacetTag = 'app.bsky.richtext.facet#tag';
 const appBskyUnspeccedDefs = 'app.bsky.unspecced.defs';
 
 /// `app.bsky.unspecced.defs#ageAssuranceEvent`
-const appBskyUnspeccedDefsAgeAssuranceEvent = 'app.bsky.unspecced.defs#ageAssuranceEvent';
+const appBskyUnspeccedDefsAgeAssuranceEvent =
+    'app.bsky.unspecced.defs#ageAssuranceEvent';
 
 /// `app.bsky.unspecced.defs#ageAssuranceState`
-const appBskyUnspeccedDefsAgeAssuranceState = 'app.bsky.unspecced.defs#ageAssuranceState';
+const appBskyUnspeccedDefsAgeAssuranceState =
+    'app.bsky.unspecced.defs#ageAssuranceState';
 
 /// `app.bsky.unspecced.defs#skeletonSearchActor`
-const appBskyUnspeccedDefsSkeletonSearchActor = 'app.bsky.unspecced.defs#skeletonSearchActor';
+const appBskyUnspeccedDefsSkeletonSearchActor =
+    'app.bsky.unspecced.defs#skeletonSearchActor';
 
 /// `app.bsky.unspecced.defs#skeletonSearchPost`
-const appBskyUnspeccedDefsSkeletonSearchPost = 'app.bsky.unspecced.defs#skeletonSearchPost';
+const appBskyUnspeccedDefsSkeletonSearchPost =
+    'app.bsky.unspecced.defs#skeletonSearchPost';
 
 /// `app.bsky.unspecced.defs#skeletonSearchStarterPack`
-const appBskyUnspeccedDefsSkeletonSearchStarterPack = 'app.bsky.unspecced.defs#skeletonSearchStarterPack';
+const appBskyUnspeccedDefsSkeletonSearchStarterPack =
+    'app.bsky.unspecced.defs#skeletonSearchStarterPack';
 
 /// `app.bsky.unspecced.defs#skeletonTrend`
-const appBskyUnspeccedDefsSkeletonTrend = 'app.bsky.unspecced.defs#skeletonTrend';
+const appBskyUnspeccedDefsSkeletonTrend =
+    'app.bsky.unspecced.defs#skeletonTrend';
 
 /// `app.bsky.unspecced.defs#threadItemBlocked`
-const appBskyUnspeccedDefsThreadItemBlocked = 'app.bsky.unspecced.defs#threadItemBlocked';
+const appBskyUnspeccedDefsThreadItemBlocked =
+    'app.bsky.unspecced.defs#threadItemBlocked';
 
 /// `app.bsky.unspecced.defs#threadItemNoUnauthenticated`
-const appBskyUnspeccedDefsThreadItemNoUnauthenticated = 'app.bsky.unspecced.defs#threadItemNoUnauthenticated';
+const appBskyUnspeccedDefsThreadItemNoUnauthenticated =
+    'app.bsky.unspecced.defs#threadItemNoUnauthenticated';
 
 /// `app.bsky.unspecced.defs#threadItemNotFound`
-const appBskyUnspeccedDefsThreadItemNotFound = 'app.bsky.unspecced.defs#threadItemNotFound';
+const appBskyUnspeccedDefsThreadItemNotFound =
+    'app.bsky.unspecced.defs#threadItemNotFound';
 
 /// `app.bsky.unspecced.defs#threadItemPost`
-const appBskyUnspeccedDefsThreadItemPost = 'app.bsky.unspecced.defs#threadItemPost';
+const appBskyUnspeccedDefsThreadItemPost =
+    'app.bsky.unspecced.defs#threadItemPost';
 
 /// `app.bsky.unspecced.defs#trendView`
 const appBskyUnspeccedDefsTrendView = 'app.bsky.unspecced.defs#trendView';
 
 /// `app.bsky.unspecced.defs#trendingTopic`
-const appBskyUnspeccedDefsTrendingTopic = 'app.bsky.unspecced.defs#trendingTopic';
+const appBskyUnspeccedDefsTrendingTopic =
+    'app.bsky.unspecced.defs#trendingTopic';
 
 /// `app.bsky.unspecced.getAgeAssuranceState`
-const appBskyUnspeccedGetAgeAssuranceState = 'app.bsky.unspecced.getAgeAssuranceState';
+const appBskyUnspeccedGetAgeAssuranceState =
+    'app.bsky.unspecced.getAgeAssuranceState';
 
 /// `app.bsky.unspecced.getConfig`
 const appBskyUnspeccedGetConfig = 'app.bsky.unspecced.getConfig';
 
 /// `app.bsky.unspecced.getConfig#liveNowConfig`
-const appBskyUnspeccedGetConfigLiveNowConfig = 'app.bsky.unspecced.getConfig#liveNowConfig';
+const appBskyUnspeccedGetConfigLiveNowConfig =
+    'app.bsky.unspecced.getConfig#liveNowConfig';
 
 /// `app.bsky.unspecced.getOnboardingSuggestedStarterPacks`
-const appBskyUnspeccedGetOnboardingSuggestedStarterPacks = 'app.bsky.unspecced.getOnboardingSuggestedStarterPacks';
+const appBskyUnspeccedGetOnboardingSuggestedStarterPacks =
+    'app.bsky.unspecced.getOnboardingSuggestedStarterPacks';
 
 /// `app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton`
-const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton = 'app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton';
+const appBskyUnspeccedGetOnboardingSuggestedStarterPacksSkeleton =
+    'app.bsky.unspecced.getOnboardingSuggestedStarterPacksSkeleton';
 
 /// `app.bsky.unspecced.getOnboardingSuggestedUsersSkeleton`
-const appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton = 'app.bsky.unspecced.getOnboardingSuggestedUsersSkeleton';
+const appBskyUnspeccedGetOnboardingSuggestedUsersSkeleton =
+    'app.bsky.unspecced.getOnboardingSuggestedUsersSkeleton';
 
 /// `app.bsky.unspecced.getPopularFeedGenerators`
-const appBskyUnspeccedGetPopularFeedGenerators = 'app.bsky.unspecced.getPopularFeedGenerators';
+const appBskyUnspeccedGetPopularFeedGenerators =
+    'app.bsky.unspecced.getPopularFeedGenerators';
 
 /// `app.bsky.unspecced.getPostThreadOtherV2`
-const appBskyUnspeccedGetPostThreadOtherV2 = 'app.bsky.unspecced.getPostThreadOtherV2';
+const appBskyUnspeccedGetPostThreadOtherV2 =
+    'app.bsky.unspecced.getPostThreadOtherV2';
 
 /// `app.bsky.unspecced.getPostThreadOtherV2#threadItem`
-const appBskyUnspeccedGetPostThreadOtherV2ThreadItem = 'app.bsky.unspecced.getPostThreadOtherV2#threadItem';
+const appBskyUnspeccedGetPostThreadOtherV2ThreadItem =
+    'app.bsky.unspecced.getPostThreadOtherV2#threadItem';
 
 /// `app.bsky.unspecced.getPostThreadV2`
 const appBskyUnspeccedGetPostThreadV2 = 'app.bsky.unspecced.getPostThreadV2';
 
 /// `app.bsky.unspecced.getPostThreadV2#threadItem`
-const appBskyUnspeccedGetPostThreadV2ThreadItem = 'app.bsky.unspecced.getPostThreadV2#threadItem';
+const appBskyUnspeccedGetPostThreadV2ThreadItem =
+    'app.bsky.unspecced.getPostThreadV2#threadItem';
 
 /// `app.bsky.unspecced.getSuggestedFeeds`
-const appBskyUnspeccedGetSuggestedFeeds = 'app.bsky.unspecced.getSuggestedFeeds';
+const appBskyUnspeccedGetSuggestedFeeds =
+    'app.bsky.unspecced.getSuggestedFeeds';
 
 /// `app.bsky.unspecced.getSuggestedFeedsSkeleton`
-const appBskyUnspeccedGetSuggestedFeedsSkeleton = 'app.bsky.unspecced.getSuggestedFeedsSkeleton';
+const appBskyUnspeccedGetSuggestedFeedsSkeleton =
+    'app.bsky.unspecced.getSuggestedFeedsSkeleton';
 
 /// `app.bsky.unspecced.getSuggestedOnboardingUsers`
-const appBskyUnspeccedGetSuggestedOnboardingUsers = 'app.bsky.unspecced.getSuggestedOnboardingUsers';
+const appBskyUnspeccedGetSuggestedOnboardingUsers =
+    'app.bsky.unspecced.getSuggestedOnboardingUsers';
 
 /// `app.bsky.unspecced.getSuggestedStarterPacks`
-const appBskyUnspeccedGetSuggestedStarterPacks = 'app.bsky.unspecced.getSuggestedStarterPacks';
+const appBskyUnspeccedGetSuggestedStarterPacks =
+    'app.bsky.unspecced.getSuggestedStarterPacks';
 
 /// `app.bsky.unspecced.getSuggestedStarterPacksSkeleton`
-const appBskyUnspeccedGetSuggestedStarterPacksSkeleton = 'app.bsky.unspecced.getSuggestedStarterPacksSkeleton';
+const appBskyUnspeccedGetSuggestedStarterPacksSkeleton =
+    'app.bsky.unspecced.getSuggestedStarterPacksSkeleton';
 
 /// `app.bsky.unspecced.getSuggestedUsers`
-const appBskyUnspeccedGetSuggestedUsers = 'app.bsky.unspecced.getSuggestedUsers';
+const appBskyUnspeccedGetSuggestedUsers =
+    'app.bsky.unspecced.getSuggestedUsers';
 
 /// `app.bsky.unspecced.getSuggestedUsersSkeleton`
-const appBskyUnspeccedGetSuggestedUsersSkeleton = 'app.bsky.unspecced.getSuggestedUsersSkeleton';
+const appBskyUnspeccedGetSuggestedUsersSkeleton =
+    'app.bsky.unspecced.getSuggestedUsersSkeleton';
 
 /// `app.bsky.unspecced.getSuggestionsSkeleton`
-const appBskyUnspeccedGetSuggestionsSkeleton = 'app.bsky.unspecced.getSuggestionsSkeleton';
+const appBskyUnspeccedGetSuggestionsSkeleton =
+    'app.bsky.unspecced.getSuggestionsSkeleton';
 
 /// `app.bsky.unspecced.getTaggedSuggestions`
-const appBskyUnspeccedGetTaggedSuggestions = 'app.bsky.unspecced.getTaggedSuggestions';
+const appBskyUnspeccedGetTaggedSuggestions =
+    'app.bsky.unspecced.getTaggedSuggestions';
 
 /// `app.bsky.unspecced.getTaggedSuggestions#suggestion`
-const appBskyUnspeccedGetTaggedSuggestionsSuggestion = 'app.bsky.unspecced.getTaggedSuggestions#suggestion';
+const appBskyUnspeccedGetTaggedSuggestionsSuggestion =
+    'app.bsky.unspecced.getTaggedSuggestions#suggestion';
 
 /// `app.bsky.unspecced.getTrendingTopics`
-const appBskyUnspeccedGetTrendingTopics = 'app.bsky.unspecced.getTrendingTopics';
+const appBskyUnspeccedGetTrendingTopics =
+    'app.bsky.unspecced.getTrendingTopics';
 
 /// `app.bsky.unspecced.getTrends`
 const appBskyUnspeccedGetTrends = 'app.bsky.unspecced.getTrends';
 
 /// `app.bsky.unspecced.getTrendsSkeleton`
-const appBskyUnspeccedGetTrendsSkeleton = 'app.bsky.unspecced.getTrendsSkeleton';
+const appBskyUnspeccedGetTrendsSkeleton =
+    'app.bsky.unspecced.getTrendsSkeleton';
 
 /// `app.bsky.unspecced.initAgeAssurance`
 const appBskyUnspeccedInitAgeAssurance = 'app.bsky.unspecced.initAgeAssurance';
 
 /// `app.bsky.unspecced.searchActorsSkeleton`
-const appBskyUnspeccedSearchActorsSkeleton = 'app.bsky.unspecced.searchActorsSkeleton';
+const appBskyUnspeccedSearchActorsSkeleton =
+    'app.bsky.unspecced.searchActorsSkeleton';
 
 /// `app.bsky.unspecced.searchPostsSkeleton`
-const appBskyUnspeccedSearchPostsSkeleton = 'app.bsky.unspecced.searchPostsSkeleton';
+const appBskyUnspeccedSearchPostsSkeleton =
+    'app.bsky.unspecced.searchPostsSkeleton';
 
 /// `app.bsky.unspecced.searchStarterPacksSkeleton`
-const appBskyUnspeccedSearchStarterPacksSkeleton = 'app.bsky.unspecced.searchStarterPacksSkeleton';
+const appBskyUnspeccedSearchStarterPacksSkeleton =
+    'app.bsky.unspecced.searchStarterPacksSkeleton';
 
 /// `app.bsky.video.defs`
 const appBskyVideoDefs = 'app.bsky.video.defs';
@@ -944,7 +1039,8 @@ const chatBskyActorDeclaration = 'chat.bsky.actor.declaration';
 const chatBskyActorDefs = 'chat.bsky.actor.defs';
 
 /// `chat.bsky.actor.defs#profileViewBasic`
-const chatBskyActorDefsProfileViewBasic = 'chat.bsky.actor.defs#profileViewBasic';
+const chatBskyActorDefsProfileViewBasic =
+    'chat.bsky.actor.defs#profileViewBasic';
 
 /// `chat.bsky.actor.deleteAccount`
 const chatBskyActorDeleteAccount = 'chat.bsky.actor.deleteAccount';
@@ -965,7 +1061,8 @@ const chatBskyConvoDefs = 'chat.bsky.convo.defs';
 const chatBskyConvoDefsConvoView = 'chat.bsky.convo.defs#convoView';
 
 /// `chat.bsky.convo.defs#deletedMessageView`
-const chatBskyConvoDefsDeletedMessageView = 'chat.bsky.convo.defs#deletedMessageView';
+const chatBskyConvoDefsDeletedMessageView =
+    'chat.bsky.convo.defs#deletedMessageView';
 
 /// `chat.bsky.convo.defs#logAcceptConvo`
 const chatBskyConvoDefsLogAcceptConvo = 'chat.bsky.convo.defs#logAcceptConvo';
@@ -977,10 +1074,12 @@ const chatBskyConvoDefsLogAddReaction = 'chat.bsky.convo.defs#logAddReaction';
 const chatBskyConvoDefsLogBeginConvo = 'chat.bsky.convo.defs#logBeginConvo';
 
 /// `chat.bsky.convo.defs#logCreateMessage`
-const chatBskyConvoDefsLogCreateMessage = 'chat.bsky.convo.defs#logCreateMessage';
+const chatBskyConvoDefsLogCreateMessage =
+    'chat.bsky.convo.defs#logCreateMessage';
 
 /// `chat.bsky.convo.defs#logDeleteMessage`
-const chatBskyConvoDefsLogDeleteMessage = 'chat.bsky.convo.defs#logDeleteMessage';
+const chatBskyConvoDefsLogDeleteMessage =
+    'chat.bsky.convo.defs#logDeleteMessage';
 
 /// `chat.bsky.convo.defs#logLeaveConvo`
 const chatBskyConvoDefsLogLeaveConvo = 'chat.bsky.convo.defs#logLeaveConvo';
@@ -992,13 +1091,15 @@ const chatBskyConvoDefsLogMuteConvo = 'chat.bsky.convo.defs#logMuteConvo';
 const chatBskyConvoDefsLogReadMessage = 'chat.bsky.convo.defs#logReadMessage';
 
 /// `chat.bsky.convo.defs#logRemoveReaction`
-const chatBskyConvoDefsLogRemoveReaction = 'chat.bsky.convo.defs#logRemoveReaction';
+const chatBskyConvoDefsLogRemoveReaction =
+    'chat.bsky.convo.defs#logRemoveReaction';
 
 /// `chat.bsky.convo.defs#logUnmuteConvo`
 const chatBskyConvoDefsLogUnmuteConvo = 'chat.bsky.convo.defs#logUnmuteConvo';
 
 /// `chat.bsky.convo.defs#messageAndReactionView`
-const chatBskyConvoDefsMessageAndReactionView = 'chat.bsky.convo.defs#messageAndReactionView';
+const chatBskyConvoDefsMessageAndReactionView =
+    'chat.bsky.convo.defs#messageAndReactionView';
 
 /// `chat.bsky.convo.defs#messageInput`
 const chatBskyConvoDefsMessageInput = 'chat.bsky.convo.defs#messageInput';
@@ -1010,22 +1111,26 @@ const chatBskyConvoDefsMessageRef = 'chat.bsky.convo.defs#messageRef';
 const chatBskyConvoDefsMessageView = 'chat.bsky.convo.defs#messageView';
 
 /// `chat.bsky.convo.defs#messageViewSender`
-const chatBskyConvoDefsMessageViewSender = 'chat.bsky.convo.defs#messageViewSender';
+const chatBskyConvoDefsMessageViewSender =
+    'chat.bsky.convo.defs#messageViewSender';
 
 /// `chat.bsky.convo.defs#reactionView`
 const chatBskyConvoDefsReactionView = 'chat.bsky.convo.defs#reactionView';
 
 /// `chat.bsky.convo.defs#reactionViewSender`
-const chatBskyConvoDefsReactionViewSender = 'chat.bsky.convo.defs#reactionViewSender';
+const chatBskyConvoDefsReactionViewSender =
+    'chat.bsky.convo.defs#reactionViewSender';
 
 /// `chat.bsky.convo.deleteMessageForSelf`
-const chatBskyConvoDeleteMessageForSelf = 'chat.bsky.convo.deleteMessageForSelf';
+const chatBskyConvoDeleteMessageForSelf =
+    'chat.bsky.convo.deleteMessageForSelf';
 
 /// `chat.bsky.convo.getConvo`
 const chatBskyConvoGetConvo = 'chat.bsky.convo.getConvo';
 
 /// `chat.bsky.convo.getConvoAvailability`
-const chatBskyConvoGetConvoAvailability = 'chat.bsky.convo.getConvoAvailability';
+const chatBskyConvoGetConvoAvailability =
+    'chat.bsky.convo.getConvoAvailability';
 
 /// `chat.bsky.convo.getConvoForMembers`
 const chatBskyConvoGetConvoForMembers = 'chat.bsky.convo.getConvoForMembers';
@@ -1055,7 +1160,8 @@ const chatBskyConvoSendMessage = 'chat.bsky.convo.sendMessage';
 const chatBskyConvoSendMessageBatch = 'chat.bsky.convo.sendMessageBatch';
 
 /// `chat.bsky.convo.sendMessageBatch#batchItem`
-const chatBskyConvoSendMessageBatchBatchItem = 'chat.bsky.convo.sendMessageBatch#batchItem';
+const chatBskyConvoSendMessageBatchBatchItem =
+    'chat.bsky.convo.sendMessageBatch#batchItem';
 
 /// `chat.bsky.convo.unmuteConvo`
 const chatBskyConvoUnmuteConvo = 'chat.bsky.convo.unmuteConvo';
@@ -1067,16 +1173,20 @@ const chatBskyConvoUpdateAllRead = 'chat.bsky.convo.updateAllRead';
 const chatBskyConvoUpdateRead = 'chat.bsky.convo.updateRead';
 
 /// `chat.bsky.moderation.getActorMetadata`
-const chatBskyModerationGetActorMetadata = 'chat.bsky.moderation.getActorMetadata';
+const chatBskyModerationGetActorMetadata =
+    'chat.bsky.moderation.getActorMetadata';
 
 /// `chat.bsky.moderation.getActorMetadata#metadata`
-const chatBskyModerationGetActorMetadataMetadata = 'chat.bsky.moderation.getActorMetadata#metadata';
+const chatBskyModerationGetActorMetadataMetadata =
+    'chat.bsky.moderation.getActorMetadata#metadata';
 
 /// `chat.bsky.moderation.getMessageContext`
-const chatBskyModerationGetMessageContext = 'chat.bsky.moderation.getMessageContext';
+const chatBskyModerationGetMessageContext =
+    'chat.bsky.moderation.getMessageContext';
 
 /// `chat.bsky.moderation.updateActorAccess`
-const chatBskyModerationUpdateActorAccess = 'chat.bsky.moderation.updateActorAccess';
+const chatBskyModerationUpdateActorAccess =
+    'chat.bsky.moderation.updateActorAccess';
 
 /// `com.atproto.admin.defs`
 const comAtprotoAdminDefs = 'com.atproto.admin.defs';
@@ -1094,19 +1204,23 @@ const comAtprotoAdminDefsRepoRef = 'com.atproto.admin.defs#repoRef';
 const comAtprotoAdminDefsStatusAttr = 'com.atproto.admin.defs#statusAttr';
 
 /// `com.atproto.admin.defs#threatSignature`
-const comAtprotoAdminDefsThreatSignature = 'com.atproto.admin.defs#threatSignature';
+const comAtprotoAdminDefsThreatSignature =
+    'com.atproto.admin.defs#threatSignature';
 
 /// `com.atproto.admin.deleteAccount`
 const comAtprotoAdminDeleteAccount = 'com.atproto.admin.deleteAccount';
 
 /// `com.atproto.admin.disableAccountInvites`
-const comAtprotoAdminDisableAccountInvites = 'com.atproto.admin.disableAccountInvites';
+const comAtprotoAdminDisableAccountInvites =
+    'com.atproto.admin.disableAccountInvites';
 
 /// `com.atproto.admin.disableInviteCodes`
-const comAtprotoAdminDisableInviteCodes = 'com.atproto.admin.disableInviteCodes';
+const comAtprotoAdminDisableInviteCodes =
+    'com.atproto.admin.disableInviteCodes';
 
 /// `com.atproto.admin.enableAccountInvites`
-const comAtprotoAdminEnableAccountInvites = 'com.atproto.admin.enableAccountInvites';
+const comAtprotoAdminEnableAccountInvites =
+    'com.atproto.admin.enableAccountInvites';
 
 /// `com.atproto.admin.getAccountInfo`
 const comAtprotoAdminGetAccountInfo = 'com.atproto.admin.getAccountInfo';
@@ -1127,34 +1241,43 @@ const comAtprotoAdminSearchAccounts = 'com.atproto.admin.searchAccounts';
 const comAtprotoAdminSendEmail = 'com.atproto.admin.sendEmail';
 
 /// `com.atproto.admin.updateAccountEmail`
-const comAtprotoAdminUpdateAccountEmail = 'com.atproto.admin.updateAccountEmail';
+const comAtprotoAdminUpdateAccountEmail =
+    'com.atproto.admin.updateAccountEmail';
 
 /// `com.atproto.admin.updateAccountHandle`
-const comAtprotoAdminUpdateAccountHandle = 'com.atproto.admin.updateAccountHandle';
+const comAtprotoAdminUpdateAccountHandle =
+    'com.atproto.admin.updateAccountHandle';
 
 /// `com.atproto.admin.updateAccountPassword`
-const comAtprotoAdminUpdateAccountPassword = 'com.atproto.admin.updateAccountPassword';
+const comAtprotoAdminUpdateAccountPassword =
+    'com.atproto.admin.updateAccountPassword';
 
 /// `com.atproto.admin.updateAccountSigningKey`
-const comAtprotoAdminUpdateAccountSigningKey = 'com.atproto.admin.updateAccountSigningKey';
+const comAtprotoAdminUpdateAccountSigningKey =
+    'com.atproto.admin.updateAccountSigningKey';
 
 /// `com.atproto.admin.updateSubjectStatus`
-const comAtprotoAdminUpdateSubjectStatus = 'com.atproto.admin.updateSubjectStatus';
+const comAtprotoAdminUpdateSubjectStatus =
+    'com.atproto.admin.updateSubjectStatus';
 
 /// `com.atproto.identity.defs`
 const comAtprotoIdentityDefs = 'com.atproto.identity.defs';
 
 /// `com.atproto.identity.defs#identityInfo`
-const comAtprotoIdentityDefsIdentityInfo = 'com.atproto.identity.defs#identityInfo';
+const comAtprotoIdentityDefsIdentityInfo =
+    'com.atproto.identity.defs#identityInfo';
 
 /// `com.atproto.identity.getRecommendedDidCredentials`
-const comAtprotoIdentityGetRecommendedDidCredentials = 'com.atproto.identity.getRecommendedDidCredentials';
+const comAtprotoIdentityGetRecommendedDidCredentials =
+    'com.atproto.identity.getRecommendedDidCredentials';
 
 /// `com.atproto.identity.refreshIdentity`
-const comAtprotoIdentityRefreshIdentity = 'com.atproto.identity.refreshIdentity';
+const comAtprotoIdentityRefreshIdentity =
+    'com.atproto.identity.refreshIdentity';
 
 /// `com.atproto.identity.requestPlcOperationSignature`
-const comAtprotoIdentityRequestPlcOperationSignature = 'com.atproto.identity.requestPlcOperationSignature';
+const comAtprotoIdentityRequestPlcOperationSignature =
+    'com.atproto.identity.requestPlcOperationSignature';
 
 /// `com.atproto.identity.resolveDid`
 const comAtprotoIdentityResolveDid = 'com.atproto.identity.resolveDid';
@@ -1163,13 +1286,16 @@ const comAtprotoIdentityResolveDid = 'com.atproto.identity.resolveDid';
 const comAtprotoIdentityResolveHandle = 'com.atproto.identity.resolveHandle';
 
 /// `com.atproto.identity.resolveIdentity`
-const comAtprotoIdentityResolveIdentity = 'com.atproto.identity.resolveIdentity';
+const comAtprotoIdentityResolveIdentity =
+    'com.atproto.identity.resolveIdentity';
 
 /// `com.atproto.identity.signPlcOperation`
-const comAtprotoIdentitySignPlcOperation = 'com.atproto.identity.signPlcOperation';
+const comAtprotoIdentitySignPlcOperation =
+    'com.atproto.identity.signPlcOperation';
 
 /// `com.atproto.identity.submitPlcOperation`
-const comAtprotoIdentitySubmitPlcOperation = 'com.atproto.identity.submitPlcOperation';
+const comAtprotoIdentitySubmitPlcOperation =
+    'com.atproto.identity.submitPlcOperation';
 
 /// `com.atproto.identity.updateHandle`
 const comAtprotoIdentityUpdateHandle = 'com.atproto.identity.updateHandle';
@@ -1184,10 +1310,12 @@ const comAtprotoLabelDefsLabel = 'com.atproto.label.defs#label';
 const comAtprotoLabelDefsLabelValue = 'com.atproto.label.defs#labelValue';
 
 /// `com.atproto.label.defs#labelValueDefinition`
-const comAtprotoLabelDefsLabelValueDefinition = 'com.atproto.label.defs#labelValueDefinition';
+const comAtprotoLabelDefsLabelValueDefinition =
+    'com.atproto.label.defs#labelValueDefinition';
 
 /// `com.atproto.label.defs#labelValueDefinitionStrings`
-const comAtprotoLabelDefsLabelValueDefinitionStrings = 'com.atproto.label.defs#labelValueDefinitionStrings';
+const comAtprotoLabelDefsLabelValueDefinitionStrings =
+    'com.atproto.label.defs#labelValueDefinitionStrings';
 
 /// `com.atproto.label.defs#selfLabel`
 const comAtprotoLabelDefsSelfLabel = 'com.atproto.label.defs#selfLabel';
@@ -1202,10 +1330,12 @@ const comAtprotoLabelQueryLabels = 'com.atproto.label.queryLabels';
 const comAtprotoLabelSubscribeLabels = 'com.atproto.label.subscribeLabels';
 
 /// `com.atproto.label.subscribeLabels#info`
-const comAtprotoLabelSubscribeLabelsInfo = 'com.atproto.label.subscribeLabels#info';
+const comAtprotoLabelSubscribeLabelsInfo =
+    'com.atproto.label.subscribeLabels#info';
 
 /// `com.atproto.label.subscribeLabels#labels`
-const comAtprotoLabelSubscribeLabelsLabels = 'com.atproto.label.subscribeLabels#labels';
+const comAtprotoLabelSubscribeLabelsLabels =
+    'com.atproto.label.subscribeLabels#labels';
 
 /// `com.atproto.lexicon.resolveLexicon`
 const comAtprotoLexiconResolveLexicon = 'com.atproto.lexicon.resolveLexicon';
@@ -1217,37 +1347,47 @@ const comAtprotoLexiconSchema = 'com.atproto.lexicon.schema';
 const comAtprotoModerationCreateReport = 'com.atproto.moderation.createReport';
 
 /// `com.atproto.moderation.createReport#modTool`
-const comAtprotoModerationCreateReportModTool = 'com.atproto.moderation.createReport#modTool';
+const comAtprotoModerationCreateReportModTool =
+    'com.atproto.moderation.createReport#modTool';
 
 /// `com.atproto.moderation.defs`
 const comAtprotoModerationDefs = 'com.atproto.moderation.defs';
 
 /// `com.atproto.moderation.defs#reasonAppeal`
-const comAtprotoModerationDefsReasonAppeal = 'com.atproto.moderation.defs#reasonAppeal';
+const comAtprotoModerationDefsReasonAppeal =
+    'com.atproto.moderation.defs#reasonAppeal';
 
 /// `com.atproto.moderation.defs#reasonMisleading`
-const comAtprotoModerationDefsReasonMisleading = 'com.atproto.moderation.defs#reasonMisleading';
+const comAtprotoModerationDefsReasonMisleading =
+    'com.atproto.moderation.defs#reasonMisleading';
 
 /// `com.atproto.moderation.defs#reasonOther`
-const comAtprotoModerationDefsReasonOther = 'com.atproto.moderation.defs#reasonOther';
+const comAtprotoModerationDefsReasonOther =
+    'com.atproto.moderation.defs#reasonOther';
 
 /// `com.atproto.moderation.defs#reasonRude`
-const comAtprotoModerationDefsReasonRude = 'com.atproto.moderation.defs#reasonRude';
+const comAtprotoModerationDefsReasonRude =
+    'com.atproto.moderation.defs#reasonRude';
 
 /// `com.atproto.moderation.defs#reasonSexual`
-const comAtprotoModerationDefsReasonSexual = 'com.atproto.moderation.defs#reasonSexual';
+const comAtprotoModerationDefsReasonSexual =
+    'com.atproto.moderation.defs#reasonSexual';
 
 /// `com.atproto.moderation.defs#reasonSpam`
-const comAtprotoModerationDefsReasonSpam = 'com.atproto.moderation.defs#reasonSpam';
+const comAtprotoModerationDefsReasonSpam =
+    'com.atproto.moderation.defs#reasonSpam';
 
 /// `com.atproto.moderation.defs#reasonType`
-const comAtprotoModerationDefsReasonType = 'com.atproto.moderation.defs#reasonType';
+const comAtprotoModerationDefsReasonType =
+    'com.atproto.moderation.defs#reasonType';
 
 /// `com.atproto.moderation.defs#reasonViolation`
-const comAtprotoModerationDefsReasonViolation = 'com.atproto.moderation.defs#reasonViolation';
+const comAtprotoModerationDefsReasonViolation =
+    'com.atproto.moderation.defs#reasonViolation';
 
 /// `com.atproto.moderation.defs#subjectType`
-const comAtprotoModerationDefsSubjectType = 'com.atproto.moderation.defs#subjectType';
+const comAtprotoModerationDefsSubjectType =
+    'com.atproto.moderation.defs#subjectType';
 
 /// `com.atproto.repo.applyWrites`
 const comAtprotoRepoApplyWrites = 'com.atproto.repo.applyWrites';
@@ -1256,19 +1396,22 @@ const comAtprotoRepoApplyWrites = 'com.atproto.repo.applyWrites';
 const comAtprotoRepoApplyWritesCreate = 'com.atproto.repo.applyWrites#create';
 
 /// `com.atproto.repo.applyWrites#createResult`
-const comAtprotoRepoApplyWritesCreateResult = 'com.atproto.repo.applyWrites#createResult';
+const comAtprotoRepoApplyWritesCreateResult =
+    'com.atproto.repo.applyWrites#createResult';
 
 /// `com.atproto.repo.applyWrites#delete`
 const comAtprotoRepoApplyWritesDelete = 'com.atproto.repo.applyWrites#delete';
 
 /// `com.atproto.repo.applyWrites#deleteResult`
-const comAtprotoRepoApplyWritesDeleteResult = 'com.atproto.repo.applyWrites#deleteResult';
+const comAtprotoRepoApplyWritesDeleteResult =
+    'com.atproto.repo.applyWrites#deleteResult';
 
 /// `com.atproto.repo.applyWrites#update`
 const comAtprotoRepoApplyWritesUpdate = 'com.atproto.repo.applyWrites#update';
 
 /// `com.atproto.repo.applyWrites#updateResult`
-const comAtprotoRepoApplyWritesUpdateResult = 'com.atproto.repo.applyWrites#updateResult';
+const comAtprotoRepoApplyWritesUpdateResult =
+    'com.atproto.repo.applyWrites#updateResult';
 
 /// `com.atproto.repo.createRecord`
 const comAtprotoRepoCreateRecord = 'com.atproto.repo.createRecord';
@@ -1295,7 +1438,8 @@ const comAtprotoRepoImportRepo = 'com.atproto.repo.importRepo';
 const comAtprotoRepoListMissingBlobs = 'com.atproto.repo.listMissingBlobs';
 
 /// `com.atproto.repo.listMissingBlobs#recordBlob`
-const comAtprotoRepoListMissingBlobsRecordBlob = 'com.atproto.repo.listMissingBlobs#recordBlob';
+const comAtprotoRepoListMissingBlobsRecordBlob =
+    'com.atproto.repo.listMissingBlobs#recordBlob';
 
 /// `com.atproto.repo.listRecords`
 const comAtprotoRepoListRecords = 'com.atproto.repo.listRecords';
@@ -1316,7 +1460,8 @@ const comAtprotoRepoUploadBlob = 'com.atproto.repo.uploadBlob';
 const comAtprotoServerActivateAccount = 'com.atproto.server.activateAccount';
 
 /// `com.atproto.server.checkAccountStatus`
-const comAtprotoServerCheckAccountStatus = 'com.atproto.server.checkAccountStatus';
+const comAtprotoServerCheckAccountStatus =
+    'com.atproto.server.checkAccountStatus';
 
 /// `com.atproto.server.confirmEmail`
 const comAtprotoServerConfirmEmail = 'com.atproto.server.confirmEmail';
@@ -1325,25 +1470,30 @@ const comAtprotoServerConfirmEmail = 'com.atproto.server.confirmEmail';
 const comAtprotoServerCreateAccount = 'com.atproto.server.createAccount';
 
 /// `com.atproto.server.createAppPassword`
-const comAtprotoServerCreateAppPassword = 'com.atproto.server.createAppPassword';
+const comAtprotoServerCreateAppPassword =
+    'com.atproto.server.createAppPassword';
 
 /// `com.atproto.server.createAppPassword#appPassword`
-const comAtprotoServerCreateAppPasswordAppPassword = 'com.atproto.server.createAppPassword#appPassword';
+const comAtprotoServerCreateAppPasswordAppPassword =
+    'com.atproto.server.createAppPassword#appPassword';
 
 /// `com.atproto.server.createInviteCode`
 const comAtprotoServerCreateInviteCode = 'com.atproto.server.createInviteCode';
 
 /// `com.atproto.server.createInviteCodes`
-const comAtprotoServerCreateInviteCodes = 'com.atproto.server.createInviteCodes';
+const comAtprotoServerCreateInviteCodes =
+    'com.atproto.server.createInviteCodes';
 
 /// `com.atproto.server.createInviteCodes#accountCodes`
-const comAtprotoServerCreateInviteCodesAccountCodes = 'com.atproto.server.createInviteCodes#accountCodes';
+const comAtprotoServerCreateInviteCodesAccountCodes =
+    'com.atproto.server.createInviteCodes#accountCodes';
 
 /// `com.atproto.server.createSession`
 const comAtprotoServerCreateSession = 'com.atproto.server.createSession';
 
 /// `com.atproto.server.deactivateAccount`
-const comAtprotoServerDeactivateAccount = 'com.atproto.server.deactivateAccount';
+const comAtprotoServerDeactivateAccount =
+    'com.atproto.server.deactivateAccount';
 
 /// `com.atproto.server.defs`
 const comAtprotoServerDefs = 'com.atproto.server.defs';
@@ -1352,7 +1502,8 @@ const comAtprotoServerDefs = 'com.atproto.server.defs';
 const comAtprotoServerDefsInviteCode = 'com.atproto.server.defs#inviteCode';
 
 /// `com.atproto.server.defs#inviteCodeUse`
-const comAtprotoServerDefsInviteCodeUse = 'com.atproto.server.defs#inviteCodeUse';
+const comAtprotoServerDefsInviteCodeUse =
+    'com.atproto.server.defs#inviteCodeUse';
 
 /// `com.atproto.server.deleteAccount`
 const comAtprotoServerDeleteAccount = 'com.atproto.server.deleteAccount';
@@ -1364,13 +1515,16 @@ const comAtprotoServerDeleteSession = 'com.atproto.server.deleteSession';
 const comAtprotoServerDescribeServer = 'com.atproto.server.describeServer';
 
 /// `com.atproto.server.describeServer#contact`
-const comAtprotoServerDescribeServerContact = 'com.atproto.server.describeServer#contact';
+const comAtprotoServerDescribeServerContact =
+    'com.atproto.server.describeServer#contact';
 
 /// `com.atproto.server.describeServer#links`
-const comAtprotoServerDescribeServerLinks = 'com.atproto.server.describeServer#links';
+const comAtprotoServerDescribeServerLinks =
+    'com.atproto.server.describeServer#links';
 
 /// `com.atproto.server.getAccountInviteCodes`
-const comAtprotoServerGetAccountInviteCodes = 'com.atproto.server.getAccountInviteCodes';
+const comAtprotoServerGetAccountInviteCodes =
+    'com.atproto.server.getAccountInviteCodes';
 
 /// `com.atproto.server.getServiceAuth`
 const comAtprotoServerGetServiceAuth = 'com.atproto.server.getServiceAuth';
@@ -1382,31 +1536,38 @@ const comAtprotoServerGetSession = 'com.atproto.server.getSession';
 const comAtprotoServerListAppPasswords = 'com.atproto.server.listAppPasswords';
 
 /// `com.atproto.server.listAppPasswords#appPassword`
-const comAtprotoServerListAppPasswordsAppPassword = 'com.atproto.server.listAppPasswords#appPassword';
+const comAtprotoServerListAppPasswordsAppPassword =
+    'com.atproto.server.listAppPasswords#appPassword';
 
 /// `com.atproto.server.refreshSession`
 const comAtprotoServerRefreshSession = 'com.atproto.server.refreshSession';
 
 /// `com.atproto.server.requestAccountDelete`
-const comAtprotoServerRequestAccountDelete = 'com.atproto.server.requestAccountDelete';
+const comAtprotoServerRequestAccountDelete =
+    'com.atproto.server.requestAccountDelete';
 
 /// `com.atproto.server.requestEmailConfirmation`
-const comAtprotoServerRequestEmailConfirmation = 'com.atproto.server.requestEmailConfirmation';
+const comAtprotoServerRequestEmailConfirmation =
+    'com.atproto.server.requestEmailConfirmation';
 
 /// `com.atproto.server.requestEmailUpdate`
-const comAtprotoServerRequestEmailUpdate = 'com.atproto.server.requestEmailUpdate';
+const comAtprotoServerRequestEmailUpdate =
+    'com.atproto.server.requestEmailUpdate';
 
 /// `com.atproto.server.requestPasswordReset`
-const comAtprotoServerRequestPasswordReset = 'com.atproto.server.requestPasswordReset';
+const comAtprotoServerRequestPasswordReset =
+    'com.atproto.server.requestPasswordReset';
 
 /// `com.atproto.server.reserveSigningKey`
-const comAtprotoServerReserveSigningKey = 'com.atproto.server.reserveSigningKey';
+const comAtprotoServerReserveSigningKey =
+    'com.atproto.server.reserveSigningKey';
 
 /// `com.atproto.server.resetPassword`
 const comAtprotoServerResetPassword = 'com.atproto.server.resetPassword';
 
 /// `com.atproto.server.revokeAppPassword`
-const comAtprotoServerRevokeAppPassword = 'com.atproto.server.revokeAppPassword';
+const comAtprotoServerRevokeAppPassword =
+    'com.atproto.server.revokeAppPassword';
 
 /// `com.atproto.server.updateEmail`
 const comAtprotoServerUpdateEmail = 'com.atproto.server.updateEmail';
@@ -1457,10 +1618,12 @@ const comAtprotoSyncListHostsHost = 'com.atproto.sync.listHosts#host';
 const comAtprotoSyncListRepos = 'com.atproto.sync.listRepos';
 
 /// `com.atproto.sync.listReposByCollection`
-const comAtprotoSyncListReposByCollection = 'com.atproto.sync.listReposByCollection';
+const comAtprotoSyncListReposByCollection =
+    'com.atproto.sync.listReposByCollection';
 
 /// `com.atproto.sync.listReposByCollection#repo`
-const comAtprotoSyncListReposByCollectionRepo = 'com.atproto.sync.listReposByCollection#repo';
+const comAtprotoSyncListReposByCollectionRepo =
+    'com.atproto.sync.listReposByCollection#repo';
 
 /// `com.atproto.sync.listRepos#repo`
 const comAtprotoSyncListReposRepo = 'com.atproto.sync.listRepos#repo';
@@ -1475,19 +1638,23 @@ const comAtprotoSyncRequestCrawl = 'com.atproto.sync.requestCrawl';
 const comAtprotoSyncSubscribeRepos = 'com.atproto.sync.subscribeRepos';
 
 /// `com.atproto.sync.subscribeRepos#account`
-const comAtprotoSyncSubscribeReposAccount = 'com.atproto.sync.subscribeRepos#account';
+const comAtprotoSyncSubscribeReposAccount =
+    'com.atproto.sync.subscribeRepos#account';
 
 /// `com.atproto.sync.subscribeRepos#commit`
-const comAtprotoSyncSubscribeReposCommit = 'com.atproto.sync.subscribeRepos#commit';
+const comAtprotoSyncSubscribeReposCommit =
+    'com.atproto.sync.subscribeRepos#commit';
 
 /// `com.atproto.sync.subscribeRepos#identity`
-const comAtprotoSyncSubscribeReposIdentity = 'com.atproto.sync.subscribeRepos#identity';
+const comAtprotoSyncSubscribeReposIdentity =
+    'com.atproto.sync.subscribeRepos#identity';
 
 /// `com.atproto.sync.subscribeRepos#info`
 const comAtprotoSyncSubscribeReposInfo = 'com.atproto.sync.subscribeRepos#info';
 
 /// `com.atproto.sync.subscribeRepos#repoOp`
-const comAtprotoSyncSubscribeReposRepoOp = 'com.atproto.sync.subscribeRepos#repoOp';
+const comAtprotoSyncSubscribeReposRepoOp =
+    'com.atproto.sync.subscribeRepos#repoOp';
 
 /// `com.atproto.sync.subscribeRepos#sync`
 const comAtprotoSyncSubscribeReposSync = 'com.atproto.sync.subscribeRepos#sync';
@@ -1496,16 +1663,20 @@ const comAtprotoSyncSubscribeReposSync = 'com.atproto.sync.subscribeRepos#sync';
 const comAtprotoTempAddReservedHandle = 'com.atproto.temp.addReservedHandle';
 
 /// `com.atproto.temp.checkHandleAvailability`
-const comAtprotoTempCheckHandleAvailability = 'com.atproto.temp.checkHandleAvailability';
+const comAtprotoTempCheckHandleAvailability =
+    'com.atproto.temp.checkHandleAvailability';
 
 /// `com.atproto.temp.checkHandleAvailability#resultAvailable`
-const comAtprotoTempCheckHandleAvailabilityResultAvailable = 'com.atproto.temp.checkHandleAvailability#resultAvailable';
+const comAtprotoTempCheckHandleAvailabilityResultAvailable =
+    'com.atproto.temp.checkHandleAvailability#resultAvailable';
 
 /// `com.atproto.temp.checkHandleAvailability#resultUnavailable`
-const comAtprotoTempCheckHandleAvailabilityResultUnavailable = 'com.atproto.temp.checkHandleAvailability#resultUnavailable';
+const comAtprotoTempCheckHandleAvailabilityResultUnavailable =
+    'com.atproto.temp.checkHandleAvailability#resultUnavailable';
 
 /// `com.atproto.temp.checkHandleAvailability#suggestion`
-const comAtprotoTempCheckHandleAvailabilitySuggestion = 'com.atproto.temp.checkHandleAvailability#suggestion';
+const comAtprotoTempCheckHandleAvailabilitySuggestion =
+    'com.atproto.temp.checkHandleAvailability#suggestion';
 
 /// `com.atproto.temp.checkSignupQueue`
 const comAtprotoTempCheckSignupQueue = 'com.atproto.temp.checkSignupQueue';
@@ -1517,241 +1688,314 @@ const comAtprotoTempDereferenceScope = 'com.atproto.temp.dereferenceScope';
 const comAtprotoTempFetchLabels = 'com.atproto.temp.fetchLabels';
 
 /// `com.atproto.temp.requestPhoneVerification`
-const comAtprotoTempRequestPhoneVerification = 'com.atproto.temp.requestPhoneVerification';
+const comAtprotoTempRequestPhoneVerification =
+    'com.atproto.temp.requestPhoneVerification';
 
 /// `com.atproto.temp.revokeAccountCredentials`
-const comAtprotoTempRevokeAccountCredentials = 'com.atproto.temp.revokeAccountCredentials';
+const comAtprotoTempRevokeAccountCredentials =
+    'com.atproto.temp.revokeAccountCredentials';
 
 /// `tools.ozone.communication.createTemplate`
-const toolsOzoneCommunicationCreateTemplate = 'tools.ozone.communication.createTemplate';
+const toolsOzoneCommunicationCreateTemplate =
+    'tools.ozone.communication.createTemplate';
 
 /// `tools.ozone.communication.defs`
 const toolsOzoneCommunicationDefs = 'tools.ozone.communication.defs';
 
 /// `tools.ozone.communication.defs#templateView`
-const toolsOzoneCommunicationDefsTemplateView = 'tools.ozone.communication.defs#templateView';
+const toolsOzoneCommunicationDefsTemplateView =
+    'tools.ozone.communication.defs#templateView';
 
 /// `tools.ozone.communication.deleteTemplate`
-const toolsOzoneCommunicationDeleteTemplate = 'tools.ozone.communication.deleteTemplate';
+const toolsOzoneCommunicationDeleteTemplate =
+    'tools.ozone.communication.deleteTemplate';
 
 /// `tools.ozone.communication.listTemplates`
-const toolsOzoneCommunicationListTemplates = 'tools.ozone.communication.listTemplates';
+const toolsOzoneCommunicationListTemplates =
+    'tools.ozone.communication.listTemplates';
 
 /// `tools.ozone.communication.updateTemplate`
-const toolsOzoneCommunicationUpdateTemplate = 'tools.ozone.communication.updateTemplate';
+const toolsOzoneCommunicationUpdateTemplate =
+    'tools.ozone.communication.updateTemplate';
 
 /// `tools.ozone.hosting.getAccountHistory`
-const toolsOzoneHostingGetAccountHistory = 'tools.ozone.hosting.getAccountHistory';
+const toolsOzoneHostingGetAccountHistory =
+    'tools.ozone.hosting.getAccountHistory';
 
 /// `tools.ozone.hosting.getAccountHistory#accountCreated`
-const toolsOzoneHostingGetAccountHistoryAccountCreated = 'tools.ozone.hosting.getAccountHistory#accountCreated';
+const toolsOzoneHostingGetAccountHistoryAccountCreated =
+    'tools.ozone.hosting.getAccountHistory#accountCreated';
 
 /// `tools.ozone.hosting.getAccountHistory#emailConfirmed`
-const toolsOzoneHostingGetAccountHistoryEmailConfirmed = 'tools.ozone.hosting.getAccountHistory#emailConfirmed';
+const toolsOzoneHostingGetAccountHistoryEmailConfirmed =
+    'tools.ozone.hosting.getAccountHistory#emailConfirmed';
 
 /// `tools.ozone.hosting.getAccountHistory#emailUpdated`
-const toolsOzoneHostingGetAccountHistoryEmailUpdated = 'tools.ozone.hosting.getAccountHistory#emailUpdated';
+const toolsOzoneHostingGetAccountHistoryEmailUpdated =
+    'tools.ozone.hosting.getAccountHistory#emailUpdated';
 
 /// `tools.ozone.hosting.getAccountHistory#event`
-const toolsOzoneHostingGetAccountHistoryEvent = 'tools.ozone.hosting.getAccountHistory#event';
+const toolsOzoneHostingGetAccountHistoryEvent =
+    'tools.ozone.hosting.getAccountHistory#event';
 
 /// `tools.ozone.hosting.getAccountHistory#handleUpdated`
-const toolsOzoneHostingGetAccountHistoryHandleUpdated = 'tools.ozone.hosting.getAccountHistory#handleUpdated';
+const toolsOzoneHostingGetAccountHistoryHandleUpdated =
+    'tools.ozone.hosting.getAccountHistory#handleUpdated';
 
 /// `tools.ozone.hosting.getAccountHistory#passwordUpdated`
-const toolsOzoneHostingGetAccountHistoryPasswordUpdated = 'tools.ozone.hosting.getAccountHistory#passwordUpdated';
+const toolsOzoneHostingGetAccountHistoryPasswordUpdated =
+    'tools.ozone.hosting.getAccountHistory#passwordUpdated';
 
 /// `tools.ozone.moderation.cancelScheduledActions`
-const toolsOzoneModerationCancelScheduledActions = 'tools.ozone.moderation.cancelScheduledActions';
+const toolsOzoneModerationCancelScheduledActions =
+    'tools.ozone.moderation.cancelScheduledActions';
 
 /// `tools.ozone.moderation.cancelScheduledActions#cancellationResults`
-const toolsOzoneModerationCancelScheduledActionsCancellationResults = 'tools.ozone.moderation.cancelScheduledActions#cancellationResults';
+const toolsOzoneModerationCancelScheduledActionsCancellationResults =
+    'tools.ozone.moderation.cancelScheduledActions#cancellationResults';
 
 /// `tools.ozone.moderation.cancelScheduledActions#failedCancellation`
-const toolsOzoneModerationCancelScheduledActionsFailedCancellation = 'tools.ozone.moderation.cancelScheduledActions#failedCancellation';
+const toolsOzoneModerationCancelScheduledActionsFailedCancellation =
+    'tools.ozone.moderation.cancelScheduledActions#failedCancellation';
 
 /// `tools.ozone.moderation.defs`
 const toolsOzoneModerationDefs = 'tools.ozone.moderation.defs';
 
 /// `tools.ozone.moderation.defs#accountEvent`
-const toolsOzoneModerationDefsAccountEvent = 'tools.ozone.moderation.defs#accountEvent';
+const toolsOzoneModerationDefsAccountEvent =
+    'tools.ozone.moderation.defs#accountEvent';
 
 /// `tools.ozone.moderation.defs#accountHosting`
-const toolsOzoneModerationDefsAccountHosting = 'tools.ozone.moderation.defs#accountHosting';
+const toolsOzoneModerationDefsAccountHosting =
+    'tools.ozone.moderation.defs#accountHosting';
 
 /// `tools.ozone.moderation.defs#accountStats`
-const toolsOzoneModerationDefsAccountStats = 'tools.ozone.moderation.defs#accountStats';
+const toolsOzoneModerationDefsAccountStats =
+    'tools.ozone.moderation.defs#accountStats';
 
 /// `tools.ozone.moderation.defs#accountStrike`
-const toolsOzoneModerationDefsAccountStrike = 'tools.ozone.moderation.defs#accountStrike';
+const toolsOzoneModerationDefsAccountStrike =
+    'tools.ozone.moderation.defs#accountStrike';
 
 /// `tools.ozone.moderation.defs#ageAssuranceEvent`
-const toolsOzoneModerationDefsAgeAssuranceEvent = 'tools.ozone.moderation.defs#ageAssuranceEvent';
+const toolsOzoneModerationDefsAgeAssuranceEvent =
+    'tools.ozone.moderation.defs#ageAssuranceEvent';
 
 /// `tools.ozone.moderation.defs#ageAssuranceOverrideEvent`
-const toolsOzoneModerationDefsAgeAssuranceOverrideEvent = 'tools.ozone.moderation.defs#ageAssuranceOverrideEvent';
+const toolsOzoneModerationDefsAgeAssuranceOverrideEvent =
+    'tools.ozone.moderation.defs#ageAssuranceOverrideEvent';
 
 /// `tools.ozone.moderation.defs#ageAssurancePurgeEvent`
-const toolsOzoneModerationDefsAgeAssurancePurgeEvent = 'tools.ozone.moderation.defs#ageAssurancePurgeEvent';
+const toolsOzoneModerationDefsAgeAssurancePurgeEvent =
+    'tools.ozone.moderation.defs#ageAssurancePurgeEvent';
 
 /// `tools.ozone.moderation.defs#blobView`
 const toolsOzoneModerationDefsBlobView = 'tools.ozone.moderation.defs#blobView';
 
 /// `tools.ozone.moderation.defs#cancelScheduledTakedownEvent`
-const toolsOzoneModerationDefsCancelScheduledTakedownEvent = 'tools.ozone.moderation.defs#cancelScheduledTakedownEvent';
+const toolsOzoneModerationDefsCancelScheduledTakedownEvent =
+    'tools.ozone.moderation.defs#cancelScheduledTakedownEvent';
 
 /// `tools.ozone.moderation.defs#identityEvent`
-const toolsOzoneModerationDefsIdentityEvent = 'tools.ozone.moderation.defs#identityEvent';
+const toolsOzoneModerationDefsIdentityEvent =
+    'tools.ozone.moderation.defs#identityEvent';
 
 /// `tools.ozone.moderation.defs#imageDetails`
-const toolsOzoneModerationDefsImageDetails = 'tools.ozone.moderation.defs#imageDetails';
+const toolsOzoneModerationDefsImageDetails =
+    'tools.ozone.moderation.defs#imageDetails';
 
 /// `tools.ozone.moderation.defs#modEventAcknowledge`
-const toolsOzoneModerationDefsModEventAcknowledge = 'tools.ozone.moderation.defs#modEventAcknowledge';
+const toolsOzoneModerationDefsModEventAcknowledge =
+    'tools.ozone.moderation.defs#modEventAcknowledge';
 
 /// `tools.ozone.moderation.defs#modEventComment`
-const toolsOzoneModerationDefsModEventComment = 'tools.ozone.moderation.defs#modEventComment';
+const toolsOzoneModerationDefsModEventComment =
+    'tools.ozone.moderation.defs#modEventComment';
 
 /// `tools.ozone.moderation.defs#modEventDivert`
-const toolsOzoneModerationDefsModEventDivert = 'tools.ozone.moderation.defs#modEventDivert';
+const toolsOzoneModerationDefsModEventDivert =
+    'tools.ozone.moderation.defs#modEventDivert';
 
 /// `tools.ozone.moderation.defs#modEventEmail`
-const toolsOzoneModerationDefsModEventEmail = 'tools.ozone.moderation.defs#modEventEmail';
+const toolsOzoneModerationDefsModEventEmail =
+    'tools.ozone.moderation.defs#modEventEmail';
 
 /// `tools.ozone.moderation.defs#modEventEscalate`
-const toolsOzoneModerationDefsModEventEscalate = 'tools.ozone.moderation.defs#modEventEscalate';
+const toolsOzoneModerationDefsModEventEscalate =
+    'tools.ozone.moderation.defs#modEventEscalate';
 
 /// `tools.ozone.moderation.defs#modEventLabel`
-const toolsOzoneModerationDefsModEventLabel = 'tools.ozone.moderation.defs#modEventLabel';
+const toolsOzoneModerationDefsModEventLabel =
+    'tools.ozone.moderation.defs#modEventLabel';
 
 /// `tools.ozone.moderation.defs#modEventMute`
-const toolsOzoneModerationDefsModEventMute = 'tools.ozone.moderation.defs#modEventMute';
+const toolsOzoneModerationDefsModEventMute =
+    'tools.ozone.moderation.defs#modEventMute';
 
 /// `tools.ozone.moderation.defs#modEventMuteReporter`
-const toolsOzoneModerationDefsModEventMuteReporter = 'tools.ozone.moderation.defs#modEventMuteReporter';
+const toolsOzoneModerationDefsModEventMuteReporter =
+    'tools.ozone.moderation.defs#modEventMuteReporter';
 
 /// `tools.ozone.moderation.defs#modEventPriorityScore`
-const toolsOzoneModerationDefsModEventPriorityScore = 'tools.ozone.moderation.defs#modEventPriorityScore';
+const toolsOzoneModerationDefsModEventPriorityScore =
+    'tools.ozone.moderation.defs#modEventPriorityScore';
 
 /// `tools.ozone.moderation.defs#modEventReport`
-const toolsOzoneModerationDefsModEventReport = 'tools.ozone.moderation.defs#modEventReport';
+const toolsOzoneModerationDefsModEventReport =
+    'tools.ozone.moderation.defs#modEventReport';
 
 /// `tools.ozone.moderation.defs#modEventResolveAppeal`
-const toolsOzoneModerationDefsModEventResolveAppeal = 'tools.ozone.moderation.defs#modEventResolveAppeal';
+const toolsOzoneModerationDefsModEventResolveAppeal =
+    'tools.ozone.moderation.defs#modEventResolveAppeal';
 
 /// `tools.ozone.moderation.defs#modEventReverseTakedown`
-const toolsOzoneModerationDefsModEventReverseTakedown = 'tools.ozone.moderation.defs#modEventReverseTakedown';
+const toolsOzoneModerationDefsModEventReverseTakedown =
+    'tools.ozone.moderation.defs#modEventReverseTakedown';
 
 /// `tools.ozone.moderation.defs#modEventTag`
-const toolsOzoneModerationDefsModEventTag = 'tools.ozone.moderation.defs#modEventTag';
+const toolsOzoneModerationDefsModEventTag =
+    'tools.ozone.moderation.defs#modEventTag';
 
 /// `tools.ozone.moderation.defs#modEventTakedown`
-const toolsOzoneModerationDefsModEventTakedown = 'tools.ozone.moderation.defs#modEventTakedown';
+const toolsOzoneModerationDefsModEventTakedown =
+    'tools.ozone.moderation.defs#modEventTakedown';
 
 /// `tools.ozone.moderation.defs#modEventUnmute`
-const toolsOzoneModerationDefsModEventUnmute = 'tools.ozone.moderation.defs#modEventUnmute';
+const toolsOzoneModerationDefsModEventUnmute =
+    'tools.ozone.moderation.defs#modEventUnmute';
 
 /// `tools.ozone.moderation.defs#modEventUnmuteReporter`
-const toolsOzoneModerationDefsModEventUnmuteReporter = 'tools.ozone.moderation.defs#modEventUnmuteReporter';
+const toolsOzoneModerationDefsModEventUnmuteReporter =
+    'tools.ozone.moderation.defs#modEventUnmuteReporter';
 
 /// `tools.ozone.moderation.defs#modEventView`
-const toolsOzoneModerationDefsModEventView = 'tools.ozone.moderation.defs#modEventView';
+const toolsOzoneModerationDefsModEventView =
+    'tools.ozone.moderation.defs#modEventView';
 
 /// `tools.ozone.moderation.defs#modEventViewDetail`
-const toolsOzoneModerationDefsModEventViewDetail = 'tools.ozone.moderation.defs#modEventViewDetail';
+const toolsOzoneModerationDefsModEventViewDetail =
+    'tools.ozone.moderation.defs#modEventViewDetail';
 
 /// `tools.ozone.moderation.defs#modTool`
 const toolsOzoneModerationDefsModTool = 'tools.ozone.moderation.defs#modTool';
 
 /// `tools.ozone.moderation.defs#moderation`
-const toolsOzoneModerationDefsModeration = 'tools.ozone.moderation.defs#moderation';
+const toolsOzoneModerationDefsModeration =
+    'tools.ozone.moderation.defs#moderation';
 
 /// `tools.ozone.moderation.defs#moderationDetail`
-const toolsOzoneModerationDefsModerationDetail = 'tools.ozone.moderation.defs#moderationDetail';
+const toolsOzoneModerationDefsModerationDetail =
+    'tools.ozone.moderation.defs#moderationDetail';
 
 /// `tools.ozone.moderation.defs#recordEvent`
-const toolsOzoneModerationDefsRecordEvent = 'tools.ozone.moderation.defs#recordEvent';
+const toolsOzoneModerationDefsRecordEvent =
+    'tools.ozone.moderation.defs#recordEvent';
 
 /// `tools.ozone.moderation.defs#recordHosting`
-const toolsOzoneModerationDefsRecordHosting = 'tools.ozone.moderation.defs#recordHosting';
+const toolsOzoneModerationDefsRecordHosting =
+    'tools.ozone.moderation.defs#recordHosting';
 
 /// `tools.ozone.moderation.defs#recordView`
-const toolsOzoneModerationDefsRecordView = 'tools.ozone.moderation.defs#recordView';
+const toolsOzoneModerationDefsRecordView =
+    'tools.ozone.moderation.defs#recordView';
 
 /// `tools.ozone.moderation.defs#recordViewDetail`
-const toolsOzoneModerationDefsRecordViewDetail = 'tools.ozone.moderation.defs#recordViewDetail';
+const toolsOzoneModerationDefsRecordViewDetail =
+    'tools.ozone.moderation.defs#recordViewDetail';
 
 /// `tools.ozone.moderation.defs#recordViewNotFound`
-const toolsOzoneModerationDefsRecordViewNotFound = 'tools.ozone.moderation.defs#recordViewNotFound';
+const toolsOzoneModerationDefsRecordViewNotFound =
+    'tools.ozone.moderation.defs#recordViewNotFound';
 
 /// `tools.ozone.moderation.defs#recordsStats`
-const toolsOzoneModerationDefsRecordsStats = 'tools.ozone.moderation.defs#recordsStats';
+const toolsOzoneModerationDefsRecordsStats =
+    'tools.ozone.moderation.defs#recordsStats';
 
 /// `tools.ozone.moderation.defs#repoView`
 const toolsOzoneModerationDefsRepoView = 'tools.ozone.moderation.defs#repoView';
 
 /// `tools.ozone.moderation.defs#repoViewDetail`
-const toolsOzoneModerationDefsRepoViewDetail = 'tools.ozone.moderation.defs#repoViewDetail';
+const toolsOzoneModerationDefsRepoViewDetail =
+    'tools.ozone.moderation.defs#repoViewDetail';
 
 /// `tools.ozone.moderation.defs#repoViewNotFound`
-const toolsOzoneModerationDefsRepoViewNotFound = 'tools.ozone.moderation.defs#repoViewNotFound';
+const toolsOzoneModerationDefsRepoViewNotFound =
+    'tools.ozone.moderation.defs#repoViewNotFound';
 
 /// `tools.ozone.moderation.defs#reporterStats`
-const toolsOzoneModerationDefsReporterStats = 'tools.ozone.moderation.defs#reporterStats';
+const toolsOzoneModerationDefsReporterStats =
+    'tools.ozone.moderation.defs#reporterStats';
 
 /// `tools.ozone.moderation.defs#reviewClosed`
-const toolsOzoneModerationDefsReviewClosed = 'tools.ozone.moderation.defs#reviewClosed';
+const toolsOzoneModerationDefsReviewClosed =
+    'tools.ozone.moderation.defs#reviewClosed';
 
 /// `tools.ozone.moderation.defs#reviewEscalated`
-const toolsOzoneModerationDefsReviewEscalated = 'tools.ozone.moderation.defs#reviewEscalated';
+const toolsOzoneModerationDefsReviewEscalated =
+    'tools.ozone.moderation.defs#reviewEscalated';
 
 /// `tools.ozone.moderation.defs#reviewNone`
-const toolsOzoneModerationDefsReviewNone = 'tools.ozone.moderation.defs#reviewNone';
+const toolsOzoneModerationDefsReviewNone =
+    'tools.ozone.moderation.defs#reviewNone';
 
 /// `tools.ozone.moderation.defs#reviewOpen`
-const toolsOzoneModerationDefsReviewOpen = 'tools.ozone.moderation.defs#reviewOpen';
+const toolsOzoneModerationDefsReviewOpen =
+    'tools.ozone.moderation.defs#reviewOpen';
 
 /// `tools.ozone.moderation.defs#revokeAccountCredentialsEvent`
-const toolsOzoneModerationDefsRevokeAccountCredentialsEvent = 'tools.ozone.moderation.defs#revokeAccountCredentialsEvent';
+const toolsOzoneModerationDefsRevokeAccountCredentialsEvent =
+    'tools.ozone.moderation.defs#revokeAccountCredentialsEvent';
 
 /// `tools.ozone.moderation.defs#scheduleTakedownEvent`
-const toolsOzoneModerationDefsScheduleTakedownEvent = 'tools.ozone.moderation.defs#scheduleTakedownEvent';
+const toolsOzoneModerationDefsScheduleTakedownEvent =
+    'tools.ozone.moderation.defs#scheduleTakedownEvent';
 
 /// `tools.ozone.moderation.defs#scheduledActionView`
-const toolsOzoneModerationDefsScheduledActionView = 'tools.ozone.moderation.defs#scheduledActionView';
+const toolsOzoneModerationDefsScheduledActionView =
+    'tools.ozone.moderation.defs#scheduledActionView';
 
 /// `tools.ozone.moderation.defs#subjectReviewState`
-const toolsOzoneModerationDefsSubjectReviewState = 'tools.ozone.moderation.defs#subjectReviewState';
+const toolsOzoneModerationDefsSubjectReviewState =
+    'tools.ozone.moderation.defs#subjectReviewState';
 
 /// `tools.ozone.moderation.defs#subjectStatusView`
-const toolsOzoneModerationDefsSubjectStatusView = 'tools.ozone.moderation.defs#subjectStatusView';
+const toolsOzoneModerationDefsSubjectStatusView =
+    'tools.ozone.moderation.defs#subjectStatusView';
 
 /// `tools.ozone.moderation.defs#subjectView`
-const toolsOzoneModerationDefsSubjectView = 'tools.ozone.moderation.defs#subjectView';
+const toolsOzoneModerationDefsSubjectView =
+    'tools.ozone.moderation.defs#subjectView';
 
 /// `tools.ozone.moderation.defs#timelineEventPlcCreate`
-const toolsOzoneModerationDefsTimelineEventPlcCreate = 'tools.ozone.moderation.defs#timelineEventPlcCreate';
+const toolsOzoneModerationDefsTimelineEventPlcCreate =
+    'tools.ozone.moderation.defs#timelineEventPlcCreate';
 
 /// `tools.ozone.moderation.defs#timelineEventPlcOperation`
-const toolsOzoneModerationDefsTimelineEventPlcOperation = 'tools.ozone.moderation.defs#timelineEventPlcOperation';
+const toolsOzoneModerationDefsTimelineEventPlcOperation =
+    'tools.ozone.moderation.defs#timelineEventPlcOperation';
 
 /// `tools.ozone.moderation.defs#timelineEventPlcTombstone`
-const toolsOzoneModerationDefsTimelineEventPlcTombstone = 'tools.ozone.moderation.defs#timelineEventPlcTombstone';
+const toolsOzoneModerationDefsTimelineEventPlcTombstone =
+    'tools.ozone.moderation.defs#timelineEventPlcTombstone';
 
 /// `tools.ozone.moderation.defs#videoDetails`
-const toolsOzoneModerationDefsVideoDetails = 'tools.ozone.moderation.defs#videoDetails';
+const toolsOzoneModerationDefsVideoDetails =
+    'tools.ozone.moderation.defs#videoDetails';
 
 /// `tools.ozone.moderation.emitEvent`
 const toolsOzoneModerationEmitEvent = 'tools.ozone.moderation.emitEvent';
 
 /// `tools.ozone.moderation.getAccountTimeline`
-const toolsOzoneModerationGetAccountTimeline = 'tools.ozone.moderation.getAccountTimeline';
+const toolsOzoneModerationGetAccountTimeline =
+    'tools.ozone.moderation.getAccountTimeline';
 
 /// `tools.ozone.moderation.getAccountTimeline#timelineItem`
-const toolsOzoneModerationGetAccountTimelineTimelineItem = 'tools.ozone.moderation.getAccountTimeline#timelineItem';
+const toolsOzoneModerationGetAccountTimelineTimelineItem =
+    'tools.ozone.moderation.getAccountTimeline#timelineItem';
 
 /// `tools.ozone.moderation.getAccountTimeline#timelineItemSummary`
-const toolsOzoneModerationGetAccountTimelineTimelineItemSummary = 'tools.ozone.moderation.getAccountTimeline#timelineItemSummary';
+const toolsOzoneModerationGetAccountTimelineTimelineItemSummary =
+    'tools.ozone.moderation.getAccountTimeline#timelineItemSummary';
 
 /// `tools.ozone.moderation.getEvent`
 const toolsOzoneModerationGetEvent = 'tools.ozone.moderation.getEvent';
@@ -1766,7 +2010,8 @@ const toolsOzoneModerationGetRecords = 'tools.ozone.moderation.getRecords';
 const toolsOzoneModerationGetRepo = 'tools.ozone.moderation.getRepo';
 
 /// `tools.ozone.moderation.getReporterStats`
-const toolsOzoneModerationGetReporterStats = 'tools.ozone.moderation.getReporterStats';
+const toolsOzoneModerationGetReporterStats =
+    'tools.ozone.moderation.getReporterStats';
 
 /// `tools.ozone.moderation.getRepos`
 const toolsOzoneModerationGetRepos = 'tools.ozone.moderation.getRepos';
@@ -1775,28 +2020,35 @@ const toolsOzoneModerationGetRepos = 'tools.ozone.moderation.getRepos';
 const toolsOzoneModerationGetSubjects = 'tools.ozone.moderation.getSubjects';
 
 /// `tools.ozone.moderation.listScheduledActions`
-const toolsOzoneModerationListScheduledActions = 'tools.ozone.moderation.listScheduledActions';
+const toolsOzoneModerationListScheduledActions =
+    'tools.ozone.moderation.listScheduledActions';
 
 /// `tools.ozone.moderation.queryEvents`
 const toolsOzoneModerationQueryEvents = 'tools.ozone.moderation.queryEvents';
 
 /// `tools.ozone.moderation.queryStatuses`
-const toolsOzoneModerationQueryStatuses = 'tools.ozone.moderation.queryStatuses';
+const toolsOzoneModerationQueryStatuses =
+    'tools.ozone.moderation.queryStatuses';
 
 /// `tools.ozone.moderation.scheduleAction`
-const toolsOzoneModerationScheduleAction = 'tools.ozone.moderation.scheduleAction';
+const toolsOzoneModerationScheduleAction =
+    'tools.ozone.moderation.scheduleAction';
 
 /// `tools.ozone.moderation.scheduleAction#failedScheduling`
-const toolsOzoneModerationScheduleActionFailedScheduling = 'tools.ozone.moderation.scheduleAction#failedScheduling';
+const toolsOzoneModerationScheduleActionFailedScheduling =
+    'tools.ozone.moderation.scheduleAction#failedScheduling';
 
 /// `tools.ozone.moderation.scheduleAction#scheduledActionResults`
-const toolsOzoneModerationScheduleActionScheduledActionResults = 'tools.ozone.moderation.scheduleAction#scheduledActionResults';
+const toolsOzoneModerationScheduleActionScheduledActionResults =
+    'tools.ozone.moderation.scheduleAction#scheduledActionResults';
 
 /// `tools.ozone.moderation.scheduleAction#schedulingConfig`
-const toolsOzoneModerationScheduleActionSchedulingConfig = 'tools.ozone.moderation.scheduleAction#schedulingConfig';
+const toolsOzoneModerationScheduleActionSchedulingConfig =
+    'tools.ozone.moderation.scheduleAction#schedulingConfig';
 
 /// `tools.ozone.moderation.scheduleAction#takedown`
-const toolsOzoneModerationScheduleActionTakedown = 'tools.ozone.moderation.scheduleAction#takedown';
+const toolsOzoneModerationScheduleActionTakedown =
+    'tools.ozone.moderation.scheduleAction#takedown';
 
 /// `tools.ozone.moderation.searchRepos`
 const toolsOzoneModerationSearchRepos = 'tools.ozone.moderation.searchRepos';
@@ -1808,124 +2060,162 @@ const toolsOzoneReportDefs = 'tools.ozone.report.defs';
 const toolsOzoneReportDefsReasonAppeal = 'tools.ozone.report.defs#reasonAppeal';
 
 /// `tools.ozone.report.defs#reasonChildSafetyCSAM`
-const toolsOzoneReportDefsReasonChildSafetyCSAM = 'tools.ozone.report.defs#reasonChildSafetyCSAM';
+const toolsOzoneReportDefsReasonChildSafetyCSAM =
+    'tools.ozone.report.defs#reasonChildSafetyCSAM';
 
 /// `tools.ozone.report.defs#reasonChildSafetyGroom`
-const toolsOzoneReportDefsReasonChildSafetyGroom = 'tools.ozone.report.defs#reasonChildSafetyGroom';
+const toolsOzoneReportDefsReasonChildSafetyGroom =
+    'tools.ozone.report.defs#reasonChildSafetyGroom';
 
 /// `tools.ozone.report.defs#reasonChildSafetyHarassment`
-const toolsOzoneReportDefsReasonChildSafetyHarassment = 'tools.ozone.report.defs#reasonChildSafetyHarassment';
+const toolsOzoneReportDefsReasonChildSafetyHarassment =
+    'tools.ozone.report.defs#reasonChildSafetyHarassment';
 
 /// `tools.ozone.report.defs#reasonChildSafetyOther`
-const toolsOzoneReportDefsReasonChildSafetyOther = 'tools.ozone.report.defs#reasonChildSafetyOther';
+const toolsOzoneReportDefsReasonChildSafetyOther =
+    'tools.ozone.report.defs#reasonChildSafetyOther';
 
 /// `tools.ozone.report.defs#reasonChildSafetyPrivacy`
-const toolsOzoneReportDefsReasonChildSafetyPrivacy = 'tools.ozone.report.defs#reasonChildSafetyPrivacy';
+const toolsOzoneReportDefsReasonChildSafetyPrivacy =
+    'tools.ozone.report.defs#reasonChildSafetyPrivacy';
 
 /// `tools.ozone.report.defs#reasonHarassmentDoxxing`
-const toolsOzoneReportDefsReasonHarassmentDoxxing = 'tools.ozone.report.defs#reasonHarassmentDoxxing';
+const toolsOzoneReportDefsReasonHarassmentDoxxing =
+    'tools.ozone.report.defs#reasonHarassmentDoxxing';
 
 /// `tools.ozone.report.defs#reasonHarassmentHateSpeech`
-const toolsOzoneReportDefsReasonHarassmentHateSpeech = 'tools.ozone.report.defs#reasonHarassmentHateSpeech';
+const toolsOzoneReportDefsReasonHarassmentHateSpeech =
+    'tools.ozone.report.defs#reasonHarassmentHateSpeech';
 
 /// `tools.ozone.report.defs#reasonHarassmentOther`
-const toolsOzoneReportDefsReasonHarassmentOther = 'tools.ozone.report.defs#reasonHarassmentOther';
+const toolsOzoneReportDefsReasonHarassmentOther =
+    'tools.ozone.report.defs#reasonHarassmentOther';
 
 /// `tools.ozone.report.defs#reasonHarassmentTargeted`
-const toolsOzoneReportDefsReasonHarassmentTargeted = 'tools.ozone.report.defs#reasonHarassmentTargeted';
+const toolsOzoneReportDefsReasonHarassmentTargeted =
+    'tools.ozone.report.defs#reasonHarassmentTargeted';
 
 /// `tools.ozone.report.defs#reasonHarassmentTroll`
-const toolsOzoneReportDefsReasonHarassmentTroll = 'tools.ozone.report.defs#reasonHarassmentTroll';
+const toolsOzoneReportDefsReasonHarassmentTroll =
+    'tools.ozone.report.defs#reasonHarassmentTroll';
 
 /// `tools.ozone.report.defs#reasonMisleadingBot`
-const toolsOzoneReportDefsReasonMisleadingBot = 'tools.ozone.report.defs#reasonMisleadingBot';
+const toolsOzoneReportDefsReasonMisleadingBot =
+    'tools.ozone.report.defs#reasonMisleadingBot';
 
 /// `tools.ozone.report.defs#reasonMisleadingElections`
-const toolsOzoneReportDefsReasonMisleadingElections = 'tools.ozone.report.defs#reasonMisleadingElections';
+const toolsOzoneReportDefsReasonMisleadingElections =
+    'tools.ozone.report.defs#reasonMisleadingElections';
 
 /// `tools.ozone.report.defs#reasonMisleadingImpersonation`
-const toolsOzoneReportDefsReasonMisleadingImpersonation = 'tools.ozone.report.defs#reasonMisleadingImpersonation';
+const toolsOzoneReportDefsReasonMisleadingImpersonation =
+    'tools.ozone.report.defs#reasonMisleadingImpersonation';
 
 /// `tools.ozone.report.defs#reasonMisleadingOther`
-const toolsOzoneReportDefsReasonMisleadingOther = 'tools.ozone.report.defs#reasonMisleadingOther';
+const toolsOzoneReportDefsReasonMisleadingOther =
+    'tools.ozone.report.defs#reasonMisleadingOther';
 
 /// `tools.ozone.report.defs#reasonMisleadingScam`
-const toolsOzoneReportDefsReasonMisleadingScam = 'tools.ozone.report.defs#reasonMisleadingScam';
+const toolsOzoneReportDefsReasonMisleadingScam =
+    'tools.ozone.report.defs#reasonMisleadingScam';
 
 /// `tools.ozone.report.defs#reasonMisleadingSpam`
-const toolsOzoneReportDefsReasonMisleadingSpam = 'tools.ozone.report.defs#reasonMisleadingSpam';
+const toolsOzoneReportDefsReasonMisleadingSpam =
+    'tools.ozone.report.defs#reasonMisleadingSpam';
 
 /// `tools.ozone.report.defs#reasonOther`
 const toolsOzoneReportDefsReasonOther = 'tools.ozone.report.defs#reasonOther';
 
 /// `tools.ozone.report.defs#reasonRuleBanEvasion`
-const toolsOzoneReportDefsReasonRuleBanEvasion = 'tools.ozone.report.defs#reasonRuleBanEvasion';
+const toolsOzoneReportDefsReasonRuleBanEvasion =
+    'tools.ozone.report.defs#reasonRuleBanEvasion';
 
 /// `tools.ozone.report.defs#reasonRuleOther`
-const toolsOzoneReportDefsReasonRuleOther = 'tools.ozone.report.defs#reasonRuleOther';
+const toolsOzoneReportDefsReasonRuleOther =
+    'tools.ozone.report.defs#reasonRuleOther';
 
 /// `tools.ozone.report.defs#reasonRuleProhibitedSales`
-const toolsOzoneReportDefsReasonRuleProhibitedSales = 'tools.ozone.report.defs#reasonRuleProhibitedSales';
+const toolsOzoneReportDefsReasonRuleProhibitedSales =
+    'tools.ozone.report.defs#reasonRuleProhibitedSales';
 
 /// `tools.ozone.report.defs#reasonRuleSiteSecurity`
-const toolsOzoneReportDefsReasonRuleSiteSecurity = 'tools.ozone.report.defs#reasonRuleSiteSecurity';
+const toolsOzoneReportDefsReasonRuleSiteSecurity =
+    'tools.ozone.report.defs#reasonRuleSiteSecurity';
 
 /// `tools.ozone.report.defs#reasonSelfHarmContent`
-const toolsOzoneReportDefsReasonSelfHarmContent = 'tools.ozone.report.defs#reasonSelfHarmContent';
+const toolsOzoneReportDefsReasonSelfHarmContent =
+    'tools.ozone.report.defs#reasonSelfHarmContent';
 
 /// `tools.ozone.report.defs#reasonSelfHarmED`
-const toolsOzoneReportDefsReasonSelfHarmED = 'tools.ozone.report.defs#reasonSelfHarmED';
+const toolsOzoneReportDefsReasonSelfHarmED =
+    'tools.ozone.report.defs#reasonSelfHarmED';
 
 /// `tools.ozone.report.defs#reasonSelfHarmOther`
-const toolsOzoneReportDefsReasonSelfHarmOther = 'tools.ozone.report.defs#reasonSelfHarmOther';
+const toolsOzoneReportDefsReasonSelfHarmOther =
+    'tools.ozone.report.defs#reasonSelfHarmOther';
 
 /// `tools.ozone.report.defs#reasonSelfHarmStunts`
-const toolsOzoneReportDefsReasonSelfHarmStunts = 'tools.ozone.report.defs#reasonSelfHarmStunts';
+const toolsOzoneReportDefsReasonSelfHarmStunts =
+    'tools.ozone.report.defs#reasonSelfHarmStunts';
 
 /// `tools.ozone.report.defs#reasonSelfHarmSubstances`
-const toolsOzoneReportDefsReasonSelfHarmSubstances = 'tools.ozone.report.defs#reasonSelfHarmSubstances';
+const toolsOzoneReportDefsReasonSelfHarmSubstances =
+    'tools.ozone.report.defs#reasonSelfHarmSubstances';
 
 /// `tools.ozone.report.defs#reasonSexualAbuseContent`
-const toolsOzoneReportDefsReasonSexualAbuseContent = 'tools.ozone.report.defs#reasonSexualAbuseContent';
+const toolsOzoneReportDefsReasonSexualAbuseContent =
+    'tools.ozone.report.defs#reasonSexualAbuseContent';
 
 /// `tools.ozone.report.defs#reasonSexualAnimal`
-const toolsOzoneReportDefsReasonSexualAnimal = 'tools.ozone.report.defs#reasonSexualAnimal';
+const toolsOzoneReportDefsReasonSexualAnimal =
+    'tools.ozone.report.defs#reasonSexualAnimal';
 
 /// `tools.ozone.report.defs#reasonSexualDeepfake`
-const toolsOzoneReportDefsReasonSexualDeepfake = 'tools.ozone.report.defs#reasonSexualDeepfake';
+const toolsOzoneReportDefsReasonSexualDeepfake =
+    'tools.ozone.report.defs#reasonSexualDeepfake';
 
 /// `tools.ozone.report.defs#reasonSexualNCII`
-const toolsOzoneReportDefsReasonSexualNCII = 'tools.ozone.report.defs#reasonSexualNCII';
+const toolsOzoneReportDefsReasonSexualNCII =
+    'tools.ozone.report.defs#reasonSexualNCII';
 
 /// `tools.ozone.report.defs#reasonSexualOther`
-const toolsOzoneReportDefsReasonSexualOther = 'tools.ozone.report.defs#reasonSexualOther';
+const toolsOzoneReportDefsReasonSexualOther =
+    'tools.ozone.report.defs#reasonSexualOther';
 
 /// `tools.ozone.report.defs#reasonSexualUnlabeled`
-const toolsOzoneReportDefsReasonSexualUnlabeled = 'tools.ozone.report.defs#reasonSexualUnlabeled';
+const toolsOzoneReportDefsReasonSexualUnlabeled =
+    'tools.ozone.report.defs#reasonSexualUnlabeled';
 
 /// `tools.ozone.report.defs#reasonType`
 const toolsOzoneReportDefsReasonType = 'tools.ozone.report.defs#reasonType';
 
 /// `tools.ozone.report.defs#reasonViolenceAnimal`
-const toolsOzoneReportDefsReasonViolenceAnimal = 'tools.ozone.report.defs#reasonViolenceAnimal';
+const toolsOzoneReportDefsReasonViolenceAnimal =
+    'tools.ozone.report.defs#reasonViolenceAnimal';
 
 /// `tools.ozone.report.defs#reasonViolenceExtremistContent`
-const toolsOzoneReportDefsReasonViolenceExtremistContent = 'tools.ozone.report.defs#reasonViolenceExtremistContent';
+const toolsOzoneReportDefsReasonViolenceExtremistContent =
+    'tools.ozone.report.defs#reasonViolenceExtremistContent';
 
 /// `tools.ozone.report.defs#reasonViolenceGlorification`
-const toolsOzoneReportDefsReasonViolenceGlorification = 'tools.ozone.report.defs#reasonViolenceGlorification';
+const toolsOzoneReportDefsReasonViolenceGlorification =
+    'tools.ozone.report.defs#reasonViolenceGlorification';
 
 /// `tools.ozone.report.defs#reasonViolenceGraphicContent`
-const toolsOzoneReportDefsReasonViolenceGraphicContent = 'tools.ozone.report.defs#reasonViolenceGraphicContent';
+const toolsOzoneReportDefsReasonViolenceGraphicContent =
+    'tools.ozone.report.defs#reasonViolenceGraphicContent';
 
 /// `tools.ozone.report.defs#reasonViolenceOther`
-const toolsOzoneReportDefsReasonViolenceOther = 'tools.ozone.report.defs#reasonViolenceOther';
+const toolsOzoneReportDefsReasonViolenceOther =
+    'tools.ozone.report.defs#reasonViolenceOther';
 
 /// `tools.ozone.report.defs#reasonViolenceThreats`
-const toolsOzoneReportDefsReasonViolenceThreats = 'tools.ozone.report.defs#reasonViolenceThreats';
+const toolsOzoneReportDefsReasonViolenceThreats =
+    'tools.ozone.report.defs#reasonViolenceThreats';
 
 /// `tools.ozone.report.defs#reasonViolenceTrafficking`
-const toolsOzoneReportDefsReasonViolenceTrafficking = 'tools.ozone.report.defs#reasonViolenceTrafficking';
+const toolsOzoneReportDefsReasonViolenceTrafficking =
+    'tools.ozone.report.defs#reasonViolenceTrafficking';
 
 /// `tools.ozone.safelink.addRule`
 const toolsOzoneSafelinkAddRule = 'tools.ozone.safelink.addRule';
@@ -1943,7 +2233,8 @@ const toolsOzoneSafelinkDefsEvent = 'tools.ozone.safelink.defs#event';
 const toolsOzoneSafelinkDefsEventType = 'tools.ozone.safelink.defs#eventType';
 
 /// `tools.ozone.safelink.defs#patternType`
-const toolsOzoneSafelinkDefsPatternType = 'tools.ozone.safelink.defs#patternType';
+const toolsOzoneSafelinkDefsPatternType =
+    'tools.ozone.safelink.defs#patternType';
 
 /// `tools.ozone.safelink.defs#reasonType`
 const toolsOzoneSafelinkDefsReasonType = 'tools.ozone.safelink.defs#reasonType';
@@ -1967,10 +2258,12 @@ const toolsOzoneSafelinkUpdateRule = 'tools.ozone.safelink.updateRule';
 const toolsOzoneServerGetConfig = 'tools.ozone.server.getConfig';
 
 /// `tools.ozone.server.getConfig#serviceConfig`
-const toolsOzoneServerGetConfigServiceConfig = 'tools.ozone.server.getConfig#serviceConfig';
+const toolsOzoneServerGetConfigServiceConfig =
+    'tools.ozone.server.getConfig#serviceConfig';
 
 /// `tools.ozone.server.getConfig#viewerConfig`
-const toolsOzoneServerGetConfigViewerConfig = 'tools.ozone.server.getConfig#viewerConfig';
+const toolsOzoneServerGetConfigViewerConfig =
+    'tools.ozone.server.getConfig#viewerConfig';
 
 /// `tools.ozone.set.addValues`
 const toolsOzoneSetAddValues = 'tools.ozone.set.addValues';
@@ -2021,16 +2314,20 @@ const toolsOzoneSignatureDefs = 'tools.ozone.signature.defs';
 const toolsOzoneSignatureDefsSigDetail = 'tools.ozone.signature.defs#sigDetail';
 
 /// `tools.ozone.signature.findCorrelation`
-const toolsOzoneSignatureFindCorrelation = 'tools.ozone.signature.findCorrelation';
+const toolsOzoneSignatureFindCorrelation =
+    'tools.ozone.signature.findCorrelation';
 
 /// `tools.ozone.signature.findRelatedAccounts`
-const toolsOzoneSignatureFindRelatedAccounts = 'tools.ozone.signature.findRelatedAccounts';
+const toolsOzoneSignatureFindRelatedAccounts =
+    'tools.ozone.signature.findRelatedAccounts';
 
 /// `tools.ozone.signature.findRelatedAccounts#relatedAccount`
-const toolsOzoneSignatureFindRelatedAccountsRelatedAccount = 'tools.ozone.signature.findRelatedAccounts#relatedAccount';
+const toolsOzoneSignatureFindRelatedAccountsRelatedAccount =
+    'tools.ozone.signature.findRelatedAccounts#relatedAccount';
 
 /// `tools.ozone.signature.searchAccounts`
-const toolsOzoneSignatureSearchAccounts = 'tools.ozone.signature.searchAccounts';
+const toolsOzoneSignatureSearchAccounts =
+    'tools.ozone.signature.searchAccounts';
 
 /// `tools.ozone.team.addMember`
 const toolsOzoneTeamAddMember = 'tools.ozone.team.addMember';
@@ -2066,22 +2363,29 @@ const toolsOzoneTeamUpdateMember = 'tools.ozone.team.updateMember';
 const toolsOzoneVerificationDefs = 'tools.ozone.verification.defs';
 
 /// `tools.ozone.verification.defs#verificationView`
-const toolsOzoneVerificationDefsVerificationView = 'tools.ozone.verification.defs#verificationView';
+const toolsOzoneVerificationDefsVerificationView =
+    'tools.ozone.verification.defs#verificationView';
 
 /// `tools.ozone.verification.grantVerifications`
-const toolsOzoneVerificationGrantVerifications = 'tools.ozone.verification.grantVerifications';
+const toolsOzoneVerificationGrantVerifications =
+    'tools.ozone.verification.grantVerifications';
 
 /// `tools.ozone.verification.grantVerifications#grantError`
-const toolsOzoneVerificationGrantVerificationsGrantError = 'tools.ozone.verification.grantVerifications#grantError';
+const toolsOzoneVerificationGrantVerificationsGrantError =
+    'tools.ozone.verification.grantVerifications#grantError';
 
 /// `tools.ozone.verification.grantVerifications#verificationInput`
-const toolsOzoneVerificationGrantVerificationsVerificationInput = 'tools.ozone.verification.grantVerifications#verificationInput';
+const toolsOzoneVerificationGrantVerificationsVerificationInput =
+    'tools.ozone.verification.grantVerifications#verificationInput';
 
 /// `tools.ozone.verification.listVerifications`
-const toolsOzoneVerificationListVerifications = 'tools.ozone.verification.listVerifications';
+const toolsOzoneVerificationListVerifications =
+    'tools.ozone.verification.listVerifications';
 
 /// `tools.ozone.verification.revokeVerifications`
-const toolsOzoneVerificationRevokeVerifications = 'tools.ozone.verification.revokeVerifications';
+const toolsOzoneVerificationRevokeVerifications =
+    'tools.ozone.verification.revokeVerifications';
 
 /// `tools.ozone.verification.revokeVerifications#revokeError`
-const toolsOzoneVerificationRevokeVerificationsRevokeError = 'tools.ozone.verification.revokeVerifications#revokeError';
+const toolsOzoneVerificationRevokeVerificationsRevokeError =
+    'tools.ozone.verification.revokeVerifications#revokeError';

@@ -4,8 +4,10 @@
 
 // Dart imports:
 import 'dart:async';
+import 'dart:typed_data';
 
 // Package imports:
+import 'package:nanoid/nanoid.dart' show nanoid;
 import 'package:poptart_primitives/nsid.dart';
 import 'package:poptart_xrpc/poptart_xrpc.dart' as xrpc;
 
@@ -17,6 +19,9 @@ import '../types/session.dart';
 import 'challenge.dart';
 import 'retry_config.dart';
 import 'retry_policy.dart';
+
+const _appBskyVideoUploadVideo = 'app.bsky.video.uploadVideo';
+const _bskyVideoService = 'video.bsky.app';
 
 base class ServiceContext {
   ServiceContext({
@@ -123,6 +128,80 @@ base class ServiceContext {
     ),
     onUpdateDpopNonce: _onUpdateDpopNonce,
   );
+
+  Future<xrpc.XRPCResponse<O>> call<P, I, O>(
+    final xrpc.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  }) async {
+    final requestHeaders = {..._headers ?? const {}, ...headers ?? const {}};
+
+    if (method.nsid.toString() == _appBskyVideoUploadVideo) {
+      return await _callAppBskyVideoUploadVideo(
+        method,
+        service: service,
+        headers: requestHeaders,
+        input: input,
+      );
+    }
+
+    return await _challenge.execute(
+      () async => await xrpc.call(
+        method,
+        protocol: _protocol,
+        service: service ?? this.service,
+        headers: requestHeaders,
+        parameters: parameters,
+        input: input,
+        timeout: _timeout,
+        headerBuilder: _buildAuthHeader,
+        getClient: _getClient,
+        postClient: _postClient,
+      ),
+      onUpdateDpopNonce: _onUpdateDpopNonce,
+    );
+  }
+
+  Future<xrpc.XRPCResponse<O>> _callAppBskyVideoUploadVideo<P, I, O>(
+    final xrpc.XRPCMethodDescriptor<P, I, O> method, {
+    required final String? service,
+    required final Map<String, String> headers,
+    required final I? input,
+  }) async {
+    final bytes = input;
+    if (bytes is! Uint8List) {
+      throw ArgumentError.value(
+        input,
+        'input',
+        'app.bsky.video.uploadVideo requires Uint8List input.',
+      );
+    }
+
+    if (repo.isEmpty) {
+      throw StateError(
+        'app.bsky.video.uploadVideo requires an authenticated session.',
+      );
+    }
+
+    return await _challenge.execute(
+      () async => await xrpc.procedure<O>(
+        method.nsid,
+        protocol: _protocol,
+        service: service ?? _bskyVideoService,
+        headers: {...headers, 'Content-Length': bytes.lengthInBytes.toString()},
+        parameters: {'did': repo, 'name': '${nanoid(12)}.mp4'},
+        body: bytes,
+        contentType: method.inputEncoding,
+        timeout: _timeout,
+        to: method.outputFromJson,
+        headerBuilder: _buildAuthHeader,
+        postClient: _postClient,
+      ),
+      onUpdateDpopNonce: _onUpdateDpopNonce,
+    );
+  }
 
   Future<xrpc.XRPCResponse<xrpc.Subscription<T>>> stream<T>(
     final NSID methodId, {

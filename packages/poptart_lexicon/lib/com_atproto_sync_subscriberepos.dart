@@ -22,3 +22,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/subscribeR
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/subscribeRepos/info_name.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/subscribeRepos/repo_op.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/subscribeRepos/repo_op_action.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/subscribeRepos/descriptor.dart';

@@ -28,3 +28,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/defs/
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/defs/event.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/defs/event_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/defs/event_access.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/defs/descriptor.dart';

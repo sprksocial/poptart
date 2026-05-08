@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/communication/createTemplate/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/communication/createTemplate/descriptor.dart';

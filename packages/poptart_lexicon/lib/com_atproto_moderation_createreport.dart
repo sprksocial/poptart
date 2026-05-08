@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/moderation/crea
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/moderation/createReport/union_main_subject.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/moderation/createReport/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/moderation/createReport/mod_tool.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/moderation/createReport/descriptor.dart';

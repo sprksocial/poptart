@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/actor/defs/profile_view_basic.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/actor/defs/descriptor.dart';

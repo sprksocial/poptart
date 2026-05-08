@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/revokeAccountCredentials/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/revokeAccountCredentials/descriptor.dart';

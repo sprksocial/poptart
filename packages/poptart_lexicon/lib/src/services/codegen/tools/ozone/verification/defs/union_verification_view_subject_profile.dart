@@ -7,8 +7,11 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/internals.dart' show isA;
+
+
 
 part 'union_verification_view_subject_profile.freezed.dart';
 
@@ -16,35 +19,35 @@ part 'union_verification_view_subject_profile.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-sealed class UVerificationViewSubjectProfile
-    with _$UVerificationViewSubjectProfile {
+sealed class UVerificationViewSubjectProfile with _$UVerificationViewSubjectProfile {
   const UVerificationViewSubjectProfile._();
+
+  
 
   const factory UVerificationViewSubjectProfile.unknown({
     required Map<String, dynamic> data,
   }) = UVerificationViewSubjectProfileUnknown;
 
-  Map<String, dynamic> toJson() =>
-      const UVerificationViewSubjectProfileConverter().toJson(this);
+  Map<String, dynamic> toJson() => const UVerificationViewSubjectProfileConverter().toJson(this);
 }
 
-extension UVerificationViewSubjectProfileExtension
-    on UVerificationViewSubjectProfile {
+extension UVerificationViewSubjectProfileExtension on UVerificationViewSubjectProfile {
   bool get isUnknown => isA<UVerificationViewSubjectProfileUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  Map<String, dynamic>? get unknown =>
-      isUnknown ? data as Map<String, dynamic> : null;
+bool get isNotUnknown => !isUnknown;
+Map<String, dynamic>? get unknown => isUnknown ? data as Map<String, dynamic> : null;
+
 }
 
-final class UVerificationViewSubjectProfileConverter
-    implements
-        JsonConverter<UVerificationViewSubjectProfile, Map<String, dynamic>> {
+final class UVerificationViewSubjectProfileConverter implements JsonConverter<UVerificationViewSubjectProfile, Map<String, dynamic>> {
   const UVerificationViewSubjectProfileConverter();
 
   @override
   UVerificationViewSubjectProfile fromJson(Map<String, dynamic> json) {
     try {
+      
+
       return UVerificationViewSubjectProfile.unknown(data: json);
     } catch (_) {
       return UVerificationViewSubjectProfile.unknown(data: json);
@@ -52,6 +55,8 @@ final class UVerificationViewSubjectProfileConverter
   }
 
   @override
-  Map<String, dynamic> toJson(UVerificationViewSubjectProfile object) =>
-      object.when(unknown: (data) => data);
+  Map<String, dynamic> toJson(UVerificationViewSubjectProfile object) => object.when(
+        
+        unknown: (data) => data,
+      );
 }

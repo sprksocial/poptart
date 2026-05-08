@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/getUnreadCount/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/getUnreadCount/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/getUnreadCount/descriptor.dart';

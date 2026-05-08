@@ -5,8 +5,6 @@
 import 'package:poptart_core/poptart_core.dart' as core;
 import 'package:poptart_core/poptart_oauth.dart' as oauth;
 
-import '../tools_ozone_services.dart';
-
 /// Provides `tools.ozone.*` services.
 sealed class Ozone {
   factory Ozone.fromSession(
@@ -85,31 +83,17 @@ sealed class Ozone {
   String get service;
   String get relayService;
 
-  CommunicationService get communication;
-  HostingService get hosting;
-  ModerationService get moderation;
-  SafelinkService get safelink;
-  ServerService get server;
-  SetService get set;
-  SettingService get setting;
-  SignatureService get signature;
-  TeamService get team;
-  VerificationService get verification;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  });
 }
 
 final class _Ozone implements Ozone {
-  _Ozone(final core.ServiceContext ctx)
-    : communication = CommunicationService(ctx),
-      hosting = HostingService(ctx),
-      moderation = ModerationService(ctx),
-      safelink = SafelinkService(ctx),
-      server = ServerService(ctx),
-      set = SetService(ctx),
-      setting = SettingService(ctx),
-      signature = SignatureService(ctx),
-      team = TeamService(ctx),
-      verification = VerificationService(ctx),
-      _ctx = ctx;
+  _Ozone(this._ctx);
 
   final core.ServiceContext _ctx;
 
@@ -129,32 +113,17 @@ final class _Ozone implements Ozone {
   String get relayService => _ctx.relayService;
 
   @override
-  final CommunicationService communication;
-
-  @override
-  final HostingService hosting;
-
-  @override
-  final ModerationService moderation;
-
-  @override
-  final SafelinkService safelink;
-
-  @override
-  final ServerService server;
-
-  @override
-  final SetService set;
-
-  @override
-  final SettingService setting;
-
-  @override
-  final SignatureService signature;
-
-  @override
-  final TeamService team;
-
-  @override
-  final VerificationService verification;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  }) async => await _ctx.call(
+    method,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    input: input,
+  );
 }

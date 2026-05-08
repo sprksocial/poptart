@@ -2,6 +2,7 @@
 
 // Dart imports:
 import 'dart:convert';
+import 'dart:typed_data';
 
 // Package imports:
 import 'package:poptart_primitives/nsid.dart';
@@ -10,6 +11,7 @@ import 'package:poptart_oauth/src/helper/helper.dart' show getKeyPair;
 import 'package:poptart_oauth/src/helper/private_key.dart'
     show encodePrivateKey;
 import 'package:poptart_oauth/src/helper/public_key.dart' show encodePublicKey;
+import 'package:poptart_xrpc/poptart_xrpc.dart' as xrpc;
 import 'package:http/http.dart' as http;
 import 'package:test/test.dart';
 
@@ -272,7 +274,66 @@ void main() {
       },
     );
   });
+
+  group('.call', () {
+    test('applies app.bsky.video.uploadVideo request defaults', () async {
+      final bytes = Uint8List.fromList([1, 2, 3]);
+      Uri? requestUrl;
+      Map<String, String>? requestHeaders;
+      Object? requestBody;
+
+      final context = ServiceContext(
+        session: _session(),
+        postClient: (url, {headers, body, encoding}) async {
+          requestUrl = url;
+          requestHeaders = headers;
+          requestBody = body;
+
+          return http.Response(
+            '{}',
+            200,
+            headers: {'content-type': 'application/json'},
+            request: http.Request('POST', url),
+          );
+        },
+      );
+
+      final descriptor =
+          xrpc.XRPCMethodDescriptor<
+            xrpc.EmptyData,
+            Uint8List,
+            Map<String, Object?>
+          >(
+            nsid: NSID.parse('app.bsky.video.uploadVideo'),
+            kind: xrpc.XRPCMethodKind.procedure,
+            inputEncoding: 'video/mp4',
+            outputFromJson: (json) => json,
+          );
+
+      await context.call(descriptor, input: bytes);
+
+      expect(requestUrl?.host, 'video.bsky.app');
+      expect(requestUrl?.path, '/xrpc/app.bsky.video.uploadVideo');
+      expect(requestUrl?.queryParameters['did'], _session().did);
+      expect(requestUrl?.queryParameters['name'], endsWith('.mp4'));
+      expect(requestHeaders?['Content-Length'], bytes.lengthInBytes.toString());
+      expect(requestHeaders?['Content-type'], 'video/mp4');
+      expect(
+        requestHeaders?['Authorization'],
+        'Bearer ${_session().accessJwt}',
+      );
+      expect(requestBody, bytes);
+    });
+  });
 }
+
+Session _session() => Session(
+  did: 'did:plc:iijrtk7ocored6zuziwmqq3c',
+  handle: 'shinyakato.dev',
+  accessJwt: '1234',
+  refreshJwt: '1234',
+  didDoc: const {},
+);
 
 String _jwt(Map<String, Object?> payload) {
   final encodedPayload = base64Url

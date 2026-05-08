@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/putPreferencesV2/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/putPreferencesV2/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/putPreferencesV2/descriptor.dart';

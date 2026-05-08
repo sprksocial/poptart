@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/server/defs/invite_code.dart';
+import '../../server/defs/invite_code.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,26 +22,29 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class AdminGetInviteCodesOutput with _$AdminGetInviteCodesOutput {
-  static const knownProps = <String>['cursor', 'codes'];
+  static const knownProps = <String>['cursor', 'codes', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory AdminGetInviteCodesOutput({
     String? cursor,
-    @InviteCodeConverter() required List<InviteCode> codes,
+@InviteCodeConverter() required List<InviteCode> codes,
 
     Map<String, dynamic>? $unknown,
   }) = _AdminGetInviteCodesOutput;
 
-  factory AdminGetInviteCodesOutput.fromJson(Map<String, Object?> json) =>
-      _$AdminGetInviteCodesOutputFromJson(json);
+  factory AdminGetInviteCodesOutput.fromJson(Map<String, Object?> json) => _$AdminGetInviteCodesOutputFromJson(json);
 }
 
 extension AdminGetInviteCodesOutputExtension on AdminGetInviteCodesOutput {
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class AdminGetInviteCodesOutputConverter
     extends JsonConverter<AdminGetInviteCodesOutput, Map<String, dynamic>> {
@@ -47,12 +52,15 @@ final class AdminGetInviteCodesOutputConverter
 
   @override
   AdminGetInviteCodesOutput fromJson(Map<String, dynamic> json) {
-    return AdminGetInviteCodesOutput.fromJson(
-      translate(json, AdminGetInviteCodesOutput.knownProps),
-    );
+    return AdminGetInviteCodesOutput.fromJson(translate(
+      json,
+      AdminGetInviteCodesOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(AdminGetInviteCodesOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(AdminGetInviteCodesOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

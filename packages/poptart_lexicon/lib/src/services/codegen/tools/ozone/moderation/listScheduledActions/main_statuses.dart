@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_statuses.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ModerationListScheduledActionsStatuses
-    with _$ModerationListScheduledActionsStatuses {
+abstract class ModerationListScheduledActionsStatuses with _$ModerationListScheduledActionsStatuses {
   const ModerationListScheduledActionsStatuses._();
 
   const factory ModerationListScheduledActionsStatuses.knownValue({
@@ -33,46 +34,33 @@ abstract class ModerationListScheduledActionsStatuses
 
   static ModerationListScheduledActionsStatuses? valueOf(final String? value) {
     if (value == null) return null;
-    final knownValue = KnownModerationListScheduledActionsStatuses.valueOf(
-      value,
-    );
+    final knownValue = KnownModerationListScheduledActionsStatuses.valueOf(value);
 
-    return knownValue != null
-        ? ModerationListScheduledActionsStatuses.knownValue(data: knownValue)
-        : ModerationListScheduledActionsStatuses.unknown(data: value);
+    return knownValue != null ? ModerationListScheduledActionsStatuses.knownValue(data: knownValue) : ModerationListScheduledActionsStatuses.unknown(data: value);
   }
 
-  String toJson() =>
-      const ModerationListScheduledActionsStatusesConverter().toJson(this);
+  String toJson() => const ModerationListScheduledActionsStatusesConverter().toJson(this);
 }
 
-extension ModerationListScheduledActionsStatusesExtension
-    on ModerationListScheduledActionsStatuses {
-  bool get isKnownValue =>
-      isA<ModerationListScheduledActionsStatusesKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownModerationListScheduledActionsStatuses? get knownValue =>
-      isKnownValue ? data as KnownModerationListScheduledActionsStatuses : null;
-  bool get isUnknown =>
-      isA<ModerationListScheduledActionsStatusesUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension ModerationListScheduledActionsStatusesExtension on ModerationListScheduledActionsStatuses {
+  bool get isKnownValue => isA<ModerationListScheduledActionsStatusesKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownModerationListScheduledActionsStatuses? get knownValue => isKnownValue ? data as KnownModerationListScheduledActionsStatuses : null;
+bool get isUnknown => isA<ModerationListScheduledActionsStatusesUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ModerationListScheduledActionsStatusesConverter
-    extends JsonConverter<ModerationListScheduledActionsStatuses, String> {
+final class ModerationListScheduledActionsStatusesConverter extends JsonConverter<ModerationListScheduledActionsStatuses, String> {
   const ModerationListScheduledActionsStatusesConverter();
 
   @override
   ModerationListScheduledActionsStatuses fromJson(String json) {
     try {
-      final knownValue = KnownModerationListScheduledActionsStatuses.valueOf(
-        json,
-      );
+      final knownValue = KnownModerationListScheduledActionsStatuses.valueOf(json);
       if (knownValue != null) {
-        return ModerationListScheduledActionsStatuses.knownValue(
-          data: knownValue,
-        );
+        return ModerationListScheduledActionsStatuses.knownValue(data: knownValue);
       }
 
       return ModerationListScheduledActionsStatuses.unknown(data: json);
@@ -82,19 +70,22 @@ final class ModerationListScheduledActionsStatusesConverter
   }
 
   @override
-  String toJson(ModerationListScheduledActionsStatuses object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ModerationListScheduledActionsStatuses object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownModerationListScheduledActionsStatuses implements Serializable {
+enum KnownModerationListScheduledActionsStatuses implements Serializable{
   @JsonValue('pending')
-  pending('pending'),
-  @JsonValue('executed')
-  executed('executed'),
-  @JsonValue('cancelled')
-  cancelled('cancelled'),
-  @JsonValue('failed')
-  failed('failed');
+pending('pending'),
+@JsonValue('executed')
+executed('executed'),
+@JsonValue('cancelled')
+cancelled('cancelled'),
+@JsonValue('failed')
+failed('failed'),
+  ;
 
   @override
   final String value;
@@ -105,9 +96,7 @@ enum KnownModerationListScheduledActionsStatuses implements Serializable {
     return valueOf(value) != null;
   }
 
-  static KnownModerationListScheduledActionsStatuses? valueOf(
-    final String? value,
-  ) {
+  static KnownModerationListScheduledActionsStatuses? valueOf(final String? value) {
     if (value == null) return null;
 
     for (final v in values) {

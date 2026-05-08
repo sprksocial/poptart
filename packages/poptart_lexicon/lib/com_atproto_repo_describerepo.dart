@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/describeRepo/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/describeRepo/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/describeRepo/descriptor.dart';

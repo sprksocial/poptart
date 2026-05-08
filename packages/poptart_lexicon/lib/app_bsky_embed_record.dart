@@ -19,3 +19,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/record/union
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/record/view_not_found.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/record/view_blocked.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/record/view_detached.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/record/descriptor.dart';

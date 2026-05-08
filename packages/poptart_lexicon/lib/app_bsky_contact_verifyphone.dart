@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/verifyPhone/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/verifyPhone/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/verifyPhone/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'main_filter.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class FeedGetAuthorFeedFilter with _$FeedGetAuthorFeedFilter {
   const FeedGetAuthorFeedFilter._();
@@ -26,16 +28,15 @@ abstract class FeedGetAuthorFeedFilter with _$FeedGetAuthorFeedFilter {
     required KnownFeedGetAuthorFeedFilter data,
   }) = FeedGetAuthorFeedFilterKnownValue;
 
-  const factory FeedGetAuthorFeedFilter.unknown({required String data}) =
-      FeedGetAuthorFeedFilterUnknown;
+  const factory FeedGetAuthorFeedFilter.unknown({
+    required String data,
+  }) = FeedGetAuthorFeedFilterUnknown;
 
   static FeedGetAuthorFeedFilter? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownFeedGetAuthorFeedFilter.valueOf(value);
 
-    return knownValue != null
-        ? FeedGetAuthorFeedFilter.knownValue(data: knownValue)
-        : FeedGetAuthorFeedFilter.unknown(data: value);
+    return knownValue != null ? FeedGetAuthorFeedFilter.knownValue(data: knownValue) : FeedGetAuthorFeedFilter.unknown(data: value);
   }
 
   String toJson() => const FeedGetAuthorFeedFilterConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class FeedGetAuthorFeedFilter with _$FeedGetAuthorFeedFilter {
 
 extension FeedGetAuthorFeedFilterExtension on FeedGetAuthorFeedFilter {
   bool get isKnownValue => isA<FeedGetAuthorFeedFilterKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownFeedGetAuthorFeedFilter? get knownValue =>
-      isKnownValue ? data as KnownFeedGetAuthorFeedFilter : null;
-  bool get isUnknown => isA<FeedGetAuthorFeedFilterUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownFeedGetAuthorFeedFilter? get knownValue => isKnownValue ? data as KnownFeedGetAuthorFeedFilter : null;
+bool get isUnknown => isA<FeedGetAuthorFeedFilterUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class FeedGetAuthorFeedFilterConverter
-    extends JsonConverter<FeedGetAuthorFeedFilter, String> {
+final class FeedGetAuthorFeedFilterConverter extends JsonConverter<FeedGetAuthorFeedFilter, String> {
   const FeedGetAuthorFeedFilterConverter();
 
   @override
@@ -70,21 +70,24 @@ final class FeedGetAuthorFeedFilterConverter
   }
 
   @override
-  String toJson(FeedGetAuthorFeedFilter object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(FeedGetAuthorFeedFilter object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownFeedGetAuthorFeedFilter implements Serializable {
+enum KnownFeedGetAuthorFeedFilter implements Serializable{
   @JsonValue('posts_with_replies')
-  posts_with_replies('posts_with_replies'),
-  @JsonValue('posts_no_replies')
-  posts_no_replies('posts_no_replies'),
-  @JsonValue('posts_with_media')
-  posts_with_media('posts_with_media'),
-  @JsonValue('posts_and_author_threads')
-  posts_and_author_threads('posts_and_author_threads'),
-  @JsonValue('posts_with_video')
-  posts_with_video('posts_with_video');
+posts_with_replies('posts_with_replies'),
+@JsonValue('posts_no_replies')
+posts_no_replies('posts_no_replies'),
+@JsonValue('posts_with_media')
+posts_with_media('posts_with_media'),
+@JsonValue('posts_and_author_threads')
+posts_and_author_threads('posts_and_author_threads'),
+@JsonValue('posts_with_video')
+posts_with_video('posts_with_video'),
+  ;
 
   @override
   final String value;

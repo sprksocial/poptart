@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/searchAccounts/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/searchAccounts/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/searchAccounts/descriptor.dart';

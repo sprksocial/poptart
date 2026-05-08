@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/queryEvents/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/queryEvents/main_sort_direction.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/queryEvents/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/queryEvents/descriptor.dart';

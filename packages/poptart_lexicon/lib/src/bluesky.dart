@@ -7,10 +7,6 @@ import 'package:poptart_lexicon/poptart_atproto.dart' as atp;
 import 'package:poptart_core/poptart_core.dart' as core;
 import 'package:poptart_core/poptart_oauth.dart' as oauth;
 
-// Project imports:
-import '../app_bsky_services.dart';
-import 'services/app/bsky/video_service.dart';
-
 /// Provides `app.bsky.*` services.
 sealed class Bluesky {
   /// Returns the new instance of [Bluesky].
@@ -144,65 +140,17 @@ sealed class Bluesky {
   /// Returns atproto features.
   atp.ATProto get atproto;
 
-  /// Returns the actor service.
-  /// This service represents `app.bsky.actor.*`.
-  ActorService get actor;
-
-  /// Returns the ageassurance service.
-  /// This service represents `app.bsky.ageassurance.*`.
-  AgeassuranceService get ageassurance;
-
-  /// Returns the feed service.
-  /// This service represents `app.bsky.feed.*`.
-  FeedService get feed;
-
-  /// Returns the notification service.
-  /// This service represents `app.bsky.notification.*`.
-  NotificationService get notification;
-
-  /// Returns the graph service.
-  /// This service represents `app.bsky.graph.*`.
-  GraphService get graph;
-
-  /// Returns the unspecced service.
-  /// This service represents `app.bsky.unspecced.*`.
-  UnspeccedService get unspecced;
-
-  /// Returns the labeler service.
-  /// This service represents `app.bsky.labeler.*`.
-  LabelerService get labeler;
-
-  /// Returns the video service.
-  /// This service represents `app.bsky.video.*`.
-  VideoServiceImpl get video;
-
-  /// Returns the bookmark service.
-  /// This service represents `app.bsky.bookmark.*`.
-  BookmarkService get bookmark;
-
-  /// Returns the contact service.
-  /// This service represents `app.bsky.contact.*`.
-  ContactService get contact;
-
-  /// Returns the draft service.
-  /// This service represents `app.bsky.draft.*`.
-  DraftService get draft;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  });
 }
 
 final class _Bluesky implements Bluesky {
-  _Bluesky(final core.ServiceContext ctx, this.atproto)
-    : actor = ActorService(ctx),
-      ageassurance = AgeassuranceService(ctx),
-      feed = FeedService(ctx),
-      notification = NotificationService(ctx),
-      graph = GraphService(ctx),
-      unspecced = UnspeccedService(ctx),
-      labeler = LabelerService(ctx),
-      video = VideoServiceImpl(ctx),
-      bookmark = BookmarkService(ctx),
-      contact = ContactService(ctx),
-      draft = DraftService(ctx),
-      _ctx = ctx;
+  _Bluesky(this._ctx, this.atproto);
 
   final core.ServiceContext _ctx;
 
@@ -225,35 +173,17 @@ final class _Bluesky implements Bluesky {
   final atp.ATProto atproto;
 
   @override
-  final ActorService actor;
-
-  @override
-  final AgeassuranceService ageassurance;
-
-  @override
-  final FeedService feed;
-
-  @override
-  final NotificationService notification;
-
-  @override
-  final GraphService graph;
-
-  @override
-  final UnspeccedService unspecced;
-
-  @override
-  final LabelerService labeler;
-
-  @override
-  final VideoServiceImpl video;
-
-  @override
-  final BookmarkService bookmark;
-
-  @override
-  final ContactService contact;
-
-  @override
-  final DraftService draft;
+  Future<core.XRPCResponse<O>> call<P, I, O>(
+    final core.XRPCMethodDescriptor<P, I, O> method, {
+    final String? service,
+    final Map<String, String>? headers,
+    final P? parameters,
+    final I? input,
+  }) async => await _ctx.call(
+    method,
+    service: service,
+    headers: headers,
+    parameters: parameters,
+    input: input,
+  );
 }

@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getRelationships/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getRelationships/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getRelationships/union_main_relationships.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/getRelationships/descriptor.dart';

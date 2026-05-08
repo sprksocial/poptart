@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTaggedSuggestions/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTaggedSuggestions/suggestion.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTaggedSuggestions/suggestion_subject_type.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getTaggedSuggestions/descriptor.dart';

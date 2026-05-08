@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,23 +19,24 @@ part 'repo_op_action.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class RepoOpAction with _$RepoOpAction {
   const RepoOpAction._();
 
-  const factory RepoOpAction.knownValue({required KnownRepoOpAction data}) =
-      RepoOpActionKnownValue;
+  const factory RepoOpAction.knownValue({
+    required KnownRepoOpAction data,
+  }) = RepoOpActionKnownValue;
 
-  const factory RepoOpAction.unknown({required String data}) =
-      RepoOpActionUnknown;
+  const factory RepoOpAction.unknown({
+    required String data,
+  }) = RepoOpActionUnknown;
 
   static RepoOpAction? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownRepoOpAction.valueOf(value);
 
-    return knownValue != null
-        ? RepoOpAction.knownValue(data: knownValue)
-        : RepoOpAction.unknown(data: value);
+    return knownValue != null ? RepoOpAction.knownValue(data: knownValue) : RepoOpAction.unknown(data: value);
   }
 
   String toJson() => const RepoOpActionConverter().toJson(this);
@@ -42,12 +44,12 @@ abstract class RepoOpAction with _$RepoOpAction {
 
 extension RepoOpActionExtension on RepoOpAction {
   bool get isKnownValue => isA<RepoOpActionKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownRepoOpAction? get knownValue =>
-      isKnownValue ? data as KnownRepoOpAction : null;
-  bool get isUnknown => isA<RepoOpActionUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownRepoOpAction? get knownValue => isKnownValue ? data as KnownRepoOpAction : null;
+bool get isUnknown => isA<RepoOpActionUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
 final class RepoOpActionConverter extends JsonConverter<RepoOpAction, String> {
@@ -68,17 +70,20 @@ final class RepoOpActionConverter extends JsonConverter<RepoOpAction, String> {
   }
 
   @override
-  String toJson(RepoOpAction object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(RepoOpAction object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownRepoOpAction implements Serializable {
+enum KnownRepoOpAction implements Serializable{
   @JsonValue('create')
-  create('create'),
-  @JsonValue('update')
-  update('update'),
-  @JsonValue('delete')
-  delete('delete');
+create('create'),
+@JsonValue('update')
+update('update'),
+@JsonValue('delete')
+delete('delete'),
+  ;
 
   @override
   final String value;

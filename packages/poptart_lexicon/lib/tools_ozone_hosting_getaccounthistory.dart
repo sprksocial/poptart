@@ -21,3 +21,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/hosting/getAcco
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/hosting/getAccountHistory/email_confirmed.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/hosting/getAccountHistory/password_updated.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/hosting/getAccountHistory/handle_updated.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/hosting/getAccountHistory/descriptor.dart';

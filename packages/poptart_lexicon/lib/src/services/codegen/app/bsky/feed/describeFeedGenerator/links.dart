@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'links.freezed.dart';
 part 'links.g.dart';
@@ -18,15 +21,17 @@ part 'links.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class Links with _$Links {
-  static const knownProps = <String>['privacyPolicy', 'termsOfService'];
+  static const knownProps = <String>['privacyPolicy', 'termsOfService', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory Links({
     @Default('app.bsky.feed.describeFeedGenerator#links') String $type,
     String? privacyPolicy,
-    String? termsOfService,
+String? termsOfService,
 
     Map<String, dynamic>? $unknown,
   }) = _Links;
@@ -34,26 +39,37 @@ abstract class Links with _$Links {
   factory Links.fromJson(Map<String, Object?> json) => _$LinksFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.feed.describeFeedGenerator#links';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.feed.describeFeedGenerator#links'
+;
+}
+
 }
 
 extension LinksExtension on Links {
-  bool get hasPrivacyPolicy => privacyPolicy != null;
-  bool get hasNotPrivacyPolicy => !hasPrivacyPolicy;
-  bool get hasTermsOfService => termsOfService != null;
-  bool get hasNotTermsOfService => !hasTermsOfService;
+bool get hasPrivacyPolicy => privacyPolicy != null;
+bool get hasNotPrivacyPolicy => !hasPrivacyPolicy;
+bool get hasTermsOfService => termsOfService != null;
+bool get hasNotTermsOfService => !hasTermsOfService;
+
 }
 
-final class LinksConverter extends JsonConverter<Links, Map<String, dynamic>> {
+
+final class LinksConverter
+    extends JsonConverter<Links, Map<String, dynamic>> {
   const LinksConverter();
 
   @override
   Links fromJson(Map<String, dynamic> json) {
-    return Links.fromJson(translate(json, Links.knownProps));
+    return Links.fromJson(translate(
+      json,
+      Links.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(Links object) => untranslate(object.toJson());
+  Map<String, dynamic> toJson(Links object) => untranslate(
+        object.toJson(),
+      );
 }
+

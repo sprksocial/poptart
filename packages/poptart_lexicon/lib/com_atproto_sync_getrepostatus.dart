@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRepoStatus/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRepoStatus/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRepoStatus/main_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getRepoStatus/descriptor.dart';

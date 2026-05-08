@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/createBookmark/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/bookmark/createBookmark/descriptor.dart';

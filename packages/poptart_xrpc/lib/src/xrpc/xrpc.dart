@@ -28,6 +28,7 @@ import 'exception/invalid_request_exception.dart';
 import 'exception/rate_limit_exceeded_exception.dart';
 import 'exception/unauthorized_exception.dart';
 import 'exception/xrpc_not_supported_exception.dart';
+import 'xrpc_descriptor.dart';
 import 'xrpc_error.dart';
 import 'xrpc_request.dart';
 import 'xrpc_response.dart';
@@ -285,6 +286,7 @@ Future<XRPCResponse<T>> procedure<T>(
   final Map<String, String>? headers,
   final Map<String, dynamic>? parameters,
   final dynamic body,
+  final String? contentType,
   final Duration timeout = const Duration(seconds: 10),
   final type.ResponseDataBuilder<T>? to,
   final type.HeaderBuilder? headerBuilder,
@@ -305,11 +307,11 @@ Future<XRPCResponse<T>> procedure<T>(
             endpoint,
             headers: headerBuilder != null
                 ? headerBuilder(
-                    _appendContentType(headers, body),
+                    _appendContentType(headers, body, contentType),
                     endpoint,
                     'POST',
                   )
-                : _appendContentType(headers, body),
+                : _appendContentType(headers, body, contentType),
             body: _getProcedureBody(body),
             encoding: body is Map<String, dynamic> ? utf8 : null,
           )
@@ -317,6 +319,51 @@ Future<XRPCResponse<T>> procedure<T>(
     ),
     to,
   );
+}
+
+Future<XRPCResponse<O>> call<P, I, O>(
+  final XRPCMethodDescriptor<P, I, O> method, {
+  final Protocol protocol = Protocol.https,
+  final String? service,
+  final Map<String, String>? headers,
+  final P? parameters,
+  final I? input,
+  final Duration timeout = const Duration(seconds: 10),
+  final type.HeaderBuilder? headerBuilder,
+  final type.GetClient? getClient,
+  final type.PostClient? postClient,
+}) async {
+  if (method.isQuery) {
+    return query<O>(
+      method.nsid,
+      protocol: protocol,
+      service: service,
+      headers: headers,
+      parameters: method.encodeParameters(parameters),
+      timeout: timeout,
+      to: method.outputFromJson,
+      headerBuilder: headerBuilder,
+      getClient: getClient,
+    );
+  }
+
+  if (method.isProcedure) {
+    return procedure<O>(
+      method.nsid,
+      protocol: protocol,
+      service: service,
+      headers: headers,
+      parameters: method.encodeParameters(parameters),
+      body: method.encodeInput(input),
+      contentType: method.inputEncoding,
+      timeout: timeout,
+      to: method.outputFromJson,
+      headerBuilder: headerBuilder,
+      postClient: postClient,
+    );
+  }
+
+  throw UnsupportedError('Use subscribe() for subscription descriptors.');
 }
 
 /// Subscribes endpoints associated with [methodId] in WebSocket.
@@ -434,13 +481,17 @@ Uri _buildWsUri(
 Map<String, String> _appendContentType(
   final Map<String, String>? headers,
   final dynamic body,
+  final String? contentType,
 ) {
   if (body is Uint8List) {
-    return {'Content-Type': lookupMimeType('', headerBytes: body) ?? '*/*'}
-      ..addAll(headers ?? {});
+    return {
+      'Content-type':
+          contentType ?? lookupMimeType('', headerBytes: body) ?? '*/*',
+    }..addAll(headers ?? {});
   }
 
-  return {'Content-type': 'application/json'}..addAll(headers ?? {});
+  return {'Content-type': contentType ?? 'application/json'}
+    ..addAll(headers ?? {});
 }
 
 dynamic _getProcedureBody(final dynamic body) {

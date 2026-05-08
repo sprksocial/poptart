@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'label_value_definition_blurs.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class LabelValueDefinitionBlurs with _$LabelValueDefinitionBlurs {
   const LabelValueDefinitionBlurs._();
@@ -26,16 +28,15 @@ abstract class LabelValueDefinitionBlurs with _$LabelValueDefinitionBlurs {
     required KnownLabelValueDefinitionBlurs data,
   }) = LabelValueDefinitionBlursKnownValue;
 
-  const factory LabelValueDefinitionBlurs.unknown({required String data}) =
-      LabelValueDefinitionBlursUnknown;
+  const factory LabelValueDefinitionBlurs.unknown({
+    required String data,
+  }) = LabelValueDefinitionBlursUnknown;
 
   static LabelValueDefinitionBlurs? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownLabelValueDefinitionBlurs.valueOf(value);
 
-    return knownValue != null
-        ? LabelValueDefinitionBlurs.knownValue(data: knownValue)
-        : LabelValueDefinitionBlurs.unknown(data: value);
+    return knownValue != null ? LabelValueDefinitionBlurs.knownValue(data: knownValue) : LabelValueDefinitionBlurs.unknown(data: value);
   }
 
   String toJson() => const LabelValueDefinitionBlursConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class LabelValueDefinitionBlurs with _$LabelValueDefinitionBlurs {
 
 extension LabelValueDefinitionBlursExtension on LabelValueDefinitionBlurs {
   bool get isKnownValue => isA<LabelValueDefinitionBlursKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownLabelValueDefinitionBlurs? get knownValue =>
-      isKnownValue ? data as KnownLabelValueDefinitionBlurs : null;
-  bool get isUnknown => isA<LabelValueDefinitionBlursUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownLabelValueDefinitionBlurs? get knownValue => isKnownValue ? data as KnownLabelValueDefinitionBlurs : null;
+bool get isUnknown => isA<LabelValueDefinitionBlursUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class LabelValueDefinitionBlursConverter
-    extends JsonConverter<LabelValueDefinitionBlurs, String> {
+final class LabelValueDefinitionBlursConverter extends JsonConverter<LabelValueDefinitionBlurs, String> {
   const LabelValueDefinitionBlursConverter();
 
   @override
@@ -70,17 +70,20 @@ final class LabelValueDefinitionBlursConverter
   }
 
   @override
-  String toJson(LabelValueDefinitionBlurs object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(LabelValueDefinitionBlurs object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownLabelValueDefinitionBlurs implements Serializable {
+enum KnownLabelValueDefinitionBlurs implements Serializable{
   @JsonValue('content')
-  content('content'),
-  @JsonValue('media')
-  media('media'),
-  @JsonValue('none')
-  none('none');
+content('content'),
+@JsonValue('media')
+media('media'),
+@JsonValue('none')
+none('none'),
+  ;
 
   @override
   final String value;

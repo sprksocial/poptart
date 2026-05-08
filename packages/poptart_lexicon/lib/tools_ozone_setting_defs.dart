@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/defs/option.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/defs/option_manager_role.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/defs/option_scope.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/defs/descriptor.dart';

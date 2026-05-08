@@ -7,10 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/internals.dart' show isA;
 
-import '../../../../app/bsky/embed/external/main.dart';
+import '../../embed/external/main.dart';
+
 
 part 'union_main_embed.freezed.dart';
 
@@ -18,44 +20,45 @@ part 'union_main_embed.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 sealed class UActorStatusEmbed with _$UActorStatusEmbed {
   const UActorStatusEmbed._();
 
-  const factory UActorStatusEmbed.embedExternal({required EmbedExternal data}) =
-      UActorStatusEmbedEmbedExternal;
+  const factory UActorStatusEmbed.embedExternal({
+  required EmbedExternal data,
+}) = UActorStatusEmbedEmbedExternal;
+
 
   const factory UActorStatusEmbed.unknown({
     required Map<String, dynamic> data,
   }) = UActorStatusEmbedUnknown;
 
-  Map<String, dynamic> toJson() =>
-      const UActorStatusEmbedConverter().toJson(this);
+  Map<String, dynamic> toJson() => const UActorStatusEmbedConverter().toJson(this);
 }
 
 extension UActorStatusEmbedExtension on UActorStatusEmbed {
   bool get isEmbedExternal => isA<UActorStatusEmbedEmbedExternal>(this);
-  bool get isNotEmbedExternal => !isEmbedExternal;
-  EmbedExternal? get embedExternal =>
-      isEmbedExternal ? data as EmbedExternal : null;
-  bool get isUnknown => isA<UActorStatusEmbedUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  Map<String, dynamic>? get unknown =>
-      isUnknown ? data as Map<String, dynamic> : null;
+bool get isNotEmbedExternal => !isEmbedExternal;
+EmbedExternal? get embedExternal => isEmbedExternal ? data as EmbedExternal : null;
+bool get isUnknown => isA<UActorStatusEmbedUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+Map<String, dynamic>? get unknown => isUnknown ? data as Map<String, dynamic> : null;
+
 }
 
-final class UActorStatusEmbedConverter
-    implements JsonConverter<UActorStatusEmbed, Map<String, dynamic>> {
+final class UActorStatusEmbedConverter implements JsonConverter<UActorStatusEmbed, Map<String, dynamic>> {
   const UActorStatusEmbedConverter();
 
   @override
   UActorStatusEmbed fromJson(Map<String, dynamic> json) {
     try {
       if (EmbedExternal.validate(json)) {
-        return UActorStatusEmbed.embedExternal(
-          data: const EmbedExternalConverter().fromJson(json),
-        );
-      }
+  return UActorStatusEmbed.embedExternal(
+    data: const EmbedExternalConverter().fromJson(json),
+  );
+}
+
 
       return UActorStatusEmbed.unknown(data: json);
     } catch (_) {
@@ -65,8 +68,8 @@ final class UActorStatusEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UActorStatusEmbed object) => object.when(
-    embedExternal: (data) => const EmbedExternalConverter().toJson(data),
+        embedExternal: (data) => const EmbedExternalConverter().toJson(data),
 
-    unknown: (data) => data,
-  );
+        unknown: (data) => data,
+      );
 }

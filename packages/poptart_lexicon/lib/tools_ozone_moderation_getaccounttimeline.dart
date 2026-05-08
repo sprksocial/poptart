@@ -17,3 +17,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getA
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getAccountTimeline/timeline_item_summary.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getAccountTimeline/timeline_item_summary_event_subject_type.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getAccountTimeline/timeline_item_summary_event_type.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/getAccountTimeline/descriptor.dart';

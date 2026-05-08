@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createInviteCodes/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createInviteCodes/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createInviteCodes/account_codes.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createInviteCodes/descriptor.dart';

@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getHostStatus/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getHostStatus/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/getHostStatus/descriptor.dart';

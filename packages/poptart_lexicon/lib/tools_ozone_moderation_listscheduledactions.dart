@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/listScheduledActions/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/listScheduledActions/main_statuses.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/listScheduledActions/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/listScheduledActions/descriptor.dart';

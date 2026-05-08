@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'main_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class ServerRefreshSessionStatus with _$ServerRefreshSessionStatus {
   const ServerRefreshSessionStatus._();
@@ -26,16 +28,15 @@ abstract class ServerRefreshSessionStatus with _$ServerRefreshSessionStatus {
     required KnownServerRefreshSessionStatus data,
   }) = ServerRefreshSessionStatusKnownValue;
 
-  const factory ServerRefreshSessionStatus.unknown({required String data}) =
-      ServerRefreshSessionStatusUnknown;
+  const factory ServerRefreshSessionStatus.unknown({
+    required String data,
+  }) = ServerRefreshSessionStatusUnknown;
 
   static ServerRefreshSessionStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownServerRefreshSessionStatus.valueOf(value);
 
-    return knownValue != null
-        ? ServerRefreshSessionStatus.knownValue(data: knownValue)
-        : ServerRefreshSessionStatus.unknown(data: value);
+    return knownValue != null ? ServerRefreshSessionStatus.knownValue(data: knownValue) : ServerRefreshSessionStatus.unknown(data: value);
   }
 
   String toJson() => const ServerRefreshSessionStatusConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class ServerRefreshSessionStatus with _$ServerRefreshSessionStatus {
 
 extension ServerRefreshSessionStatusExtension on ServerRefreshSessionStatus {
   bool get isKnownValue => isA<ServerRefreshSessionStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownServerRefreshSessionStatus? get knownValue =>
-      isKnownValue ? data as KnownServerRefreshSessionStatus : null;
-  bool get isUnknown => isA<ServerRefreshSessionStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownServerRefreshSessionStatus? get knownValue => isKnownValue ? data as KnownServerRefreshSessionStatus : null;
+bool get isUnknown => isA<ServerRefreshSessionStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ServerRefreshSessionStatusConverter
-    extends JsonConverter<ServerRefreshSessionStatus, String> {
+final class ServerRefreshSessionStatusConverter extends JsonConverter<ServerRefreshSessionStatus, String> {
   const ServerRefreshSessionStatusConverter();
 
   @override
@@ -70,17 +70,20 @@ final class ServerRefreshSessionStatusConverter
   }
 
   @override
-  String toJson(ServerRefreshSessionStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ServerRefreshSessionStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownServerRefreshSessionStatus implements Serializable {
+enum KnownServerRefreshSessionStatus implements Serializable{
   @JsonValue('takendown')
-  takendown('takendown'),
-  @JsonValue('suspended')
-  suspended('suspended'),
-  @JsonValue('deactivated')
-  deactivated('deactivated');
+takendown('takendown'),
+@JsonValue('suspended')
+suspended('suspended'),
+@JsonValue('deactivated')
+deactivated('deactivated'),
+  ;
 
   @override
   final String value;

@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/team/defs/member.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/team/defs/member_role.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/team/defs/descriptor.dart';

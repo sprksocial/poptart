@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,44 +19,40 @@ part 'main_validation_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class RepoPutRecordValidationStatus
-    with _$RepoPutRecordValidationStatus {
+abstract class RepoPutRecordValidationStatus with _$RepoPutRecordValidationStatus {
   const RepoPutRecordValidationStatus._();
 
   const factory RepoPutRecordValidationStatus.knownValue({
     required KnownRepoPutRecordValidationStatus data,
   }) = RepoPutRecordValidationStatusKnownValue;
 
-  const factory RepoPutRecordValidationStatus.unknown({required String data}) =
-      RepoPutRecordValidationStatusUnknown;
+  const factory RepoPutRecordValidationStatus.unknown({
+    required String data,
+  }) = RepoPutRecordValidationStatusUnknown;
 
   static RepoPutRecordValidationStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownRepoPutRecordValidationStatus.valueOf(value);
 
-    return knownValue != null
-        ? RepoPutRecordValidationStatus.knownValue(data: knownValue)
-        : RepoPutRecordValidationStatus.unknown(data: value);
+    return knownValue != null ? RepoPutRecordValidationStatus.knownValue(data: knownValue) : RepoPutRecordValidationStatus.unknown(data: value);
   }
 
-  String toJson() =>
-      const RepoPutRecordValidationStatusConverter().toJson(this);
+  String toJson() => const RepoPutRecordValidationStatusConverter().toJson(this);
 }
 
-extension RepoPutRecordValidationStatusExtension
-    on RepoPutRecordValidationStatus {
+extension RepoPutRecordValidationStatusExtension on RepoPutRecordValidationStatus {
   bool get isKnownValue => isA<RepoPutRecordValidationStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownRepoPutRecordValidationStatus? get knownValue =>
-      isKnownValue ? data as KnownRepoPutRecordValidationStatus : null;
-  bool get isUnknown => isA<RepoPutRecordValidationStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownRepoPutRecordValidationStatus? get knownValue => isKnownValue ? data as KnownRepoPutRecordValidationStatus : null;
+bool get isUnknown => isA<RepoPutRecordValidationStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class RepoPutRecordValidationStatusConverter
-    extends JsonConverter<RepoPutRecordValidationStatus, String> {
+final class RepoPutRecordValidationStatusConverter extends JsonConverter<RepoPutRecordValidationStatus, String> {
   const RepoPutRecordValidationStatusConverter();
 
   @override
@@ -73,15 +70,18 @@ final class RepoPutRecordValidationStatusConverter
   }
 
   @override
-  String toJson(RepoPutRecordValidationStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(RepoPutRecordValidationStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownRepoPutRecordValidationStatus implements Serializable {
+enum KnownRepoPutRecordValidationStatus implements Serializable{
   @JsonValue('valid')
-  valid('valid'),
-  @JsonValue('unknown')
-  unknown('unknown');
+valid('valid'),
+@JsonValue('unknown')
+unknown('unknown'),
+  ;
 
   @override
   final String value;

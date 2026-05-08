@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/getSyncStatus/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/getSyncStatus/descriptor.dart';

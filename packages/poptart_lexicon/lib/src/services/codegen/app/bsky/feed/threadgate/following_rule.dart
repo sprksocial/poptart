@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'following_rule.freezed.dart';
 part 'following_rule.g.dart';
@@ -17,6 +20,7 @@ part 'following_rule.g.dart';
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
+
 
 /// Allow replies from actors you follow.
 @freezed
@@ -26,18 +30,21 @@ abstract class FollowingRule with _$FollowingRule {
   @JsonSerializable(includeIfNull: false)
   const factory FollowingRule({
     @Default('app.bsky.feed.threadgate#followingRule') String $type,
-
+    
     Map<String, dynamic>? $unknown,
   }) = _FollowingRule;
 
-  factory FollowingRule.fromJson(Map<String, Object?> json) =>
-      _$FollowingRuleFromJson(json);
+  factory FollowingRule.fromJson(Map<String, Object?> json) => _$FollowingRuleFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.feed.threadgate#followingRule';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.feed.threadgate#followingRule'
+;
 }
+
+}
+
+
 
 final class FollowingRuleConverter
     extends JsonConverter<FollowingRule, Map<String, dynamic>> {
@@ -45,10 +52,15 @@ final class FollowingRuleConverter
 
   @override
   FollowingRule fromJson(Map<String, dynamic> json) {
-    return FollowingRule.fromJson(translate(json, FollowingRule.knownProps));
+    return FollowingRule.fromJson(translate(
+      json,
+      FollowingRule.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(FollowingRule object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(FollowingRule object) => untranslate(
+        object.toJson(),
+      );
 }
+

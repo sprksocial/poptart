@@ -7,14 +7,16 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './blob_view.dart';
-import 'package:poptart_lexicon/com_atproto_label_defs.dart';
+import '../../../../com/atproto/label/defs/label.dart';
 import './moderation_detail.dart';
 import './repo_view.dart';
+
 
 part 'record_view_detail.freezed.dart';
 part 'record_view_detail.g.dart';
@@ -23,42 +25,38 @@ part 'record_view_detail.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class RecordViewDetail with _$RecordViewDetail {
-  static const knownProps = <String>[
-    'uri',
-    'cid',
-    'value',
-    'blobs',
-    'labels',
-    'indexedAt',
-    'moderation',
-    'repo',
-  ];
+  static const knownProps = <String>['uri', 'cid', 'value', 'blobs', 'labels', 'indexedAt', 'moderation', 'repo', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory RecordViewDetail({
     @Default('tools.ozone.moderation.defs#recordViewDetail') String $type,
     @AtUriConverter() required AtUri uri,
-    required String cid,
-    required Map<String, dynamic> value,
-    @BlobViewConverter() required List<BlobView> blobs,
-    @LabelConverter() List<Label>? labels,
-    required DateTime indexedAt,
-    @ModerationDetailConverter() required ModerationDetail moderation,
-    @RepoViewConverter() required RepoView repo,
+required String cid,
+required Map<String, dynamic> value,
+@BlobViewConverter() required List<BlobView> blobs,
+@LabelConverter() List<Label>? labels,
+required DateTime indexedAt,
+@ModerationDetailConverter() required ModerationDetail moderation,
+@RepoViewConverter() required RepoView repo,
 
     Map<String, dynamic>? $unknown,
   }) = _RecordViewDetail;
 
-  factory RecordViewDetail.fromJson(Map<String, Object?> json) =>
-      _$RecordViewDetailFromJson(json);
+  factory RecordViewDetail.fromJson(Map<String, Object?> json) => _$RecordViewDetailFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'tools.ozone.moderation.defs#recordViewDetail';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'tools.ozone.moderation.defs#recordViewDetail'
+;
 }
+
+}
+
+
 
 final class RecordViewDetailConverter
     extends JsonConverter<RecordViewDetail, Map<String, dynamic>> {
@@ -66,12 +64,15 @@ final class RecordViewDetailConverter
 
   @override
   RecordViewDetail fromJson(Map<String, dynamic> json) {
-    return RecordViewDetail.fromJson(
-      translate(json, RecordViewDetail.knownProps),
-    );
+    return RecordViewDetail.fromJson(translate(
+      json,
+      RecordViewDetail.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(RecordViewDetail object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(RecordViewDetail object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import 'package:poptart_core/poptart_core.dart';
+
 
 part 'caption.freezed.dart';
 part 'caption.g.dart';
@@ -20,27 +22,32 @@ part 'caption.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class EmbedVideoCaption with _$EmbedVideoCaption {
-  static const knownProps = <String>['lang', 'file'];
+  static const knownProps = <String>['lang', 'file', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory EmbedVideoCaption({
     @Default('app.bsky.embed.video#caption') String $type,
     required String lang,
-    @BlobConverter() required Blob file,
+@BlobConverter() required Blob file,
 
     Map<String, dynamic>? $unknown,
   }) = _EmbedVideoCaption;
 
-  factory EmbedVideoCaption.fromJson(Map<String, Object?> json) =>
-      _$EmbedVideoCaptionFromJson(json);
+  factory EmbedVideoCaption.fromJson(Map<String, Object?> json) => _$EmbedVideoCaptionFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.embed.video#caption';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.embed.video#caption'
+;
 }
+
+}
+
+
 
 final class EmbedVideoCaptionConverter
     extends JsonConverter<EmbedVideoCaption, Map<String, dynamic>> {
@@ -48,12 +55,15 @@ final class EmbedVideoCaptionConverter
 
   @override
   EmbedVideoCaption fromJson(Map<String, dynamic> json) {
-    return EmbedVideoCaption.fromJson(
-      translate(json, EmbedVideoCaption.knownProps),
-    );
+    return EmbedVideoCaption.fromJson(translate(
+      json,
+      EmbedVideoCaption.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(EmbedVideoCaption object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(EmbedVideoCaption object) => untranslate(
+        object.toJson(),
+      );
 }
+

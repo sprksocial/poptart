@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/getServiceAuth/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/getServiceAuth/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/getServiceAuth/descriptor.dart';

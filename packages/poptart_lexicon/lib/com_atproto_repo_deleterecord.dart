@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/deleteRecord/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/deleteRecord/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/deleteRecord/descriptor.dart';

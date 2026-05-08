@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/set/deleteSet/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/set/deleteSet/descriptor.dart';

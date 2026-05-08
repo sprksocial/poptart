@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/upsertO
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/upsertOption/main_scope.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/upsertOption/main_manager_role.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/upsertOption/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/upsertOption/descriptor.dart';

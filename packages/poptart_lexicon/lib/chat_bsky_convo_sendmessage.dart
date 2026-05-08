@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/sendMessage/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/sendMessage/descriptor.dart';

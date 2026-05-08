@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import 'package:poptart_lexicon/com_atproto_repo_strongref.dart';
+import '../../../../com/atproto/repo/strongRef/main.dart';
 import './union_bookmark_view_item.dart';
+
 
 part 'bookmark_view.freezed.dart';
 part 'bookmark_view.g.dart';
@@ -21,35 +23,39 @@ part 'bookmark_view.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class BookmarkView with _$BookmarkView {
-  static const knownProps = <String>['subject', 'createdAt', 'item'];
+  static const knownProps = <String>['subject', 'createdAt', 'item', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory BookmarkView({
     @Default('app.bsky.bookmark.defs#bookmarkView') String $type,
-
     /// A strong ref to the bookmarked record.
-    @RepoStrongRefConverter() required RepoStrongRef subject,
-    DateTime? createdAt,
-    @UBookmarkViewItemConverter() required UBookmarkViewItem item,
+@RepoStrongRefConverter() required RepoStrongRef subject,
+DateTime? createdAt,
+@UBookmarkViewItemConverter() required UBookmarkViewItem item,
 
     Map<String, dynamic>? $unknown,
   }) = _BookmarkView;
 
-  factory BookmarkView.fromJson(Map<String, Object?> json) =>
-      _$BookmarkViewFromJson(json);
+  factory BookmarkView.fromJson(Map<String, Object?> json) => _$BookmarkViewFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.bookmark.defs#bookmarkView';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.bookmark.defs#bookmarkView'
+;
+}
+
 }
 
 extension BookmarkViewExtension on BookmarkView {
-  bool get hasCreatedAt => createdAt != null;
-  bool get hasNotCreatedAt => !hasCreatedAt;
+bool get hasCreatedAt => createdAt != null;
+bool get hasNotCreatedAt => !hasCreatedAt;
+
 }
+
 
 final class BookmarkViewConverter
     extends JsonConverter<BookmarkView, Map<String, dynamic>> {
@@ -57,10 +63,15 @@ final class BookmarkViewConverter
 
   @override
   BookmarkView fromJson(Map<String, dynamic> json) {
-    return BookmarkView.fromJson(translate(json, BookmarkView.knownProps));
+    return BookmarkView.fromJson(translate(
+      json,
+      BookmarkView.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(BookmarkView object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(BookmarkView object) => untranslate(
+        object.toJson(),
+      );
 }
+

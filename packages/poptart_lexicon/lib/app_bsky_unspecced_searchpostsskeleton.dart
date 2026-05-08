@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/searchPostsSkeleton/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/searchPostsSkeleton/main_sort.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/searchPostsSkeleton/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/searchPostsSkeleton/descriptor.dart';

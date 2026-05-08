@@ -172,13 +172,16 @@ final class _LexTypeGenerator {
 
   List<lex.LexiconDoc> _filterLexicons(
     final List<lex.LexiconDoc> lexicons,
-    final List<String> services,
+    final List<String> roots,
   ) {
     return lexicons.where((lexicon) {
       final id = lexicon.id.toString();
-      final service = id.split('.').sublist(0, 2).join('.');
-
-      return services.contains(service);
+      return roots.any((root) {
+        final normalized = root.endsWith('.')
+            ? root.substring(0, root.length - 1)
+            : root;
+        return id == normalized || id.startsWith('$normalized.');
+      });
     }).toList();
   }
 

@@ -16,3 +16,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/de
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/defs/union_verification_view_issuer_profile.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/defs/union_verification_view_subject_repo.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/defs/union_verification_view_issuer_repo.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/verification/defs/descriptor.dart';

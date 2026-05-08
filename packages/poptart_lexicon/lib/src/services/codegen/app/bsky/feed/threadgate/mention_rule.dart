@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'mention_rule.freezed.dart';
 part 'mention_rule.g.dart';
@@ -17,6 +20,7 @@ part 'mention_rule.g.dart';
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
+
 
 /// Allow replies from actors mentioned in your post.
 @freezed
@@ -26,18 +30,21 @@ abstract class MentionRule with _$MentionRule {
   @JsonSerializable(includeIfNull: false)
   const factory MentionRule({
     @Default('app.bsky.feed.threadgate#mentionRule') String $type,
-
+    
     Map<String, dynamic>? $unknown,
   }) = _MentionRule;
 
-  factory MentionRule.fromJson(Map<String, Object?> json) =>
-      _$MentionRuleFromJson(json);
+  factory MentionRule.fromJson(Map<String, Object?> json) => _$MentionRuleFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.feed.threadgate#mentionRule';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.feed.threadgate#mentionRule'
+;
 }
+
+}
+
+
 
 final class MentionRuleConverter
     extends JsonConverter<MentionRule, Map<String, dynamic>> {
@@ -45,10 +52,15 @@ final class MentionRuleConverter
 
   @override
   MentionRule fromJson(Map<String, dynamic> json) {
-    return MentionRule.fromJson(translate(json, MentionRule.knownProps));
+    return MentionRule.fromJson(translate(
+      json,
+      MentionRule.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(MentionRule object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(MentionRule object) => untranslate(
+        object.toJson(),
+      );
 }
+

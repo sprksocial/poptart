@@ -20,3 +20,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/defs/labe
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/defs/label_value_definition_default_setting.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/defs/label_value_definition_strings.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/defs/label_value.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/label/defs/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'main_subject_type.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class ModerationQueryStatusesSubjectType
-    with _$ModerationQueryStatusesSubjectType {
+abstract class ModerationQueryStatusesSubjectType with _$ModerationQueryStatusesSubjectType {
   const ModerationQueryStatusesSubjectType._();
 
   const factory ModerationQueryStatusesSubjectType.knownValue({
@@ -35,29 +36,23 @@ abstract class ModerationQueryStatusesSubjectType
     if (value == null) return null;
     final knownValue = KnownModerationQueryStatusesSubjectType.valueOf(value);
 
-    return knownValue != null
-        ? ModerationQueryStatusesSubjectType.knownValue(data: knownValue)
-        : ModerationQueryStatusesSubjectType.unknown(data: value);
+    return knownValue != null ? ModerationQueryStatusesSubjectType.knownValue(data: knownValue) : ModerationQueryStatusesSubjectType.unknown(data: value);
   }
 
-  String toJson() =>
-      const ModerationQueryStatusesSubjectTypeConverter().toJson(this);
+  String toJson() => const ModerationQueryStatusesSubjectTypeConverter().toJson(this);
 }
 
-extension ModerationQueryStatusesSubjectTypeExtension
-    on ModerationQueryStatusesSubjectType {
-  bool get isKnownValue =>
-      isA<ModerationQueryStatusesSubjectTypeKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownModerationQueryStatusesSubjectType? get knownValue =>
-      isKnownValue ? data as KnownModerationQueryStatusesSubjectType : null;
-  bool get isUnknown => isA<ModerationQueryStatusesSubjectTypeUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension ModerationQueryStatusesSubjectTypeExtension on ModerationQueryStatusesSubjectType {
+  bool get isKnownValue => isA<ModerationQueryStatusesSubjectTypeKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownModerationQueryStatusesSubjectType? get knownValue => isKnownValue ? data as KnownModerationQueryStatusesSubjectType : null;
+bool get isUnknown => isA<ModerationQueryStatusesSubjectTypeUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class ModerationQueryStatusesSubjectTypeConverter
-    extends JsonConverter<ModerationQueryStatusesSubjectType, String> {
+final class ModerationQueryStatusesSubjectTypeConverter extends JsonConverter<ModerationQueryStatusesSubjectType, String> {
   const ModerationQueryStatusesSubjectTypeConverter();
 
   @override
@@ -75,15 +70,18 @@ final class ModerationQueryStatusesSubjectTypeConverter
   }
 
   @override
-  String toJson(ModerationQueryStatusesSubjectType object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(ModerationQueryStatusesSubjectType object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownModerationQueryStatusesSubjectType implements Serializable {
+enum KnownModerationQueryStatusesSubjectType implements Serializable{
   @JsonValue('account')
-  account('account'),
-  @JsonValue('record')
-  record('record');
+account('account'),
+@JsonValue('record')
+record('record'),
+  ;
 
   @override
   final String value;

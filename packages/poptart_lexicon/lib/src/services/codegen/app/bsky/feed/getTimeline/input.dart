@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,30 +21,33 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class FeedGetTimelineInput with _$FeedGetTimelineInput {
-  static const knownProps = <String>['algorithm', 'limit', 'cursor'];
+  static const knownProps = <String>['algorithm', 'limit', 'cursor', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory FeedGetTimelineInput({
     /// Variant 'algorithm' for timeline. Implementation-specific. NOTE: most feed flexibility has been moved to feed generator mechanism.
-    String? algorithm,
-    @Default(50) int limit,
-    String? cursor,
+String? algorithm,
+@Default(50) int limit,
+String? cursor,
 
     Map<String, dynamic>? $unknown,
   }) = _FeedGetTimelineInput;
 
-  factory FeedGetTimelineInput.fromJson(Map<String, Object?> json) =>
-      _$FeedGetTimelineInputFromJson(json);
+  factory FeedGetTimelineInput.fromJson(Map<String, Object?> json) => _$FeedGetTimelineInputFromJson(json);
 }
 
 extension FeedGetTimelineInputExtension on FeedGetTimelineInput {
-  bool get hasAlgorithm => algorithm != null;
-  bool get hasNotAlgorithm => !hasAlgorithm;
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+bool get hasAlgorithm => algorithm != null;
+bool get hasNotAlgorithm => !hasAlgorithm;
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class FeedGetTimelineInputConverter
     extends JsonConverter<FeedGetTimelineInput, Map<String, dynamic>> {
@@ -49,12 +55,15 @@ final class FeedGetTimelineInputConverter
 
   @override
   FeedGetTimelineInput fromJson(Map<String, dynamic> json) {
-    return FeedGetTimelineInput.fromJson(
-      translate(json, FeedGetTimelineInput.knownProps),
-    );
+    return FeedGetTimelineInput.fromJson(translate(
+      json,
+      FeedGetTimelineInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(FeedGetTimelineInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(FeedGetTimelineInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/listN
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/listNotifications/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/listNotifications/notification.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/listNotifications/notification_reason.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/notification/listNotifications/descriptor.dart';

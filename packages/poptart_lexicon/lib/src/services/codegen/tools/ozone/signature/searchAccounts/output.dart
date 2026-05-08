@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import 'package:poptart_lexicon/com_atproto_admin_defs.dart';
+import '../../../../com/atproto/admin/defs/account_view.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,28 +22,29 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class SignatureSearchAccountsOutput
-    with _$SignatureSearchAccountsOutput {
-  static const knownProps = <String>['cursor', 'accounts'];
+abstract class SignatureSearchAccountsOutput with _$SignatureSearchAccountsOutput {
+  static const knownProps = <String>['cursor', 'accounts', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory SignatureSearchAccountsOutput({
     String? cursor,
-    @AccountViewConverter() required List<AccountView> accounts,
+@AccountViewConverter() required List<AccountView> accounts,
 
     Map<String, dynamic>? $unknown,
   }) = _SignatureSearchAccountsOutput;
 
-  factory SignatureSearchAccountsOutput.fromJson(Map<String, Object?> json) =>
-      _$SignatureSearchAccountsOutputFromJson(json);
+  factory SignatureSearchAccountsOutput.fromJson(Map<String, Object?> json) => _$SignatureSearchAccountsOutputFromJson(json);
 }
 
-extension SignatureSearchAccountsOutputExtension
-    on SignatureSearchAccountsOutput {
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+extension SignatureSearchAccountsOutputExtension on SignatureSearchAccountsOutput {
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class SignatureSearchAccountsOutputConverter
     extends JsonConverter<SignatureSearchAccountsOutput, Map<String, dynamic>> {
@@ -49,12 +52,15 @@ final class SignatureSearchAccountsOutputConverter
 
   @override
   SignatureSearchAccountsOutput fromJson(Map<String, dynamic> json) {
-    return SignatureSearchAccountsOutput.fromJson(
-      translate(json, SignatureSearchAccountsOutput.knownProps),
-    );
+    return SignatureSearchAccountsOutput.fromJson(translate(
+      json,
+      SignatureSearchAccountsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(SignatureSearchAccountsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(SignatureSearchAccountsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

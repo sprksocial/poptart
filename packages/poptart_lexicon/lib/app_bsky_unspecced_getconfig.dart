@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getConfig/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getConfig/live_now_config.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getConfig/descriptor.dart';

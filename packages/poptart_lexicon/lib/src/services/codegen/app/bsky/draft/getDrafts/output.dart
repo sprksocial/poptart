@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../app/bsky/draft/defs/draft_view.dart';
+import '../defs/draft_view.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,26 +22,29 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class DraftGetDraftsOutput with _$DraftGetDraftsOutput {
-  static const knownProps = <String>['cursor', 'drafts'];
+  static const knownProps = <String>['cursor', 'drafts', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory DraftGetDraftsOutput({
     String? cursor,
-    @DraftViewConverter() required List<DraftView> drafts,
+@DraftViewConverter() required List<DraftView> drafts,
 
     Map<String, dynamic>? $unknown,
   }) = _DraftGetDraftsOutput;
 
-  factory DraftGetDraftsOutput.fromJson(Map<String, Object?> json) =>
-      _$DraftGetDraftsOutputFromJson(json);
+  factory DraftGetDraftsOutput.fromJson(Map<String, Object?> json) => _$DraftGetDraftsOutputFromJson(json);
 }
 
 extension DraftGetDraftsOutputExtension on DraftGetDraftsOutput {
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class DraftGetDraftsOutputConverter
     extends JsonConverter<DraftGetDraftsOutput, Map<String, dynamic>> {
@@ -47,12 +52,15 @@ final class DraftGetDraftsOutputConverter
 
   @override
   DraftGetDraftsOutput fromJson(Map<String, dynamic> json) {
-    return DraftGetDraftsOutput.fromJson(
-      translate(json, DraftGetDraftsOutput.knownProps),
-    );
+    return DraftGetDraftsOutput.fromJson(translate(
+      json,
+      DraftGetDraftsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(DraftGetDraftsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(DraftGetDraftsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

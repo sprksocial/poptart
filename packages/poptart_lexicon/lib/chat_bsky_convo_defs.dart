@@ -40,3 +40,4 @@ export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/defs/log_ad
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/defs/union_log_add_reaction_message.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/defs/log_remove_reaction.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/defs/union_log_remove_reaction_message.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/defs/descriptor.dart';

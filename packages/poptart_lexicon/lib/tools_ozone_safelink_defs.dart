@@ -17,3 +17,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/defs/p
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/defs/action_type.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/defs/reason_type.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/defs/url_rule.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/safelink/defs/descriptor.dart';

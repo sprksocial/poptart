@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findCorrelation/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findCorrelation/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findCorrelation/descriptor.dart';

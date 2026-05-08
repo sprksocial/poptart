@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/identity/signPlcOperation/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/identity/signPlcOperation/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/identity/signPlcOperation/descriptor.dart';

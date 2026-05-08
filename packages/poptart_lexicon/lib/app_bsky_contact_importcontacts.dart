@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/importContacts/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/importContacts/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/contact/importContacts/descriptor.dart';

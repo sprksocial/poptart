@@ -7,10 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/internals.dart' show isA;
 
-import '../../../../app/bsky/embed/external/view.dart';
+import '../../embed/external/view.dart';
+
 
 part 'union_status_view_embed.freezed.dart';
 
@@ -18,44 +20,45 @@ part 'union_status_view_embed.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 sealed class UStatusViewEmbed with _$UStatusViewEmbed {
   const UStatusViewEmbed._();
 
   const factory UStatusViewEmbed.embedExternalView({
-    required EmbedExternalView data,
-  }) = UStatusViewEmbedEmbedExternalView;
+  required EmbedExternalView data,
+}) = UStatusViewEmbedEmbedExternalView;
 
-  const factory UStatusViewEmbed.unknown({required Map<String, dynamic> data}) =
-      UStatusViewEmbedUnknown;
 
-  Map<String, dynamic> toJson() =>
-      const UStatusViewEmbedConverter().toJson(this);
+  const factory UStatusViewEmbed.unknown({
+    required Map<String, dynamic> data,
+  }) = UStatusViewEmbedUnknown;
+
+  Map<String, dynamic> toJson() => const UStatusViewEmbedConverter().toJson(this);
 }
 
 extension UStatusViewEmbedExtension on UStatusViewEmbed {
   bool get isEmbedExternalView => isA<UStatusViewEmbedEmbedExternalView>(this);
-  bool get isNotEmbedExternalView => !isEmbedExternalView;
-  EmbedExternalView? get embedExternalView =>
-      isEmbedExternalView ? data as EmbedExternalView : null;
-  bool get isUnknown => isA<UStatusViewEmbedUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  Map<String, dynamic>? get unknown =>
-      isUnknown ? data as Map<String, dynamic> : null;
+bool get isNotEmbedExternalView => !isEmbedExternalView;
+EmbedExternalView? get embedExternalView => isEmbedExternalView ? data as EmbedExternalView : null;
+bool get isUnknown => isA<UStatusViewEmbedUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+Map<String, dynamic>? get unknown => isUnknown ? data as Map<String, dynamic> : null;
+
 }
 
-final class UStatusViewEmbedConverter
-    implements JsonConverter<UStatusViewEmbed, Map<String, dynamic>> {
+final class UStatusViewEmbedConverter implements JsonConverter<UStatusViewEmbed, Map<String, dynamic>> {
   const UStatusViewEmbedConverter();
 
   @override
   UStatusViewEmbed fromJson(Map<String, dynamic> json) {
     try {
       if (EmbedExternalView.validate(json)) {
-        return UStatusViewEmbed.embedExternalView(
-          data: const EmbedExternalViewConverter().fromJson(json),
-        );
-      }
+  return UStatusViewEmbed.embedExternalView(
+    data: const EmbedExternalViewConverter().fromJson(json),
+  );
+}
+
 
       return UStatusViewEmbed.unknown(data: json);
     } catch (_) {
@@ -65,9 +68,8 @@ final class UStatusViewEmbedConverter
 
   @override
   Map<String, dynamic> toJson(UStatusViewEmbed object) => object.when(
-    embedExternalView: (data) =>
-        const EmbedExternalViewConverter().toJson(data),
+        embedExternalView: (data) => const EmbedExternalViewConverter().toJson(data),
 
-    unknown: (data) => data,
-  );
+        unknown: (data) => data,
+      );
 }

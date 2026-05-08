@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,26 +21,29 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ServerCreateInviteCodeInput with _$ServerCreateInviteCodeInput {
-  static const knownProps = <String>['useCount', 'forAccount'];
+  static const knownProps = <String>['useCount', 'forAccount', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ServerCreateInviteCodeInput({
     required int useCount,
-    String? forAccount,
+String? forAccount,
 
     Map<String, dynamic>? $unknown,
   }) = _ServerCreateInviteCodeInput;
 
-  factory ServerCreateInviteCodeInput.fromJson(Map<String, Object?> json) =>
-      _$ServerCreateInviteCodeInputFromJson(json);
+  factory ServerCreateInviteCodeInput.fromJson(Map<String, Object?> json) => _$ServerCreateInviteCodeInputFromJson(json);
 }
 
 extension ServerCreateInviteCodeInputExtension on ServerCreateInviteCodeInput {
-  bool get hasForAccount => forAccount != null;
-  bool get hasNotForAccount => !hasForAccount;
+bool get hasForAccount => forAccount != null;
+bool get hasNotForAccount => !hasForAccount;
+
 }
+
 
 final class ServerCreateInviteCodeInputConverter
     extends JsonConverter<ServerCreateInviteCodeInput, Map<String, dynamic>> {
@@ -45,12 +51,15 @@ final class ServerCreateInviteCodeInputConverter
 
   @override
   ServerCreateInviteCodeInput fromJson(Map<String, dynamic> json) {
-    return ServerCreateInviteCodeInput.fromJson(
-      translate(json, ServerCreateInviteCodeInput.knownProps),
-    );
+    return ServerCreateInviteCodeInput.fromJson(translate(
+      json,
+      ServerCreateInviteCodeInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ServerCreateInviteCodeInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ServerCreateInviteCodeInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

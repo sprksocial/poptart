@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findRelatedAccounts/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findRelatedAccounts/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findRelatedAccounts/related_account.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/findRelatedAccounts/descriptor.dart';

@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../tools/ozone/verification/defs/verification_view.dart';
+import '../defs/verification_view.dart';
 import './grant_error.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -21,40 +23,40 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class VerificationGrantVerificationsOutput
-    with _$VerificationGrantVerificationsOutput {
-  static const knownProps = <String>['verifications', 'failedVerifications'];
+abstract class VerificationGrantVerificationsOutput with _$VerificationGrantVerificationsOutput {
+  static const knownProps = <String>['verifications', 'failedVerifications', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory VerificationGrantVerificationsOutput({
     @VerificationViewConverter() required List<VerificationView> verifications,
-    @GrantErrorConverter() required List<GrantError> failedVerifications,
+@GrantErrorConverter() required List<GrantError> failedVerifications,
 
     Map<String, dynamic>? $unknown,
   }) = _VerificationGrantVerificationsOutput;
 
-  factory VerificationGrantVerificationsOutput.fromJson(
-    Map<String, Object?> json,
-  ) => _$VerificationGrantVerificationsOutputFromJson(json);
+  factory VerificationGrantVerificationsOutput.fromJson(Map<String, Object?> json) => _$VerificationGrantVerificationsOutputFromJson(json);
 }
 
+
+
 final class VerificationGrantVerificationsOutputConverter
-    extends
-        JsonConverter<
-          VerificationGrantVerificationsOutput,
-          Map<String, dynamic>
-        > {
+    extends JsonConverter<VerificationGrantVerificationsOutput, Map<String, dynamic>> {
   const VerificationGrantVerificationsOutputConverter();
 
   @override
   VerificationGrantVerificationsOutput fromJson(Map<String, dynamic> json) {
-    return VerificationGrantVerificationsOutput.fromJson(
-      translate(json, VerificationGrantVerificationsOutput.knownProps),
-    );
+    return VerificationGrantVerificationsOutput.fromJson(translate(
+      json,
+      VerificationGrantVerificationsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(VerificationGrantVerificationsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(VerificationGrantVerificationsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

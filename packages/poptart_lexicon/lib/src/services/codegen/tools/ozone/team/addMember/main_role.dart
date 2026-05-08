@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'main_role.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class TeamAddMemberRole with _$TeamAddMemberRole {
   const TeamAddMemberRole._();
@@ -26,16 +28,15 @@ abstract class TeamAddMemberRole with _$TeamAddMemberRole {
     required KnownTeamAddMemberRole data,
   }) = TeamAddMemberRoleKnownValue;
 
-  const factory TeamAddMemberRole.unknown({required String data}) =
-      TeamAddMemberRoleUnknown;
+  const factory TeamAddMemberRole.unknown({
+    required String data,
+  }) = TeamAddMemberRoleUnknown;
 
   static TeamAddMemberRole? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownTeamAddMemberRole.valueOf(value);
 
-    return knownValue != null
-        ? TeamAddMemberRole.knownValue(data: knownValue)
-        : TeamAddMemberRole.unknown(data: value);
+    return knownValue != null ? TeamAddMemberRole.knownValue(data: knownValue) : TeamAddMemberRole.unknown(data: value);
   }
 
   String toJson() => const TeamAddMemberRoleConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class TeamAddMemberRole with _$TeamAddMemberRole {
 
 extension TeamAddMemberRoleExtension on TeamAddMemberRole {
   bool get isKnownValue => isA<TeamAddMemberRoleKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownTeamAddMemberRole? get knownValue =>
-      isKnownValue ? data as KnownTeamAddMemberRole : null;
-  bool get isUnknown => isA<TeamAddMemberRoleUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownTeamAddMemberRole? get knownValue => isKnownValue ? data as KnownTeamAddMemberRole : null;
+bool get isUnknown => isA<TeamAddMemberRoleUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class TeamAddMemberRoleConverter
-    extends JsonConverter<TeamAddMemberRole, String> {
+final class TeamAddMemberRoleConverter extends JsonConverter<TeamAddMemberRole, String> {
   const TeamAddMemberRoleConverter();
 
   @override
@@ -70,19 +70,22 @@ final class TeamAddMemberRoleConverter
   }
 
   @override
-  String toJson(TeamAddMemberRole object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(TeamAddMemberRole object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownTeamAddMemberRole implements Serializable {
+enum KnownTeamAddMemberRole implements Serializable{
   @JsonValue('tools.ozone.team.defs#roleAdmin')
-  toolsOzoneTeamDefsRoleAdmin('tools.ozone.team.defs#roleAdmin'),
-  @JsonValue('tools.ozone.team.defs#roleModerator')
-  toolsOzoneTeamDefsRoleModerator('tools.ozone.team.defs#roleModerator'),
-  @JsonValue('tools.ozone.team.defs#roleVerifier')
-  toolsOzoneTeamDefsRoleVerifier('tools.ozone.team.defs#roleVerifier'),
-  @JsonValue('tools.ozone.team.defs#roleTriage')
-  toolsOzoneTeamDefsRoleTriage('tools.ozone.team.defs#roleTriage');
+toolsOzoneTeamDefsRoleAdmin('tools.ozone.team.defs#roleAdmin'),
+@JsonValue('tools.ozone.team.defs#roleModerator')
+toolsOzoneTeamDefsRoleModerator('tools.ozone.team.defs#roleModerator'),
+@JsonValue('tools.ozone.team.defs#roleVerifier')
+toolsOzoneTeamDefsRoleVerifier('tools.ozone.team.defs#roleVerifier'),
+@JsonValue('tools.ozone.team.defs#roleTriage')
+toolsOzoneTeamDefsRoleTriage('tools.ozone.team.defs#roleTriage'),
+  ;
 
   @override
   final String value;

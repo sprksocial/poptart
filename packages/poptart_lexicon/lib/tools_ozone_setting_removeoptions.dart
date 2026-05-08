@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/removeOptions/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/removeOptions/main_scope.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/setting/removeOptions/descriptor.dart';

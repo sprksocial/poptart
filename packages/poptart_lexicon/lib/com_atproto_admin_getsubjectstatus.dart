@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/getSubjectStatus/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/getSubjectStatus/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/getSubjectStatus/union_main_subject.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/admin/getSubjectStatus/descriptor.dart';

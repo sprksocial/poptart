@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,6 +19,7 @@ part 'age_assurance_state_status.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
 abstract class AgeAssuranceStateStatus with _$AgeAssuranceStateStatus {
   const AgeAssuranceStateStatus._();
@@ -26,16 +28,15 @@ abstract class AgeAssuranceStateStatus with _$AgeAssuranceStateStatus {
     required KnownAgeAssuranceStateStatus data,
   }) = AgeAssuranceStateStatusKnownValue;
 
-  const factory AgeAssuranceStateStatus.unknown({required String data}) =
-      AgeAssuranceStateStatusUnknown;
+  const factory AgeAssuranceStateStatus.unknown({
+    required String data,
+  }) = AgeAssuranceStateStatusUnknown;
 
   static AgeAssuranceStateStatus? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownAgeAssuranceStateStatus.valueOf(value);
 
-    return knownValue != null
-        ? AgeAssuranceStateStatus.knownValue(data: knownValue)
-        : AgeAssuranceStateStatus.unknown(data: value);
+    return knownValue != null ? AgeAssuranceStateStatus.knownValue(data: knownValue) : AgeAssuranceStateStatus.unknown(data: value);
   }
 
   String toJson() => const AgeAssuranceStateStatusConverter().toJson(this);
@@ -43,16 +44,15 @@ abstract class AgeAssuranceStateStatus with _$AgeAssuranceStateStatus {
 
 extension AgeAssuranceStateStatusExtension on AgeAssuranceStateStatus {
   bool get isKnownValue => isA<AgeAssuranceStateStatusKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownAgeAssuranceStateStatus? get knownValue =>
-      isKnownValue ? data as KnownAgeAssuranceStateStatus : null;
-  bool get isUnknown => isA<AgeAssuranceStateStatusUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownAgeAssuranceStateStatus? get knownValue => isKnownValue ? data as KnownAgeAssuranceStateStatus : null;
+bool get isUnknown => isA<AgeAssuranceStateStatusUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class AgeAssuranceStateStatusConverter
-    extends JsonConverter<AgeAssuranceStateStatus, String> {
+final class AgeAssuranceStateStatusConverter extends JsonConverter<AgeAssuranceStateStatus, String> {
   const AgeAssuranceStateStatusConverter();
 
   @override
@@ -70,19 +70,22 @@ final class AgeAssuranceStateStatusConverter
   }
 
   @override
-  String toJson(AgeAssuranceStateStatus object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(AgeAssuranceStateStatus object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownAgeAssuranceStateStatus implements Serializable {
+enum KnownAgeAssuranceStateStatus implements Serializable{
   @JsonValue('unknown')
-  unknown('unknown'),
-  @JsonValue('pending')
-  pending('pending'),
-  @JsonValue('assured')
-  assured('assured'),
-  @JsonValue('blocked')
-  blocked('blocked');
+unknown('unknown'),
+@JsonValue('pending')
+pending('pending'),
+@JsonValue('assured')
+assured('assured'),
+@JsonValue('blocked')
+blocked('blocked'),
+  ;
 
   @override
   final String value;

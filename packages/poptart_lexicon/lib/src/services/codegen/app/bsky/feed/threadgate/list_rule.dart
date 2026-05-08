@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'list_rule.freezed.dart';
 part 'list_rule.g.dart';
@@ -18,10 +21,11 @@ part 'list_rule.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
 /// Allow replies from actors on a list.
 @freezed
 abstract class ListRule with _$ListRule {
-  static const knownProps = <String>['list'];
+  static const knownProps = <String>['list', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ListRule({
@@ -31,14 +35,17 @@ abstract class ListRule with _$ListRule {
     Map<String, dynamic>? $unknown,
   }) = _ListRule;
 
-  factory ListRule.fromJson(Map<String, Object?> json) =>
-      _$ListRuleFromJson(json);
+  factory ListRule.fromJson(Map<String, Object?> json) => _$ListRuleFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.feed.threadgate#listRule';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.feed.threadgate#listRule'
+;
 }
+
+}
+
+
 
 final class ListRuleConverter
     extends JsonConverter<ListRule, Map<String, dynamic>> {
@@ -46,9 +53,15 @@ final class ListRuleConverter
 
   @override
   ListRule fromJson(Map<String, dynamic> json) {
-    return ListRule.fromJson(translate(json, ListRule.knownProps));
+    return ListRule.fromJson(translate(
+      json,
+      ListRule.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ListRule object) => untranslate(object.toJson());
+  Map<String, dynamic> toJson(ListRule object) => untranslate(
+        object.toJson(),
+      );
 }
+

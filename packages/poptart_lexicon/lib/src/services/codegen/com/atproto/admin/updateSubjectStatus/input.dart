@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './union_main_subject.dart';
-import '../../../../com/atproto/admin/defs/status_attr.dart';
+import '../defs/status_attr.dart';
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -21,32 +23,32 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class AdminUpdateSubjectStatusInput
-    with _$AdminUpdateSubjectStatusInput {
-  static const knownProps = <String>['subject', 'takedown', 'deactivated'];
+abstract class AdminUpdateSubjectStatusInput with _$AdminUpdateSubjectStatusInput {
+  static const knownProps = <String>['subject', 'takedown', 'deactivated', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory AdminUpdateSubjectStatusInput({
-    @UAdminUpdateSubjectStatusSubjectConverter()
-    required UAdminUpdateSubjectStatusSubject subject,
-    @StatusAttrConverter() StatusAttr? takedown,
-    @StatusAttrConverter() StatusAttr? deactivated,
+    @UAdminUpdateSubjectStatusSubjectConverter() required UAdminUpdateSubjectStatusSubject subject,
+@StatusAttrConverter() StatusAttr? takedown,
+@StatusAttrConverter() StatusAttr? deactivated,
 
     Map<String, dynamic>? $unknown,
   }) = _AdminUpdateSubjectStatusInput;
 
-  factory AdminUpdateSubjectStatusInput.fromJson(Map<String, Object?> json) =>
-      _$AdminUpdateSubjectStatusInputFromJson(json);
+  factory AdminUpdateSubjectStatusInput.fromJson(Map<String, Object?> json) => _$AdminUpdateSubjectStatusInputFromJson(json);
 }
 
-extension AdminUpdateSubjectStatusInputExtension
-    on AdminUpdateSubjectStatusInput {
-  bool get hasTakedown => takedown != null;
-  bool get hasNotTakedown => !hasTakedown;
-  bool get hasDeactivated => deactivated != null;
-  bool get hasNotDeactivated => !hasDeactivated;
+extension AdminUpdateSubjectStatusInputExtension on AdminUpdateSubjectStatusInput {
+bool get hasTakedown => takedown != null;
+bool get hasNotTakedown => !hasTakedown;
+bool get hasDeactivated => deactivated != null;
+bool get hasNotDeactivated => !hasDeactivated;
+
 }
+
 
 final class AdminUpdateSubjectStatusInputConverter
     extends JsonConverter<AdminUpdateSubjectStatusInput, Map<String, dynamic>> {
@@ -54,12 +56,15 @@ final class AdminUpdateSubjectStatusInputConverter
 
   @override
   AdminUpdateSubjectStatusInput fromJson(Map<String, dynamic> json) {
-    return AdminUpdateSubjectStatusInput.fromJson(
-      translate(json, AdminUpdateSubjectStatusInput.knownProps),
-    );
+    return AdminUpdateSubjectStatusInput.fromJson(translate(
+      json,
+      AdminUpdateSubjectStatusInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(AdminUpdateSubjectStatusInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(AdminUpdateSubjectStatusInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

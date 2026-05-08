@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/getServices/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/getServices/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/getServices/union_main_views.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/labeler/getServices/descriptor.dart';

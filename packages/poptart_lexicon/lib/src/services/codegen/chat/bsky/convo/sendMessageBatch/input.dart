@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './batch_item.dart';
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -20,9 +22,11 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ConvoSendMessageBatchInput with _$ConvoSendMessageBatchInput {
-  static const knownProps = <String>['items'];
+  static const knownProps = <String>['items', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ConvoSendMessageBatchInput({
@@ -31,9 +35,10 @@ abstract class ConvoSendMessageBatchInput with _$ConvoSendMessageBatchInput {
     Map<String, dynamic>? $unknown,
   }) = _ConvoSendMessageBatchInput;
 
-  factory ConvoSendMessageBatchInput.fromJson(Map<String, Object?> json) =>
-      _$ConvoSendMessageBatchInputFromJson(json);
+  factory ConvoSendMessageBatchInput.fromJson(Map<String, Object?> json) => _$ConvoSendMessageBatchInputFromJson(json);
 }
+
+
 
 final class ConvoSendMessageBatchInputConverter
     extends JsonConverter<ConvoSendMessageBatchInput, Map<String, dynamic>> {
@@ -41,12 +46,15 @@ final class ConvoSendMessageBatchInputConverter
 
   @override
   ConvoSendMessageBatchInput fromJson(Map<String, dynamic> json) {
-    return ConvoSendMessageBatchInput.fromJson(
-      translate(json, ConvoSendMessageBatchInput.knownProps),
-    );
+    return ConvoSendMessageBatchInput.fromJson(translate(
+      json,
+      ConvoSendMessageBatchInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ConvoSendMessageBatchInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ConvoSendMessageBatchInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/reserveSigningKey/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/reserveSigningKey/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/reserveSigningKey/descriptor.dart';

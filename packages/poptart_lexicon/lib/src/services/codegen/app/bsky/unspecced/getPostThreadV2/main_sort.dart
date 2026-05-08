@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,43 +19,40 @@ part 'main_sort.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class UnspeccedGetPostThreadV2Sort
-    with _$UnspeccedGetPostThreadV2Sort {
+abstract class UnspeccedGetPostThreadV2Sort with _$UnspeccedGetPostThreadV2Sort {
   const UnspeccedGetPostThreadV2Sort._();
 
   const factory UnspeccedGetPostThreadV2Sort.knownValue({
     required KnownUnspeccedGetPostThreadV2Sort data,
   }) = UnspeccedGetPostThreadV2SortKnownValue;
 
-  const factory UnspeccedGetPostThreadV2Sort.unknown({required String data}) =
-      UnspeccedGetPostThreadV2SortUnknown;
+  const factory UnspeccedGetPostThreadV2Sort.unknown({
+    required String data,
+  }) = UnspeccedGetPostThreadV2SortUnknown;
 
   static UnspeccedGetPostThreadV2Sort? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownUnspeccedGetPostThreadV2Sort.valueOf(value);
 
-    return knownValue != null
-        ? UnspeccedGetPostThreadV2Sort.knownValue(data: knownValue)
-        : UnspeccedGetPostThreadV2Sort.unknown(data: value);
+    return knownValue != null ? UnspeccedGetPostThreadV2Sort.knownValue(data: knownValue) : UnspeccedGetPostThreadV2Sort.unknown(data: value);
   }
 
   String toJson() => const UnspeccedGetPostThreadV2SortConverter().toJson(this);
 }
 
-extension UnspeccedGetPostThreadV2SortExtension
-    on UnspeccedGetPostThreadV2Sort {
+extension UnspeccedGetPostThreadV2SortExtension on UnspeccedGetPostThreadV2Sort {
   bool get isKnownValue => isA<UnspeccedGetPostThreadV2SortKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownUnspeccedGetPostThreadV2Sort? get knownValue =>
-      isKnownValue ? data as KnownUnspeccedGetPostThreadV2Sort : null;
-  bool get isUnknown => isA<UnspeccedGetPostThreadV2SortUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownUnspeccedGetPostThreadV2Sort? get knownValue => isKnownValue ? data as KnownUnspeccedGetPostThreadV2Sort : null;
+bool get isUnknown => isA<UnspeccedGetPostThreadV2SortUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class UnspeccedGetPostThreadV2SortConverter
-    extends JsonConverter<UnspeccedGetPostThreadV2Sort, String> {
+final class UnspeccedGetPostThreadV2SortConverter extends JsonConverter<UnspeccedGetPostThreadV2Sort, String> {
   const UnspeccedGetPostThreadV2SortConverter();
 
   @override
@@ -72,17 +70,20 @@ final class UnspeccedGetPostThreadV2SortConverter
   }
 
   @override
-  String toJson(UnspeccedGetPostThreadV2Sort object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(UnspeccedGetPostThreadV2Sort object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownUnspeccedGetPostThreadV2Sort implements Serializable {
+enum KnownUnspeccedGetPostThreadV2Sort implements Serializable{
   @JsonValue('newest')
-  newest('newest'),
-  @JsonValue('oldest')
-  oldest('oldest'),
-  @JsonValue('top')
-  top('top');
+newest('newest'),
+@JsonValue('oldest')
+oldest('oldest'),
+@JsonValue('top')
+top('top'),
+  ;
 
   @override
   final String value;

@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/defs/aspect_ratio.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/defs/descriptor.dart';

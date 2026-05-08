@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getPostT
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getPostThreadOtherV2/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getPostThreadOtherV2/thread_item.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getPostThreadOtherV2/union_thread_item_value.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/unspecced/getPostThreadOtherV2/descriptor.dart';

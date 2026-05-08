@@ -34,12 +34,24 @@ final class LexiconNamespaceRule {
 
   bool matches(final String lexiconId) {
     for (final prefix in prefixes) {
-      if (lexiconId.startsWith(prefix)) {
+      final normalized = _normalizePrefix(prefix);
+      if (lexiconId == normalized || lexiconId.startsWith('$normalized.')) {
         return true;
       }
     }
 
     return false;
+  }
+
+  String get longestPrefix => prefixes.fold<String>('', (current, prefix) {
+    final normalized = _normalizePrefix(prefix);
+    return normalized.length > current.length ? normalized : current;
+  });
+
+  String _normalizePrefix(final String prefix) {
+    return prefix.endsWith('.')
+        ? prefix.substring(0, prefix.length - 1)
+        : prefix;
   }
 }
 

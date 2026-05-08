@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getMessageContext/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getMessageContext/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getMessageContext/union_main_messages.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/moderation/getMessageContext/descriptor.dart';

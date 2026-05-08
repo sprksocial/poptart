@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/defs/commit_meta.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/defs/descriptor.dart';

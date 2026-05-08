@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/video/getJobStatus/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/video/getJobStatus/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/video/getJobStatus/descriptor.dart';

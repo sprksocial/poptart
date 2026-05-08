@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/searchRepos/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/searchRepos/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/searchRepos/descriptor.dart';

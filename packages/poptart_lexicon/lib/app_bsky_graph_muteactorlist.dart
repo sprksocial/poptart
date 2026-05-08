@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/muteActorList/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/graph/muteActorList/descriptor.dart';

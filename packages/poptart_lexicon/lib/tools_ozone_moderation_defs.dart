@@ -79,3 +79,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/defs
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/defs/scheduled_action_view.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/defs/scheduled_action_view_action.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/defs/scheduled_action_view_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/defs/descriptor.dart';

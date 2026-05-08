@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/profile/main.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/profile/union_main_labels.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/profile/descriptor.dart';

@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,43 +19,40 @@ part 'label_value_definition_severity.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class LabelValueDefinitionSeverity
-    with _$LabelValueDefinitionSeverity {
+abstract class LabelValueDefinitionSeverity with _$LabelValueDefinitionSeverity {
   const LabelValueDefinitionSeverity._();
 
   const factory LabelValueDefinitionSeverity.knownValue({
     required KnownLabelValueDefinitionSeverity data,
   }) = LabelValueDefinitionSeverityKnownValue;
 
-  const factory LabelValueDefinitionSeverity.unknown({required String data}) =
-      LabelValueDefinitionSeverityUnknown;
+  const factory LabelValueDefinitionSeverity.unknown({
+    required String data,
+  }) = LabelValueDefinitionSeverityUnknown;
 
   static LabelValueDefinitionSeverity? valueOf(final String? value) {
     if (value == null) return null;
     final knownValue = KnownLabelValueDefinitionSeverity.valueOf(value);
 
-    return knownValue != null
-        ? LabelValueDefinitionSeverity.knownValue(data: knownValue)
-        : LabelValueDefinitionSeverity.unknown(data: value);
+    return knownValue != null ? LabelValueDefinitionSeverity.knownValue(data: knownValue) : LabelValueDefinitionSeverity.unknown(data: value);
   }
 
   String toJson() => const LabelValueDefinitionSeverityConverter().toJson(this);
 }
 
-extension LabelValueDefinitionSeverityExtension
-    on LabelValueDefinitionSeverity {
+extension LabelValueDefinitionSeverityExtension on LabelValueDefinitionSeverity {
   bool get isKnownValue => isA<LabelValueDefinitionSeverityKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownLabelValueDefinitionSeverity? get knownValue =>
-      isKnownValue ? data as KnownLabelValueDefinitionSeverity : null;
-  bool get isUnknown => isA<LabelValueDefinitionSeverityUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+bool get isNotKnownValue => !isKnownValue;
+KnownLabelValueDefinitionSeverity? get knownValue => isKnownValue ? data as KnownLabelValueDefinitionSeverity : null;
+bool get isUnknown => isA<LabelValueDefinitionSeverityUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class LabelValueDefinitionSeverityConverter
-    extends JsonConverter<LabelValueDefinitionSeverity, String> {
+final class LabelValueDefinitionSeverityConverter extends JsonConverter<LabelValueDefinitionSeverity, String> {
   const LabelValueDefinitionSeverityConverter();
 
   @override
@@ -72,17 +70,20 @@ final class LabelValueDefinitionSeverityConverter
   }
 
   @override
-  String toJson(LabelValueDefinitionSeverity object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(LabelValueDefinitionSeverity object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownLabelValueDefinitionSeverity implements Serializable {
+enum KnownLabelValueDefinitionSeverity implements Serializable{
   @JsonValue('inform')
-  inform('inform'),
-  @JsonValue('alert')
-  alert('alert'),
-  @JsonValue('none')
-  none('none');
+inform('inform'),
+@JsonValue('alert')
+alert('alert'),
+@JsonValue('none')
+none('none'),
+  ;
 
   @override
   final String value;

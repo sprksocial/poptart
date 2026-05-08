@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -18,33 +21,35 @@ part 'input.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class SyncListBlobsInput with _$SyncListBlobsInput {
-  static const knownProps = <String>['did', 'since', 'limit', 'cursor'];
+  static const knownProps = <String>['did', 'since', 'limit', 'cursor', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory SyncListBlobsInput({
     /// The DID of the repo.
-    required String did,
-
-    /// Optional revision of the repo to list blobs since.
-    String? since,
-    @Default(500) int limit,
-    String? cursor,
+required String did,
+/// Optional revision of the repo to list blobs since.
+String? since,
+@Default(500) int limit,
+String? cursor,
 
     Map<String, dynamic>? $unknown,
   }) = _SyncListBlobsInput;
 
-  factory SyncListBlobsInput.fromJson(Map<String, Object?> json) =>
-      _$SyncListBlobsInputFromJson(json);
+  factory SyncListBlobsInput.fromJson(Map<String, Object?> json) => _$SyncListBlobsInputFromJson(json);
 }
 
 extension SyncListBlobsInputExtension on SyncListBlobsInput {
-  bool get hasSince => since != null;
-  bool get hasNotSince => !hasSince;
-  bool get hasCursor => cursor != null;
-  bool get hasNotCursor => !hasCursor;
+bool get hasSince => since != null;
+bool get hasNotSince => !hasSince;
+bool get hasCursor => cursor != null;
+bool get hasNotCursor => !hasCursor;
+
 }
+
 
 final class SyncListBlobsInputConverter
     extends JsonConverter<SyncListBlobsInput, Map<String, dynamic>> {
@@ -52,12 +57,15 @@ final class SyncListBlobsInputConverter
 
   @override
   SyncListBlobsInput fromJson(Map<String, dynamic> json) {
-    return SyncListBlobsInput.fromJson(
-      translate(json, SyncListBlobsInput.knownProps),
-    );
+    return SyncListBlobsInput.fromJson(translate(
+      json,
+      SyncListBlobsInput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(SyncListBlobsInput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(SyncListBlobsInput object) => untranslate(
+        object.toJson(),
+      );
 }
+

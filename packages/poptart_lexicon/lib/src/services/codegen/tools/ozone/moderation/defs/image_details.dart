@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'image_details.freezed.dart';
 part 'image_details.g.dart';
@@ -18,27 +21,32 @@ part 'image_details.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class ImageDetails with _$ImageDetails {
-  static const knownProps = <String>['width', 'height'];
+  static const knownProps = <String>['width', 'height', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ImageDetails({
     @Default('tools.ozone.moderation.defs#imageDetails') String $type,
     required int width,
-    required int height,
+required int height,
 
     Map<String, dynamic>? $unknown,
   }) = _ImageDetails;
 
-  factory ImageDetails.fromJson(Map<String, Object?> json) =>
-      _$ImageDetailsFromJson(json);
+  factory ImageDetails.fromJson(Map<String, Object?> json) => _$ImageDetailsFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'tools.ozone.moderation.defs#imageDetails';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'tools.ozone.moderation.defs#imageDetails'
+;
 }
+
+}
+
+
 
 final class ImageDetailsConverter
     extends JsonConverter<ImageDetails, Map<String, dynamic>> {
@@ -46,10 +54,15 @@ final class ImageDetailsConverter
 
   @override
   ImageDetails fromJson(Map<String, dynamic> json) {
-    return ImageDetails.fromJson(translate(json, ImageDetails.knownProps));
+    return ImageDetails.fromJson(translate(
+      json,
+      ImageDetails.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ImageDetails object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ImageDetails object) => untranslate(
+        object.toJson(),
+      );
 }
+

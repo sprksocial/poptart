@@ -23,3 +23,4 @@ export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/applyWrite
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/applyWrites/update_result.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/applyWrites/update_result_validation_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/applyWrites/delete_result.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/applyWrites/descriptor.dart';

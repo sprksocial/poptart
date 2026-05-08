@@ -17,3 +17,4 @@ export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/sche
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/scheduleAction/scheduling_config.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/scheduleAction/scheduled_action_results.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/scheduleAction/failed_scheduling.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/scheduleAction/descriptor.dart';

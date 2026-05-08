@@ -59,3 +59,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/defs/union_p
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/defs/status_view.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/defs/union_status_view_embed.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/defs/status_view_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/defs/descriptor.dart';

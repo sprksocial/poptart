@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import './repo_op_action.dart';
+
 
 part 'repo_op.freezed.dart';
 part 'repo_op.g.dart';
@@ -20,22 +22,21 @@ part 'repo_op.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
 /// A repo operation, ie a mutation of a single record.
 @freezed
 abstract class RepoOp with _$RepoOp {
-  static const knownProps = <String>['action', 'path', 'cid', 'prev'];
+  static const knownProps = <String>['action', 'path', 'cid', 'prev', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory RepoOp({
     @Default('com.atproto.sync.subscribeRepos#repoOp') String $type,
     @RepoOpActionConverter() required RepoOpAction action,
-    required String path,
-
-    /// For creates and updates, the new record CID. For deletions, null.
-    required String? cid,
-
-    /// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.
-    String? prev,
+required String path,
+/// For creates and updates, the new record CID. For deletions, null.
+required String? cid,
+/// For updates and deletes, the previous record CID (required for inductive firehose). For creations, field should not be defined.
+String? prev,
 
     Map<String, dynamic>? $unknown,
   }) = _RepoOp;
@@ -43,15 +44,19 @@ abstract class RepoOp with _$RepoOp {
   factory RepoOp.fromJson(Map<String, Object?> json) => _$RepoOpFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('t')) return false;
-    return object['t'] == '#repoOp';
-  }
+  if (!object.containsKey('t')) return false;
+  return object['t'] == '#repoOp'
+;
+}
+
 }
 
 extension RepoOpExtension on RepoOp {
-  bool get hasPrev => prev != null;
-  bool get hasNotPrev => !hasPrev;
+bool get hasPrev => prev != null;
+bool get hasNotPrev => !hasPrev;
+
 }
+
 
 final class RepoOpConverter
     extends JsonConverter<RepoOp, Map<String, dynamic>> {
@@ -59,9 +64,15 @@ final class RepoOpConverter
 
   @override
   RepoOp fromJson(Map<String, dynamic> json) {
-    return RepoOp.fromJson(translate(json, RepoOp.knownProps));
+    return RepoOp.fromJson(translate(
+      json,
+      RepoOp.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(RepoOp object) => untranslate(object.toJson());
+  Map<String, dynamic> toJson(RepoOp object) => untranslate(
+        object.toJson(),
+      );
 }
+

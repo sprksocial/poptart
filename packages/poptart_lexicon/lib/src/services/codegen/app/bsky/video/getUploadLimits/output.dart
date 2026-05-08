@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -18,43 +21,40 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class VideoGetUploadLimitsOutput with _$VideoGetUploadLimitsOutput {
-  static const knownProps = <String>[
-    'canUpload',
-    'remainingDailyVideos',
-    'remainingDailyBytes',
-    'message',
-    'error',
-  ];
+  static const knownProps = <String>['canUpload', 'remainingDailyVideos', 'remainingDailyBytes', 'message', 'error', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory VideoGetUploadLimitsOutput({
     required bool canUpload,
-    int? remainingDailyVideos,
-    int? remainingDailyBytes,
-    String? message,
-    String? error,
+int? remainingDailyVideos,
+int? remainingDailyBytes,
+String? message,
+String? error,
 
     Map<String, dynamic>? $unknown,
   }) = _VideoGetUploadLimitsOutput;
 
-  factory VideoGetUploadLimitsOutput.fromJson(Map<String, Object?> json) =>
-      _$VideoGetUploadLimitsOutputFromJson(json);
+  factory VideoGetUploadLimitsOutput.fromJson(Map<String, Object?> json) => _$VideoGetUploadLimitsOutputFromJson(json);
 }
 
 extension VideoGetUploadLimitsOutputExtension on VideoGetUploadLimitsOutput {
-  bool get isCanUpload => canUpload;
-  bool get isNotCanUpload => !isCanUpload;
-  bool get hasRemainingDailyVideos => remainingDailyVideos != null;
-  bool get hasNotRemainingDailyVideos => !hasRemainingDailyVideos;
-  bool get hasRemainingDailyBytes => remainingDailyBytes != null;
-  bool get hasNotRemainingDailyBytes => !hasRemainingDailyBytes;
-  bool get hasMessage => message != null;
-  bool get hasNotMessage => !hasMessage;
-  bool get hasError => error != null;
-  bool get hasNotError => !hasError;
+bool get isCanUpload => canUpload;
+bool get isNotCanUpload => !isCanUpload;
+bool get hasRemainingDailyVideos => remainingDailyVideos != null;
+bool get hasNotRemainingDailyVideos => !hasRemainingDailyVideos;
+bool get hasRemainingDailyBytes => remainingDailyBytes != null;
+bool get hasNotRemainingDailyBytes => !hasRemainingDailyBytes;
+bool get hasMessage => message != null;
+bool get hasNotMessage => !hasMessage;
+bool get hasError => error != null;
+bool get hasNotError => !hasError;
+
 }
+
 
 final class VideoGetUploadLimitsOutputConverter
     extends JsonConverter<VideoGetUploadLimitsOutput, Map<String, dynamic>> {
@@ -62,12 +62,15 @@ final class VideoGetUploadLimitsOutputConverter
 
   @override
   VideoGetUploadLimitsOutput fromJson(Map<String, dynamic> json) {
-    return VideoGetUploadLimitsOutput.fromJson(
-      translate(json, VideoGetUploadLimitsOutput.knownProps),
-    );
+    return VideoGetUploadLimitsOutput.fromJson(translate(
+      json,
+      VideoGetUploadLimitsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(VideoGetUploadLimitsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(VideoGetUploadLimitsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

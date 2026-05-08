@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createSession/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createSession/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createSession/main_status.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/createSession/descriptor.dart';

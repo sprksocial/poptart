@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/listMissingBlobs/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/listMissingBlobs/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/listMissingBlobs/record_blob.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/repo/listMissingBlobs/descriptor.dart';

@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/defs/sig_detail.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/signature/defs/descriptor.dart';

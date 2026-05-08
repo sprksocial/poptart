@@ -7,6 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:poptart_core/poptart_core.dart' show Serializable;
 import 'package:poptart_core/internals.dart' show isA;
 
@@ -18,9 +19,9 @@ part 'label_value_definition_default_setting.freezed.dart';
 // LexGenerator
 // **************************************************************************
 
+
 @freezed
-abstract class LabelValueDefinitionDefaultSetting
-    with _$LabelValueDefinitionDefaultSetting {
+abstract class LabelValueDefinitionDefaultSetting with _$LabelValueDefinitionDefaultSetting {
   const LabelValueDefinitionDefaultSetting._();
 
   const factory LabelValueDefinitionDefaultSetting.knownValue({
@@ -35,29 +36,23 @@ abstract class LabelValueDefinitionDefaultSetting
     if (value == null) return null;
     final knownValue = KnownLabelValueDefinitionDefaultSetting.valueOf(value);
 
-    return knownValue != null
-        ? LabelValueDefinitionDefaultSetting.knownValue(data: knownValue)
-        : LabelValueDefinitionDefaultSetting.unknown(data: value);
+    return knownValue != null ? LabelValueDefinitionDefaultSetting.knownValue(data: knownValue) : LabelValueDefinitionDefaultSetting.unknown(data: value);
   }
 
-  String toJson() =>
-      const LabelValueDefinitionDefaultSettingConverter().toJson(this);
+  String toJson() => const LabelValueDefinitionDefaultSettingConverter().toJson(this);
 }
 
-extension LabelValueDefinitionDefaultSettingExtension
-    on LabelValueDefinitionDefaultSetting {
-  bool get isKnownValue =>
-      isA<LabelValueDefinitionDefaultSettingKnownValue>(this);
-  bool get isNotKnownValue => !isKnownValue;
-  KnownLabelValueDefinitionDefaultSetting? get knownValue =>
-      isKnownValue ? data as KnownLabelValueDefinitionDefaultSetting : null;
-  bool get isUnknown => isA<LabelValueDefinitionDefaultSettingUnknown>(this);
-  bool get isNotUnknown => !isUnknown;
-  String? get unknown => isUnknown ? data as String : null;
+extension LabelValueDefinitionDefaultSettingExtension on LabelValueDefinitionDefaultSetting {
+  bool get isKnownValue => isA<LabelValueDefinitionDefaultSettingKnownValue>(this);
+bool get isNotKnownValue => !isKnownValue;
+KnownLabelValueDefinitionDefaultSetting? get knownValue => isKnownValue ? data as KnownLabelValueDefinitionDefaultSetting : null;
+bool get isUnknown => isA<LabelValueDefinitionDefaultSettingUnknown>(this);
+bool get isNotUnknown => !isUnknown;
+String? get unknown => isUnknown ? data as String : null;
+
 }
 
-final class LabelValueDefinitionDefaultSettingConverter
-    extends JsonConverter<LabelValueDefinitionDefaultSetting, String> {
+final class LabelValueDefinitionDefaultSettingConverter extends JsonConverter<LabelValueDefinitionDefaultSetting, String> {
   const LabelValueDefinitionDefaultSettingConverter();
 
   @override
@@ -75,17 +70,20 @@ final class LabelValueDefinitionDefaultSettingConverter
   }
 
   @override
-  String toJson(LabelValueDefinitionDefaultSetting object) =>
-      object.when(knownValue: (data) => data.value, unknown: (data) => data);
+  String toJson(LabelValueDefinitionDefaultSetting object) => object.when(
+        knownValue: (data) => data.value,
+        unknown: (data) => data,
+      );
 }
 
-enum KnownLabelValueDefinitionDefaultSetting implements Serializable {
+enum KnownLabelValueDefinitionDefaultSetting implements Serializable{
   @JsonValue('ignore')
-  ignore('ignore'),
-  @JsonValue('warn')
-  warn('warn'),
-  @JsonValue('hide')
-  hide('hide');
+ignore('ignore'),
+@JsonValue('warn')
+warn('warn'),
+@JsonValue('hide')
+hide('hide'),
+  ;
 
   @override
   final String value;

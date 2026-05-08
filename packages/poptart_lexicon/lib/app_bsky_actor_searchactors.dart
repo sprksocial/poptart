@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/searchActors/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/searchActors/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/actor/searchActors/descriptor.dart';

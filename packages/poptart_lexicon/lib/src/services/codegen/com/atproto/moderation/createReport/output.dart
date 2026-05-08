@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/moderation/defs/reason_type.dart';
+import '../defs/reason_type.dart';
 import './union_main_subject.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -21,40 +23,33 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
-abstract class ModerationCreateReportOutput
-    with _$ModerationCreateReportOutput {
-  static const knownProps = <String>[
-    'id',
-    'reasonType',
-    'reason',
-    'subject',
-    'reportedBy',
-    'createdAt',
-  ];
+abstract class ModerationCreateReportOutput with _$ModerationCreateReportOutput {
+  static const knownProps = <String>['id', 'reasonType', 'reason', 'subject', 'reportedBy', 'createdAt', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ModerationCreateReportOutput({
     required int id,
-    @ReasonTypeConverter() required ReasonType reasonType,
-    String? reason,
-    @UModerationCreateReportSubjectConverter()
-    required UModerationCreateReportSubject subject,
-    required String reportedBy,
-    required DateTime createdAt,
+@ReasonTypeConverter() required ReasonType reasonType,
+String? reason,
+@UModerationCreateReportSubjectConverter() required UModerationCreateReportSubject subject,
+required String reportedBy,
+required DateTime createdAt,
 
     Map<String, dynamic>? $unknown,
   }) = _ModerationCreateReportOutput;
 
-  factory ModerationCreateReportOutput.fromJson(Map<String, Object?> json) =>
-      _$ModerationCreateReportOutputFromJson(json);
+  factory ModerationCreateReportOutput.fromJson(Map<String, Object?> json) => _$ModerationCreateReportOutputFromJson(json);
 }
 
-extension ModerationCreateReportOutputExtension
-    on ModerationCreateReportOutput {
-  bool get hasReason => reason != null;
-  bool get hasNotReason => !hasReason;
+extension ModerationCreateReportOutputExtension on ModerationCreateReportOutput {
+bool get hasReason => reason != null;
+bool get hasNotReason => !hasReason;
+
 }
+
 
 final class ModerationCreateReportOutputConverter
     extends JsonConverter<ModerationCreateReportOutput, Map<String, dynamic>> {
@@ -62,12 +57,15 @@ final class ModerationCreateReportOutputConverter
 
   @override
   ModerationCreateReportOutput fromJson(Map<String, dynamic> json) {
-    return ModerationCreateReportOutput.fromJson(
-      translate(json, ModerationCreateReportOutput.knownProps),
-    );
+    return ModerationCreateReportOutput.fromJson(translate(
+      json,
+      ModerationCreateReportOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ModerationCreateReportOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ModerationCreateReportOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

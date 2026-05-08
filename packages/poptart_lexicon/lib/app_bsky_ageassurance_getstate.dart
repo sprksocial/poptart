@@ -13,3 +13,4 @@
 
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/getState/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/getState/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/ageassurance/getState/descriptor.dart';

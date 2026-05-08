@@ -7,12 +7,14 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import 'package:poptart_lexicon/com_atproto_admin_defs.dart';
-import '../../../../tools/ozone/signature/defs/sig_detail.dart';
+import '../../../../com/atproto/admin/defs/account_view.dart';
+import '../defs/sig_detail.dart';
+
 
 part 'related_account.freezed.dart';
 part 'related_account.g.dart';
@@ -21,29 +23,32 @@ part 'related_account.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class RelatedAccount with _$RelatedAccount {
-  static const knownProps = <String>['account', 'similarities'];
+  static const knownProps = <String>['account', 'similarities', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory RelatedAccount({
-    @Default('tools.ozone.signature.findRelatedAccounts#relatedAccount')
-    String $type,
+    @Default('tools.ozone.signature.findRelatedAccounts#relatedAccount') String $type,
     @AccountViewConverter() required AccountView account,
-    @SigDetailConverter() List<SigDetail>? similarities,
+@SigDetailConverter() List<SigDetail>? similarities,
 
     Map<String, dynamic>? $unknown,
   }) = _RelatedAccount;
 
-  factory RelatedAccount.fromJson(Map<String, Object?> json) =>
-      _$RelatedAccountFromJson(json);
+  factory RelatedAccount.fromJson(Map<String, Object?> json) => _$RelatedAccountFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] ==
-        'tools.ozone.signature.findRelatedAccounts#relatedAccount';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'tools.ozone.signature.findRelatedAccounts#relatedAccount'
+;
 }
+
+}
+
+
 
 final class RelatedAccountConverter
     extends JsonConverter<RelatedAccount, Map<String, dynamic>> {
@@ -51,10 +56,15 @@ final class RelatedAccountConverter
 
   @override
   RelatedAccount fromJson(Map<String, dynamic> json) {
-    return RelatedAccount.fromJson(translate(json, RelatedAccount.knownProps));
+    return RelatedAccount.fromJson(translate(
+      json,
+      RelatedAccount.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(RelatedAccount object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(RelatedAccount object) => untranslate(
+        object.toJson(),
+      );
 }
+

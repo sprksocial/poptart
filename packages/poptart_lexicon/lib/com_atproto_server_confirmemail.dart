@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/confirmEmail/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/server/confirmEmail/descriptor.dart';

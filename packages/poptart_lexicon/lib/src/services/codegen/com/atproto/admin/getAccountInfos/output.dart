@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/admin/defs/account_view.dart';
+import '../defs/account_view.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,9 +22,11 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class AdminGetAccountInfosOutput with _$AdminGetAccountInfosOutput {
-  static const knownProps = <String>['infos'];
+  static const knownProps = <String>['infos', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory AdminGetAccountInfosOutput({
@@ -31,9 +35,10 @@ abstract class AdminGetAccountInfosOutput with _$AdminGetAccountInfosOutput {
     Map<String, dynamic>? $unknown,
   }) = _AdminGetAccountInfosOutput;
 
-  factory AdminGetAccountInfosOutput.fromJson(Map<String, Object?> json) =>
-      _$AdminGetAccountInfosOutputFromJson(json);
+  factory AdminGetAccountInfosOutput.fromJson(Map<String, Object?> json) => _$AdminGetAccountInfosOutputFromJson(json);
 }
+
+
 
 final class AdminGetAccountInfosOutputConverter
     extends JsonConverter<AdminGetAccountInfosOutput, Map<String, dynamic>> {
@@ -41,12 +46,15 @@ final class AdminGetAccountInfosOutputConverter
 
   @override
   AdminGetAccountInfosOutput fromJson(Map<String, dynamic> json) {
-    return AdminGetAccountInfosOutput.fromJson(
-      translate(json, AdminGetAccountInfosOutput.knownProps),
-    );
+    return AdminGetAccountInfosOutput.fromJson(translate(
+      json,
+      AdminGetAccountInfosOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(AdminGetAccountInfosOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(AdminGetAccountInfosOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

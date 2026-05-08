@@ -7,9 +7,12 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
+
+
 
 part 'thread_context.freezed.dart';
 part 'thread_context.g.dart';
@@ -18,10 +21,11 @@ part 'thread_context.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
 /// Metadata about this post within the context of the thread it is in.
 @freezed
 abstract class ThreadContext with _$ThreadContext {
-  static const knownProps = <String>['rootAuthorLike'];
+  static const knownProps = <String>['rootAuthorLike', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory ThreadContext({
@@ -31,19 +35,22 @@ abstract class ThreadContext with _$ThreadContext {
     Map<String, dynamic>? $unknown,
   }) = _ThreadContext;
 
-  factory ThreadContext.fromJson(Map<String, Object?> json) =>
-      _$ThreadContextFromJson(json);
+  factory ThreadContext.fromJson(Map<String, Object?> json) => _$ThreadContextFromJson(json);
 
   static bool validate(final Map<String, dynamic> object) {
-    if (!object.containsKey('\$type')) return false;
-    return object['\$type'] == 'app.bsky.feed.defs#threadContext';
-  }
+  if (!object.containsKey('\$type')) return false;
+  return object['\$type'] == 'app.bsky.feed.defs#threadContext'
+;
+}
+
 }
 
 extension ThreadContextExtension on ThreadContext {
-  bool get hasRootAuthorLike => rootAuthorLike != null;
-  bool get hasNotRootAuthorLike => !hasRootAuthorLike;
+bool get hasRootAuthorLike => rootAuthorLike != null;
+bool get hasNotRootAuthorLike => !hasRootAuthorLike;
+
 }
+
 
 final class ThreadContextConverter
     extends JsonConverter<ThreadContext, Map<String, dynamic>> {
@@ -51,10 +58,15 @@ final class ThreadContextConverter
 
   @override
   ThreadContext fromJson(Map<String, dynamic> json) {
-    return ThreadContext.fromJson(translate(json, ThreadContext.knownProps));
+    return ThreadContext.fromJson(translate(
+      json,
+      ThreadContext.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(ThreadContext object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(ThreadContext object) => untranslate(
+        object.toJson(),
+      );
 }
+

@@ -7,11 +7,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import '../../../../com/atproto/label/defs/label.dart';
+import '../../label/defs/label.dart';
+
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -20,9 +22,11 @@ part 'output.g.dart';
 // LexGenerator
 // **************************************************************************
 
+
+
 @freezed
 abstract class TempFetchLabelsOutput with _$TempFetchLabelsOutput {
-  static const knownProps = <String>['labels'];
+  static const knownProps = <String>['labels', ];
 
   @JsonSerializable(includeIfNull: false)
   const factory TempFetchLabelsOutput({
@@ -31,9 +35,10 @@ abstract class TempFetchLabelsOutput with _$TempFetchLabelsOutput {
     Map<String, dynamic>? $unknown,
   }) = _TempFetchLabelsOutput;
 
-  factory TempFetchLabelsOutput.fromJson(Map<String, Object?> json) =>
-      _$TempFetchLabelsOutputFromJson(json);
+  factory TempFetchLabelsOutput.fromJson(Map<String, Object?> json) => _$TempFetchLabelsOutputFromJson(json);
 }
+
+
 
 final class TempFetchLabelsOutputConverter
     extends JsonConverter<TempFetchLabelsOutput, Map<String, dynamic>> {
@@ -41,12 +46,15 @@ final class TempFetchLabelsOutputConverter
 
   @override
   TempFetchLabelsOutput fromJson(Map<String, dynamic> json) {
-    return TempFetchLabelsOutput.fromJson(
-      translate(json, TempFetchLabelsOutput.knownProps),
-    );
+    return TempFetchLabelsOutput.fromJson(translate(
+      json,
+      TempFetchLabelsOutput.knownProps,
+    ));
   }
 
   @override
-  Map<String, dynamic> toJson(TempFetchLabelsOutput object) =>
-      untranslate(object.toJson());
+  Map<String, dynamic> toJson(TempFetchLabelsOutput object) => untranslate(
+        object.toJson(),
+      );
 }
+

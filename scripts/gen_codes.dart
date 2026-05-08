@@ -303,8 +303,7 @@ LexGenConfig _buildLexGenConfig({
             (package) => LexiconNamespaceRule(
               prefixes: package.roots,
               homeDir: '$packagesPath/${package.name}/lib/src/services/codegen',
-              exportCodegenPath:
-                  'package:${package.name}/src/services/codegen',
+              exportCodegenPath: 'package:${package.name}/src/services/codegen',
               servicePackagePath: 'package:${package.name}',
               rootPackageName: package.name,
             ),
@@ -322,11 +321,8 @@ final class _LexiconManifest {
 
   const _LexiconManifest({required this.packages});
 
-  List<String> get services => packages
-      .expand((package) => package.roots)
-      .map((root) => root.split('.').take(2).join('.'))
-      .toSet()
-      .toList();
+  List<String> get services =>
+      packages.expand((package) => package.roots).toSet().toList();
 
   static _LexiconManifest load(final String path) {
     final file = File(path);
@@ -350,7 +346,9 @@ final class _LexiconManifest {
       roots.clear();
     }
 
-    for (final rawLine in const LineSplitter().convert(file.readAsStringSync())) {
+    for (final rawLine in const LineSplitter().convert(
+      file.readAsStringSync(),
+    )) {
       final line = rawLine.trim();
       if (line.isEmpty || line.startsWith('#') || line == 'packages:') {
         continue;

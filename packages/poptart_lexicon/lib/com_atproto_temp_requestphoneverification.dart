@@ -12,3 +12,4 @@
 // **************************************************************************
 
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/requestPhoneVerification/input.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/temp/requestPhoneVerification/descriptor.dart';

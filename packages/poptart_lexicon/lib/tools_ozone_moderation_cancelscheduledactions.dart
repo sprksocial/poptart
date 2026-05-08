@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/cancelScheduledActions/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/cancelScheduledActions/cancellation_results.dart';
 export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/cancelScheduledActions/failed_cancellation.dart';
+export 'package:poptart_lexicon/src/services/codegen/tools/ozone/moderation/cancelScheduledActions/descriptor.dart';

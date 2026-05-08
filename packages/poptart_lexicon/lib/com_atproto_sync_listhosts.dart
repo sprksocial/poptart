@@ -14,3 +14,4 @@
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listHosts/input.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listHosts/output.dart';
 export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listHosts/host.dart';
+export 'package:poptart_lexicon/src/services/codegen/com/atproto/sync/listHosts/descriptor.dart';

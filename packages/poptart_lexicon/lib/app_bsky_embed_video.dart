@@ -16,3 +16,4 @@ export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/video/main_p
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/video/caption.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/video/view.dart';
 export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/video/view_presentation.dart';
+export 'package:poptart_lexicon/src/services/codegen/app/bsky/embed/video/descriptor.dart';

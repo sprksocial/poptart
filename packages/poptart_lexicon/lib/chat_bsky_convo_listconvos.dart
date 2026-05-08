@@ -15,3 +15,4 @@ export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/listConvos/
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/listConvos/main_read_state.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/listConvos/main_status.dart';
 export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/listConvos/output.dart';
+export 'package:poptart_lexicon/src/services/codegen/chat/bsky/convo/listConvos/descriptor.dart';
