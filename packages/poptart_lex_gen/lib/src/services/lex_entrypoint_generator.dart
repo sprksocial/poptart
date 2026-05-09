@@ -119,20 +119,20 @@ final class _LexEntrypointGenerator {
     final aggregates = <String, List<_LeafEntrypoint>>{};
 
     for (final leaf in leaves) {
-      final parts = leaf.publicPath.split('/');
-      for (var i = 1; i < parts.length; i++) {
-        final aggregatePath = parts.take(i).join('/');
-        aggregates.putIfAbsent(aggregatePath, () => []).add(leaf);
-      }
+      if (!leaf.hasMethodDescriptor) continue;
+
+      final parentDir = rule.getPublicParentDir(leaf.lexiconId);
+      if (parentDir.isEmpty) continue;
+
+      aggregates.putIfAbsent(parentDir, () => []).add(leaf);
     }
 
     for (final entry in aggregates.entries) {
       final packageName = entry.value.first.packageName;
       final buffer = StringBuffer()..writeln(kHeaderHint);
 
-      final methodLeaves =
-          entry.value.where((leaf) => leaf.hasMethodDescriptor).toList()
-            ..sort((a, b) => a.publicPath.compareTo(b.publicPath));
+      final methodLeaves = entry.value
+        ..sort((a, b) => a.publicPath.compareTo(b.publicPath));
 
       for (final leaf in methodLeaves) {
         buffer.writeln(
