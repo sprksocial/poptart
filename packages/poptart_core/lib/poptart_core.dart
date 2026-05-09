@@ -11,6 +11,7 @@ export 'package:poptart_core/src/car_decoder.dart';
 export 'package:poptart_core/src/utils.dart' show isValidAppPassword;
 export 'package:poptart_core/src/clients/challenge.dart';
 export 'package:poptart_core/src/clients/service_context.dart';
+export 'package:poptart_core/src/clients/session.dart';
 export 'package:poptart_core/src/clients/jitter.dart';
 export 'package:poptart_core/src/clients/retry_event.dart';
 export 'package:poptart_core/src/types/jwt.dart';

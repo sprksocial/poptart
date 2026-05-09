@@ -3,4 +3,5 @@
 ## v0.1.0
 
 - Initial Poptart umbrella package release.
-- Exports the app-facing client, OAuth, core, primitive, raw XRPC, and curated ATProto lexicon surfaces for application use.
+- Exports session helpers, OAuth, core, primitive, and raw XRPC surfaces for application use.
+- Generated Lexicon APIs are available through the separate `poptart_lex` package.
