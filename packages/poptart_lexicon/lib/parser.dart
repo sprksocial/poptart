@@ -1,7 +1,3 @@
-// Copyright (c) 2023-2026, Shinya Kato and Poptart contributors.
-// All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
-
 export 'package:poptart_primitives/nsid.dart' show NSID;
 
 export 'package:poptart_lexicon/src/types/blobs/lex_blob.dart';
