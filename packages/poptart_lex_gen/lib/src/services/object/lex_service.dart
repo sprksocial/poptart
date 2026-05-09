@@ -112,7 +112,7 @@ final class LexService {
 
       if (_hasRecordApi()) {
         importPaths.add(
-          "import 'package:poptart_lexicon/com_atproto_repo_createrecord.dart';",
+          "import 'package:poptart_lex/com_atproto_repo_createrecord.dart';",
         );
       }
     }
@@ -140,7 +140,7 @@ import 'package:poptart_core/internals.dart' show protected;
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart' show iso8601;
 
-import 'package:poptart_lexicon/com_atproto_services.dart'
+import 'package:poptart_lex/com_atproto_services.dart'
     show
         comAtprotoRepoGetRecord,
         comAtprotoRepoListRecords,
@@ -148,11 +148,11 @@ import 'package:poptart_lexicon/com_atproto_services.dart'
         comAtprotoRepoPutRecord,
         comAtprotoRepoDeleteRecord;
 
-import 'package:poptart_lexicon/com_atproto_repo_createrecord.dart';
-import 'package:poptart_lexicon/com_atproto_repo_deleterecord.dart';
-import 'package:poptart_lexicon/com_atproto_repo_getrecord.dart';
-import 'package:poptart_lexicon/com_atproto_repo_listrecords.dart';
-import 'package:poptart_lexicon/com_atproto_repo_putrecord.dart';
+import 'package:poptart_lex/com_atproto_repo_createrecord.dart';
+import 'package:poptart_lex/com_atproto_repo_deleterecord.dart';
+import 'package:poptart_lex/com_atproto_repo_getrecord.dart';
+import 'package:poptart_lex/com_atproto_repo_listrecords.dart';
+import 'package:poptart_lex/com_atproto_repo_putrecord.dart';
 
 $packagePaths
 

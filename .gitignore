@@ -140,6 +140,10 @@ coverage.lcov
 docs/.nuxt/
 docs/.output/
 docs/node_modules/
+website/.data/
+website/.nuxt/
+website/.output/
+website/node_modules/
 
 # Kiro IDE
 .kiro

@@ -20,7 +20,7 @@ import 'utils.dart' as utils;
 /// Optimized lexicon documentation generator script.
 class GenLexiconDocsScript extends BaseScript {
   static const _fileName = 'lexicons.g.dart';
-  static const _outputPath = 'packages/poptart_lexicon/lib/src/$_fileName';
+  static const _outputPath = 'packages/poptart_lex/lib/src/$_fileName';
 
   final FileManager _fileManager;
   final JsonEncoder _jsonEncoder = const JsonEncoder.withIndent('  ');

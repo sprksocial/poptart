@@ -11,9 +11,10 @@ environment:
 
 dependencies:
   poptart_core: ^0.1.0
-  poptart_lexicon: ^0.1.0
+  poptart_lex: ^0.1.0
   poptart_oauth: ^0.1.0
   poptart_primitives: ^0.1.0
+  poptart_xrpc: ^0.1.0
 
 topics:
   - atproto

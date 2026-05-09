@@ -31,10 +31,6 @@ class OptimizedUtils {
 
   // Constants
   static const String pubspecFileName = 'pubspec.yaml';
-  static const String moderationResourcesPath =
-      'packages/poptart_lexicon/test/src/moderation/suite/data';
-  static const String moderationDefinitionsPath =
-      'packages/poptart_lexicon/lib/src/moderation/definitions';
   static final List<String> lexiconsRoot = _loadLexiconRootsFromManifest();
   static final RepositorySlug officialRepositorySlug = RepositorySlug(
     'bluesky-social',
@@ -258,7 +254,9 @@ class OptimizedUtils {
     final buffer = StringBuffer()
       ..writeln('// coverage:ignore-file')
       ..writeln('// ignore_for_file: type=lint')
-      ..writeln('// ignore_for_file: unused_import, duplicate_import, unnecessary_cast')
+      ..writeln(
+        '// ignore_for_file: unused_import, duplicate_import, unnecessary_cast',
+      )
       ..writeln('// GENERATED CODE - DO NOT MODIFY BY HAND')
       ..writeln()
       ..writeln(

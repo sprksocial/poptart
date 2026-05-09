@@ -6,6 +6,7 @@ export 'package:poptart_primitives/at_uri.dart' show AtUri;
 export 'package:poptart_primitives/nsid.dart' show NSID;
 
 export 'package:poptart_core/src/clients/base_http_service.dart';
+export 'package:poptart_core/src/clients/client.dart';
 export 'package:poptart_core/src/car_decoder.dart';
 export 'package:poptart_core/src/utils.dart' show isValidAppPassword;
 export 'package:poptart_core/src/clients/challenge.dart';
@@ -43,6 +44,7 @@ export 'package:poptart_xrpc/poptart_xrpc.dart'
         HttpMethod,
         HttpStatus,
         Serializable,
+        XRPCClient,
         XRPCMethodDescriptor,
         XRPCMethodKind,
         XRPCObjectDescriptor,

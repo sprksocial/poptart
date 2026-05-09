@@ -36,8 +36,12 @@ final class CommandGen implements Gen {
   @override
   void execute() {
     final docs = config.docsProvider();
+    final commandRuleConfig = config.commandRuleConfig;
+    if (commandRuleConfig == null) {
+      throw StateError('Command generation requires commandRuleConfig.');
+    }
 
-    command_rule.setLexCommandRuleConfig(config.commandRuleConfig);
+    command_rule.setLexCommandRuleConfig(commandRuleConfig);
 
     generateLexCommands(docs);
   }

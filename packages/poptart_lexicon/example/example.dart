@@ -1,4 +1,3 @@
-import 'package:poptart_lexicon/docs.dart' as docs;
 import 'package:poptart_lexicon/poptart_lexicon.dart';
 
 void main() {
@@ -26,17 +25,4 @@ void main() {
   print(appBskyFeedLike.id);
   print(appBskyFeedLike.description);
   print(appBskyFeedLike.defs);
-
-  //* Or you can use prepared official lexicons.
-  final appBskyFeedPost = LexiconDoc.fromJson(docs.appBskyFeedPost);
-  print(appBskyFeedPost);
-
-  //* Also you can see all official lexicons.
-  for (final lexicon in docs.lexicons) {
-    final lexiconDoc = LexiconDoc.fromJson(lexicon);
-
-    print(lexiconDoc.id);
-    print(lexiconDoc.description);
-    print(lexiconDoc.defs);
-  }
 }

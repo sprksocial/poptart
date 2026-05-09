@@ -14,10 +14,9 @@ workspace:
   - packages/poptart_core
   - packages/poptart_oauth
   - packages/poptart_test
-  - packages/poptart_bluesky_text
-  - packages/poptart_cli
   - packages/poptart_did_plc
   - packages/poptart_lex_gen
+  - packages/poptart_lex
   - packages/poptart_lexicon
   - packages/poptart_multiformats
   - packages/poptart_primitives
@@ -27,6 +26,7 @@ dependencies:
   github: ^9.12.0
   http: ^1.4.0
   poptart_lex_gen: ^0.1.0
+  poptart_lex: ^0.1.0
   poptart_lexicon: ^0.1.0
   pubspec: ^2.3.0
   test: ^1.26.2
@@ -92,10 +92,8 @@ melos:
         dart run ./scripts/gen_lexicon_docs.dart
         dart run ./scripts/gen_lexicon_ids.dart
         dart run ./scripts/gen_codes.dart
-        cd packages/poptart_lexicon
+        cd packages/poptart_lex
         dart run build_runner build --delete-conflicting-outputs
-        dart fix --apply
-        cd ../../packages/poptart_cli
         dart fix --apply
         cd ../../
         melos fmt

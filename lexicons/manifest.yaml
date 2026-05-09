@@ -1,5 +1,5 @@
 packages:
-  - name: poptart_lexicon
+  - name: poptart_lex
     roots:
       - com.atproto.
       - app.bsky.

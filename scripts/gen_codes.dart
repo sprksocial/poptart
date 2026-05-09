@@ -45,7 +45,7 @@ class GenCodesScript extends BaseScript {
     final options = _parseArguments(args);
 
     // Start progress tracking
-    progress.startOperation('Code Generation', 2);
+    progress.startOperation('Code Generation', 1);
 
     try {
       // Generate services and types in parallel if possible
@@ -57,7 +57,6 @@ class GenCodesScript extends BaseScript {
 
       final stats = {
         'Services Generated': 'Complete',
-        'Commands Generated': 'Complete',
         'Parallel Processing': options.parallel ? 'Enabled' : 'Disabled',
         'Max Parallel Operations': config.maxParallelOperations,
         'Generation Mode': options.parallel ? 'Parallel' : 'Sequential',
@@ -99,38 +98,15 @@ class GenCodesScript extends BaseScript {
       );
       rethrow;
     }
-
-    logger.info('Generating commands...');
-    progress.updateProgress(1, currentItem: 'Initializing command generation');
-
-    final commandStartTime = DateTime.now();
-    try {
-      CommandGen(config: lexGenConfig).execute();
-      final commandDuration = DateTime.now().difference(commandStartTime);
-      progress.updateProgress(2, currentItem: 'Command generation complete');
-      logger.debug(
-        'Command generation completed successfully in ${commandDuration.inMilliseconds}ms',
-      );
-    } catch (error) {
-      progress.reportError(
-        'Command generation failed',
-        context: 'CommandGen.execute()',
-      );
-      errorHandler.handleValidationError(
-        'Command generation failed',
-        context: 'CommandGen.execute()',
-      );
-      rethrow;
-    }
   }
 
   /// Generate code in parallel using isolates for better performance.
   Future<void> _generateInParallel() async {
-    logger.info('Generating services and commands in parallel...');
+    logger.info('Generating services in parallel...');
 
     final completer = Completer<void>();
     var completedTasks = 0;
-    final totalTasks = 2;
+    final totalTasks = 1;
 
     void onTaskComplete() {
       completedTasks++;
@@ -162,42 +138,12 @@ class GenCodesScript extends BaseScript {
       }
     });
 
-    // Start command generation in isolate
-    final commandPort = ReceivePort();
-    commandPort.listen((message) {
-      if (message is String && message == 'complete') {
-        logger.debug('Command generation completed in isolate');
-        onTaskComplete();
-        commandPort.close();
-      } else if (message is String && message.startsWith('error:')) {
-        final error = message.substring(6);
-        errorHandler.handleValidationError(
-          'Command generation failed in isolate',
-          context: error,
-        );
-        commandPort.close();
-        if (!completer.isCompleted) {
-          completer.completeError(
-            Exception('Command generation failed: $error'),
-          );
-        }
-      }
-    });
-
     try {
-      // Spawn isolates for parallel execution
-      await Future.wait([
-        Isolate.spawn(_serviceGenerationIsolate, {
-          'sendPort': servicePort.sendPort,
-          'lexiconsPath': config.lexiconsPath,
-          'packagesPath': config.packagesPath,
-        }),
-        Isolate.spawn(_commandGenerationIsolate, {
-          'sendPort': commandPort.sendPort,
-          'lexiconsPath': config.lexiconsPath,
-          'packagesPath': config.packagesPath,
-        }),
-      ]);
+      await Isolate.spawn(_serviceGenerationIsolate, {
+        'sendPort': servicePort.sendPort,
+        'lexiconsPath': config.lexiconsPath,
+        'packagesPath': config.packagesPath,
+      });
 
       // Wait for both tasks to complete
       await completer.future;
@@ -268,25 +214,6 @@ void _serviceGenerationIsolate(Map<String, Object> args) {
   }
 }
 
-/// Isolate entry point for command generation.
-void _commandGenerationIsolate(Map<String, Object> args) {
-  final sendPort = args['sendPort']! as SendPort;
-  final lexiconsPath = args['lexiconsPath']! as String;
-  final packagesPath = args['packagesPath']! as String;
-
-  try {
-    final config = _buildLexGenConfig(
-      lexiconsPath: lexiconsPath,
-      packagesPath: packagesPath,
-    );
-
-    CommandGen(config: config).execute();
-    sendPort.send('complete');
-  } catch (error) {
-    sendPort.send('error:$error');
-  }
-}
-
 LexGenConfig _buildLexGenConfig({
   required String lexiconsPath,
   required String packagesPath,
@@ -309,9 +236,6 @@ LexGenConfig _buildLexGenConfig({
             ),
           )
           .toList(),
-    ),
-    commandRuleConfig: LexCommandRuleConfig(
-      homeDir: '$packagesPath/poptart_cli/lib/src/commands/codegen',
     ),
   );
 }

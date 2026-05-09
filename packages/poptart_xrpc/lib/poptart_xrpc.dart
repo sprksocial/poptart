@@ -26,6 +26,7 @@ export 'package:poptart_xrpc/src/serializable.dart';
 export 'package:poptart_xrpc/src/subscription.dart';
 export 'package:poptart_xrpc/src/xrpc/xrpc.dart'
     show query, procedure, subscribe, call;
+export 'package:poptart_xrpc/src/xrpc/client.dart';
 export 'package:poptart_xrpc/src/xrpc/xrpc_descriptor.dart';
 export 'package:poptart_xrpc/src/xrpc/xrpc_error.dart';
 export 'package:poptart_xrpc/src/xrpc/xrpc_request.dart';

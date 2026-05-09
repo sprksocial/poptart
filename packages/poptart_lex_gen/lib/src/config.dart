@@ -72,13 +72,13 @@ base class LexGenConfig {
   final List<String> packages;
   final LexiconDocsProvider docsProvider;
   final LexServiceRuleConfig serviceRuleConfig;
-  final LexCommandRuleConfig commandRuleConfig;
+  final LexCommandRuleConfig? commandRuleConfig;
 
   const LexGenConfig({
     required this.services,
     required this.packages,
     required this.docsProvider,
     required this.serviceRuleConfig,
-    required this.commandRuleConfig,
+    this.commandRuleConfig,
   });
 }

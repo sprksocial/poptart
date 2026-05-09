@@ -13,11 +13,11 @@ import 'retry_event.dart';
 /// the timing of retries.
 ///
 /// ```dart
-/// import 'package:poptart_lexicon/poptart_bluesky.dart';
+/// import 'package:poptart/poptart.dart';
 ///
 /// void main() async {
-///   final bluesky = Bluesky(
-///     accessJwt: 'YOUR_TOKEN_HERE',
+///   final client = PoptartClient.fromSession(
+///     session,
 ///     retryConfig: RetryConfig(
 ///       maxAttempts: 5,
 ///     ),

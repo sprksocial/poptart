@@ -47,7 +47,8 @@ import 'package:poptart_xrpc/poptart_xrpc.dart';
 ### 1.1.3. Implementation
 
 ```dart
-import 'package:poptart_lexicon/poptart_atproto.dart' as atproto;
+import 'package:poptart_lex/com_atproto_server_createsession.dart'
+    as create_session;
 import 'package:poptart_xrpc/poptart_xrpc.dart' as xrpc;
 
 Future<void> main() async {
@@ -60,7 +61,7 @@ Future<void> main() async {
       'handle': 'HANDLE',
       'password': 'PASSWORD',
     },
-    to: atproto.Session.fromJson,
+    to: create_session.ServerCreateSessionOutput.fromJson,
   );
 
   final session = await xrpc.query(

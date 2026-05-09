@@ -4,11 +4,10 @@
   "binPath": "scripts",
   "packageMappings": {
     "poptart": "packages/poptart",
-    "poptart_bluesky_text": "packages/poptart_bluesky_text",
-    "poptart_cli": "packages/poptart_cli",
     "poptart_core": "packages/poptart_core",
     "poptart_did_plc": "packages/poptart_did_plc",
     "poptart_lex_gen": "packages/poptart_lex_gen",
+    "poptart_lex": "packages/poptart_lex",
     "poptart_lexicon": "packages/poptart_lexicon",
     "poptart_multiformats": "packages/poptart_multiformats",
     "poptart_oauth": "packages/poptart_oauth",
