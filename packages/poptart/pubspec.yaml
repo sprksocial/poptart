@@ -2,7 +2,8 @@ name: poptart
 resolution: workspace
 version: 0.1.0
 description: Friendly Dart and Flutter SDK entrypoint for AT Protocol sessions, OAuth, XRPC, and core Poptart primitives.
-homepage: https://github.com/sprksocial/poptart
+homepage: https://poptart.xyz
+documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart
 issue_tracker: https://github.com/sprksocial/poptart/issues
 

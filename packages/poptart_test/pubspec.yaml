@@ -3,6 +3,11 @@ resolution: workspace
 description: This package provides core reusable and useful functionality for testing atproto based packages.
 version: 0.1.0
 publish_to: none
+homepage: https://poptart.xyz
+documentation: https://poptart.xyz
+repository: https://github.com/sprksocial/poptart
+issue_tracker: https://github.com/sprksocial/poptart/issues
+
 environment:
   sdk: ">=3.8.0 <4.0.0"
 

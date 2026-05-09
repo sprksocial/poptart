@@ -7,9 +7,47 @@ export default defineNuxtConfig({
       "Dart and Flutter SDK packages for AT Protocol, broad Lexicon APIs, OAuth, and protocol utilities.",
   },
 
+  llms: {
+    domain: "https://poptart.xyz",
+  },
+
   fonts: {
+    families: [
+      { name: "Fraunces", provider: "none" },
+      { name: "SN Pro", provider: "none" },
+    ],
     providers: {
+      bunny: false,
+      fontshare: false,
+      fontsource: false,
       google: false,
+    },
+  },
+
+  css: ["~/assets/css/landing-theme.css"],
+
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: [
+            "bash",
+            "dart",
+            "diff",
+            "html",
+            "css",
+            "js",
+            "json",
+            "md",
+            "mdc",
+            "sh",
+            "shell",
+            "ts",
+            "vue",
+            "yaml",
+          ],
+        },
+      },
     },
   },
 

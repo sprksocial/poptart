@@ -2,7 +2,8 @@ name: poptart_lexicon
 resolution: workspace
 description: Lexicon parser and schema model types for AT Protocol lexicon documents.
 version: 0.1.0
-homepage: https://github.com/sprksocial/poptart
+homepage: https://poptart.xyz
+documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart
 issue_tracker: https://github.com/sprksocial/poptart/issues
 funding:

@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root,
+.light {
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --bg-primary: #ffffff;
+  --bg-secondary: #e9e8e8;
+  --pink: #ff0090;
+  --green: #22d464;
+  --blue: #0273ff;
+  --accent-color: var(--pink);
+  --accent-color-secondary: #db007c;
+
+  --ui-primary: var(--accent-color);
+  --ui-success: var(--green);
+  --ui-info: var(--blue);
+  --ui-radius: 0.75rem;
+
+  --ui-color-primary-50: #fff0f8;
+  --ui-color-primary-100: #ffe0f2;
+  --ui-color-primary-200: #ffc2e5;
+  --ui-color-primary-300: #ff94cf;
+  --ui-color-primary-400: #ff55b2;
+  --ui-color-primary-500: var(--pink);
+  --ui-color-primary-600: var(--accent-color-secondary);
+  --ui-color-primary-700: #b60068;
+  --ui-color-primary-800: #900056;
+  --ui-color-primary-900: #740248;
+  --ui-color-primary-950: #4a002b;
+
+  --ui-color-neutral-50: #fafafa;
+  --ui-color-neutral-100: #f4f4f4;
+  --ui-color-neutral-200: var(--bg-secondary);
+  --ui-color-neutral-300: #d2d1d1;
+  --ui-color-neutral-400: #9b9b9b;
+  --ui-color-neutral-500: #707070;
+  --ui-color-neutral-600: var(--text-secondary);
+  --ui-color-neutral-700: #323232;
+  --ui-color-neutral-800: #242424;
+  --ui-color-neutral-900: var(--text-primary);
+  --ui-color-neutral-950: #0f0f0f;
+
+  --ui-text-dimmed: #8a8a8a;
+  --ui-text-muted: #707070;
+  --ui-text-toned: var(--text-secondary);
+  --ui-text: var(--text-primary);
+  --ui-text-highlighted: var(--text-primary);
+  --ui-bg: var(--bg-primary);
+  --ui-bg-muted: #f7f7f7;
+  --ui-bg-elevated: #f2f2f2;
+  --ui-bg-accented: var(--bg-secondary);
+  --ui-border: color-mix(in srgb, var(--text-primary) 10%, transparent);
+  --ui-border-muted: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  --ui-border-accented: color-mix(in srgb, var(--text-primary) 18%, transparent);
+}
+
+.dark {
+  --text-primary: #ffffff;
+  --text-secondary: #c7c7c7;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #3a3a3a;
+  --accent-color: #ff0090;
+  --accent-color-secondary: #ff50b3;
+
+  --ui-primary: var(--accent-color);
+  --ui-success: var(--green);
+  --ui-info: var(--blue);
+
+  --ui-color-primary-400: #ff50b3;
+  --ui-color-primary-500: var(--accent-color);
+  --ui-color-primary-600: #db007c;
+
+  --ui-color-neutral-50: #f8f8f8;
+  --ui-color-neutral-100: #eeeeee;
+  --ui-color-neutral-200: #d7d7d7;
+  --ui-color-neutral-300: var(--text-secondary);
+  --ui-color-neutral-400: #8f8f8f;
+  --ui-color-neutral-500: #6c6c6c;
+  --ui-color-neutral-600: #565656;
+  --ui-color-neutral-700: var(--bg-secondary);
+  --ui-color-neutral-800: #202020;
+  --ui-color-neutral-900: var(--bg-primary);
+  --ui-color-neutral-950: #050505;
+
+  --ui-text-dimmed: #8f8f8f;
+  --ui-text-muted: #a8a8a8;
+  --ui-text-toned: var(--text-secondary);
+  --ui-text: var(--text-primary);
+  --ui-text-highlighted: var(--text-primary);
+  --ui-bg: var(--bg-primary);
+  --ui-bg-muted: #151515;
+  --ui-bg-elevated: #202020;
+  --ui-bg-accented: var(--bg-secondary);
+  --ui-border: color-mix(in srgb, var(--text-primary) 10%, transparent);
+  --ui-border-muted: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  --ui-border-accented: color-mix(in srgb, var(--text-primary) 18%, transparent);
+}
+
+html,
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "SN Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  letter-spacing: -0.01em;
+}
+
+h1,
+h2,
+.prose h1,
+.prose h2,
+[class*="text-4xl"],
+[class*="text-5xl"] {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.02em;
+}
+
+h3,
+h4,
+h5,
+h6,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: "SN Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+a {
+  text-underline-offset: 2px;
+}
+
+.prose a {
+  color: var(--accent-color);
+}
+
+.prose a:hover {
+  color: var(--accent-color-secondary);
+}
