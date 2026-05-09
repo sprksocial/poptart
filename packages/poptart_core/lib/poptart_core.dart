@@ -42,6 +42,7 @@ export 'package:poptart_xrpc/poptart_xrpc.dart'
         HttpStatus,
         Serializable,
         XRPCClient,
+        XRPCMethod,
         XRPCMethodDescriptor,
         XRPCMethodKind,
         XRPCObjectDescriptor,

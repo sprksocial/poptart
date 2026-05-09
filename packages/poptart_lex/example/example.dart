@@ -1,4 +1,4 @@
-import 'package:poptart_lex/app_bsky_feed_post.dart' as feed_post;
+import 'package:poptart_lex/app/bsky/feed/post.dart' as feed_post;
 import 'package:poptart_lex/docs.dart' as docs;
 
 void main() {

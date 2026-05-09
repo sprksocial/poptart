@@ -47,7 +47,7 @@ import 'package:poptart_xrpc/poptart_xrpc.dart';
 ### 1.1.3. Implementation
 
 ```dart
-import 'package:poptart_lex/com_atproto_server_createsession.dart'
+import 'package:poptart_lex/com/atproto/server/create_session.dart'
     as create_session;
 import 'package:poptart_xrpc/poptart_xrpc.dart' as xrpc;
 

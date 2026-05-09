@@ -26,7 +26,7 @@ final class RepoCommitHandler {
 
 import 'dart:async';
 
-import 'package:poptart_lex/com_atproto_sync_subscriberepos.dart';
+import 'package:poptart_lex/com/atproto/sync/subscribe_repos.dart';
 import 'package:poptart_core/poptart_core.dart';
 
 $imports
@@ -248,13 +248,7 @@ final class RepoCommitDelete {
     final imports = StringBuffer();
 
     for (final lexiconId in lexiconIds) {
-      if (lexiconId.startsWith('com.atproto.')) {
-        final libName = lexiconId.split('.').join('_');
-        imports.writeln("import 'package:poptart_lex/$libName.dart';");
-      } else {
-        final path = lexiconId.split('.').join('/');
-        imports.writeln("import '$path/main.dart';");
-      }
+      imports.writeln("import '${getPublicPackagePath(lexiconId)}';");
     }
 
     return imports.toString();

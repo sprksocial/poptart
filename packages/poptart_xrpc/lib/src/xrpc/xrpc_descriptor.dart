@@ -72,7 +72,11 @@ final class XRPCRecordDescriptor<T> extends XRPCSchemaDescriptor<T> {
   final String key;
 }
 
-final class XRPCMethodDescriptor<P, I, O> {
+abstract interface class XRPCMethod<P, I, O> {
+  XRPCMethodDescriptor<P, I, O> get methodDescriptor;
+}
+
+final class XRPCMethodDescriptor<P, I, O> implements XRPCMethod<P, I, O> {
   const XRPCMethodDescriptor({
     required this.nsid,
     required this.kind,
@@ -98,6 +102,9 @@ final class XRPCMethodDescriptor<P, I, O> {
   final String? inputEncoding;
   final String? outputEncoding;
   final List<String> errors;
+
+  @override
+  XRPCMethodDescriptor<P, I, O> get methodDescriptor => this;
 
   bool get isQuery => kind == XRPCMethodKind.query;
   bool get isProcedure => kind == XRPCMethodKind.procedure;

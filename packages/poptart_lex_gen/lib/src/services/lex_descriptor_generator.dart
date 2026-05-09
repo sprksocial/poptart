@@ -2,9 +2,6 @@
 // All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// Dart imports:
-import 'dart:io';
-
 // Package imports:
 import 'package:poptart_lexicon/parser.dart';
 
@@ -37,9 +34,8 @@ final class _LexDescriptorGenerator {
 
       final path =
           '${rule.getHomeDir(doc.id.toString())}/'
-          '${doc.id.toString().split('.').join('/')}/descriptor.dart';
+          '${rule.getPublicFileDir(doc.id.toString())}/descriptor.dart';
       files.add(GeneratedFile(path: path, content: content));
-      _appendDescriptorExport(doc.id.toString());
     }
 
     return files;
@@ -181,7 +177,9 @@ ${descriptors.join('\n\n')}
   nsid: NSID.parse('$id'),
   kind: $kind,$paramsLines$inputLines$outputLines$inputEncodingLine
   errors: $errors,
-);''';
+);
+
+final ${rule.getMethodName(id)} = methodDescriptor;''';
   }
 
   String _typeName(final LexType? type) {
@@ -223,8 +221,8 @@ ${descriptors.join('\n\n')}
     }
 
     final relativeDir = _relativeDir(
-      currentLexiconId.split('.').join('/'),
-      type.lexiconId.split('.').join('/'),
+      rule.getPublicFileDir(currentLexiconId),
+      rule.getPublicFileDir(type.lexiconId),
     );
     imports.add("import '$relativeDir/${type.getFileName()}.dart';");
   }
@@ -273,25 +271,6 @@ ${descriptors.join('\n\n')}
     }
 
     return null;
-  }
-
-  void _appendDescriptorExport(final String lexiconId) {
-    final root = rule.getRootPackageName(lexiconId);
-    final name = rule.getPackageName(lexiconId);
-    final file = File('packages/$root/lib/$name.dart');
-    final export =
-        "export '${rule.getLexObjectAbsolutePath(lexiconId, 'descriptor')}';";
-
-    if (!file.existsSync()) {
-      file
-        ..createSync(recursive: true)
-        ..writeAsStringSync('$kHeaderHint\n\n$kHeader\n\n$export\n');
-      return;
-    }
-
-    final content = file.readAsStringSync();
-    if (content.contains(export)) return;
-    file.writeAsStringSync('$content$export\n');
   }
 
   String _relativeDir(final String fromDir, final String toDir) {

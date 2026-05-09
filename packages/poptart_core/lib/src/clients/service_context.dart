@@ -130,17 +130,18 @@ base class ServiceContext {
   );
 
   Future<xrpc.XRPCResponse<O>> call<P, I, O>(
-    final xrpc.XRPCMethodDescriptor<P, I, O> method, {
+    final xrpc.XRPCMethod<P, I, O> method, {
     final String? service,
     final Map<String, String>? headers,
     final P? parameters,
     final I? input,
   }) async {
     final requestHeaders = {..._headers ?? const {}, ...headers ?? const {}};
+    final descriptor = method.methodDescriptor;
 
-    if (method.nsid.toString() == _appBskyVideoUploadVideo) {
+    if (descriptor.nsid.toString() == _appBskyVideoUploadVideo) {
       return await _callAppBskyVideoUploadVideo(
-        method,
+        descriptor,
         service: service,
         headers: requestHeaders,
         input: input,

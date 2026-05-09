@@ -8,13 +8,13 @@ import 'resource_manager.dart';
 abstract class BaseScript implements Disposable {
   /// Logger instance for consistent logging across scripts.
   final Logger logger;
-  
+
   /// Progress reporter for standardized progress feedback.
   final ProgressReporter progress;
-  
+
   /// Error handler for centralized error management.
   final ErrorHandler errorHandler;
-  
+
   /// Resource manager for proper resource disposal and memory management.
   final ResourceManager resourceManager;
 
@@ -44,10 +44,10 @@ abstract class BaseScript implements Disposable {
   Future<void> run(List<String> args) async {
     logger.info('Starting $scriptName: $description');
     progress.startOperation(scriptName, 1);
-    
+
     // Start memory monitoring for long-running scripts
     resourceManager.startMemoryMonitoring();
-    
+
     try {
       await execute(args);
       progress.completeOperation();
@@ -65,10 +65,10 @@ abstract class BaseScript implements Disposable {
   @override
   Future<void> dispose() async {
     if (_isDisposed) return;
-    
+
     _isDisposed = true;
     logger.debug('Disposing $scriptName resources');
-    
+
     try {
       await resourceManager.dispose();
     } catch (e) {

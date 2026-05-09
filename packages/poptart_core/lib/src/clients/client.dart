@@ -136,9 +136,9 @@ sealed class PoptartClient {
     final xrpc.ResponseDataAdaptor? adaptor,
   });
 
-  /// Executes any generated query or procedure descriptor.
+  /// Executes any generated query or procedure method.
   Future<xrpc.XRPCResponse<O>> call<P, I, O>(
-    final xrpc.XRPCMethodDescriptor<P, I, O> method, {
+    final xrpc.XRPCMethod<P, I, O> method, {
     final String? service,
     final Map<String, String>? headers,
     final P? parameters,
@@ -215,7 +215,7 @@ final class _PoptartClient implements PoptartClient {
 
   @override
   Future<xrpc.XRPCResponse<O>> call<P, I, O>(
-    final xrpc.XRPCMethodDescriptor<P, I, O> method, {
+    final xrpc.XRPCMethod<P, I, O> method, {
     final String? service,
     final Map<String, String>? headers,
     final P? parameters,

@@ -18,7 +18,7 @@ import 'xrpc_response.dart';
 ///
 /// Generated lexicons provide typed descriptors; the client only needs shared
 /// transport and service configuration. Use [call] with any generated
-/// `methodDescriptor`, regardless of lexicon namespace.
+/// method value or `methodDescriptor`, regardless of lexicon namespace.
 final class XRPCClient {
   /// Returns a client configured for the selected service.
   const XRPCClient({
@@ -115,7 +115,7 @@ final class XRPCClient {
 
   /// Executes any generated query or procedure descriptor.
   Future<XRPCResponse<O>> call<P, I, O>(
-    final XRPCMethodDescriptor<P, I, O> method, {
+    final XRPCMethod<P, I, O> method, {
     final String? service,
     final Map<String, String>? headers,
     final P? parameters,

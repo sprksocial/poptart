@@ -117,6 +117,45 @@ String getFilePath(
   }
 }
 
+String getLeafEntryPointPath(final String lexiconId) {
+  return '${getHomeDir(lexiconId)}/${getPublicFileDir(lexiconId)}.dart';
+}
+
+String getAggregateEntryPointPath(
+  final String rootPackageName,
+  final String dir,
+) {
+  return 'packages/$rootPackageName/lib/$dir.dart';
+}
+
+String getPublicPackagePath(final String lexiconId) {
+  return 'package:${getRootPackageName(lexiconId)}/${getPublicFileDir(lexiconId)}.dart';
+}
+
+String getPublicFileDir(final String lexiconId) {
+  final parts = lexiconId.split('.');
+  if (parts.isEmpty) return lexiconId;
+
+  final last = parts.removeLast();
+  parts.add(_toPathSegment(last));
+  return parts.join('/');
+}
+
+String getPublicParentDir(final String lexiconId) {
+  final parts = getPublicFileDir(lexiconId).split('/');
+  if (parts.length <= 1) return '';
+  return parts.sublist(0, parts.length - 1).join('/');
+}
+
+String getMethodName(final String lexiconId) {
+  return toFirstLowerCase(lexiconId.split('.').map(toFirstUpperCase).join());
+}
+
+String _toPathSegment(final String value) {
+  if (value.isEmpty) return value;
+  return splitByUpperCase(value).join('_').toLowerCase();
+}
+
 String getFileNameForUnion(
   final String lexiconId,
   final String? defName,
@@ -166,7 +205,7 @@ String _getHomeDirForService(final String lexiconId) {
 }
 
 String _getFileDir(final String lexiconId) {
-  return lexiconId.split('.').join('/');
+  return getPublicFileDir(lexiconId);
 }
 
 String getFileDirForService(final String lexiconId) {

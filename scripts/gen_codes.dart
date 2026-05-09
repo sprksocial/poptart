@@ -229,8 +229,8 @@ LexGenConfig _buildLexGenConfig({
           .map(
             (package) => LexiconNamespaceRule(
               prefixes: package.roots,
-              homeDir: '$packagesPath/${package.name}/lib/src/services/codegen',
-              exportCodegenPath: 'package:${package.name}/src/services/codegen',
+              homeDir: '$packagesPath/${package.name}/lib',
+              exportCodegenPath: 'package:${package.name}',
               servicePackagePath: 'package:${package.name}',
               rootPackageName: package.name,
             ),

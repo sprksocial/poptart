@@ -1,0 +1,53 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, unused_import, duplicate_import, unnecessary_cast, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:poptart_core/poptart_core.dart';
+import 'package:poptart_core/internals.dart';
+
+part 'input.freezed.dart';
+part 'input.g.dart';
+
+// **************************************************************************
+// LexGenerator
+// **************************************************************************
+
+@freezed
+abstract class FeedGetFeedInput with _$FeedGetFeedInput {
+  static const knownProps = <String>['feed', 'limit', 'cursor'];
+
+  @JsonSerializable(includeIfNull: false)
+  const factory FeedGetFeedInput({
+    @AtUriConverter() required AtUri feed,
+    @Default(50) int limit,
+    String? cursor,
+
+    Map<String, dynamic>? $unknown,
+  }) = _FeedGetFeedInput;
+
+  factory FeedGetFeedInput.fromJson(Map<String, Object?> json) =>
+      _$FeedGetFeedInputFromJson(json);
+}
+
+extension FeedGetFeedInputExtension on FeedGetFeedInput {
+  bool get hasCursor => cursor != null;
+  bool get hasNotCursor => !hasCursor;
+}
+
+final class FeedGetFeedInputConverter
+    extends JsonConverter<FeedGetFeedInput, Map<String, dynamic>> {
+  const FeedGetFeedInputConverter();
+
+  @override
+  FeedGetFeedInput fromJson(Map<String, dynamic> json) {
+    return FeedGetFeedInput.fromJson(
+      translate(json, FeedGetFeedInput.knownProps),
+    );
+  }
+
+  @override
+  Map<String, dynamic> toJson(FeedGetFeedInput object) =>
+      untranslate(object.toJson());
+}

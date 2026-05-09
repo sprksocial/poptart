@@ -9,7 +9,7 @@ Most apps should start with the umbrella package:
 
 ```sh
 dart pub add poptart
-dart pub add poptart_lex # for generated method descriptors and models
+dart pub add poptart_lex # for generated methods, descriptors, and models
 ```
 
 ```dart
@@ -21,7 +21,7 @@ import 'package:poptart/poptart.dart';
 | Package | Use it when... |
 | --- | --- |
 | `poptart` | You are building a normal Dart or Flutter app and want the app-facing client, sessions, OAuth, raw XRPC, primitives, and the curated ATProto lexicon surface. |
-| `poptart_lex` | You need focused generated lexicon barrels, record models, method descriptors outside the umbrella ATProto surface, generated IDs, or bundled lexicon documents. |
+| `poptart_lex` | You need focused generated lexicon barrels, record models, generated method values, method descriptors, generated IDs, or bundled lexicon documents. |
 | `poptart_lexicon` | You need to parse raw Lexicon documents with `LexiconDoc` and schema model types. |
 | `poptart_oauth` | You are adding AT Protocol OAuth sign-in and session refresh to an app. |
 | `poptart_primitives` | You only need handles, DIDs, AT URIs, NSIDs, and validation helpers. |
@@ -35,14 +35,14 @@ Make an anonymous generated request:
 
 ```dart
 import 'package:poptart/poptart.dart';
-import 'package:poptart_lex/app_bsky_actor_getprofile.dart'
+import 'package:poptart_lex/app/bsky/actor/get_profile.dart'
     as get_profile;
 
 Future<void> main() async {
   final client = PoptartClient.anonymous();
 
   final response = await client.call(
-    get_profile.methodDescriptor,
+    get_profile.appBskyActorGetProfile,
     parameters: const get_profile.ActorGetProfileInput(
       actor: 'bsky.app',
     ),
@@ -51,6 +51,10 @@ Future<void> main() async {
   print(response.data.handle);
 }
 ```
+
+`client.call` accepts both the generated method value shown above and its
+underlying descriptor, so `get_profile.methodDescriptor` is also valid when you
+prefer the leaf-import descriptor style.
 
 Create an app-password client for scripts or trusted tools:
 

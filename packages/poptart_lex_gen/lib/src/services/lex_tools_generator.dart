@@ -24,7 +24,7 @@ final class _LexToolsGenerator {
 
   void execute() {
     final recordLexiconIds = _getRecordLexiconIds();
-    final homeDir = getHomeDir('app.bsky.');
+    final homeDir = '${getHomeDir('app.bsky.')}/src/tools';
 
     File('$homeDir/at_uri_extension.dart')
       ..createSync(recursive: true)

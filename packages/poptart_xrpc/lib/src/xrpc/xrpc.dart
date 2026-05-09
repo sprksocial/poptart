@@ -322,7 +322,7 @@ Future<XRPCResponse<T>> procedure<T>(
 }
 
 Future<XRPCResponse<O>> call<P, I, O>(
-  final XRPCMethodDescriptor<P, I, O> method, {
+  final XRPCMethod<P, I, O> method, {
   final Protocol protocol = Protocol.https,
   final String? service,
   final Map<String, String>? headers,
@@ -333,31 +333,33 @@ Future<XRPCResponse<O>> call<P, I, O>(
   final type.GetClient? getClient,
   final type.PostClient? postClient,
 }) async {
-  if (method.isQuery) {
+  final descriptor = method.methodDescriptor;
+
+  if (descriptor.isQuery) {
     return query<O>(
-      method.nsid,
+      descriptor.nsid,
       protocol: protocol,
       service: service,
       headers: headers,
-      parameters: method.encodeParameters(parameters),
+      parameters: descriptor.encodeParameters(parameters),
       timeout: timeout,
-      to: method.outputFromJson,
+      to: descriptor.outputFromJson,
       headerBuilder: headerBuilder,
       getClient: getClient,
     );
   }
 
-  if (method.isProcedure) {
+  if (descriptor.isProcedure) {
     return procedure<O>(
-      method.nsid,
+      descriptor.nsid,
       protocol: protocol,
       service: service,
       headers: headers,
-      parameters: method.encodeParameters(parameters),
-      body: method.encodeInput(input),
-      contentType: method.inputEncoding,
+      parameters: descriptor.encodeParameters(parameters),
+      body: descriptor.encodeInput(input),
+      contentType: descriptor.inputEncoding,
       timeout: timeout,
-      to: method.outputFromJson,
+      to: descriptor.outputFromJson,
       headerBuilder: headerBuilder,
       postClient: postClient,
     );

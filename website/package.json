@@ -1,0 +1,23 @@
+{
+  "name": "poptart-docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preflight": "node ./scripts/patch-docus-for-deno.mjs",
+    "dev": "node ./scripts/patch-docus-for-deno.mjs && nuxt dev",
+    "build": "node ./scripts/patch-docus-for-deno.mjs && nuxt build",
+    "generate": "node ./scripts/patch-docus-for-deno.mjs && nuxt generate",
+    "preview": "node ./scripts/patch-docus-for-deno.mjs && nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.13.0",
+    "docus": "5.11.0",
+    "zod": "^3.25.76",
+    "zod-to-json-schema": "^3.25.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.7",
+    "@iconify-json/lucide": "^1.2.105",
+    "@iconify-json/simple-icons": "^1.2.81"
+  }
+}

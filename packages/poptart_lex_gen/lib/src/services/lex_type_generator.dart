@@ -11,7 +11,6 @@ import 'package:poptart_lexicon/parser.dart' as lex;
 // Project imports:
 import 'fmt/lex_known_values_generator.dart';
 import 'fmt/lex_object_generator.dart';
-import 'fmt/lex_packages_generator.dart';
 import 'fmt/lex_record_generator.dart';
 import 'fmt/lex_union_generator.dart';
 import 'fmt/lex_xrpc_procedure_generator.dart';
@@ -145,8 +144,6 @@ final class _LexTypeGenerator {
         ..writeAsStringSync(type.format());
     }
 
-    _generateLexPackages(types);
-
     return types;
   }
 
@@ -154,6 +151,17 @@ final class _LexTypeGenerator {
     for (final package in packages) {
       final dir = Directory('packages/$package/lib/src/services/codegen');
       if (dir.existsSync()) dir.deleteSync(recursive: true);
+
+      final toolsDir = Directory('packages/$package/lib/src/tools');
+      if (toolsDir.existsSync()) toolsDir.deleteSync(recursive: true);
+
+      for (final topLevel in const ['app', 'chat', 'com', 'tools']) {
+        final generatedDir = Directory('packages/$package/lib/$topLevel');
+        if (generatedDir.existsSync()) generatedDir.deleteSync(recursive: true);
+
+        final generatedFile = File('packages/$package/lib/$topLevel.dart');
+        if (generatedFile.existsSync()) generatedFile.deleteSync();
+      }
 
       final $services = services.map((e) => e.split('.').join('_')).toList();
       final libDir = Directory('packages/$package/lib/');
@@ -183,16 +191,6 @@ final class _LexTypeGenerator {
         return id == normalized || id.startsWith('$normalized.');
       });
     }).toList();
-  }
-
-  void _generateLexPackages(final List<LexType> type) {
-    final packages = generateLexPackages(type);
-
-    for (final package in packages) {
-      File('packages/${package.root}/lib/${package.name}.dart')
-        ..createSync(recursive: true)
-        ..writeAsStringSync(package.exportableDependencies);
-    }
   }
 
   List<String> _checkMainVariants(final List<lex.LexiconDoc> lexicons) {

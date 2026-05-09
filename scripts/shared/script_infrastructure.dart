@@ -14,9 +14,7 @@ class ScriptInfrastructure {
   }
 
   /// Creates a progress reporter with the specified configuration.
-  static ProgressReporter createProgressReporter({
-    bool useProgressBar = true,
-  }) {
+  static ProgressReporter createProgressReporter({bool useProgressBar = true}) {
     return ProgressReporter(useProgressBar: useProgressBar);
   }
 
@@ -26,11 +24,8 @@ class ScriptInfrastructure {
   }
 
   /// Creates a complete set of infrastructure components.
-  static ({
-    Logger logger,
-    ProgressReporter progress,
-    ErrorHandler errorHandler,
-  }) createInfrastructure({
+  static ({Logger logger, ProgressReporter progress, ErrorHandler errorHandler})
+  createInfrastructure({
     LogLevel logLevel = LogLevel.info,
     bool useColors = true,
     bool useProgressBar = true,
@@ -39,10 +34,6 @@ class ScriptInfrastructure {
     final progress = createProgressReporter(useProgressBar: useProgressBar);
     final errorHandler = createErrorHandler(logger);
 
-    return (
-      logger: logger,
-      progress: progress,
-      errorHandler: errorHandler,
-    );
+    return (logger: logger, progress: progress, errorHandler: errorHandler);
   }
 }

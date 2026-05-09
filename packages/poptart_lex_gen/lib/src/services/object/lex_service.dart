@@ -108,7 +108,7 @@ final class LexService {
 
       if (_hasRecordApi()) {
         importPaths.add(
-          "import 'package:poptart_lex/com_atproto_repo_createrecord.dart';",
+          "import 'package:poptart_lex/com/atproto/repo/create_record.dart';",
         );
       }
     }
@@ -136,7 +136,7 @@ import 'package:poptart_core/internals.dart' show protected;
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart' show iso8601;
 
-import 'package:poptart_lex/com_atproto_services.dart'
+import 'package:poptart_lex/com/atproto.dart'
     show
         comAtprotoRepoGetRecord,
         comAtprotoRepoListRecords,
@@ -144,11 +144,11 @@ import 'package:poptart_lex/com_atproto_services.dart'
         comAtprotoRepoPutRecord,
         comAtprotoRepoDeleteRecord;
 
-import 'package:poptart_lex/com_atproto_repo_createrecord.dart';
-import 'package:poptart_lex/com_atproto_repo_deleterecord.dart';
-import 'package:poptart_lex/com_atproto_repo_getrecord.dart';
-import 'package:poptart_lex/com_atproto_repo_listrecords.dart';
-import 'package:poptart_lex/com_atproto_repo_putrecord.dart';
+import 'package:poptart_lex/com/atproto/repo/create_record.dart';
+import 'package:poptart_lex/com/atproto/repo/delete_record.dart';
+import 'package:poptart_lex/com/atproto/repo/get_record.dart';
+import 'package:poptart_lex/com/atproto/repo/list_records.dart';
+import 'package:poptart_lex/com/atproto/repo/put_record.dart';
 
 $packagePaths
 
