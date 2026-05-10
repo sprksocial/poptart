@@ -1,139 +1,81 @@
-<p align="center">
-  <a href="https://github.com/myConsciousness/atproto.dart">
-    <img alt="at_primitives" width="50%" height="auto" src="https://raw.githubusercontent.com/myConsciousness/atproto.dart/main/resources/pkg_logo.png">
-  </a>
-</p>
+# poptart_primitives
 
-<p align="center">
-  <b>AT Protocol primitive types and utilities 🦋</b>
-</p>
+AT Protocol primitive types and validation helpers for Dart and Flutter.
 
-<!-- TOC -->
+Use this package when you need the small, dependable ingredients: handles, DIDs,
+AT URIs, NSIDs, and validation functions. It has no opinions about clients or
+network calls.
 
-- [1. Guide 🌎](#1-guide-)
-  - [1.1. Getting Started ⚡](#11-getting-started-)
-    - [1.1.1. Install Library](#111-install-library)
-    - [1.1.2. Import](#112-import)
-    - [1.1.3. Implementation](#113-implementation)
-  - [1.2. Migration from Individual Packages](#12-migration-from-individual-packages)
+## Install
 
-<!-- /TOC -->
-
-# 1. Guide 🌎
-
-This library provides the essential primitive types and utilities for [AT Protocol](https://atproto.com) in **Dart** and **Flutter** apps. It consolidates functionality from the previously separate `at_identifier`, `at_uri`, and `nsid` packages into a single, unified package.
-
-## 1.1. Getting Started ⚡
-
-### 1.1.1. Install Library
-
-**With Dart:**
-
-```bash
- dart pub add poptart_primitives
-```
-
-**Or With Flutter:**
-
-```bash
- flutter pub add poptart_primitives
-```
-
-### 1.1.2. Import
-
-```dart
-import 'package:poptart_primitives/at_primitives.dart';
-```
-
-### 1.1.3. Implementation
-
-**AT Identifiers:**
-```dart
-import 'package:poptart_primitives/at_primitives.dart' as primitives;
-
-void main() {
-  // Handle validation
-  primitives.isValidHandle('alice.test'); // returns true
-  primitives.ensureValidHandle('alice.test'); // returns void
-
-  primitives.isValidHandle('al!ce.test'); // returns false
-  primitives.ensureValidHandle('al!ce.test'); // throws
-
-  // DID validation
-  primitives.ensureValidDid('did:method:val'); // returns void
-  primitives.ensureValidDid(':did:method:val'); // throws
-}
-```
-
-**AT URIs:**
-```dart
-import 'package:poptart_primitives/at_primitives.dart';
-
-void main() {
-  final uri = AtUri.parse('at://bob.com/com.example.post/1234');
-
-  uri.protocol; // => 'at:'
-  uri.origin; // => 'at://bob.com'
-  uri.hostname; // => 'bob.com'
-  uri.collection; // => 'com.example.post'
-  uri.rkey; // => '1234'
-
-  ensureValidAtUri('at://user.bsky.social'); // => returns void
-  ensureValidAtUri('at//did:plc:asdf123'); // => throws
-}
-```
-
-**NSIDs:**
-```dart
-import 'package:poptart_primitives/at_primitives.dart';
-
-void main() {
-  final id1 = NSID.parse('com.example.foo');
-  id1.authority; // => 'example.com'
-  id1.name; // => 'foo'
-  id1.toString(); // => 'com.example.foo'
-
-  final id2 = NSID.create('example.com', 'foo');
-  id2.authority; // => 'example.com'
-  id2.name; // => 'foo'
-  id2.toString(); // => 'com.example.foo'
-
-  final id3 = NSID.create('example.com', '*');
-  id3.authority; // => 'example.com'
-  id3.name; // => '*'
-  id3.toString(); // => 'com.example.*'
-}
-```
-
-## 1.2. Migration from Individual Packages
-
-If you were previously using the individual packages (`at_identifier`, `at_uri`, `nsid`), migration is straightforward:
-
-**Remove old packages:**
-```bash
-dart pub remove at_identifier at_uri nsid
-```
-
-**Add at_primitives:**
-```bash
+```sh
 dart pub add poptart_primitives
 ```
 
-**Update imports:**
 ```dart
-// Old
-import 'package:at_identifier/at_identifier.dart';
-import 'package:at_uri/at_uri.dart';
-import 'package:nsid/nsid.dart';
+import 'package:poptart_primitives/at_primitives.dart';
+```
 
-// New
+## Handles And DIDs
+
+```dart
+import 'package:poptart_primitives/at_primitives.dart';
+
+void main() {
+  final handle = normalizeAndEnsureValidHandle('Bsky.App');
+
+  ensureValidDid('did:plc:iijrtk7ocored6zuziwmqq3c');
+
+  print(handle); // bsky.app
+  print(isValidHandle('not a handle')); // false
+}
+```
+
+## AT URIs
+
+```dart
+import 'package:poptart_primitives/at_primitives.dart';
+
+void main() {
+  final uri = AtUri.parse(
+    'at://bsky.app/app.bsky.feed.post/3jzfcijpj2z2a',
+  );
+
+  print(uri.hostname);
+  print(uri.collection);
+  print(uri.rkey);
+}
+```
+
+## NSIDs
+
+```dart
+import 'package:poptart_primitives/at_primitives.dart';
+
+void main() {
+  final id = NSID.parse('app.bsky.actor.getProfile');
+  final created = NSID.create('bsky.app.actor', 'getProfile');
+
+  print(id.authority); // actor.bsky.app
+  print(created); // app.bsky.actor.getProfile
+}
+```
+
+## Focused Imports
+
+You can import the whole primitive set:
+
+```dart
+import 'package:poptart_primitives/at_primitives.dart';
+```
+
+Or only the pastry crumb you need:
+
+```dart
 import 'package:poptart_primitives/at_identifier.dart';
 import 'package:poptart_primitives/at_uri.dart';
 import 'package:poptart_primitives/nsid.dart';
 ```
 
-The API remains exactly the same, so no code changes are required beyond updating the import statements.
-
----
-
-This package is part of the [atproto.dart](https://atprotodart.com) ecosystem.
+This package replaces the old individual primitive packages with one cohesive
+Poptart surface.

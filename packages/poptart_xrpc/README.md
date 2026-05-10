@@ -1,78 +1,78 @@
-<p align="center">
-  <a href="https://github.com/myConsciousness/atproto.dart">
-    <img alt="xrpc" width="50%" height="auto" src="https://raw.githubusercontent.com/myConsciousness/atproto.dart/main/resources/pkg_logo.png">
-  </a>
-</p>
+# poptart_xrpc
 
-<p align="center">
-  <b>Core library for XRPC communication 🦋</b>
-</p>
+Low-level XRPC transport for Dart and Flutter.
 
-<!-- TOC -->
+Use `poptart_xrpc` when you want direct control over query, procedure,
+subscription, and descriptor calls. Most apps should use `PoptartClient` from
+`poptart`, but this package is the crisp transport layer underneath it.
 
-- [1. Guide 🌎](#1-guide-)
-  - [1.1. Getting Started ⚡](#11-getting-started-)
-    - [1.1.1. Install Library](#111-install-library)
-    - [1.1.2. Import](#112-import)
-    - [1.1.3. Implementation](#113-implementation)
+## Install
 
-<!-- /TOC -->
-
-# 1. Guide 🌎
-
-This library provides the easiest way to use **_[XRPC](https://atproto.com/specs/xrpc)_** communication supported by **_[AT Protocol](https://atproto.com)_** in Dart and Flutter apps.
-
-## 1.1. Getting Started ⚡
-
-### 1.1.1. Install Library
-
-**With Dart:**
-
-```bash
- dart pub add poptart_xrpc
+```sh
+dart pub add poptart_xrpc
 ```
-
-**Or With Flutter:**
-
-```bash
- flutter pub add poptart_xrpc
-```
-
-### 1.1.2. Import
 
 ```dart
 import 'package:poptart_xrpc/poptart_xrpc.dart';
 ```
 
-### 1.1.3. Implementation
+## Raw Query
 
 ```dart
-import 'package:poptart_lex/com/atproto/server/create_session.dart'
-    as create_session;
-import 'package:poptart_xrpc/poptart_xrpc.dart' as xrpc;
+import 'package:poptart_xrpc/poptart_xrpc.dart';
 
 Future<void> main() async {
-  final response = await xrpc.procedure(
-    xrpc.NSID.create(
-      'session.atproto.com',
-      'create',
-    ),
-    body: {
-      'handle': 'HANDLE',
-      'password': 'PASSWORD',
-    },
-    to: create_session.ServerCreateSessionOutput.fromJson,
+  final response = await query<String>(
+    NSID.parse('com.atproto.server.describeServer'),
+    service: 'bsky.social',
   );
 
-  final session = await xrpc.query(
-    xrpc.NSID.create(
-      'session.atproto.com',
-      'get',
-    ),
-    headers: {'Authorization': 'Bearer ${response.data.accessJwt}'},
-    to: atproto.CurrentSession.fromJson,
-  );
-
-  print(session);
+  print(response.data);
 }
 ```
+
+## Client Form
+
+```dart
+import 'package:poptart_xrpc/poptart_xrpc.dart';
+
+Future<void> main() async {
+  final client = XRPCClient(service: 'bsky.social');
+
+  final response = await client.get<String>(
+    NSID.parse('com.atproto.server.describeServer'),
+  );
+
+  print(response.status);
+}
+```
+
+## Generated Descriptor Calls
+
+```dart
+import 'package:poptart_lex/app/bsky/actor/get_profile.dart'
+    as get_profile;
+import 'package:poptart_xrpc/poptart_xrpc.dart';
+
+Future<void> main() async {
+  final client = XRPCClient();
+
+  final profile = await client.call(
+    get_profile.appBskyActorGetProfile,
+    parameters: const get_profile.ActorGetProfileInput(actor: 'bsky.app'),
+  );
+
+  print(profile.data.handle);
+}
+```
+
+## What It Handles
+
+- GET queries, POST procedures, and websocket subscriptions.
+- `XRPCMethodDescriptor` and generated method values.
+- Request parameter cleanup and JSON conversion.
+- Auth headers, custom header builders, test clients, and timeouts.
+- XRPC error mapping for unauthorized, rate limited, invalid request, and server errors.
+
+It is intentionally transport-focused: no OAuth session management, no app-level
+state, just the XRPC toaster slot.

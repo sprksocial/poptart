@@ -1,37 +1,44 @@
 # Poptart
 
-Poptart is a Dart and Flutter SDK for building AT Protocol applications. It
-packages a shared client, OAuth helpers, XRPC request utilities, DID PLC tools,
-protocol primitives, and optional generated lexicon packages behind a
-consumer-friendly package family.
+Poptart is a Dart and Flutter SDK for building AT Protocol applications.
+It gives app developers a warm, curated entrypoint while keeping the lower-level
+protocol pieces available as focused packages.
 
-Most apps should start with the umbrella package:
+Most apps should start here:
 
 ```sh
 dart pub add poptart
-dart pub add poptart_lex # for generated methods, descriptors, and models
+dart pub add poptart_lex
 ```
 
 ```dart
 import 'package:poptart/poptart.dart';
 ```
 
-## What To Install
+Think of the repository as a tray of small, well-labeled pieces: the main
+`poptart` package is the frosted top, and the specialist packages are there
+when you need to reach closer to the protocol.
+
+## Packages
 
 | Package | Use it when... |
 | --- | --- |
-| `poptart` | You are building a normal Dart or Flutter app and want the app-facing client, sessions, OAuth, raw XRPC, primitives, and the curated ATProto lexicon surface. |
-| `poptart_lex` | You need focused generated lexicon barrels, record models, generated method values, method descriptors, generated IDs, or bundled lexicon documents. |
-| `poptart_lexicon` | You need to parse raw Lexicon documents with `LexiconDoc` and schema model types. |
-| `poptart_oauth` | You are adding AT Protocol OAuth sign-in and session refresh to an app. |
+| `poptart` | You are building a normal Dart or Flutter app and want the app-facing client, sessions, OAuth, raw XRPC access, and common primitives from one dependency. |
+| `poptart_lex` | You need generated AT Protocol lexicon models, method values, descriptors, IDs, or bundled lexicon documents. |
+| `poptart_core` | You are building package-level integrations and need `PoptartClient`, `ServiceContext`, session helpers, retry configuration, CAR decoding, blobs, or shared client types. |
+| `poptart_oauth` | You are adding AT Protocol OAuth sign-in, callback handling, token refresh, or DPoP proof support. |
+| `poptart_xrpc` | You are making lower-level XRPC calls without going through the app-facing client. |
 | `poptart_primitives` | You only need handles, DIDs, AT URIs, NSIDs, and validation helpers. |
-| `poptart_xrpc` | You are building lower-level XRPC calls without generated descriptors. |
-| `poptart_did_plc` | You need DID PLC documents, operation logs, audit logs, caching, or streaming. |
-| `poptart_multiformats` | You need CID or IPFS-related parsing helpers. |
+| `poptart_lexicon` | You need to parse raw Lexicon documents and inspect schema model types. |
+| `poptart_lex_gen` | You are generating Dart model and descriptor code from lexicon JSON. |
+| `poptart_did_plc` | You need DID PLC documents, operation logs, audit logs, health checks, or export streams. |
+| `poptart_multiformats` | You need CID parsing and IPFS-related content identifier helpers. |
+| `poptart_test` | You are testing Poptart workspace packages with shared XRPC mocks and expectations. |
 
-## Quick Examples
+## Quick Start
 
-Make an anonymous generated request:
+Fetch a public Bluesky profile with the app-facing client and a generated
+lexicon method:
 
 ```dart
 import 'package:poptart/poptart.dart';
@@ -41,22 +48,16 @@ import 'package:poptart_lex/app/bsky/actor/get_profile.dart'
 Future<void> main() async {
   final client = PoptartClient.anonymous();
 
-  final response = await client.call(
+  final profile = await client.call(
     get_profile.appBskyActorGetProfile,
-    parameters: const get_profile.ActorGetProfileInput(
-      actor: 'bsky.app',
-    ),
+    parameters: const get_profile.ActorGetProfileInput(actor: 'bsky.app'),
   );
 
-  print(response.data.handle);
+  print(profile.data.handle);
 }
 ```
 
-`client.call` accepts both the generated method value shown above and its
-underlying descriptor, so `get_profile.methodDescriptor` is also valid when you
-prefer the leaf-import descriptor style.
-
-Create an app-password client for scripts or trusted tools:
+Create an app-password session for scripts or trusted tools:
 
 ```dart
 import 'package:poptart/poptart.dart';
@@ -71,7 +72,7 @@ Future<PoptartClient> signIn(String identifier, String appPassword) async {
 }
 ```
 
-Validate protocol primitives:
+Validate protocol identifiers before you put them on the wire:
 
 ```dart
 import 'package:poptart_primitives/at_primitives.dart';
@@ -84,6 +85,24 @@ void validateTarget(String repo, String collection) {
   NSID.parse(collection);
 }
 ```
+
+## Repository Workflow
+
+This is a Dart pub workspace. Generated lexicon code is checked in, but it
+should be regenerated from the lexicon sources and
+[`lexicons/manifest.yaml`](lexicons/manifest.yaml) rather than edited by hand.
+
+Useful checks:
+
+```sh
+dart analyze .
+dart test
+dart pub publish --dry-run
+```
+
+Run package-specific publish dry-runs from the package directory when preparing
+an individual package. It is the final toaster timer for package metadata,
+README rendering, and pub.dev shape.
 
 ## Docs
 
@@ -99,16 +118,9 @@ The consumer docs live in [`website/content`](website/content):
 - [Primitive Validation](website/content/8.primitive-validation.md)
 - [Custom XRPC Calls](website/content/9.custom-xrpc-calls.md)
 
-They cover package choice, generated lexicon usage, authentication flows,
-scripts, DID PLC lookups, and primitive validation.
-
 ## Repository Notes
 
 This repository is a fork of
 [`myConsciousness/atproto.dart`](https://github.com/myConsciousness/atproto.dart).
-Upstream license and copyright notices are preserved. New Poptart work lives
-under the `poptart_*` package family.
-
-The checked-in lexicons are organized by [`lexicons/manifest.yaml`](lexicons/manifest.yaml).
-Generated code should be regenerated from the manifest and lexicon sources
-rather than edited by hand.
+Upstream license and copyright notices are preserved. New work lives under the
+`poptart_*` package family.

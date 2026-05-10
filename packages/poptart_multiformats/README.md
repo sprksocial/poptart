@@ -1,73 +1,61 @@
-<p align="center">
-  <a href="https://github.com/myConsciousness/atproto.dart">
-    <img alt="multiformats" width="50%" height="auto" src="https://raw.githubusercontent.com/myConsciousness/atproto.dart/main/resources/pkg_logo.png">
-  </a>
-</p>
+# poptart_multiformats
 
-<p align="center">
-  <b>Core library for parsing IPFS-related things 🦋</b>
-</p>
+CID and IPFS-related multiformats helpers for Dart.
 
-<!-- TOC -->
+This package is small by design. It gives Poptart packages a shared CID type for
+content-addressed AT Protocol data, and it is useful directly when you need to
+parse, create, or serialize CID v1 values.
 
-- [1. Guide 🌎](#1-guide-)
-  - [1.1. Getting Started ⚡](#11-getting-started-)
-    - [1.1.1. Install Library](#111-install-library)
-    - [1.1.2. Import](#112-import)
-    - [1.1.3. Implementation](#113-implementation)
+## Install
 
-<!-- /TOC -->
-
-# 1. Guide 🌎
-
-This library provides the easiest way to use **_[v1 CID](https://docs.ipfs.tech/concepts/content-addressing/)_** and other IPFS things in Dart and Flutter apps.
-
-## 1.1. Getting Started ⚡
-
-### 1.1.1. Install Library
-
-**With Dart:**
-
-```bash
- dart pub add poptart_multiformats
+```sh
+dart pub add poptart_multiformats
 ```
-
-**Or With Flutter:**
-
-```bash
- flutter pub add poptart_multiformats
-```
-
-### 1.1.2. Import
 
 ```dart
 import 'package:poptart_multiformats/poptart_multiformats.dart';
 ```
 
-### 1.1.3. Implementation
+## Parse A CID
 
 ```dart
 import 'package:poptart_multiformats/poptart_multiformats.dart';
-
-import 'data.dart';
 
 void main() {
-  final cid1 = CID.parse(stringCid);
-  final cid2 = CID.fromList(bytesCid);
+  final cid = CID.parse(
+    'bafkreicks4diafps5lz5hjf5lflqbxkhevgdty4k66inqtw4brjyqcr6ou',
+  );
 
-  cid1 == cid2; // => true
-  cid1.bytes; // => [0, 1, 85, 18, 32, 74, 151, 6, 128, 21, 242, 234, 243, 211, 164, 189, 89, 87, 0, 221, 71, 37, 76, 57, 227, 138, 247, 144, 216, 78, 220, 12, 83, 136, 10, 62, 117]
-  cid2.toString(); // => bafkreicks4diafps5lz5hjf5lflqbxkhevgdty4k66inqtw4brjyqcr6ou
-
-  final cid3 = CID.fromJson({
-    '/': stringCid,
-  });
-
-  cid3 == cid1 && cid3 == cid2; // => true
-  cid3.toJson(); // => {"/": "bafkreicks4diafps5lz5hjf5lflqbxkhevgdty4k66inqtw4brjyqcr6ou"}
-
-  final cid4 = CID.create('hello world');
-
-  cid4.toString(); // => bafkreifzjut3te2nhyekklss27nh3k72ysco7y32koao5eei66wof36n5e
+  print(cid.codec);
+  print(cid.toJson());
 }
 ```
+
+## Create A CID
+
+```dart
+import 'package:poptart_multiformats/poptart_multiformats.dart';
+
+void main() {
+  final cid = CID.create('fresh record bytes');
+
+  print(cid.toString());
+  print(cid.bytes.length);
+}
+```
+
+## JSON Round Trip
+
+```dart
+import 'package:poptart_multiformats/poptart_multiformats.dart';
+
+void main() {
+  final original = CID.create('toast');
+  final restored = CID.fromJson(original.toJson());
+
+  print(original == restored); // true
+}
+```
+
+Supported CIDs are CID v1 values encoded as base32 with SHA-256 multihashes and
+the supported DAG codecs exposed by `Multicodec`.

@@ -1,7 +1,7 @@
 name: poptart_workspace
 description: Workspace tooling and package orchestration for the Poptart Dart packages.
 version: 0.1.0
-publish_to: https://sprk.so
+publish_to: none
 homepage: https://poptart.xyz
 documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart
