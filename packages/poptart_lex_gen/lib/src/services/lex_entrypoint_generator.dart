@@ -66,6 +66,8 @@ final class _LexEntrypointGenerator {
       leaves[lexiconId] = _LeafEntrypoint(
         lexiconId: lexiconId,
         packageName: rule.getRootPackageName(lexiconId),
+        homeDir: rule.getHomeDir(lexiconId),
+        packageDir: rule.getPackageDir(lexiconId),
         publicPath: rule.getPublicFileDir(lexiconId),
         dependencies: dependencies.toList()..sort(),
         hasMethodDescriptor: _hasMethodDescriptor(doc),
@@ -110,7 +112,7 @@ final class _LexEntrypointGenerator {
       buffer.writeln("export '$relative';");
     }
 
-    File('packages/${leaf.packageName}/lib/${leaf.publicPath}.dart')
+    File('${leaf.homeDir}/${leaf.publicPath}.dart')
       ..createSync(recursive: true)
       ..writeAsStringSync(buffer.toString());
   }
@@ -128,7 +130,6 @@ final class _LexEntrypointGenerator {
     }
 
     for (final entry in aggregates.entries) {
-      final packageName = entry.value.first.packageName;
       final buffer = StringBuffer()..writeln(kHeaderHint);
 
       final methodLeaves = entry.value
@@ -155,7 +156,12 @@ final class _LexEntrypointGenerator {
         );
       }
 
-      File(rule.getAggregateEntryPointPath(packageName, entry.key))
+      File(
+          rule.getAggregateEntryPointPathForLexicon(
+            entry.value.first.lexiconId,
+            entry.key,
+          ),
+        )
         ..createSync(recursive: true)
         ..writeAsStringSync(buffer.toString());
     }
@@ -169,6 +175,8 @@ final class _LexEntrypointGenerator {
 final class _LeafEntrypoint {
   final String lexiconId;
   final String packageName;
+  final String homeDir;
+  final String packageDir;
   final String publicPath;
   final List<String> dependencies;
   final bool hasMethodDescriptor;
@@ -176,6 +184,8 @@ final class _LeafEntrypoint {
   const _LeafEntrypoint({
     required this.lexiconId,
     required this.packageName,
+    required this.homeDir,
+    required this.packageDir,
     required this.publicPath,
     required this.dependencies,
     required this.hasMethodDescriptor,

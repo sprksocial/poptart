@@ -12,11 +12,79 @@ depend on `poptart_lex`, which contains the generated output ready to use.
 dart pub add --dev poptart_lex_gen
 ```
 
+## Generate From The CLI
+
+Add a manifest that maps lexicon ID prefixes to generated Dart packages:
+
+```yaml
+packages:
+  - name: poptart_lex
+    output: poptart_lex
+    roots:
+      - com.atproto.
+      - app.bsky.
+      - chat.bsky.
+      - tools.ozone.
+```
+
+Then run the generator:
+
+```sh
+dart run poptart_lex_gen generate \
+  --manifest lexicons/manifest.yaml \
+  --lexicons lexicons \
+  --packages packages
+```
+
+The default paths match that example, so projects with the same layout can use:
+
+```sh
+dart run poptart_lex_gen generate
+```
+
+Generated packages that use `freezed` or `json_serializable` should run their
+normal build step afterward:
+
+```sh
+cd packages/poptart_lex
+dart run build_runner build --delete-conflicting-outputs
+```
+
+### Multi-package Lexicons
+
+Each manifest package owns the lexicons whose IDs match one of its `roots`.
+When more than one root matches, the generator uses the most specific prefix.
+References across package boundaries are emitted as package imports, so a custom
+lexicon package can reference shared AT Protocol or Bluesky types without being
+generated into the same output package.
+
+`name` is the Dart package name used in generated package imports. `output` is
+the directory under `--packages`; when omitted, it defaults to `name`.
+
+For example:
+
+```yaml
+packages:
+  - name: poptart_lex
+    output: lex
+    roots:
+      - com.atproto.
+      - app.bsky.
+  - name: spark_lex
+    output: spark
+    roots:
+      - so.sprk.
+```
+
+With that manifest, `so.sprk.feed.post` is generated into
+`packages/spark/lib`, while references to `app.bsky.richtext.facet` import
+from `package:poptart_lex/...`.
+
+## Load Lexicons In Dart
+
 ```dart
 import 'package:poptart_lex_gen/poptart_lex_gen.dart';
 ```
-
-## Load Lexicons
 
 ```dart
 import 'package:poptart_lex_gen/poptart_lex_gen.dart';
@@ -32,6 +100,9 @@ void main() {
 
 ## Generate Services
 
+The CLI is the preferred entrypoint, but tooling can also build a config and run
+the generator directly:
+
 ```dart
 import 'package:poptart_lex_gen/poptart_lex_gen.dart';
 
@@ -44,9 +115,9 @@ void main() {
       namespaceRules: [
         LexiconNamespaceRule(
           prefixes: ['app.', 'com.'],
-          homeDir: 'packages/poptart_lex',
-          exportCodegenPath: 'lib',
-          servicePackagePath: 'lib',
+          homeDir: 'packages/poptart_lex/lib',
+          exportCodegenPath: 'package:poptart_lex',
+          servicePackagePath: 'package:poptart_lex',
           rootPackageName: 'poptart_lex',
         ),
       ],

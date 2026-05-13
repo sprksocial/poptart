@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 import 'dart:isolate';
 
@@ -218,94 +217,11 @@ LexGenConfig _buildLexGenConfig({
   required String lexiconsPath,
   required String packagesPath,
 }) {
-  final manifest = _LexiconManifest.load(_lexiconManifestPath);
-
-  return LexGenConfig(
-    services: manifest.services,
-    packages: manifest.packages.map((e) => e.name).toList(),
-    docsProvider: lexiconDocsProviderFromPaths([lexiconsPath]),
-    serviceRuleConfig: LexServiceRuleConfig(
-      namespaceRules: manifest.packages
-          .map(
-            (package) => LexiconNamespaceRule(
-              prefixes: package.roots,
-              homeDir: '$packagesPath/${package.name}/lib',
-              exportCodegenPath: 'package:${package.name}',
-              servicePackagePath: 'package:${package.name}',
-              rootPackageName: package.name,
-            ),
-          )
-          .toList(),
-    ),
+  return lexGenConfigFromManifest(
+    manifestPath: _lexiconManifestPath,
+    lexiconsPath: lexiconsPath,
+    packagesPath: packagesPath,
   );
-}
-
-final class _LexiconManifest {
-  final List<_LexiconPackage> packages;
-
-  const _LexiconManifest({required this.packages});
-
-  List<String> get services =>
-      packages.expand((package) => package.roots).toSet().toList();
-
-  static _LexiconManifest load(final String path) {
-    final file = File(path);
-    if (!file.existsSync()) {
-      throw StateError('Lexicon manifest does not exist: $path');
-    }
-
-    final packages = <_LexiconPackage>[];
-    String? currentName;
-    final roots = <String>[];
-
-    void flush() {
-      if (currentName == null) return;
-      if (roots.isEmpty) {
-        throw FormatException('Package $currentName has no roots in $path');
-      }
-      packages.add(
-        _LexiconPackage(name: currentName!, roots: List.unmodifiable(roots)),
-      );
-      currentName = null;
-      roots.clear();
-    }
-
-    for (final rawLine in const LineSplitter().convert(
-      file.readAsStringSync(),
-    )) {
-      final line = rawLine.trim();
-      if (line.isEmpty || line.startsWith('#') || line == 'packages:') {
-        continue;
-      }
-      if (line.startsWith('- name:')) {
-        flush();
-        currentName = line.substring('- name:'.length).trim();
-        continue;
-      }
-      if (line == 'roots:') continue;
-      if (line.startsWith('- ')) {
-        if (currentName == null) {
-          throw FormatException('Root declared before package name in $path');
-        }
-        roots.add(line.substring(2).trim());
-      }
-    }
-
-    flush();
-
-    if (packages.isEmpty) {
-      throw FormatException('No packages found in lexicon manifest: $path');
-    }
-
-    return _LexiconManifest(packages: List.unmodifiable(packages));
-  }
-}
-
-final class _LexiconPackage {
-  final String name;
-  final List<String> roots;
-
-  const _LexiconPackage({required this.name, required this.roots});
 }
 
 /// Main entry point for the script.

@@ -128,6 +128,13 @@ String getAggregateEntryPointPath(
   return 'packages/$rootPackageName/lib/$dir.dart';
 }
 
+String getAggregateEntryPointPathForLexicon(
+  final String lexiconId,
+  final String dir,
+) {
+  return '${_getNamespaceRule(lexiconId).homeDir}/$dir.dart';
+}
+
 String getPublicPackagePath(final String lexiconId) {
   return 'package:${getRootPackageName(lexiconId)}/${getPublicFileDir(lexiconId)}.dart';
 }
@@ -229,7 +236,7 @@ String getLexObjectNameFromRef(
     return getLexObjectName(parts[0], parts[1], mainVariants);
   }
 
-  return getLexObjectName(ref, '', mainVariants);
+  return getLexObjectName(ref, 'main', mainVariants);
 }
 
 String getLexObjectPackagePathFromRef(
@@ -255,9 +262,9 @@ String getLexObjectPackagePathFromRef(
   } else {
     if (ref.contains('#')) {
       final $lexiconId = ref.split('#').first;
-      return '$relativePath/$fileNamePrefix${getPackageName($lexiconId)}.dart';
+      return '$relativePath/${getPublicFileDir($lexiconId)}.dart';
     } else {
-      return '$relativePath/$fileNamePrefix${getPackageName(ref)}.dart';
+      return '$relativePath/${getPublicFileDir(ref)}.dart';
     }
   }
 }
@@ -348,6 +355,10 @@ String getRecordTypeName(final String lexiconId) {
 
 String getRootPackageName(final String lexiconId) {
   return _getNamespaceRule(lexiconId).rootPackageName;
+}
+
+String getPackageDir(final String lexiconId) {
+  return _getNamespaceRule(lexiconId).packageDir;
 }
 
 LexiconNamespaceRule _getNamespaceRule(final String lexiconId) {

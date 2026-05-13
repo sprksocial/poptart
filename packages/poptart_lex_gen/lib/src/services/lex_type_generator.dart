@@ -149,22 +149,25 @@ final class _LexTypeGenerator {
 
   void _cleanWorkspace() {
     for (final package in packages) {
-      final dir = Directory('packages/$package/lib/src/services/codegen');
+      final packageDir = package.contains('/') ? package : 'packages/$package';
+      final dir = Directory('$packageDir/lib/src/services/codegen');
       if (dir.existsSync()) dir.deleteSync(recursive: true);
 
-      final toolsDir = Directory('packages/$package/lib/src/tools');
+      final toolsDir = Directory('$packageDir/lib/src/tools');
       if (toolsDir.existsSync()) toolsDir.deleteSync(recursive: true);
 
       for (final topLevel in const ['app', 'chat', 'com', 'tools']) {
-        final generatedDir = Directory('packages/$package/lib/$topLevel');
+        final generatedDir = Directory('$packageDir/lib/$topLevel');
         if (generatedDir.existsSync()) generatedDir.deleteSync(recursive: true);
 
-        final generatedFile = File('packages/$package/lib/$topLevel.dart');
+        final generatedFile = File('$packageDir/lib/$topLevel.dart');
         if (generatedFile.existsSync()) generatedFile.deleteSync();
       }
 
       final $services = services.map((e) => e.split('.').join('_')).toList();
-      final libDir = Directory('packages/$package/lib/');
+      final libDir = Directory('$packageDir/lib/');
+      if (!libDir.existsSync()) continue;
+
       for (final file in libDir.listSync()) {
         if (file is! File) continue;
 

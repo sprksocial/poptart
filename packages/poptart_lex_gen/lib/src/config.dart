@@ -28,6 +28,15 @@ final class LexiconNamespaceRule {
     required this.rootPackageName,
   });
 
+  String get packageDir {
+    const suffix = '/lib';
+    if (homeDir.endsWith(suffix)) {
+      return homeDir.substring(0, homeDir.length - suffix.length);
+    }
+
+    return homeDir;
+  }
+
   bool matches(final String lexiconId) {
     for (final prefix in prefixes) {
       final normalized = _normalizePrefix(prefix);

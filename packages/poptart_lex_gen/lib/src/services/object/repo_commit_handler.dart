@@ -26,7 +26,7 @@ final class RepoCommitHandler {
 
 import 'dart:async';
 
-import 'package:poptart_lex/com/atproto/sync/subscribe_repos.dart';
+import '${getPublicPackagePath('com.atproto.sync.subscribeRepos')}';
 import 'package:poptart_core/poptart_core.dart';
 
 $imports

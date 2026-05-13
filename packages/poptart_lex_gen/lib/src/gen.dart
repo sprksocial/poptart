@@ -1,7 +1,7 @@
 // Project imports:
+import 'build/lex_build_project.dart';
 import 'commands/lex_command_generator.dart';
 import 'commands/rule.dart' as command_rule;
-import 'build/lex_build_project.dart';
 import 'config.dart';
 import 'utils.dart';
 
