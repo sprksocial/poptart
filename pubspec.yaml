@@ -83,8 +83,8 @@ melos:
 
     publish_all:
       run: |
-        melos publish
-        melos publish --no-dry-run --git-tag-version
+        dart run melos publish
+        dart run melos publish --no-dry-run --git-tag-version --yes
         git push origin --tags
       description: Publish all packages, create git tags and push them to origin.
 
