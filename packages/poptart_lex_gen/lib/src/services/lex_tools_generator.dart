@@ -9,37 +9,47 @@ import 'dart:io';
 import 'package:poptart_lexicon/parser.dart';
 
 // Project imports:
+import '../config.dart';
 import 'object/at_uri_extension.dart';
 import 'object/repo_commit_handler.dart';
-import 'rule.dart';
 
-void generateLexTools(final List<LexiconDoc> docs) {
-  return _LexToolsGenerator(docs).execute();
+void generateLexTools(
+  final List<LexiconNamespaceRule> namespaceRules,
+  final List<LexiconDoc> docs,
+) {
+  return _LexToolsGenerator(namespaceRules, docs).execute();
 }
 
 final class _LexToolsGenerator {
+  final List<LexiconNamespaceRule> namespaceRules;
   final List<LexiconDoc> docs;
 
-  const _LexToolsGenerator(this.docs);
+  const _LexToolsGenerator(this.namespaceRules, this.docs);
 
   void execute() {
-    final recordLexiconIds = _getRecordLexiconIds();
-    final homeDir = '${getHomeDir('app.bsky.')}/src/tools';
+    for (final rule in namespaceRules) {
+      if (rule.homeDir.isEmpty) continue;
 
-    File('$homeDir/at_uri_extension.dart')
-      ..createSync(recursive: true)
-      ..writeAsStringSync(AtUriExtension(recordLexiconIds).format());
+      final recordLexiconIds = _getRecordLexiconIds(rule);
+      if (recordLexiconIds.isEmpty) continue;
 
-    File('$homeDir/repo_commit_handler.dart')
-      ..createSync(recursive: true)
-      ..writeAsStringSync(RepoCommitHandler(recordLexiconIds).format());
+      final homeDir = '${rule.homeDir}/src/tools';
+
+      File('$homeDir/at_uri_extension.dart')
+        ..createSync(recursive: true)
+        ..writeAsStringSync(AtUriExtension(recordLexiconIds).format());
+
+      File('$homeDir/repo_commit_handler.dart')
+        ..createSync(recursive: true)
+        ..writeAsStringSync(RepoCommitHandler(recordLexiconIds).format());
+    }
   }
 
-  List<String> _getRecordLexiconIds() {
+  List<String> _getRecordLexiconIds(final LexiconNamespaceRule rule) {
     final recordLexiconIds = <String>[];
 
     for (final doc in docs) {
-      if (_isRecord(doc)) {
+      if (rule.matches(doc.id.toString()) && _isRecord(doc)) {
         recordLexiconIds.add(doc.id.toString());
       }
     }

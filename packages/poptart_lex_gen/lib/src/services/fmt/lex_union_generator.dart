@@ -37,6 +37,16 @@ final class _LexUnionGenerator {
   );
 
   LexUnion execute() {
+    final refs = refUnion.refs!.where((ref) {
+      final relatedDoc = rule.getRelatedDocFromContextualRef(
+        lexiconId.toString(),
+        ref,
+      );
+      if (relatedDoc == null) return true;
+
+      return !rule.isDeprecated(rule.getLexUserTypeDescription(relatedDoc));
+    }).toList();
+
     return LexUnion(
       lexiconId: lexiconId.toString(),
       defName: defName,
@@ -47,7 +57,7 @@ final class _LexUnionGenerator {
         mainVariants,
       ),
       fieldName: fieldName,
-      refs: refUnion.refs!,
+      refs: refs,
       mainVariants: mainVariants,
     );
   }

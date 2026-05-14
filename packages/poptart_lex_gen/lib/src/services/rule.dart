@@ -255,7 +255,10 @@ String getLexObjectPackagePathFromRef(
   if (_isInTheSamePackage(lexiconId, ref)) {
     if (ref.contains('#')) {
       final parts = ref.split('#');
-      return '$relativePath/$fileNamePrefix${getLexObjectFileName(parts[1])}.dart';
+      final fileName = isUnion
+          ? getFileNameForUnion(parts.first, parts[1], '')
+          : getLexObjectFileName(parts[1]);
+      return '$relativePath/$fileName.dart';
     } else {
       return '$relativePath/$fileNamePrefix${getLexObjectFileName('main')}.dart';
     }
@@ -464,4 +467,33 @@ LexUserType? getRelatedDocFromRef(final String? ref) {
   }
 
   return null;
+}
+
+LexUserType? getRelatedDocFromContextualRef(
+  final String lexiconId,
+  final String? ref,
+) {
+  if (ref == null) return null;
+  if (ref.startsWith('#')) return getRelatedDocFromRef('$lexiconId$ref');
+
+  return getRelatedDocFromRef(ref);
+}
+
+String? getLexUserTypeDescription(final LexUserType type) {
+  return type.whenOrNull(
+    record: (data) => data.description,
+    xrpcQuery: (data) => data.description,
+    xrpcProcedure: (data) => data.description,
+    xrpcSubscription: (data) => data.description,
+    blob: (data) => data.description,
+    array: (data) => data.description,
+    token: (data) => data.description,
+    object: (data) => data.description,
+    boolean: (data) => data.description,
+    integer: (data) => data.description,
+    string: (data) => data.description,
+    bytes: (data) => data.description,
+    cidLink: (data) => data.description,
+    unknown: (data) => data.description,
+  );
 }

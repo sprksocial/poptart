@@ -60,6 +60,7 @@ final class LexUserTypeConverter
         );
 
       case 'unknown':
+      case 'permission-set':
         return LexUserType.unknown(data: LexUnknown.fromJson(json));
       default:
         throw UnsupportedError('Unsupported type [$type]');
