@@ -24,7 +24,11 @@ when you need to reach closer to the protocol.
 | Package | Use it when... |
 | --- | --- |
 | `poptart` | You are building a normal Dart or Flutter app and want the app-facing client, sessions, OAuth, raw XRPC access, and common primitives from one dependency. |
-| `poptart_lex` | You need generated AT Protocol lexicon models, method values, descriptors, IDs, or bundled lexicon documents. |
+| `poptart_lex` | You need generated `com.atproto.*` lexicon models, method values, descriptors, IDs, or bundled lexicon documents. |
+| `bluesky_poptart` | You need generated `app.bsky.*` or `chat.bsky.*` lexicon APIs. |
+| `ozone_poptart` | You need generated `tools.ozone.*` moderation lexicon APIs. |
+| `sprk_poptart` | You need generated `so.sprk.*` lexicon APIs. |
+| `margin_poptart` | You need generated `at.margin.*` lexicon APIs. |
 | `poptart_core` | You are building package-level integrations and need `PoptartClient`, `ServiceContext`, session helpers, retry configuration, CAR decoding, blobs, or shared client types. |
 | `poptart_oauth` | You are adding AT Protocol OAuth sign-in, callback handling, token refresh, or DPoP proof support. |
 | `poptart_xrpc` | You are making lower-level XRPC calls without going through the app-facing client. |
@@ -42,7 +46,7 @@ lexicon method:
 
 ```dart
 import 'package:poptart/poptart.dart';
-import 'package:poptart_lex/app/bsky/actor/get_profile.dart'
+import 'package:bluesky_poptart/app/bsky/actor/get_profile.dart'
     as get_profile;
 
 Future<void> main() async {

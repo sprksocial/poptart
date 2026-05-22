@@ -4,7 +4,9 @@ Code generator for building Dart models and runtime descriptors from AT Protocol
 lexicons.
 
 This package is for maintainers and tooling authors. Most app developers should
-depend on `poptart_lex`, which contains the generated output ready to use.
+depend on the generated lexicon package for the namespaces they call, such as
+`poptart_lex` for `com.atproto.*` or `bluesky_poptart` for `app.bsky.*` and
+`chat.bsky.*`.
 
 ## Install
 
@@ -22,9 +24,23 @@ packages:
     output: poptart_lex
     roots:
       - com.atproto.
+  - name: bluesky_poptart
+    output: bluesky_poptart
+    roots:
       - app.bsky.
       - chat.bsky.
+  - name: ozone_poptart
+    output: ozone_poptart
+    roots:
       - tools.ozone.
+  - name: sprk_poptart
+    output: sprk_poptart
+    roots:
+      - so.sprk.
+  - name: margin_poptart
+    output: margin_poptart
+    roots:
+      - at.margin.
 ```
 
 Then run the generator:
@@ -46,7 +62,7 @@ Generated packages that use `freezed` or `json_serializable` should run their
 normal build step afterward:
 
 ```sh
-cd packages/poptart_lex
+cd packages/bluesky_poptart
 dart run build_runner build --delete-conflicting-outputs
 ```
 
@@ -69,15 +85,19 @@ packages:
     output: lex
     roots:
       - com.atproto.
+  - name: bluesky_poptart
+    output: bluesky
+    roots:
       - app.bsky.
-  - name: spark_lex
-    output: spark
+  - name: sprk_poptart
+    output: sprk
     roots:
       - so.sprk.
 ```
 
 With that manifest, `so.sprk.feed.post` is generated into
-`packages/spark/lib`, while references to `app.bsky.richtext.facet` import
+`packages/sprk/lib`, while references to `app.bsky.richtext.facet` import
+from `package:bluesky_poptart/...` and references to `com.atproto.*` import
 from `package:poptart_lex/...`.
 
 ## Load Lexicons In Dart
@@ -109,16 +129,23 @@ import 'package:poptart_lex_gen/poptart_lex_gen.dart';
 void main() {
   final config = LexGenConfig(
     services: const ['app', 'com'],
-    packages: const ['poptart_lex'],
+    packages: const ['poptart_lex', 'bluesky_poptart'],
     docsProvider: lexiconDocsProviderFromPaths(['lexicons']),
     serviceRuleConfig: const LexServiceRuleConfig(
       namespaceRules: [
         LexiconNamespaceRule(
-          prefixes: ['app.', 'com.'],
+          prefixes: ['com.atproto.'],
           homeDir: 'packages/poptart_lex/lib',
           exportCodegenPath: 'package:poptart_lex',
           servicePackagePath: 'package:poptart_lex',
           rootPackageName: 'poptart_lex',
+        ),
+        LexiconNamespaceRule(
+          prefixes: ['app.bsky.', 'chat.bsky.'],
+          homeDir: 'packages/bluesky_poptart/lib',
+          exportCodegenPath: 'package:bluesky_poptart',
+          servicePackagePath: 'package:bluesky_poptart',
+          rootPackageName: 'bluesky_poptart',
         ),
       ],
     ),

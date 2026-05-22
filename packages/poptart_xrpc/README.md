@@ -50,7 +50,7 @@ Future<void> main() async {
 ## Generated Descriptor Calls
 
 ```dart
-import 'package:poptart_lex/app/bsky/actor/get_profile.dart'
+import 'package:bluesky_poptart/app/bsky/actor/get_profile.dart'
     as get_profile;
 import 'package:poptart_xrpc/poptart_xrpc.dart';
 
