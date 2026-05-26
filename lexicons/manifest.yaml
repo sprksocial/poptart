@@ -2,6 +2,3 @@ packages:
   - name: poptart_lex
     roots:
       - com.atproto.
-      - app.bsky.
-      - chat.bsky.
-      - tools.ozone.
