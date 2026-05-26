@@ -1,7 +1,7 @@
 name: poptart_oauth
 resolution: workspace
 description: Provides tools to handle OAuth for AT Protocol and Bluesky Social.
-version: 0.1.0
+version: 0.1.1
 homepage: https://poptart.xyz
 documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart

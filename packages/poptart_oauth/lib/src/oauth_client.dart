@@ -282,6 +282,11 @@ final class OAuthClient {
       ),
       sub: body['sub'],
       $clientId: metadata.clientId,
+      $pdsEndpoint: _resolvePdsEndpoint(
+        body,
+        accessToken: body['access_token'],
+        fallback: service,
+      ),
       $dPoPNonce: response.headers['dpop-nonce']!,
       $publicKey: publicKey,
       $privateKey: privateKey,
@@ -376,9 +381,53 @@ final class OAuthClient {
       ),
       sub: body['sub'],
       $clientId: metadata.clientId,
+      $pdsEndpoint: _resolvePdsEndpoint(
+        body,
+        accessToken: body['access_token'],
+        fallback: session.$pdsEndpoint ?? service,
+      ),
       $dPoPNonce: response.headers['dpop-nonce']!,
       $publicKey: session.$publicKey,
       $privateKey: session.$privateKey,
     );
+  }
+}
+
+String? _resolvePdsEndpoint(
+  Object? body, {
+  required Object? accessToken,
+  String? fallback,
+}) {
+  if (body is Map<String, dynamic>) {
+    final pdsEndpoint = body['pds_endpoint'];
+    if (pdsEndpoint is String && pdsEndpoint.isNotEmpty) {
+      return pdsEndpoint;
+    }
+  }
+
+  if (accessToken is String && _looksLikeJwt(accessToken)) {
+    return null;
+  }
+
+  if (fallback != null && fallback.isNotEmpty) {
+    return fallback;
+  }
+
+  return null;
+}
+
+bool _looksLikeJwt(String token) {
+  final parts = token.split('.');
+  if (parts.length != 3 || parts.any((part) => part.isEmpty)) {
+    return false;
+  }
+
+  try {
+    final payload = jsonDecode(
+      utf8.decode(base64Url.decode(base64Url.normalize(parts[1]))),
+    );
+    return payload is Map<String, Object?>;
+  } catch (_) {
+    return false;
   }
 }

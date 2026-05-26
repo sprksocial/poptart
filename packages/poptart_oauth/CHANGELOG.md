@@ -1,5 +1,9 @@
 # Release Note
 
+## v0.1.1
+
+- Preserve PDS endpoint information on OAuth sessions for opaque access tokens.
+
 ## v0.1.0
 
 - Initial Poptart fork release under the new `poptart_*` package name.

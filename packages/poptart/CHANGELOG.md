@@ -1,5 +1,9 @@
 # Release Note
 
+## v0.1.1
+
+- Bump `poptart_core` and `poptart_oauth` for opaque OAuth token restore support.
+
 ## v0.1.0
 
 - Initial Poptart umbrella package release.

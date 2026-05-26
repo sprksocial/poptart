@@ -32,6 +32,7 @@
 ///   scope: 'profile email',
 ///   expiresAt: DateTime.now().add(Duration(hours: 1)),
 ///   sub: '123456789',
+///   $pdsEndpoint: 'porcini.us-east.host.bsky.network',
 ///   $dPoPNonce: 'nonce-7654321',
 ///   $publicKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2Iiwia2lkIjoiMTI...',
 ///   $privateKey: 'eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2Iiwia2lkIjoi...',
@@ -50,6 +51,7 @@ final class OAuthSession {
   /// - [expiresAt]: Token expiration timestamp
   /// - [sub]: Subject identifier for token binding
   /// - [$clientId]: OAuth client identifier used to mint the session
+  /// - [$pdsEndpoint]: Resource server endpoint for opaque tokens
   /// - [$dPoPNonce]: Server-provided nonce for DPoP proof freshness
   /// - [$publicKey]: Base64URL encoded public key for DPoP proof verification
   /// - [$privateKey]: Base64URL encoded private key for DPoP proof generation
@@ -61,6 +63,7 @@ final class OAuthSession {
     required this.expiresAt,
     required this.sub,
     this.$clientId,
+    this.$pdsEndpoint,
     required this.$dPoPNonce,
     required this.$publicKey,
     required this.$privateKey,
@@ -107,6 +110,12 @@ final class OAuthSession {
   /// Some providers do not mirror `client_id` into issued tokens, so we keep
   /// the original client identifier to continue building DPoP proofs later.
   final String? $clientId;
+
+  /// Resource server endpoint used for AT Protocol XRPC requests.
+  ///
+  /// Providers that issue opaque access tokens do not expose the endpoint in
+  /// JWT claims, so restored sessions can keep the endpoint alongside the token.
+  final String? $pdsEndpoint;
 
   /// Server-provided DPoP nonce.
   ///

@@ -1,5 +1,10 @@
 # Release Note
 
+## v0.1.1
+
+- Restore OAuth sessions from persisted metadata without requiring JWT access tokens.
+- Preserve restored PDS endpoints so opaque-token sessions route to the correct service.
+
 ## v0.1.0
 
 - Initial Poptart fork release under the new `poptart_*` package name.

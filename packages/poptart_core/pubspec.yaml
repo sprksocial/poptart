@@ -1,7 +1,7 @@
 name: poptart_core
 resolution: workspace
 description: Core library for clients and tools. This package is mainly used by https://atprotodart.com packages.
-version: 0.1.0
+version: 0.1.1
 homepage: https://poptart.xyz
 documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart
@@ -25,7 +25,7 @@ dependencies:
   json_annotation: ^4.9.0
   cbor: ^6.3.7
   poptart_multiformats: ^0.1.0
-  poptart_oauth: ^0.1.0
+  poptart_oauth: ^0.1.1
   nanoid: ^1.0.0
   meta: ^1.17.0
 
