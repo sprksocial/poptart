@@ -269,7 +269,10 @@ DartType _getLexRefVariantType(
       bool isArray = false;
       bool isUnion = false;
 
-      final relatedDoc = rule.getRelatedDocFromRef(ref.data.ref);
+      final relatedDoc = rule.getRelatedDocFromContextualRef(
+        lexiconId.toString(),
+        ref.data.ref,
+      );
       if (relatedDoc != null) {
         final array = relatedDoc.whenOrNull(array: (data) => data);
         if (array != null) {

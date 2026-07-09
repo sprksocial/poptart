@@ -476,6 +476,8 @@ LexUserType? getRelatedDocFromContextualRef(
   if (ref == null) return null;
   if (ref.startsWith('#')) return getRelatedDocFromRef('$lexiconId$ref');
 
+  if (!ref.contains('#')) return getRelatedDocFromRef('$ref#main');
+
   return getRelatedDocFromRef(ref);
 }
 
