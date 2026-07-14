@@ -486,10 +486,11 @@ Map<String, String> _appendContentType(
   final String? contentType,
 ) {
   if (body is Uint8List) {
-    return {
-      'Content-type':
-          contentType ?? lookupMimeType('', headerBytes: body) ?? '*/*',
-    }..addAll(headers ?? {});
+    final resolvedContentType = contentType == null || contentType.contains('*')
+        ? lookupMimeType('', headerBytes: body) ?? 'application/octet-stream'
+        : contentType;
+
+    return {'Content-type': resolvedContentType}..addAll(headers ?? {});
   }
 
   return {'Content-type': contentType ?? 'application/json'}

@@ -1,5 +1,9 @@
 # Release Note
 
+## v0.1.1
+
+- Ensure wildcard binary input encodings use a concrete request content type.
+
 ## v0.1.0
 
 - Initial Poptart fork release under the new `poptart_*` package name.

@@ -1,5 +1,9 @@
 # Release Note
 
+## v0.1.2
+
+- Require `poptart_xrpc` 0.1.1 for concrete binary request content types.
+
 ## v0.1.1
 
 - Bump `poptart_core` and `poptart_oauth` for opaque OAuth token restore support.

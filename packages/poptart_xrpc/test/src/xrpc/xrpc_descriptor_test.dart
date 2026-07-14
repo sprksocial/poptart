@@ -138,6 +138,67 @@ void main() {
       expect(response.data, const _ExampleObject(name: 'alice'));
     });
 
+    test(
+      'procedure call resolves wildcard input encoding from bytes',
+      () async {
+        final descriptor =
+            XRPCMethodDescriptor<void, Uint8List, _ExampleObject>(
+              nsid: NSID.parse('com.example.uploadBlob'),
+              kind: XRPCMethodKind.procedure,
+              inputEncoding: '*/*',
+              outputFromJson: _ExampleObject.fromJson,
+            );
+        final bytes = Uint8List.fromList([0xff, 0xd8, 0xff, 0xe0]);
+
+        final response = await call(
+          descriptor,
+          input: bytes,
+          postClient: (url, {body, encoding, headers}) async {
+            expect(body, bytes);
+            expect(headers, containsPair('Content-type', 'image/jpeg'));
+
+            return Response(
+              r'{"$type":"com.example.lexicon","name":"alice"}',
+              200,
+              request: Request('POST', url),
+            );
+          },
+        );
+
+        expect(response.data, const _ExampleObject(name: 'alice'));
+      },
+    );
+
+    test('procedure call falls back for unknown wildcard bytes', () async {
+      final descriptor = XRPCMethodDescriptor<void, Uint8List, _ExampleObject>(
+        nsid: NSID.parse('com.example.uploadBlob'),
+        kind: XRPCMethodKind.procedure,
+        inputEncoding: '*/*',
+        outputFromJson: _ExampleObject.fromJson,
+      );
+      final bytes = Uint8List.fromList([1, 2, 3]);
+
+      final response = await call(
+        descriptor,
+        input: bytes,
+        postClient: (url, {body, encoding, headers}) async {
+          expect(body, bytes);
+          expect(
+            headers,
+            containsPair('Content-type', 'application/octet-stream'),
+          );
+
+          return Response(
+            r'{"$type":"com.example.lexicon","name":"alice"}',
+            200,
+            request: Request('POST', url),
+          );
+        },
+      );
+
+      expect(response.data, const _ExampleObject(name: 'alice'));
+    });
+
     test('query call preserves descriptor bytes output', () async {
       final descriptor = XRPCMethodDescriptor<_ExampleParams, void, Uint8List>(
         nsid: NSID.parse('com.example.getBlob'),
