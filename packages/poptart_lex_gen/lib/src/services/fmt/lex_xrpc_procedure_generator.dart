@@ -7,7 +7,8 @@ import '../object/lex_output.dart';
 import '../rule.dart' as rule;
 import 'lex_property_generator.dart';
 
-(LexInput?, LexOutput?)? generateLexXrpcProcedure(
+({LexInput? parameters, LexInput? input, LexOutput? output})?
+generateLexXrpcProcedure(
   final lex.NSID lexiconId,
   final String defName,
   final lex.LexXrpcProcedure procedure,
@@ -34,10 +35,43 @@ final class _LexLexXrpcProcedureGenerator {
     this.mainVariants,
   );
 
-  (LexInput?, LexOutput?)? execute() {
-    if (procedure.input == null && procedure.output == null) return null;
+  ({LexInput? parameters, LexInput? input, LexOutput? output})? execute() {
+    if (procedure.parameters == null &&
+        procedure.input == null &&
+        procedure.output == null) {
+      return null;
+    }
 
-    return (_getInput(), _getOutput());
+    return (
+      parameters: _getParameters(),
+      input: _getInput(),
+      output: _getOutput(),
+    );
+  }
+
+  LexInput? _getParameters() {
+    if (procedure.parameters?.properties == null) return null;
+    final parameters = procedure.parameters!;
+
+    final properties = generateLexPropertiesFromLexXrpcParameters(
+      lexiconId,
+      defName,
+      parameters.properties,
+      parameters.requiredProperties,
+      null,
+      mainVariants,
+      nestedTypeScope: LexNestedTypeScope.parameters,
+    );
+    if (properties.isEmpty) return null;
+
+    return LexInput(
+      lexiconId: lexiconId.toString(),
+      defName: defName,
+      name: rule.getLexObjectName(lexiconId.toString(), defName, mainVariants),
+      description: parameters.description,
+      properties: properties,
+      isParameters: true,
+    );
   }
 
   LexInput? _getInput() {
@@ -63,6 +97,7 @@ final class _LexLexXrpcProcedureGenerator {
         object.requiredProperties,
         object.nullableProperties,
         mainVariants,
+        nestedTypeScope: LexNestedTypeScope.input,
       );
       if (properties.isEmpty) return null;
 
@@ -107,6 +142,7 @@ final class _LexLexXrpcProcedureGenerator {
         object.requiredProperties,
         object.nullableProperties,
         mainVariants,
+        nestedTypeScope: LexNestedTypeScope.output,
       );
       if (properties.isEmpty) return null;
 

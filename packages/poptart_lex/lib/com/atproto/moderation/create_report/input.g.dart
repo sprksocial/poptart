@@ -18,7 +18,7 @@ _ModerationCreateReportInput _$ModerationCreateReportInputFromJson(Map json) =>
         reason: $checkedConvert('reason', (v) => v as String?),
         subject: $checkedConvert(
           'subject',
-          (v) => const UModerationCreateReportSubjectConverter().fromJson(
+          (v) => const UModerationCreateReportInputSubjectConverter().fromJson(
             v as Map<String, dynamic>,
           ),
         ),
@@ -42,7 +42,7 @@ Map<String, dynamic> _$ModerationCreateReportInputToJson(
 ) => <String, dynamic>{
   'reasonType': const ReasonTypeConverter().toJson(instance.reasonType),
   'reason': ?instance.reason,
-  'subject': const UModerationCreateReportSubjectConverter().toJson(
+  'subject': const UModerationCreateReportInputSubjectConverter().toJson(
     instance.subject,
   ),
   'modTool': ?_$JsonConverterToJson<Map<String, dynamic>, ModTool>(

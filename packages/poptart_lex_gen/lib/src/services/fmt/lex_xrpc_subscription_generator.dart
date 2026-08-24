@@ -52,6 +52,7 @@ final class _LexLexXrpcSubscriptionGenerator {
       parameters.requiredProperties,
       null,
       mainVariants,
+      nestedTypeScope: LexNestedTypeScope.parameters,
     );
     if (properties.isEmpty) return null;
 

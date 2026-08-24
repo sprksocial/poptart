@@ -1,6 +1,6 @@
 name: poptart_lex_gen
 description: Code generator for building Dart models and runtime descriptors from AT Protocol lexicons.
-version: 0.2.0
+version: 0.3.0
 resolution: workspace
 homepage: https://poptart.xyz
 documentation: https://poptart.xyz

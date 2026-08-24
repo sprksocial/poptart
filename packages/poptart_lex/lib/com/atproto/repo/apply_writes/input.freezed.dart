@@ -17,7 +17,7 @@ mixin _$RepoApplyWritesInput {
 
 /// The handle or DID of the repo (aka, current account).
  String get repo;/// Can be set to 'false' to skip Lexicon schema validation of record data across all operations, 'true' to require it, or leave unset to validate only for known Lexicons.
- bool? get validate;@URepoApplyWritesWritesConverter() List<URepoApplyWritesWrites> get writes;/// If provided, the entire operation will fail if the current repo commit CID does not match this value. Used to prevent conflicting repo mutations.
+ bool? get validate;@URepoApplyWritesInputWritesConverter() List<URepoApplyWritesInputWrites> get writes;/// If provided, the entire operation will fail if the current repo commit CID does not match this value. Used to prevent conflicting repo mutations.
  String? get swapCommit; Map<String, dynamic>? get $unknown;
 /// Create a copy of RepoApplyWritesInput
 /// with the given fields replaced by the non-null parameter values.
@@ -51,7 +51,7 @@ abstract mixin class $RepoApplyWritesInputCopyWith<$Res>  {
   factory $RepoApplyWritesInputCopyWith(RepoApplyWritesInput value, $Res Function(RepoApplyWritesInput) _then) = _$RepoApplyWritesInputCopyWithImpl;
 @useResult
 $Res call({
- String repo, bool? validate,@URepoApplyWritesWritesConverter() List<URepoApplyWritesWrites> writes, String? swapCommit, Map<String, dynamic>? $unknown
+ String repo, bool? validate,@URepoApplyWritesInputWritesConverter() List<URepoApplyWritesInputWrites> writes, String? swapCommit, Map<String, dynamic>? $unknown
 });
 
 
@@ -73,7 +73,7 @@ class _$RepoApplyWritesInputCopyWithImpl<$Res>
 repo: null == repo ? _self.repo : repo // ignore: cast_nullable_to_non_nullable
 as String,validate: freezed == validate ? _self.validate : validate // ignore: cast_nullable_to_non_nullable
 as bool?,writes: null == writes ? _self.writes : writes // ignore: cast_nullable_to_non_nullable
-as List<URepoApplyWritesWrites>,swapCommit: freezed == swapCommit ? _self.swapCommit : swapCommit // ignore: cast_nullable_to_non_nullable
+as List<URepoApplyWritesInputWrites>,swapCommit: freezed == swapCommit ? _self.swapCommit : swapCommit // ignore: cast_nullable_to_non_nullable
 as String?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String repo,  bool? validate, @URepoApplyWritesWritesConverter()  List<URepoApplyWritesWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String repo,  bool? validate, @URepoApplyWritesInputWritesConverter()  List<URepoApplyWritesInputWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesInput() when $default != null:
 return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$unknown);case _:
@@ -181,7 +181,7 @@ return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$u
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String repo,  bool? validate, @URepoApplyWritesWritesConverter()  List<URepoApplyWritesWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String repo,  bool? validate, @URepoApplyWritesInputWritesConverter()  List<URepoApplyWritesInputWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesInput():
 return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$unknown);case _:
@@ -201,7 +201,7 @@ return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$u
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String repo,  bool? validate, @URepoApplyWritesWritesConverter()  List<URepoApplyWritesWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String repo,  bool? validate, @URepoApplyWritesInputWritesConverter()  List<URepoApplyWritesInputWrites> writes,  String? swapCommit,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesInput() when $default != null:
 return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$unknown);case _:
@@ -216,15 +216,15 @@ return $default(_that.repo,_that.validate,_that.writes,_that.swapCommit,_that.$u
 
 @JsonSerializable(includeIfNull: false)
 class _RepoApplyWritesInput implements RepoApplyWritesInput {
-  const _RepoApplyWritesInput({required this.repo, this.validate, @URepoApplyWritesWritesConverter() required final  List<URepoApplyWritesWrites> writes, this.swapCommit, final  Map<String, dynamic>? $unknown}): _writes = writes,_$unknown = $unknown;
+  const _RepoApplyWritesInput({required this.repo, this.validate, @URepoApplyWritesInputWritesConverter() required final  List<URepoApplyWritesInputWrites> writes, this.swapCommit, final  Map<String, dynamic>? $unknown}): _writes = writes,_$unknown = $unknown;
   factory _RepoApplyWritesInput.fromJson(Map<String, dynamic> json) => _$RepoApplyWritesInputFromJson(json);
 
 /// The handle or DID of the repo (aka, current account).
 @override final  String repo;
 /// Can be set to 'false' to skip Lexicon schema validation of record data across all operations, 'true' to require it, or leave unset to validate only for known Lexicons.
 @override final  bool? validate;
- final  List<URepoApplyWritesWrites> _writes;
-@override@URepoApplyWritesWritesConverter() List<URepoApplyWritesWrites> get writes {
+ final  List<URepoApplyWritesInputWrites> _writes;
+@override@URepoApplyWritesInputWritesConverter() List<URepoApplyWritesInputWrites> get writes {
   if (_writes is EqualUnmodifiableListView) return _writes;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_writes);
@@ -275,7 +275,7 @@ abstract mixin class _$RepoApplyWritesInputCopyWith<$Res> implements $RepoApplyW
   factory _$RepoApplyWritesInputCopyWith(_RepoApplyWritesInput value, $Res Function(_RepoApplyWritesInput) _then) = __$RepoApplyWritesInputCopyWithImpl;
 @override @useResult
 $Res call({
- String repo, bool? validate,@URepoApplyWritesWritesConverter() List<URepoApplyWritesWrites> writes, String? swapCommit, Map<String, dynamic>? $unknown
+ String repo, bool? validate,@URepoApplyWritesInputWritesConverter() List<URepoApplyWritesInputWrites> writes, String? swapCommit, Map<String, dynamic>? $unknown
 });
 
 
@@ -297,7 +297,7 @@ class __$RepoApplyWritesInputCopyWithImpl<$Res>
 repo: null == repo ? _self.repo : repo // ignore: cast_nullable_to_non_nullable
 as String,validate: freezed == validate ? _self.validate : validate // ignore: cast_nullable_to_non_nullable
 as bool?,writes: null == writes ? _self._writes : writes // ignore: cast_nullable_to_non_nullable
-as List<URepoApplyWritesWrites>,swapCommit: freezed == swapCommit ? _self.swapCommit : swapCommit // ignore: cast_nullable_to_non_nullable
+as List<URepoApplyWritesInputWrites>,swapCommit: freezed == swapCommit ? _self.swapCommit : swapCommit // ignore: cast_nullable_to_non_nullable
 as String?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));

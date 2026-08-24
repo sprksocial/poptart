@@ -15,9 +15,9 @@ _SyncGetRepoStatusOutput _$SyncGetRepoStatusOutputFromJson(Map json) =>
         active: $checkedConvert('active', (v) => v as bool),
         status: $checkedConvert(
           'status',
-          (v) => _$JsonConverterFromJson<String, SyncGetRepoStatusStatus>(
+          (v) => _$JsonConverterFromJson<String, SyncGetRepoStatusOutputStatus>(
             v,
-            const SyncGetRepoStatusStatusConverter().fromJson,
+            const SyncGetRepoStatusOutputStatusConverter().fromJson,
           ),
         ),
         rev: $checkedConvert('rev', (v) => v as String?),
@@ -34,9 +34,9 @@ Map<String, dynamic> _$SyncGetRepoStatusOutputToJson(
 ) => <String, dynamic>{
   'did': instance.did,
   'active': instance.active,
-  'status': ?_$JsonConverterToJson<String, SyncGetRepoStatusStatus>(
+  'status': ?_$JsonConverterToJson<String, SyncGetRepoStatusOutputStatus>(
     instance.status,
-    const SyncGetRepoStatusStatusConverter().toJson,
+    const SyncGetRepoStatusOutputStatusConverter().toJson,
   ),
   'rev': ?instance.rev,
   r'$unknown': ?instance.$unknown,

@@ -17,11 +17,13 @@ final class LexInput extends LexType {
 
   final bool bytes;
   final String? encoding;
+  final bool isParameters;
 
   final String? ref;
 
   @override
-  LexTypeState get state => LexTypeState.input;
+  LexTypeState get state =>
+      isParameters ? LexTypeState.parameters : LexTypeState.input;
 
   const LexInput({
     required this.lexiconId,
@@ -32,6 +34,7 @@ final class LexInput extends LexType {
     this.bytes = false,
     this.ref,
     this.encoding,
+    this.isParameters = false,
   });
 
   String? getDescription() {
@@ -65,12 +68,12 @@ final class LexInput extends LexType {
 
   @override
   String getFileName() {
-    return 'input';
+    return isParameters ? 'parameters' : 'input';
   }
 
   @override
   String getTypeName() {
-    return '${name}Input';
+    return '$name${isParameters ? 'Parameters' : 'Input'}';
   }
 
   @override
@@ -95,9 +98,11 @@ final class LexInput extends LexType {
     }
 
     final typeName = getTypeName();
+    final suffix = isParameters ? 'Parameters' : 'Input';
+    final fileName = getFileName();
     final knownProps = getKnownProps(this.properties);
-    final extensions = getExtensions(name, this.properties, suffix: 'Input');
-    final converter = getObjectConverter(name, suffix: 'Input');
+    final extensions = getExtensions(name, this.properties, suffix: suffix);
+    final converter = getObjectConverter(name, suffix: suffix);
 
     return '''$kHeaderHint
 
@@ -107,8 +112,8 @@ import 'package:poptart_core/internals.dart';
 
 ${packages.toString()}
 
-part 'input.freezed.dart';
-part 'input.g.dart';
+part '$fileName.freezed.dart';
+part '$fileName.g.dart';
 
 $kHeader
 

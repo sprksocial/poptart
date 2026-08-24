@@ -10,4 +10,4 @@
 export 'get_subject_status/descriptor.dart';
 export 'get_subject_status/input.dart';
 export 'get_subject_status/output.dart';
-export 'get_subject_status/union_main_subject.dart';
+export 'get_subject_status/union_main_output_subject.dart';

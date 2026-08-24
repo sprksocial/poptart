@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './main_sort.dart';
+import './main_parameters_sort.dart';
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -22,7 +22,8 @@ abstract class AdminGetInviteCodesInput with _$AdminGetInviteCodesInput {
 
   @JsonSerializable(includeIfNull: false)
   const factory AdminGetInviteCodesInput({
-    @AdminGetInviteCodesSortConverter() AdminGetInviteCodesSort? sort,
+    @AdminGetInviteCodesParametersSortConverter()
+    AdminGetInviteCodesParametersSort? sort,
     @Default(100) int limit,
     String? cursor,
 

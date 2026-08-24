@@ -51,6 +51,7 @@ final class _LexLexXrpcQueryGenerator {
       parameters.requiredProperties,
       null,
       mainVariants,
+      nestedTypeScope: LexNestedTypeScope.parameters,
     );
     if (properties.isEmpty) return null;
 
@@ -86,6 +87,7 @@ final class _LexLexXrpcQueryGenerator {
         object.requiredProperties,
         object.nullableProperties,
         mainVariants,
+        nestedTypeScope: LexNestedTypeScope.output,
       );
       if (properties.isEmpty) return null;
 

@@ -100,7 +100,9 @@ String getFilePath(
   final LexTypeState state, {
   final String? fieldName,
 }) {
-  if (state == LexTypeState.input) {
+  if (state == LexTypeState.parameters) {
+    return '${getHomeDir(lexiconId)}/${_getFileDir(lexiconId)}/parameters.dart';
+  } else if (state == LexTypeState.input) {
     return '${getHomeDir(lexiconId)}/${_getFileDir(lexiconId)}/input.dart';
   } else if (state == LexTypeState.output) {
     return '${getHomeDir(lexiconId)}/${_getFileDir(lexiconId)}/output.dart';

@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './main_status.dart';
+import './main_output_status.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -44,7 +44,8 @@ abstract class ServerRefreshSessionOutput with _$ServerRefreshSessionOutput {
     bool? active,
 
     /// Hosting status of the account. If not specified, then assume 'active'.
-    @ServerRefreshSessionStatusConverter() ServerRefreshSessionStatus? status,
+    @ServerRefreshSessionOutputStatusConverter()
+    ServerRefreshSessionOutputStatus? status,
 
     Map<String, dynamic>? $unknown,
   }) = _ServerRefreshSessionOutput;

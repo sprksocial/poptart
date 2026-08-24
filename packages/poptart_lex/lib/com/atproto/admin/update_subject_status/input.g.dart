@@ -14,7 +14,7 @@ _AdminUpdateSubjectStatusInput _$AdminUpdateSubjectStatusInputFromJson(
   final val = _AdminUpdateSubjectStatusInput(
     subject: $checkedConvert(
       'subject',
-      (v) => const UAdminUpdateSubjectStatusSubjectConverter().fromJson(
+      (v) => const UAdminUpdateSubjectStatusInputSubjectConverter().fromJson(
         v as Map<String, dynamic>,
       ),
     ),
@@ -43,7 +43,7 @@ _AdminUpdateSubjectStatusInput _$AdminUpdateSubjectStatusInputFromJson(
 Map<String, dynamic> _$AdminUpdateSubjectStatusInputToJson(
   _AdminUpdateSubjectStatusInput instance,
 ) => <String, dynamic>{
-  'subject': const UAdminUpdateSubjectStatusSubjectConverter().toJson(
+  'subject': const UAdminUpdateSubjectStatusInputSubjectConverter().toJson(
     instance.subject,
   ),
   'takedown': ?_$JsonConverterToJson<Map<String, dynamic>, StatusAttr>(

@@ -9,5 +9,5 @@
 
 export 'create_record/descriptor.dart';
 export 'create_record/input.dart';
-export 'create_record/main_validation_status.dart';
+export 'create_record/main_output_validation_status.dart';
 export 'create_record/output.dart';

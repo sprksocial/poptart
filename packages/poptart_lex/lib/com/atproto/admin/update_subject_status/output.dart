@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './union_main_subject.dart';
+import './union_main_output_subject.dart';
 import '../defs/status_attr.dart';
 
 part 'output.freezed.dart';
@@ -24,8 +24,8 @@ abstract class AdminUpdateSubjectStatusOutput
 
   @JsonSerializable(includeIfNull: false)
   const factory AdminUpdateSubjectStatusOutput({
-    @UAdminUpdateSubjectStatusSubjectConverter()
-    required UAdminUpdateSubjectStatusSubject subject,
+    @UAdminUpdateSubjectStatusOutputSubjectConverter()
+    required UAdminUpdateSubjectStatusOutputSubject subject,
     @StatusAttrConverter() StatusAttr? takedown,
 
     Map<String, dynamic>? $unknown,

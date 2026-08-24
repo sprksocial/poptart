@@ -9,5 +9,5 @@
 
 export 'get_repo_status/descriptor.dart';
 export 'get_repo_status/input.dart';
-export 'get_repo_status/main_status.dart';
+export 'get_repo_status/main_output_status.dart';
 export 'get_repo_status/output.dart';

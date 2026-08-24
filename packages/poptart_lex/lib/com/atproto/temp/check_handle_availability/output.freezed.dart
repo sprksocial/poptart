@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$TempCheckHandleAvailabilityOutput {
 
 /// Echo of the input handle.
- String get handle;@UTempCheckHandleAvailabilityResultConverter() UTempCheckHandleAvailabilityResult get result; Map<String, dynamic>? get $unknown;
+ String get handle;@UTempCheckHandleAvailabilityOutputResultConverter() UTempCheckHandleAvailabilityOutputResult get result; Map<String, dynamic>? get $unknown;
 /// Create a copy of TempCheckHandleAvailabilityOutput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -49,11 +49,11 @@ abstract mixin class $TempCheckHandleAvailabilityOutputCopyWith<$Res>  {
   factory $TempCheckHandleAvailabilityOutputCopyWith(TempCheckHandleAvailabilityOutput value, $Res Function(TempCheckHandleAvailabilityOutput) _then) = _$TempCheckHandleAvailabilityOutputCopyWithImpl;
 @useResult
 $Res call({
- String handle,@UTempCheckHandleAvailabilityResultConverter() UTempCheckHandleAvailabilityResult result, Map<String, dynamic>? $unknown
+ String handle,@UTempCheckHandleAvailabilityOutputResultConverter() UTempCheckHandleAvailabilityOutputResult result, Map<String, dynamic>? $unknown
 });
 
 
-$UTempCheckHandleAvailabilityResultCopyWith<$Res> get result;
+$UTempCheckHandleAvailabilityOutputResultCopyWith<$Res> get result;
 
 }
 /// @nodoc
@@ -70,7 +70,7 @@ class _$TempCheckHandleAvailabilityOutputCopyWithImpl<$Res>
   return _then(_self.copyWith(
 handle: null == handle ? _self.handle : handle // ignore: cast_nullable_to_non_nullable
 as String,result: null == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
-as UTempCheckHandleAvailabilityResult,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
+as UTempCheckHandleAvailabilityOutputResult,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -78,9 +78,9 @@ as Map<String, dynamic>?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UTempCheckHandleAvailabilityResultCopyWith<$Res> get result {
+$UTempCheckHandleAvailabilityOutputResultCopyWith<$Res> get result {
   
-  return $UTempCheckHandleAvailabilityResultCopyWith<$Res>(_self.result, (value) {
+  return $UTempCheckHandleAvailabilityOutputResultCopyWith<$Res>(_self.result, (value) {
     return _then(_self.copyWith(result: value));
   });
 }
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String handle, @UTempCheckHandleAvailabilityResultConverter()  UTempCheckHandleAvailabilityResult result,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String handle, @UTempCheckHandleAvailabilityOutputResultConverter()  UTempCheckHandleAvailabilityOutputResult result,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TempCheckHandleAvailabilityOutput() when $default != null:
 return $default(_that.handle,_that.result,_that.$unknown);case _:
@@ -186,7 +186,7 @@ return $default(_that.handle,_that.result,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String handle, @UTempCheckHandleAvailabilityResultConverter()  UTempCheckHandleAvailabilityResult result,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String handle, @UTempCheckHandleAvailabilityOutputResultConverter()  UTempCheckHandleAvailabilityOutputResult result,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _TempCheckHandleAvailabilityOutput():
 return $default(_that.handle,_that.result,_that.$unknown);case _:
@@ -206,7 +206,7 @@ return $default(_that.handle,_that.result,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String handle, @UTempCheckHandleAvailabilityResultConverter()  UTempCheckHandleAvailabilityResult result,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String handle, @UTempCheckHandleAvailabilityOutputResultConverter()  UTempCheckHandleAvailabilityOutputResult result,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _TempCheckHandleAvailabilityOutput() when $default != null:
 return $default(_that.handle,_that.result,_that.$unknown);case _:
@@ -221,12 +221,12 @@ return $default(_that.handle,_that.result,_that.$unknown);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _TempCheckHandleAvailabilityOutput implements TempCheckHandleAvailabilityOutput {
-  const _TempCheckHandleAvailabilityOutput({required this.handle, @UTempCheckHandleAvailabilityResultConverter() required this.result, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
+  const _TempCheckHandleAvailabilityOutput({required this.handle, @UTempCheckHandleAvailabilityOutputResultConverter() required this.result, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
   factory _TempCheckHandleAvailabilityOutput.fromJson(Map<String, dynamic> json) => _$TempCheckHandleAvailabilityOutputFromJson(json);
 
 /// Echo of the input handle.
 @override final  String handle;
-@override@UTempCheckHandleAvailabilityResultConverter() final  UTempCheckHandleAvailabilityResult result;
+@override@UTempCheckHandleAvailabilityOutputResultConverter() final  UTempCheckHandleAvailabilityOutputResult result;
  final  Map<String, dynamic>? _$unknown;
 @override Map<String, dynamic>? get $unknown {
   final value = _$unknown;
@@ -270,11 +270,11 @@ abstract mixin class _$TempCheckHandleAvailabilityOutputCopyWith<$Res> implement
   factory _$TempCheckHandleAvailabilityOutputCopyWith(_TempCheckHandleAvailabilityOutput value, $Res Function(_TempCheckHandleAvailabilityOutput) _then) = __$TempCheckHandleAvailabilityOutputCopyWithImpl;
 @override @useResult
 $Res call({
- String handle,@UTempCheckHandleAvailabilityResultConverter() UTempCheckHandleAvailabilityResult result, Map<String, dynamic>? $unknown
+ String handle,@UTempCheckHandleAvailabilityOutputResultConverter() UTempCheckHandleAvailabilityOutputResult result, Map<String, dynamic>? $unknown
 });
 
 
-@override $UTempCheckHandleAvailabilityResultCopyWith<$Res> get result;
+@override $UTempCheckHandleAvailabilityOutputResultCopyWith<$Res> get result;
 
 }
 /// @nodoc
@@ -291,7 +291,7 @@ class __$TempCheckHandleAvailabilityOutputCopyWithImpl<$Res>
   return _then(_TempCheckHandleAvailabilityOutput(
 handle: null == handle ? _self.handle : handle // ignore: cast_nullable_to_non_nullable
 as String,result: null == result ? _self.result : result // ignore: cast_nullable_to_non_nullable
-as UTempCheckHandleAvailabilityResult,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
+as UTempCheckHandleAvailabilityOutputResult,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -300,9 +300,9 @@ as Map<String, dynamic>?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UTempCheckHandleAvailabilityResultCopyWith<$Res> get result {
+$UTempCheckHandleAvailabilityOutputResultCopyWith<$Res> get result {
   
-  return $UTempCheckHandleAvailabilityResultCopyWith<$Res>(_self.result, (value) {
+  return $UTempCheckHandleAvailabilityOutputResultCopyWith<$Res>(_self.result, (value) {
     return _then(_self.copyWith(result: value));
   });
 }

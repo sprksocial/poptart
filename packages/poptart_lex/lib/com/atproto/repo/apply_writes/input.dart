@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './union_main_writes.dart';
+import './union_main_input_writes.dart';
 
 part 'input.freezed.dart';
 part 'input.g.dart';
@@ -32,8 +32,8 @@ abstract class RepoApplyWritesInput with _$RepoApplyWritesInput {
 
     /// Can be set to 'false' to skip Lexicon schema validation of record data across all operations, 'true' to require it, or leave unset to validate only for known Lexicons.
     bool? validate,
-    @URepoApplyWritesWritesConverter()
-    required List<URepoApplyWritesWrites> writes,
+    @URepoApplyWritesInputWritesConverter()
+    required List<URepoApplyWritesInputWrites> writes,
 
     /// If provided, the entire operation will fail if the current repo commit CID does not match this value. Used to prevent conflicting repo mutations.
     String? swapCommit,

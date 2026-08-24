@@ -1,7 +1,7 @@
 name: poptart_lex
 resolution: workspace
 description: Generated Dart types and method descriptors for AT Protocol ecosystem lexicons.
-version: 0.1.0
+version: 0.2.0
 homepage: https://poptart.xyz
 documentation: https://poptart.xyz
 repository: https://github.com/sprksocial/poptart

@@ -10,4 +10,5 @@
 export 'update_subject_status/descriptor.dart';
 export 'update_subject_status/input.dart';
 export 'update_subject_status/output.dart';
-export 'update_subject_status/union_main_subject.dart';
+export 'update_subject_status/union_main_input_subject.dart';
+export 'update_subject_status/union_main_output_subject.dart';

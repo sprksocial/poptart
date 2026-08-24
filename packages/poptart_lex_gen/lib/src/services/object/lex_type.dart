@@ -8,6 +8,7 @@ enum LexTypeState {
   record,
   knownValues,
   output,
+  parameters,
   input,
   message,
   union,

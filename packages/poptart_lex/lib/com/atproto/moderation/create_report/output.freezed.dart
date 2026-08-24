@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ModerationCreateReportOutput {
 
- int get id;@ReasonTypeConverter() ReasonType get reasonType; String? get reason;@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject get subject; String get reportedBy; DateTime get createdAt; Map<String, dynamic>? get $unknown;
+ int get id;@ReasonTypeConverter() ReasonType get reasonType; String? get reason;@UModerationCreateReportOutputSubjectConverter() UModerationCreateReportOutputSubject get subject; String get reportedBy; DateTime get createdAt; Map<String, dynamic>? get $unknown;
 /// Create a copy of ModerationCreateReportOutput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $ModerationCreateReportOutputCopyWith<$Res>  {
   factory $ModerationCreateReportOutputCopyWith(ModerationCreateReportOutput value, $Res Function(ModerationCreateReportOutput) _then) = _$ModerationCreateReportOutputCopyWithImpl;
 @useResult
 $Res call({
- int id,@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject subject, String reportedBy, DateTime createdAt, Map<String, dynamic>? $unknown
+ int id,@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportOutputSubjectConverter() UModerationCreateReportOutputSubject subject, String reportedBy, DateTime createdAt, Map<String, dynamic>? $unknown
 });
 
 
-$ReasonTypeCopyWith<$Res> get reasonType;$UModerationCreateReportSubjectCopyWith<$Res> get subject;
+$ReasonTypeCopyWith<$Res> get reasonType;$UModerationCreateReportOutputSubjectCopyWith<$Res> get subject;
 
 }
 /// @nodoc
@@ -71,7 +71,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,reasonType: null == reasonType ? _self.reasonType : reasonType // ignore: cast_nullable_to_non_nullable
 as ReasonType,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UModerationCreateReportSubject,reportedBy: null == reportedBy ? _self.reportedBy : reportedBy // ignore: cast_nullable_to_non_nullable
+as UModerationCreateReportOutputSubject,reportedBy: null == reportedBy ? _self.reportedBy : reportedBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
@@ -90,9 +90,9 @@ $ReasonTypeCopyWith<$Res> get reasonType {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UModerationCreateReportSubjectCopyWith<$Res> get subject {
+$UModerationCreateReportOutputSubjectCopyWith<$Res> get subject {
   
-  return $UModerationCreateReportSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UModerationCreateReportOutputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }
@@ -177,7 +177,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportOutputSubjectConverter()  UModerationCreateReportOutputSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportOutput() when $default != null:
 return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.reportedBy,_that.createdAt,_that.$unknown);case _:
@@ -198,7 +198,7 @@ return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.repor
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportOutputSubjectConverter()  UModerationCreateReportOutputSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportOutput():
 return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.reportedBy,_that.createdAt,_that.$unknown);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.repor
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id, @ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportOutputSubjectConverter()  UModerationCreateReportOutputSubject subject,  String reportedBy,  DateTime createdAt,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportOutput() when $default != null:
 return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.reportedBy,_that.createdAt,_that.$unknown);case _:
@@ -233,13 +233,13 @@ return $default(_that.id,_that.reasonType,_that.reason,_that.subject,_that.repor
 
 @JsonSerializable(includeIfNull: false)
 class _ModerationCreateReportOutput implements ModerationCreateReportOutput {
-  const _ModerationCreateReportOutput({required this.id, @ReasonTypeConverter() required this.reasonType, this.reason, @UModerationCreateReportSubjectConverter() required this.subject, required this.reportedBy, required this.createdAt, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
+  const _ModerationCreateReportOutput({required this.id, @ReasonTypeConverter() required this.reasonType, this.reason, @UModerationCreateReportOutputSubjectConverter() required this.subject, required this.reportedBy, required this.createdAt, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
   factory _ModerationCreateReportOutput.fromJson(Map<String, dynamic> json) => _$ModerationCreateReportOutputFromJson(json);
 
 @override final  int id;
 @override@ReasonTypeConverter() final  ReasonType reasonType;
 @override final  String? reason;
-@override@UModerationCreateReportSubjectConverter() final  UModerationCreateReportSubject subject;
+@override@UModerationCreateReportOutputSubjectConverter() final  UModerationCreateReportOutputSubject subject;
 @override final  String reportedBy;
 @override final  DateTime createdAt;
  final  Map<String, dynamic>? _$unknown;
@@ -285,11 +285,11 @@ abstract mixin class _$ModerationCreateReportOutputCopyWith<$Res> implements $Mo
   factory _$ModerationCreateReportOutputCopyWith(_ModerationCreateReportOutput value, $Res Function(_ModerationCreateReportOutput) _then) = __$ModerationCreateReportOutputCopyWithImpl;
 @override @useResult
 $Res call({
- int id,@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject subject, String reportedBy, DateTime createdAt, Map<String, dynamic>? $unknown
+ int id,@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportOutputSubjectConverter() UModerationCreateReportOutputSubject subject, String reportedBy, DateTime createdAt, Map<String, dynamic>? $unknown
 });
 
 
-@override $ReasonTypeCopyWith<$Res> get reasonType;@override $UModerationCreateReportSubjectCopyWith<$Res> get subject;
+@override $ReasonTypeCopyWith<$Res> get reasonType;@override $UModerationCreateReportOutputSubjectCopyWith<$Res> get subject;
 
 }
 /// @nodoc
@@ -308,7 +308,7 @@ id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as int,reasonType: null == reasonType ? _self.reasonType : reasonType // ignore: cast_nullable_to_non_nullable
 as ReasonType,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UModerationCreateReportSubject,reportedBy: null == reportedBy ? _self.reportedBy : reportedBy // ignore: cast_nullable_to_non_nullable
+as UModerationCreateReportOutputSubject,reportedBy: null == reportedBy ? _self.reportedBy : reportedBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
@@ -328,9 +328,9 @@ $ReasonTypeCopyWith<$Res> get reasonType {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UModerationCreateReportSubjectCopyWith<$Res> get subject {
+$UModerationCreateReportOutputSubjectCopyWith<$Res> get subject {
   
-  return $UModerationCreateReportSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UModerationCreateReportOutputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }

@@ -8,5 +8,5 @@
 // **************************************************************************
 
 export 'refresh_session/descriptor.dart';
-export 'refresh_session/main_status.dart';
+export 'refresh_session/main_output_status.dart';
 export 'refresh_session/output.dart';

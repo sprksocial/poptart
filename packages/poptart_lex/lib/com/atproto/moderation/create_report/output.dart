@@ -8,7 +8,7 @@ import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import '../defs/reason_type.dart';
-import './union_main_subject.dart';
+import './union_main_output_subject.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -34,8 +34,8 @@ abstract class ModerationCreateReportOutput
     required int id,
     @ReasonTypeConverter() required ReasonType reasonType,
     String? reason,
-    @UModerationCreateReportSubjectConverter()
-    required UModerationCreateReportSubject subject,
+    @UModerationCreateReportOutputSubjectConverter()
+    required UModerationCreateReportOutputSubject subject,
     required String reportedBy,
     required DateTime createdAt,
 

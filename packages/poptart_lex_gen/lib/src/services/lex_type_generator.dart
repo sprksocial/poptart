@@ -110,8 +110,9 @@ final class _LexTypeGenerator {
 
           if (type == null) continue;
 
-          _aggregateTypes(types, type.$1);
-          _aggregateTypes(types, type.$2);
+          _aggregateTypes(types, type.parameters);
+          _aggregateTypes(types, type.input);
+          _aggregateTypes(types, type.output);
         } else if (def.value is lex.ULexUserTypeXrpcSubscription) {
           final type = generateLexXrpcSubscription(
             doc.id,

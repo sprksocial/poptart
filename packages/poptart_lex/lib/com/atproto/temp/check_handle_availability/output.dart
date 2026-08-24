@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './union_main_result.dart';
+import './union_main_output_result.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -25,8 +25,8 @@ abstract class TempCheckHandleAvailabilityOutput
   const factory TempCheckHandleAvailabilityOutput({
     /// Echo of the input handle.
     required String handle,
-    @UTempCheckHandleAvailabilityResultConverter()
-    required UTempCheckHandleAvailabilityResult result,
+    @UTempCheckHandleAvailabilityOutputResultConverter()
+    required UTempCheckHandleAvailabilityOutputResult result,
 
     Map<String, dynamic>? $unknown,
   }) = _TempCheckHandleAvailabilityOutput;

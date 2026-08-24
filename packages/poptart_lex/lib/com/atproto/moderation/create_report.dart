@@ -11,4 +11,5 @@ export 'create_report/descriptor.dart';
 export 'create_report/input.dart';
 export 'create_report/mod_tool.dart';
 export 'create_report/output.dart';
-export 'create_report/union_main_subject.dart';
+export 'create_report/union_main_input_subject.dart';
+export 'create_report/union_main_output_subject.dart';

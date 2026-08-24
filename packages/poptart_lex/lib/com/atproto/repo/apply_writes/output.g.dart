@@ -22,7 +22,7 @@ _RepoApplyWritesOutput _$RepoApplyWritesOutputFromJson(Map json) =>
           'results',
           (v) => (v as List<dynamic>?)
               ?.map(
-                (e) => const URepoApplyWritesResultsConverter().fromJson(
+                (e) => const URepoApplyWritesOutputResultsConverter().fromJson(
                   e as Map<String, dynamic>,
                 ),
               )
@@ -44,7 +44,7 @@ Map<String, dynamic> _$RepoApplyWritesOutputToJson(
     const CommitMetaConverter().toJson,
   ),
   'results': ?instance.results
-      ?.map(const URepoApplyWritesResultsConverter().toJson)
+      ?.map(const URepoApplyWritesOutputResultsConverter().toJson)
       .toList(),
   r'$unknown': ?instance.$unknown,
 };

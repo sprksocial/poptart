@@ -10,87 +10,90 @@ import '../defs/repo_ref.dart';
 import '../../repo/strong_ref/main.dart';
 import '../defs/repo_blob_ref.dart';
 
-part 'union_main_subject.freezed.dart';
+part 'union_main_output_subject.freezed.dart';
 
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
 
 @freezed
-sealed class UAdminUpdateSubjectStatusSubject
-    with _$UAdminUpdateSubjectStatusSubject {
-  const UAdminUpdateSubjectStatusSubject._();
+sealed class UAdminGetSubjectStatusOutputSubject
+    with _$UAdminGetSubjectStatusOutputSubject {
+  const UAdminGetSubjectStatusOutputSubject._();
 
-  const factory UAdminUpdateSubjectStatusSubject.repoRef({
+  const factory UAdminGetSubjectStatusOutputSubject.repoRef({
     required RepoRef data,
-  }) = UAdminUpdateSubjectStatusSubjectRepoRef;
-  const factory UAdminUpdateSubjectStatusSubject.repoStrongRef({
+  }) = UAdminGetSubjectStatusOutputSubjectRepoRef;
+  const factory UAdminGetSubjectStatusOutputSubject.repoStrongRef({
     required RepoStrongRef data,
-  }) = UAdminUpdateSubjectStatusSubjectRepoStrongRef;
-  const factory UAdminUpdateSubjectStatusSubject.repoBlobRef({
+  }) = UAdminGetSubjectStatusOutputSubjectRepoStrongRef;
+  const factory UAdminGetSubjectStatusOutputSubject.repoBlobRef({
     required RepoBlobRef data,
-  }) = UAdminUpdateSubjectStatusSubjectRepoBlobRef;
+  }) = UAdminGetSubjectStatusOutputSubjectRepoBlobRef;
 
-  const factory UAdminUpdateSubjectStatusSubject.unknown({
+  const factory UAdminGetSubjectStatusOutputSubject.unknown({
     required Map<String, dynamic> data,
-  }) = UAdminUpdateSubjectStatusSubjectUnknown;
+  }) = UAdminGetSubjectStatusOutputSubjectUnknown;
 
   Map<String, dynamic> toJson() =>
-      const UAdminUpdateSubjectStatusSubjectConverter().toJson(this);
+      const UAdminGetSubjectStatusOutputSubjectConverter().toJson(this);
 }
 
-extension UAdminUpdateSubjectStatusSubjectExtension
-    on UAdminUpdateSubjectStatusSubject {
-  bool get isRepoRef => isA<UAdminUpdateSubjectStatusSubjectRepoRef>(this);
+extension UAdminGetSubjectStatusOutputSubjectExtension
+    on UAdminGetSubjectStatusOutputSubject {
+  bool get isRepoRef => isA<UAdminGetSubjectStatusOutputSubjectRepoRef>(this);
   bool get isNotRepoRef => !isRepoRef;
   RepoRef? get repoRef => isRepoRef ? data as RepoRef : null;
   bool get isRepoStrongRef =>
-      isA<UAdminUpdateSubjectStatusSubjectRepoStrongRef>(this);
+      isA<UAdminGetSubjectStatusOutputSubjectRepoStrongRef>(this);
   bool get isNotRepoStrongRef => !isRepoStrongRef;
   RepoStrongRef? get repoStrongRef =>
       isRepoStrongRef ? data as RepoStrongRef : null;
   bool get isRepoBlobRef =>
-      isA<UAdminUpdateSubjectStatusSubjectRepoBlobRef>(this);
+      isA<UAdminGetSubjectStatusOutputSubjectRepoBlobRef>(this);
   bool get isNotRepoBlobRef => !isRepoBlobRef;
   RepoBlobRef? get repoBlobRef => isRepoBlobRef ? data as RepoBlobRef : null;
-  bool get isUnknown => isA<UAdminUpdateSubjectStatusSubjectUnknown>(this);
+  bool get isUnknown => isA<UAdminGetSubjectStatusOutputSubjectUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
       isUnknown ? data as Map<String, dynamic> : null;
 }
 
-final class UAdminUpdateSubjectStatusSubjectConverter
+final class UAdminGetSubjectStatusOutputSubjectConverter
     implements
-        JsonConverter<UAdminUpdateSubjectStatusSubject, Map<String, dynamic>> {
-  const UAdminUpdateSubjectStatusSubjectConverter();
+        JsonConverter<
+          UAdminGetSubjectStatusOutputSubject,
+          Map<String, dynamic>
+        > {
+  const UAdminGetSubjectStatusOutputSubjectConverter();
 
   @override
-  UAdminUpdateSubjectStatusSubject fromJson(Map<String, dynamic> json) {
+  UAdminGetSubjectStatusOutputSubject fromJson(Map<String, dynamic> json) {
     try {
       if (RepoRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoRef(
+        return UAdminGetSubjectStatusOutputSubject.repoRef(
           data: const RepoRefConverter().fromJson(json),
         );
       }
       if (RepoStrongRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoStrongRef(
+        return UAdminGetSubjectStatusOutputSubject.repoStrongRef(
           data: const RepoStrongRefConverter().fromJson(json),
         );
       }
       if (RepoBlobRef.validate(json)) {
-        return UAdminUpdateSubjectStatusSubject.repoBlobRef(
+        return UAdminGetSubjectStatusOutputSubject.repoBlobRef(
           data: const RepoBlobRefConverter().fromJson(json),
         );
       }
 
-      return UAdminUpdateSubjectStatusSubject.unknown(data: json);
+      return UAdminGetSubjectStatusOutputSubject.unknown(data: json);
     } catch (_) {
-      return UAdminUpdateSubjectStatusSubject.unknown(data: json);
+      return UAdminGetSubjectStatusOutputSubject.unknown(data: json);
     }
   }
 
   @override
-  Map<String, dynamic> toJson(UAdminUpdateSubjectStatusSubject object) =>
+  Map<String, dynamic> toJson(UAdminGetSubjectStatusOutputSubject object) =>
       object.when(
         repoRef: (data) => const RepoRefConverter().toJson(data),
         repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),

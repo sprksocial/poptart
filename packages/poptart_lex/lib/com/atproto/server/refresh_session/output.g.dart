@@ -25,10 +25,11 @@ _ServerRefreshSessionOutput _$ServerRefreshSessionOutputFromJson(Map json) =>
         active: $checkedConvert('active', (v) => v as bool?),
         status: $checkedConvert(
           'status',
-          (v) => _$JsonConverterFromJson<String, ServerRefreshSessionStatus>(
-            v,
-            const ServerRefreshSessionStatusConverter().fromJson,
-          ),
+          (v) =>
+              _$JsonConverterFromJson<String, ServerRefreshSessionOutputStatus>(
+                v,
+                const ServerRefreshSessionOutputStatusConverter().fromJson,
+              ),
         ),
         $unknown: $checkedConvert(
           r'$unknown',
@@ -50,9 +51,9 @@ Map<String, dynamic> _$ServerRefreshSessionOutputToJson(
   'emailConfirmed': ?instance.emailConfirmed,
   'emailAuthFactor': ?instance.emailAuthFactor,
   'active': ?instance.active,
-  'status': ?_$JsonConverterToJson<String, ServerRefreshSessionStatus>(
+  'status': ?_$JsonConverterToJson<String, ServerRefreshSessionOutputStatus>(
     instance.status,
-    const ServerRefreshSessionStatusConverter().toJson,
+    const ServerRefreshSessionOutputStatusConverter().toJson,
   ),
   r'$unknown': ?instance.$unknown,
 };

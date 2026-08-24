@@ -17,7 +17,7 @@ _TempCheckHandleAvailabilityOutput _$TempCheckHandleAvailabilityOutputFromJson(
     handle: $checkedConvert('handle', (v) => v as String),
     result: $checkedConvert(
       'result',
-      (v) => const UTempCheckHandleAvailabilityResultConverter().fromJson(
+      (v) => const UTempCheckHandleAvailabilityOutputResultConverter().fromJson(
         v as Map<String, dynamic>,
       ),
     ),
@@ -33,7 +33,7 @@ Map<String, dynamic> _$TempCheckHandleAvailabilityOutputToJson(
   _TempCheckHandleAvailabilityOutput instance,
 ) => <String, dynamic>{
   'handle': instance.handle,
-  'result': const UTempCheckHandleAvailabilityResultConverter().toJson(
+  'result': const UTempCheckHandleAvailabilityOutputResultConverter().toJson(
     instance.result,
   ),
   r'$unknown': ?instance.$unknown,

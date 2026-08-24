@@ -9,75 +9,78 @@ import 'package:poptart_core/internals.dart' show isA;
 import '../../admin/defs/repo_ref.dart';
 import '../../repo/strong_ref/main.dart';
 
-part 'union_main_subject.freezed.dart';
+part 'union_main_input_subject.freezed.dart';
 
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
 
 @freezed
-sealed class UModerationCreateReportSubject
-    with _$UModerationCreateReportSubject {
-  const UModerationCreateReportSubject._();
+sealed class UModerationCreateReportInputSubject
+    with _$UModerationCreateReportInputSubject {
+  const UModerationCreateReportInputSubject._();
 
-  const factory UModerationCreateReportSubject.repoRef({
+  const factory UModerationCreateReportInputSubject.repoRef({
     required RepoRef data,
-  }) = UModerationCreateReportSubjectRepoRef;
-  const factory UModerationCreateReportSubject.repoStrongRef({
+  }) = UModerationCreateReportInputSubjectRepoRef;
+  const factory UModerationCreateReportInputSubject.repoStrongRef({
     required RepoStrongRef data,
-  }) = UModerationCreateReportSubjectRepoStrongRef;
+  }) = UModerationCreateReportInputSubjectRepoStrongRef;
 
-  const factory UModerationCreateReportSubject.unknown({
+  const factory UModerationCreateReportInputSubject.unknown({
     required Map<String, dynamic> data,
-  }) = UModerationCreateReportSubjectUnknown;
+  }) = UModerationCreateReportInputSubjectUnknown;
 
   Map<String, dynamic> toJson() =>
-      const UModerationCreateReportSubjectConverter().toJson(this);
+      const UModerationCreateReportInputSubjectConverter().toJson(this);
 }
 
-extension UModerationCreateReportSubjectExtension
-    on UModerationCreateReportSubject {
-  bool get isRepoRef => isA<UModerationCreateReportSubjectRepoRef>(this);
+extension UModerationCreateReportInputSubjectExtension
+    on UModerationCreateReportInputSubject {
+  bool get isRepoRef => isA<UModerationCreateReportInputSubjectRepoRef>(this);
   bool get isNotRepoRef => !isRepoRef;
   RepoRef? get repoRef => isRepoRef ? data as RepoRef : null;
   bool get isRepoStrongRef =>
-      isA<UModerationCreateReportSubjectRepoStrongRef>(this);
+      isA<UModerationCreateReportInputSubjectRepoStrongRef>(this);
   bool get isNotRepoStrongRef => !isRepoStrongRef;
   RepoStrongRef? get repoStrongRef =>
       isRepoStrongRef ? data as RepoStrongRef : null;
-  bool get isUnknown => isA<UModerationCreateReportSubjectUnknown>(this);
+  bool get isUnknown => isA<UModerationCreateReportInputSubjectUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
       isUnknown ? data as Map<String, dynamic> : null;
 }
 
-final class UModerationCreateReportSubjectConverter
+final class UModerationCreateReportInputSubjectConverter
     implements
-        JsonConverter<UModerationCreateReportSubject, Map<String, dynamic>> {
-  const UModerationCreateReportSubjectConverter();
+        JsonConverter<
+          UModerationCreateReportInputSubject,
+          Map<String, dynamic>
+        > {
+  const UModerationCreateReportInputSubjectConverter();
 
   @override
-  UModerationCreateReportSubject fromJson(Map<String, dynamic> json) {
+  UModerationCreateReportInputSubject fromJson(Map<String, dynamic> json) {
     try {
       if (RepoRef.validate(json)) {
-        return UModerationCreateReportSubject.repoRef(
+        return UModerationCreateReportInputSubject.repoRef(
           data: const RepoRefConverter().fromJson(json),
         );
       }
       if (RepoStrongRef.validate(json)) {
-        return UModerationCreateReportSubject.repoStrongRef(
+        return UModerationCreateReportInputSubject.repoStrongRef(
           data: const RepoStrongRefConverter().fromJson(json),
         );
       }
 
-      return UModerationCreateReportSubject.unknown(data: json);
+      return UModerationCreateReportInputSubject.unknown(data: json);
     } catch (_) {
-      return UModerationCreateReportSubject.unknown(data: json);
+      return UModerationCreateReportInputSubject.unknown(data: json);
     }
   }
 
   @override
-  Map<String, dynamic> toJson(UModerationCreateReportSubject object) =>
+  Map<String, dynamic> toJson(UModerationCreateReportInputSubject object) =>
       object.when(
         repoRef: (data) => const RepoRefConverter().toJson(data),
         repoStrongRef: (data) => const RepoStrongRefConverter().toJson(data),

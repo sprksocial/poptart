@@ -3,10 +3,13 @@ import 'package:poptart_lexicon/parser.dart' as lex;
 
 // Project imports:
 import '../../dart_type.dart';
+import '../../utils.dart';
 import '../object/lex_property.dart';
 import '../rule.dart' as rule;
 import 'lex_known_values_generator.dart';
 import 'lex_union_generator.dart';
+
+enum LexNestedTypeScope { parameters, input, output }
 
 List<LexProperty> generateLexPropertiesFromLexXrpcParameters(
   final lex.NSID lexiconId,
@@ -14,8 +17,9 @@ List<LexProperty> generateLexPropertiesFromLexXrpcParameters(
   final Map<String, lex.LexXrpcParametersProperty>? properties,
   final List<String>? requiredProperties,
   final List<String>? nullableProperties,
-  final List<String> mainVariants,
-) {
+  final List<String> mainVariants, {
+  final LexNestedTypeScope? nestedTypeScope,
+}) {
   if (properties == null) return const [];
 
   final $properties = properties.map(
@@ -32,6 +36,7 @@ List<LexProperty> generateLexPropertiesFromLexXrpcParameters(
     requiredProperties,
     nullableProperties,
     mainVariants,
+    nestedTypeScope: nestedTypeScope,
   );
 }
 
@@ -41,8 +46,9 @@ List<LexProperty> generateLexProperties(
   final Map<String, lex.LexObjectProperty>? properties,
   final List<String>? requiredProperties,
   final List<String>? nullableProperties,
-  final List<String> mainVariants,
-) {
+  final List<String> mainVariants, {
+  final LexNestedTypeScope? nestedTypeScope,
+}) {
   if (properties == null) return const [];
 
   final requiredProps = requiredProperties ?? const [];
@@ -58,6 +64,7 @@ List<LexProperty> generateLexProperties(
       defName,
       mainVariants,
       isSingleProp,
+      nestedTypeScope,
     );
 
     if (type.isNil) continue;
@@ -104,6 +111,7 @@ DartType _getDartType(
   final String defName,
   final List<String> mainVariants,
   final bool isSingleProp,
+  final LexNestedTypeScope? nestedTypeScope,
 ) {
   switch (property.value) {
     case lex.ULexObjectPropertyPrimitive primitive:
@@ -113,6 +121,7 @@ DartType _getDartType(
         mainVariants,
         property.key,
         primitive.data,
+        nestedTypeScope,
       );
 
     case lex.ULexObjectPropertyBlob blob:
@@ -134,6 +143,7 @@ DartType _getDartType(
             mainVariants,
             property.key,
             primitive.data,
+            nestedTypeScope,
           );
           return DartType.array(
             lexiconId: type.lexiconId,
@@ -162,6 +172,7 @@ DartType _getDartType(
             property.key,
             mainVariants,
             isSingleProp,
+            nestedTypeScope,
           );
 
           return DartType.array(
@@ -187,6 +198,7 @@ DartType _getDartType(
         property.key,
         mainVariants,
         isSingleProp,
+        nestedTypeScope,
       );
 
     default:
@@ -200,6 +212,7 @@ DartType _getLexPrimitiveType(
   final List<String> mainVariants,
   final String propertyName,
   final lex.LexPrimitive data,
+  final LexNestedTypeScope? nestedTypeScope,
 ) {
   switch (data) {
     case lex.ULexPrimitiveString string:
@@ -210,12 +223,16 @@ DartType _getLexPrimitiveType(
       }
 
       if (string.data.knownValues != null) {
+        final nestedFieldName = _getNestedFieldName(
+          propertyName,
+          nestedTypeScope,
+        );
         final knownValues = generateLexKnownValues(
           lexiconId,
           defName,
           string.data,
           mainVariants,
-          fieldName: propertyName,
+          fieldName: nestedFieldName,
         );
 
         final typeName = knownValues.getTypeName();
@@ -225,7 +242,7 @@ DartType _getLexPrimitiveType(
           name: typeName,
           lexiconId: lexiconId.toString(),
           defName: defName,
-          fieldName: propertyName,
+          fieldName: nestedFieldName,
           description: string.data.description,
           packagePath: './$fileName.dart',
           annotation: '@${typeName}Converter()',
@@ -263,6 +280,7 @@ DartType _getLexRefVariantType(
   final String fieldName,
   final List<String> mainVariants,
   final bool isSingleProp,
+  final LexNestedTypeScope? nestedTypeScope,
 ) {
   switch (ref) {
     case lex.ULexRefVariantRef ref:
@@ -318,10 +336,11 @@ DartType _getLexRefVariantType(
         isUnion: isUnion,
       );
     case lex.ULexRefVariantRefUnion refUnion:
+      final nestedFieldName = _getNestedFieldName(fieldName, nestedTypeScope);
       final union = generateLexUnion(
         lexiconId,
         defName,
-        fieldName,
+        nestedFieldName,
         refUnion.data,
         mainVariants,
       );
@@ -330,15 +349,24 @@ DartType _getLexRefVariantType(
         type: union.name,
         lexiconId: lexiconId.toString(),
         defName: defName,
-        fieldName: fieldName,
+        fieldName: nestedFieldName,
         packagePath: rule.getLexObjectPackagePathForUnion(
           lexiconId.toString(),
           defName,
-          fieldName,
+          nestedFieldName,
         ),
         union: union,
       );
     default:
       return DartType.json();
   }
+}
+
+String _getNestedFieldName(
+  final String fieldName,
+  final LexNestedTypeScope? nestedTypeScope,
+) {
+  if (nestedTypeScope == null) return fieldName;
+
+  return '${nestedTypeScope.name}${toFirstUpperCase(fieldName)}';
 }

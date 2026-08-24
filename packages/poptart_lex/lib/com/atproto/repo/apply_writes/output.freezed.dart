@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RepoApplyWritesOutput {
 
-@CommitMetaConverter() CommitMeta? get commit;@URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? get results; Map<String, dynamic>? get $unknown;
+@CommitMetaConverter() CommitMeta? get commit;@URepoApplyWritesOutputResultsConverter() List<URepoApplyWritesOutputResults>? get results; Map<String, dynamic>? get $unknown;
 /// Create a copy of RepoApplyWritesOutput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RepoApplyWritesOutputCopyWith<$Res>  {
   factory $RepoApplyWritesOutputCopyWith(RepoApplyWritesOutput value, $Res Function(RepoApplyWritesOutput) _then) = _$RepoApplyWritesOutputCopyWithImpl;
 @useResult
 $Res call({
-@CommitMetaConverter() CommitMeta? commit,@URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results, Map<String, dynamic>? $unknown
+@CommitMetaConverter() CommitMeta? commit,@URepoApplyWritesOutputResultsConverter() List<URepoApplyWritesOutputResults>? results, Map<String, dynamic>? $unknown
 });
 
 
@@ -69,7 +69,7 @@ class _$RepoApplyWritesOutputCopyWithImpl<$Res>
   return _then(_self.copyWith(
 commit: freezed == commit ? _self.commit : commit // ignore: cast_nullable_to_non_nullable
 as CommitMeta?,results: freezed == results ? _self.results : results // ignore: cast_nullable_to_non_nullable
-as List<URepoApplyWritesResults>?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
+as List<URepoApplyWritesOutputResults>?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -167,7 +167,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesResultsConverter()  List<URepoApplyWritesResults>? results,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesOutputResultsConverter()  List<URepoApplyWritesOutputResults>? results,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesOutput() when $default != null:
 return $default(_that.commit,_that.results,_that.$unknown);case _:
@@ -188,7 +188,7 @@ return $default(_that.commit,_that.results,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesResultsConverter()  List<URepoApplyWritesResults>? results,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesOutputResultsConverter()  List<URepoApplyWritesOutputResults>? results,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesOutput():
 return $default(_that.commit,_that.results,_that.$unknown);case _:
@@ -208,7 +208,7 @@ return $default(_that.commit,_that.results,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesResultsConverter()  List<URepoApplyWritesResults>? results,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@CommitMetaConverter()  CommitMeta? commit, @URepoApplyWritesOutputResultsConverter()  List<URepoApplyWritesOutputResults>? results,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _RepoApplyWritesOutput() when $default != null:
 return $default(_that.commit,_that.results,_that.$unknown);case _:
@@ -223,12 +223,12 @@ return $default(_that.commit,_that.results,_that.$unknown);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _RepoApplyWritesOutput implements RepoApplyWritesOutput {
-  const _RepoApplyWritesOutput({@CommitMetaConverter() this.commit, @URepoApplyWritesResultsConverter() final  List<URepoApplyWritesResults>? results, final  Map<String, dynamic>? $unknown}): _results = results,_$unknown = $unknown;
+  const _RepoApplyWritesOutput({@CommitMetaConverter() this.commit, @URepoApplyWritesOutputResultsConverter() final  List<URepoApplyWritesOutputResults>? results, final  Map<String, dynamic>? $unknown}): _results = results,_$unknown = $unknown;
   factory _RepoApplyWritesOutput.fromJson(Map<String, dynamic> json) => _$RepoApplyWritesOutputFromJson(json);
 
 @override@CommitMetaConverter() final  CommitMeta? commit;
- final  List<URepoApplyWritesResults>? _results;
-@override@URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? get results {
+ final  List<URepoApplyWritesOutputResults>? _results;
+@override@URepoApplyWritesOutputResultsConverter() List<URepoApplyWritesOutputResults>? get results {
   final value = _results;
   if (value == null) return null;
   if (_results is EqualUnmodifiableListView) return _results;
@@ -279,7 +279,7 @@ abstract mixin class _$RepoApplyWritesOutputCopyWith<$Res> implements $RepoApply
   factory _$RepoApplyWritesOutputCopyWith(_RepoApplyWritesOutput value, $Res Function(_RepoApplyWritesOutput) _then) = __$RepoApplyWritesOutputCopyWithImpl;
 @override @useResult
 $Res call({
-@CommitMetaConverter() CommitMeta? commit,@URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results, Map<String, dynamic>? $unknown
+@CommitMetaConverter() CommitMeta? commit,@URepoApplyWritesOutputResultsConverter() List<URepoApplyWritesOutputResults>? results, Map<String, dynamic>? $unknown
 });
 
 
@@ -300,7 +300,7 @@ class __$RepoApplyWritesOutputCopyWithImpl<$Res>
   return _then(_RepoApplyWritesOutput(
 commit: freezed == commit ? _self.commit : commit // ignore: cast_nullable_to_non_nullable
 as CommitMeta?,results: freezed == results ? _self._results : results // ignore: cast_nullable_to_non_nullable
-as List<URepoApplyWritesResults>?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
+as List<URepoApplyWritesOutputResults>?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }

@@ -129,6 +129,9 @@ ${descriptors.join('\n\n')}
       LexTypeState.input,
       LexTypeState.record,
     ]);
+    final procedureParameters = _relatedType(id, const [
+      LexTypeState.parameters,
+    ]);
     final output = _relatedType(id, const [LexTypeState.output]);
     if ((input?.isBytes() ?? false) || (output?.isBytes() ?? false)) {
       imports.add("import 'dart:typed_data';");
@@ -142,10 +145,10 @@ ${descriptors.join('\n\n')}
     };
     if (kind == null) return null;
 
-    final paramsType =
-        api is ULexUserTypeXrpcQuery || api is ULexUserTypeXrpcSubscription
-        ? _typeName(input)
-        : 'EmptyData';
+    final parameters = api is ULexUserTypeXrpcProcedure
+        ? procedureParameters
+        : input;
+    final paramsType = _typeName(parameters);
     final inputType = api is ULexUserTypeXrpcProcedure
         ? _typeName(input)
         : 'EmptyData';
@@ -153,12 +156,13 @@ ${descriptors.join('\n\n')}
         ? 'Object'
         : _typeName(output);
 
+    _addTypeImport(doc.id.toString(), parameters, imports);
     _addTypeImport(doc.id.toString(), input, imports);
     _addTypeImport(doc.id.toString(), output, imports);
 
-    final paramsLines = paramsType == 'EmptyData' || (input?.isBytes() ?? false)
+    final paramsLines = paramsType == 'EmptyData'
         ? ''
-        : _codecLines('parameters', input!);
+        : _codecLines('parameters', parameters!);
     final inputLines = inputType == 'EmptyData' || (input?.isBytes() ?? false)
         ? ''
         : _codecLines('input', input!);

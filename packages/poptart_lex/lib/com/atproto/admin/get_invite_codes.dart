@@ -9,5 +9,5 @@
 
 export 'get_invite_codes/descriptor.dart';
 export 'get_invite_codes/input.dart';
-export 'get_invite_codes/main_sort.dart';
+export 'get_invite_codes/main_parameters_sort.dart';
 export 'get_invite_codes/output.dart';

@@ -23,9 +23,9 @@ _ServerGetSessionOutput _$ServerGetSessionOutputFromJson(Map json) =>
         active: $checkedConvert('active', (v) => v as bool?),
         status: $checkedConvert(
           'status',
-          (v) => _$JsonConverterFromJson<String, ServerGetSessionStatus>(
+          (v) => _$JsonConverterFromJson<String, ServerGetSessionOutputStatus>(
             v,
-            const ServerGetSessionStatusConverter().fromJson,
+            const ServerGetSessionOutputStatusConverter().fromJson,
           ),
         ),
         $unknown: $checkedConvert(
@@ -46,9 +46,9 @@ Map<String, dynamic> _$ServerGetSessionOutputToJson(
   'emailConfirmed': ?instance.emailConfirmed,
   'emailAuthFactor': ?instance.emailAuthFactor,
   'active': ?instance.active,
-  'status': ?_$JsonConverterToJson<String, ServerGetSessionStatus>(
+  'status': ?_$JsonConverterToJson<String, ServerGetSessionOutputStatus>(
     instance.status,
-    const ServerGetSessionStatusConverter().toJson,
+    const ServerGetSessionOutputStatusConverter().toJson,
   ),
   r'$unknown': ?instance.$unknown,
 };

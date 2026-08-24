@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
-import './main_status.dart';
+import './main_output_status.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -40,7 +40,8 @@ abstract class ServerGetSessionOutput with _$ServerGetSessionOutput {
     bool? active,
 
     /// If active=false, this optional field indicates a possible reason for why the account is not active. If active=false and no status is supplied, then the host makes no claim for why the repository is no longer being hosted.
-    @ServerGetSessionStatusConverter() ServerGetSessionStatus? status,
+    @ServerGetSessionOutputStatusConverter()
+    ServerGetSessionOutputStatus? status,
 
     Map<String, dynamic>? $unknown,
   }) = _ServerGetSessionOutput;

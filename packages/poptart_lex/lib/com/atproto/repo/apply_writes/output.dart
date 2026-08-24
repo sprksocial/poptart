@@ -8,7 +8,7 @@ import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import '../defs/commit_meta.dart';
-import './union_main_results.dart';
+import './union_main_output_results.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -24,7 +24,8 @@ abstract class RepoApplyWritesOutput with _$RepoApplyWritesOutput {
   @JsonSerializable(includeIfNull: false)
   const factory RepoApplyWritesOutput({
     @CommitMetaConverter() CommitMeta? commit,
-    @URepoApplyWritesResultsConverter() List<URepoApplyWritesResults>? results,
+    @URepoApplyWritesOutputResultsConverter()
+    List<URepoApplyWritesOutputResults>? results,
 
     Map<String, dynamic>? $unknown,
   }) = _RepoApplyWritesOutput;

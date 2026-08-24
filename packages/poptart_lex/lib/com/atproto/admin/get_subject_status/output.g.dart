@@ -13,7 +13,7 @@ _AdminGetSubjectStatusOutput _$AdminGetSubjectStatusOutputFromJson(Map json) =>
       final val = _AdminGetSubjectStatusOutput(
         subject: $checkedConvert(
           'subject',
-          (v) => const UAdminGetSubjectStatusSubjectConverter().fromJson(
+          (v) => const UAdminGetSubjectStatusOutputSubjectConverter().fromJson(
             v as Map<String, dynamic>,
           ),
         ),
@@ -42,7 +42,7 @@ _AdminGetSubjectStatusOutput _$AdminGetSubjectStatusOutputFromJson(Map json) =>
 Map<String, dynamic> _$AdminGetSubjectStatusOutputToJson(
   _AdminGetSubjectStatusOutput instance,
 ) => <String, dynamic>{
-  'subject': const UAdminGetSubjectStatusSubjectConverter().toJson(
+  'subject': const UAdminGetSubjectStatusOutputSubjectConverter().toJson(
     instance.subject,
   ),
   'takedown': ?_$JsonConverterToJson<Map<String, dynamic>, StatusAttr>(

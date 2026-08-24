@@ -8,7 +8,7 @@ import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import '../defs/reason_type.dart';
-import './union_main_subject.dart';
+import './union_main_input_subject.dart';
 import './mod_tool.dart';
 
 part 'input.freezed.dart';
@@ -34,8 +34,8 @@ abstract class ModerationCreateReportInput with _$ModerationCreateReportInput {
 
     /// Additional context about the content and violation.
     String? reason,
-    @UModerationCreateReportSubjectConverter()
-    required UModerationCreateReportSubject subject,
+    @UModerationCreateReportInputSubjectConverter()
+    required UModerationCreateReportInputSubject subject,
     @ModToolConverter() ModTool? modTool,
 
     Map<String, dynamic>? $unknown,

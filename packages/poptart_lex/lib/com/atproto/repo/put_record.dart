@@ -9,5 +9,5 @@
 
 export 'put_record/descriptor.dart';
 export 'put_record/input.dart';
-export 'put_record/main_validation_status.dart';
+export 'put_record/main_output_validation_status.dart';
 export 'put_record/output.dart';

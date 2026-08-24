@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminUpdateSubjectStatusOutput {
 
-@UAdminUpdateSubjectStatusSubjectConverter() UAdminUpdateSubjectStatusSubject get subject;@StatusAttrConverter() StatusAttr? get takedown; Map<String, dynamic>? get $unknown;
+@UAdminUpdateSubjectStatusOutputSubjectConverter() UAdminUpdateSubjectStatusOutputSubject get subject;@StatusAttrConverter() StatusAttr? get takedown; Map<String, dynamic>? get $unknown;
 /// Create a copy of AdminUpdateSubjectStatusOutput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $AdminUpdateSubjectStatusOutputCopyWith<$Res>  {
   factory $AdminUpdateSubjectStatusOutputCopyWith(AdminUpdateSubjectStatusOutput value, $Res Function(AdminUpdateSubjectStatusOutput) _then) = _$AdminUpdateSubjectStatusOutputCopyWithImpl;
 @useResult
 $Res call({
-@UAdminUpdateSubjectStatusSubjectConverter() UAdminUpdateSubjectStatusSubject subject,@StatusAttrConverter() StatusAttr? takedown, Map<String, dynamic>? $unknown
+@UAdminUpdateSubjectStatusOutputSubjectConverter() UAdminUpdateSubjectStatusOutputSubject subject,@StatusAttrConverter() StatusAttr? takedown, Map<String, dynamic>? $unknown
 });
 
 
-$UAdminUpdateSubjectStatusSubjectCopyWith<$Res> get subject;$StatusAttrCopyWith<$Res>? get takedown;
+$UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res> get subject;$StatusAttrCopyWith<$Res>? get takedown;
 
 }
 /// @nodoc
@@ -68,7 +68,7 @@ class _$AdminUpdateSubjectStatusOutputCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? subject = null,Object? takedown = freezed,Object? $unknown = freezed,}) {
   return _then(_self.copyWith(
 subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UAdminUpdateSubjectStatusSubject,takedown: freezed == takedown ? _self.takedown : takedown // ignore: cast_nullable_to_non_nullable
+as UAdminUpdateSubjectStatusOutputSubject,takedown: freezed == takedown ? _self.takedown : takedown // ignore: cast_nullable_to_non_nullable
 as StatusAttr?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -77,9 +77,9 @@ as Map<String, dynamic>?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UAdminUpdateSubjectStatusSubjectCopyWith<$Res> get subject {
+$UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res> get subject {
   
-  return $UAdminUpdateSubjectStatusSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }/// Create a copy of AdminUpdateSubjectStatusOutput
@@ -176,7 +176,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@UAdminUpdateSubjectStatusSubjectConverter()  UAdminUpdateSubjectStatusSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@UAdminUpdateSubjectStatusOutputSubjectConverter()  UAdminUpdateSubjectStatusOutputSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminUpdateSubjectStatusOutput() when $default != null:
 return $default(_that.subject,_that.takedown,_that.$unknown);case _:
@@ -197,7 +197,7 @@ return $default(_that.subject,_that.takedown,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@UAdminUpdateSubjectStatusSubjectConverter()  UAdminUpdateSubjectStatusSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@UAdminUpdateSubjectStatusOutputSubjectConverter()  UAdminUpdateSubjectStatusOutputSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _AdminUpdateSubjectStatusOutput():
 return $default(_that.subject,_that.takedown,_that.$unknown);case _:
@@ -217,7 +217,7 @@ return $default(_that.subject,_that.takedown,_that.$unknown);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@UAdminUpdateSubjectStatusSubjectConverter()  UAdminUpdateSubjectStatusSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@UAdminUpdateSubjectStatusOutputSubjectConverter()  UAdminUpdateSubjectStatusOutputSubject subject, @StatusAttrConverter()  StatusAttr? takedown,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminUpdateSubjectStatusOutput() when $default != null:
 return $default(_that.subject,_that.takedown,_that.$unknown);case _:
@@ -232,10 +232,10 @@ return $default(_that.subject,_that.takedown,_that.$unknown);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _AdminUpdateSubjectStatusOutput implements AdminUpdateSubjectStatusOutput {
-  const _AdminUpdateSubjectStatusOutput({@UAdminUpdateSubjectStatusSubjectConverter() required this.subject, @StatusAttrConverter() this.takedown, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
+  const _AdminUpdateSubjectStatusOutput({@UAdminUpdateSubjectStatusOutputSubjectConverter() required this.subject, @StatusAttrConverter() this.takedown, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
   factory _AdminUpdateSubjectStatusOutput.fromJson(Map<String, dynamic> json) => _$AdminUpdateSubjectStatusOutputFromJson(json);
 
-@override@UAdminUpdateSubjectStatusSubjectConverter() final  UAdminUpdateSubjectStatusSubject subject;
+@override@UAdminUpdateSubjectStatusOutputSubjectConverter() final  UAdminUpdateSubjectStatusOutputSubject subject;
 @override@StatusAttrConverter() final  StatusAttr? takedown;
  final  Map<String, dynamic>? _$unknown;
 @override Map<String, dynamic>? get $unknown {
@@ -280,11 +280,11 @@ abstract mixin class _$AdminUpdateSubjectStatusOutputCopyWith<$Res> implements $
   factory _$AdminUpdateSubjectStatusOutputCopyWith(_AdminUpdateSubjectStatusOutput value, $Res Function(_AdminUpdateSubjectStatusOutput) _then) = __$AdminUpdateSubjectStatusOutputCopyWithImpl;
 @override @useResult
 $Res call({
-@UAdminUpdateSubjectStatusSubjectConverter() UAdminUpdateSubjectStatusSubject subject,@StatusAttrConverter() StatusAttr? takedown, Map<String, dynamic>? $unknown
+@UAdminUpdateSubjectStatusOutputSubjectConverter() UAdminUpdateSubjectStatusOutputSubject subject,@StatusAttrConverter() StatusAttr? takedown, Map<String, dynamic>? $unknown
 });
 
 
-@override $UAdminUpdateSubjectStatusSubjectCopyWith<$Res> get subject;@override $StatusAttrCopyWith<$Res>? get takedown;
+@override $UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res> get subject;@override $StatusAttrCopyWith<$Res>? get takedown;
 
 }
 /// @nodoc
@@ -300,7 +300,7 @@ class __$AdminUpdateSubjectStatusOutputCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? subject = null,Object? takedown = freezed,Object? $unknown = freezed,}) {
   return _then(_AdminUpdateSubjectStatusOutput(
 subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UAdminUpdateSubjectStatusSubject,takedown: freezed == takedown ? _self.takedown : takedown // ignore: cast_nullable_to_non_nullable
+as UAdminUpdateSubjectStatusOutputSubject,takedown: freezed == takedown ? _self.takedown : takedown // ignore: cast_nullable_to_non_nullable
 as StatusAttr?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -310,9 +310,9 @@ as Map<String, dynamic>?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UAdminUpdateSubjectStatusSubjectCopyWith<$Res> get subject {
+$UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res> get subject {
   
-  return $UAdminUpdateSubjectStatusSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UAdminUpdateSubjectStatusOutputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }/// Create a copy of AdminUpdateSubjectStatusOutput

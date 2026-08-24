@@ -8,7 +8,7 @@ import 'package:poptart_core/poptart_core.dart';
 import 'package:poptart_core/internals.dart';
 
 import '../defs/commit_meta.dart';
-import './main_validation_status.dart';
+import './main_output_validation_status.dart';
 
 part 'output.freezed.dart';
 part 'output.g.dart';
@@ -31,8 +31,8 @@ abstract class RepoPutRecordOutput with _$RepoPutRecordOutput {
     @AtUriConverter() required AtUri uri,
     required String cid,
     @CommitMetaConverter() CommitMeta? commit,
-    @RepoPutRecordValidationStatusConverter()
-    RepoPutRecordValidationStatus? validationStatus,
+    @RepoPutRecordOutputValidationStatusConverter()
+    RepoPutRecordOutputValidationStatus? validationStatus,
 
     Map<String, dynamic>? $unknown,
   }) = _RepoPutRecordOutput;

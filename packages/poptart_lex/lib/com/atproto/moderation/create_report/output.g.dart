@@ -20,7 +20,7 @@ _ModerationCreateReportOutput _$ModerationCreateReportOutputFromJson(
     reason: $checkedConvert('reason', (v) => v as String?),
     subject: $checkedConvert(
       'subject',
-      (v) => const UModerationCreateReportSubjectConverter().fromJson(
+      (v) => const UModerationCreateReportOutputSubjectConverter().fromJson(
         v as Map<String, dynamic>,
       ),
     ),
@@ -40,7 +40,7 @@ Map<String, dynamic> _$ModerationCreateReportOutputToJson(
   'id': instance.id,
   'reasonType': const ReasonTypeConverter().toJson(instance.reasonType),
   'reason': ?instance.reason,
-  'subject': const UModerationCreateReportSubjectConverter().toJson(
+  'subject': const UModerationCreateReportOutputSubjectConverter().toJson(
     instance.subject,
   ),
   'reportedBy': instance.reportedBy,

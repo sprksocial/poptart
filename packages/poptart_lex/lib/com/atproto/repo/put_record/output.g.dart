@@ -8,35 +8,37 @@ part of 'output.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RepoPutRecordOutput _$RepoPutRecordOutputFromJson(Map json) =>
-    $checkedCreate('_RepoPutRecordOutput', json, ($checkedConvert) {
-      final val = _RepoPutRecordOutput(
-        uri: $checkedConvert(
-          'uri',
-          (v) => const AtUriConverter().fromJson(v as String),
-        ),
-        cid: $checkedConvert('cid', (v) => v as String),
-        commit: $checkedConvert(
-          'commit',
-          (v) => _$JsonConverterFromJson<Map<String, dynamic>, CommitMeta>(
+_RepoPutRecordOutput _$RepoPutRecordOutputFromJson(
+  Map json,
+) => $checkedCreate('_RepoPutRecordOutput', json, ($checkedConvert) {
+  final val = _RepoPutRecordOutput(
+    uri: $checkedConvert(
+      'uri',
+      (v) => const AtUriConverter().fromJson(v as String),
+    ),
+    cid: $checkedConvert('cid', (v) => v as String),
+    commit: $checkedConvert(
+      'commit',
+      (v) => _$JsonConverterFromJson<Map<String, dynamic>, CommitMeta>(
+        v,
+        const CommitMetaConverter().fromJson,
+      ),
+    ),
+    validationStatus: $checkedConvert(
+      'validationStatus',
+      (v) =>
+          _$JsonConverterFromJson<String, RepoPutRecordOutputValidationStatus>(
             v,
-            const CommitMetaConverter().fromJson,
+            const RepoPutRecordOutputValidationStatusConverter().fromJson,
           ),
-        ),
-        validationStatus: $checkedConvert(
-          'validationStatus',
-          (v) => _$JsonConverterFromJson<String, RepoPutRecordValidationStatus>(
-            v,
-            const RepoPutRecordValidationStatusConverter().fromJson,
-          ),
-        ),
-        $unknown: $checkedConvert(
-          r'$unknown',
-          (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
-        ),
-      );
-      return val;
-    });
+    ),
+    $unknown: $checkedConvert(
+      r'$unknown',
+      (v) => (v as Map?)?.map((k, e) => MapEntry(k as String, e)),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$RepoPutRecordOutputToJson(
   _RepoPutRecordOutput instance,
@@ -48,9 +50,9 @@ Map<String, dynamic> _$RepoPutRecordOutputToJson(
     const CommitMetaConverter().toJson,
   ),
   'validationStatus':
-      ?_$JsonConverterToJson<String, RepoPutRecordValidationStatus>(
+      ?_$JsonConverterToJson<String, RepoPutRecordOutputValidationStatus>(
         instance.validationStatus,
-        const RepoPutRecordValidationStatusConverter().toJson,
+        const RepoPutRecordOutputValidationStatusConverter().toJson,
       ),
   r'$unknown': ?instance.$unknown,
 };

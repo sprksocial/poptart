@@ -10,88 +10,95 @@ import './create_result.dart';
 import './update_result.dart';
 import './delete_result.dart';
 
-part 'union_main_results.freezed.dart';
+part 'union_main_output_results.freezed.dart';
 
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
 
 @freezed
-sealed class URepoApplyWritesResults with _$URepoApplyWritesResults {
-  const URepoApplyWritesResults._();
+sealed class URepoApplyWritesOutputResults
+    with _$URepoApplyWritesOutputResults {
+  const URepoApplyWritesOutputResults._();
 
-  const factory URepoApplyWritesResults.createResult({
+  const factory URepoApplyWritesOutputResults.createResult({
     required CreateResult data,
-  }) = URepoApplyWritesResultsCreateResult;
-  const factory URepoApplyWritesResults.updateResult({
+  }) = URepoApplyWritesOutputResultsCreateResult;
+  const factory URepoApplyWritesOutputResults.updateResult({
     required UpdateResult data,
-  }) = URepoApplyWritesResultsUpdateResult;
-  const factory URepoApplyWritesResults.deleteResult({
+  }) = URepoApplyWritesOutputResultsUpdateResult;
+  const factory URepoApplyWritesOutputResults.deleteResult({
     required DeleteResult data,
-  }) = URepoApplyWritesResultsDeleteResult;
+  }) = URepoApplyWritesOutputResultsDeleteResult;
 
-  const factory URepoApplyWritesResults.unknown({
+  const factory URepoApplyWritesOutputResults.unknown({
     required Map<String, dynamic> data,
-  }) = URepoApplyWritesResultsUnknown;
+  }) = URepoApplyWritesOutputResultsUnknown;
 
   Map<String, dynamic> toJson() =>
-      const URepoApplyWritesResultsConverter().toJson(this);
+      const URepoApplyWritesOutputResultsConverter().toJson(this);
 }
 
-extension URepoApplyWritesResultsExtension on URepoApplyWritesResults {
-  bool get isCreateResult => isA<URepoApplyWritesResultsCreateResult>(this);
+extension URepoApplyWritesOutputResultsExtension
+    on URepoApplyWritesOutputResults {
+  bool get isCreateResult =>
+      isA<URepoApplyWritesOutputResultsCreateResult>(this);
   bool get isNotCreateResult => !isCreateResult;
   CreateResult? get createResult =>
       isCreateResult ? data as CreateResult : null;
-  bool get isUpdateResult => isA<URepoApplyWritesResultsUpdateResult>(this);
+  bool get isUpdateResult =>
+      isA<URepoApplyWritesOutputResultsUpdateResult>(this);
   bool get isNotUpdateResult => !isUpdateResult;
   UpdateResult? get updateResult =>
       isUpdateResult ? data as UpdateResult : null;
-  bool get isDeleteResult => isA<URepoApplyWritesResultsDeleteResult>(this);
+  bool get isDeleteResult =>
+      isA<URepoApplyWritesOutputResultsDeleteResult>(this);
   bool get isNotDeleteResult => !isDeleteResult;
   DeleteResult? get deleteResult =>
       isDeleteResult ? data as DeleteResult : null;
-  bool get isUnknown => isA<URepoApplyWritesResultsUnknown>(this);
+  bool get isUnknown => isA<URepoApplyWritesOutputResultsUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
       isUnknown ? data as Map<String, dynamic> : null;
 }
 
-final class URepoApplyWritesResultsConverter
-    implements JsonConverter<URepoApplyWritesResults, Map<String, dynamic>> {
-  const URepoApplyWritesResultsConverter();
+final class URepoApplyWritesOutputResultsConverter
+    implements
+        JsonConverter<URepoApplyWritesOutputResults, Map<String, dynamic>> {
+  const URepoApplyWritesOutputResultsConverter();
 
   @override
-  URepoApplyWritesResults fromJson(Map<String, dynamic> json) {
+  URepoApplyWritesOutputResults fromJson(Map<String, dynamic> json) {
     try {
       if (CreateResult.validate(json)) {
-        return URepoApplyWritesResults.createResult(
+        return URepoApplyWritesOutputResults.createResult(
           data: const CreateResultConverter().fromJson(json),
         );
       }
       if (UpdateResult.validate(json)) {
-        return URepoApplyWritesResults.updateResult(
+        return URepoApplyWritesOutputResults.updateResult(
           data: const UpdateResultConverter().fromJson(json),
         );
       }
       if (DeleteResult.validate(json)) {
-        return URepoApplyWritesResults.deleteResult(
+        return URepoApplyWritesOutputResults.deleteResult(
           data: const DeleteResultConverter().fromJson(json),
         );
       }
 
-      return URepoApplyWritesResults.unknown(data: json);
+      return URepoApplyWritesOutputResults.unknown(data: json);
     } catch (_) {
-      return URepoApplyWritesResults.unknown(data: json);
+      return URepoApplyWritesOutputResults.unknown(data: json);
     }
   }
 
   @override
-  Map<String, dynamic> toJson(URepoApplyWritesResults object) => object.when(
-    createResult: (data) => const CreateResultConverter().toJson(data),
-    updateResult: (data) => const UpdateResultConverter().toJson(data),
-    deleteResult: (data) => const DeleteResultConverter().toJson(data),
+  Map<String, dynamic> toJson(URepoApplyWritesOutputResults object) =>
+      object.when(
+        createResult: (data) => const CreateResultConverter().toJson(data),
+        updateResult: (data) => const UpdateResultConverter().toJson(data),
+        deleteResult: (data) => const DeleteResultConverter().toJson(data),
 
-    unknown: (data) => data,
-  );
+        unknown: (data) => data,
+      );
 }

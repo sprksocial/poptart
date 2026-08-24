@@ -9,5 +9,5 @@
 
 export 'create_session/descriptor.dart';
 export 'create_session/input.dart';
-export 'create_session/main_status.dart';
+export 'create_session/main_output_status.dart';
 export 'create_session/output.dart';

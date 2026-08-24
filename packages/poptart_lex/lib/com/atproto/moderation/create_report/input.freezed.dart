@@ -17,7 +17,7 @@ mixin _$ModerationCreateReportInput {
 
 /// Indicates the broad category of violation the report is for.
 @ReasonTypeConverter() ReasonType get reasonType;/// Additional context about the content and violation.
- String? get reason;@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject get subject;@ModToolConverter() ModTool? get modTool; Map<String, dynamic>? get $unknown;
+ String? get reason;@UModerationCreateReportInputSubjectConverter() UModerationCreateReportInputSubject get subject;@ModToolConverter() ModTool? get modTool; Map<String, dynamic>? get $unknown;
 /// Create a copy of ModerationCreateReportInput
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -50,11 +50,11 @@ abstract mixin class $ModerationCreateReportInputCopyWith<$Res>  {
   factory $ModerationCreateReportInputCopyWith(ModerationCreateReportInput value, $Res Function(ModerationCreateReportInput) _then) = _$ModerationCreateReportInputCopyWithImpl;
 @useResult
 $Res call({
-@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject subject,@ModToolConverter() ModTool? modTool, Map<String, dynamic>? $unknown
+@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportInputSubjectConverter() UModerationCreateReportInputSubject subject,@ModToolConverter() ModTool? modTool, Map<String, dynamic>? $unknown
 });
 
 
-$ReasonTypeCopyWith<$Res> get reasonType;$UModerationCreateReportSubjectCopyWith<$Res> get subject;$ModToolCopyWith<$Res>? get modTool;
+$ReasonTypeCopyWith<$Res> get reasonType;$UModerationCreateReportInputSubjectCopyWith<$Res> get subject;$ModToolCopyWith<$Res>? get modTool;
 
 }
 /// @nodoc
@@ -72,7 +72,7 @@ class _$ModerationCreateReportInputCopyWithImpl<$Res>
 reasonType: null == reasonType ? _self.reasonType : reasonType // ignore: cast_nullable_to_non_nullable
 as ReasonType,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UModerationCreateReportSubject,modTool: freezed == modTool ? _self.modTool : modTool // ignore: cast_nullable_to_non_nullable
+as UModerationCreateReportInputSubject,modTool: freezed == modTool ? _self.modTool : modTool // ignore: cast_nullable_to_non_nullable
 as ModTool?,$unknown: freezed == $unknown ? _self.$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -90,9 +90,9 @@ $ReasonTypeCopyWith<$Res> get reasonType {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UModerationCreateReportSubjectCopyWith<$Res> get subject {
+$UModerationCreateReportInputSubjectCopyWith<$Res> get subject {
   
-  return $UModerationCreateReportSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UModerationCreateReportInputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }/// Create a copy of ModerationCreateReportInput
@@ -189,7 +189,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportInputSubjectConverter()  UModerationCreateReportInputSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportInput() when $default != null:
 return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.$unknown);case _:
@@ -210,7 +210,7 @@ return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportInputSubjectConverter()  UModerationCreateReportInputSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)  $default,) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportInput():
 return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.$unknown);case _:
@@ -230,7 +230,7 @@ return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportSubjectConverter()  UModerationCreateReportSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@ReasonTypeConverter()  ReasonType reasonType,  String? reason, @UModerationCreateReportInputSubjectConverter()  UModerationCreateReportInputSubject subject, @ModToolConverter()  ModTool? modTool,  Map<String, dynamic>? $unknown)?  $default,) {final _that = this;
 switch (_that) {
 case _ModerationCreateReportInput() when $default != null:
 return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.$unknown);case _:
@@ -245,14 +245,14 @@ return $default(_that.reasonType,_that.reason,_that.subject,_that.modTool,_that.
 
 @JsonSerializable(includeIfNull: false)
 class _ModerationCreateReportInput implements ModerationCreateReportInput {
-  const _ModerationCreateReportInput({@ReasonTypeConverter() required this.reasonType, this.reason, @UModerationCreateReportSubjectConverter() required this.subject, @ModToolConverter() this.modTool, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
+  const _ModerationCreateReportInput({@ReasonTypeConverter() required this.reasonType, this.reason, @UModerationCreateReportInputSubjectConverter() required this.subject, @ModToolConverter() this.modTool, final  Map<String, dynamic>? $unknown}): _$unknown = $unknown;
   factory _ModerationCreateReportInput.fromJson(Map<String, dynamic> json) => _$ModerationCreateReportInputFromJson(json);
 
 /// Indicates the broad category of violation the report is for.
 @override@ReasonTypeConverter() final  ReasonType reasonType;
 /// Additional context about the content and violation.
 @override final  String? reason;
-@override@UModerationCreateReportSubjectConverter() final  UModerationCreateReportSubject subject;
+@override@UModerationCreateReportInputSubjectConverter() final  UModerationCreateReportInputSubject subject;
 @override@ModToolConverter() final  ModTool? modTool;
  final  Map<String, dynamic>? _$unknown;
 @override Map<String, dynamic>? get $unknown {
@@ -297,11 +297,11 @@ abstract mixin class _$ModerationCreateReportInputCopyWith<$Res> implements $Mod
   factory _$ModerationCreateReportInputCopyWith(_ModerationCreateReportInput value, $Res Function(_ModerationCreateReportInput) _then) = __$ModerationCreateReportInputCopyWithImpl;
 @override @useResult
 $Res call({
-@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportSubjectConverter() UModerationCreateReportSubject subject,@ModToolConverter() ModTool? modTool, Map<String, dynamic>? $unknown
+@ReasonTypeConverter() ReasonType reasonType, String? reason,@UModerationCreateReportInputSubjectConverter() UModerationCreateReportInputSubject subject,@ModToolConverter() ModTool? modTool, Map<String, dynamic>? $unknown
 });
 
 
-@override $ReasonTypeCopyWith<$Res> get reasonType;@override $UModerationCreateReportSubjectCopyWith<$Res> get subject;@override $ModToolCopyWith<$Res>? get modTool;
+@override $ReasonTypeCopyWith<$Res> get reasonType;@override $UModerationCreateReportInputSubjectCopyWith<$Res> get subject;@override $ModToolCopyWith<$Res>? get modTool;
 
 }
 /// @nodoc
@@ -319,7 +319,7 @@ class __$ModerationCreateReportInputCopyWithImpl<$Res>
 reasonType: null == reasonType ? _self.reasonType : reasonType // ignore: cast_nullable_to_non_nullable
 as ReasonType,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
 as String?,subject: null == subject ? _self.subject : subject // ignore: cast_nullable_to_non_nullable
-as UModerationCreateReportSubject,modTool: freezed == modTool ? _self.modTool : modTool // ignore: cast_nullable_to_non_nullable
+as UModerationCreateReportInputSubject,modTool: freezed == modTool ? _self.modTool : modTool // ignore: cast_nullable_to_non_nullable
 as ModTool?,$unknown: freezed == $unknown ? _self._$unknown : $unknown // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -338,9 +338,9 @@ $ReasonTypeCopyWith<$Res> get reasonType {
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UModerationCreateReportSubjectCopyWith<$Res> get subject {
+$UModerationCreateReportInputSubjectCopyWith<$Res> get subject {
   
-  return $UModerationCreateReportSubjectCopyWith<$Res>(_self.subject, (value) {
+  return $UModerationCreateReportInputSubjectCopyWith<$Res>(_self.subject, (value) {
     return _then(_self.copyWith(subject: value));
   });
 }/// Create a copy of ModerationCreateReportInput

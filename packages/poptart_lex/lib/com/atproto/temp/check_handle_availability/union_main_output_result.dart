@@ -9,86 +9,87 @@ import 'package:poptart_core/internals.dart' show isA;
 import './result_available.dart';
 import './result_unavailable.dart';
 
-part 'union_main_result.freezed.dart';
+part 'union_main_output_result.freezed.dart';
 
 // **************************************************************************
 // LexGenerator
 // **************************************************************************
 
 @freezed
-sealed class UTempCheckHandleAvailabilityResult
-    with _$UTempCheckHandleAvailabilityResult {
-  const UTempCheckHandleAvailabilityResult._();
+sealed class UTempCheckHandleAvailabilityOutputResult
+    with _$UTempCheckHandleAvailabilityOutputResult {
+  const UTempCheckHandleAvailabilityOutputResult._();
 
-  const factory UTempCheckHandleAvailabilityResult.resultAvailable({
+  const factory UTempCheckHandleAvailabilityOutputResult.resultAvailable({
     required ResultAvailable data,
-  }) = UTempCheckHandleAvailabilityResultResultAvailable;
-  const factory UTempCheckHandleAvailabilityResult.resultUnavailable({
+  }) = UTempCheckHandleAvailabilityOutputResultResultAvailable;
+  const factory UTempCheckHandleAvailabilityOutputResult.resultUnavailable({
     required ResultUnavailable data,
-  }) = UTempCheckHandleAvailabilityResultResultUnavailable;
+  }) = UTempCheckHandleAvailabilityOutputResultResultUnavailable;
 
-  const factory UTempCheckHandleAvailabilityResult.unknown({
+  const factory UTempCheckHandleAvailabilityOutputResult.unknown({
     required Map<String, dynamic> data,
-  }) = UTempCheckHandleAvailabilityResultUnknown;
+  }) = UTempCheckHandleAvailabilityOutputResultUnknown;
 
   Map<String, dynamic> toJson() =>
-      const UTempCheckHandleAvailabilityResultConverter().toJson(this);
+      const UTempCheckHandleAvailabilityOutputResultConverter().toJson(this);
 }
 
-extension UTempCheckHandleAvailabilityResultExtension
-    on UTempCheckHandleAvailabilityResult {
+extension UTempCheckHandleAvailabilityOutputResultExtension
+    on UTempCheckHandleAvailabilityOutputResult {
   bool get isResultAvailable =>
-      isA<UTempCheckHandleAvailabilityResultResultAvailable>(this);
+      isA<UTempCheckHandleAvailabilityOutputResultResultAvailable>(this);
   bool get isNotResultAvailable => !isResultAvailable;
   ResultAvailable? get resultAvailable =>
       isResultAvailable ? data as ResultAvailable : null;
   bool get isResultUnavailable =>
-      isA<UTempCheckHandleAvailabilityResultResultUnavailable>(this);
+      isA<UTempCheckHandleAvailabilityOutputResultResultUnavailable>(this);
   bool get isNotResultUnavailable => !isResultUnavailable;
   ResultUnavailable? get resultUnavailable =>
       isResultUnavailable ? data as ResultUnavailable : null;
-  bool get isUnknown => isA<UTempCheckHandleAvailabilityResultUnknown>(this);
+  bool get isUnknown =>
+      isA<UTempCheckHandleAvailabilityOutputResultUnknown>(this);
   bool get isNotUnknown => !isUnknown;
   Map<String, dynamic>? get unknown =>
       isUnknown ? data as Map<String, dynamic> : null;
 }
 
-final class UTempCheckHandleAvailabilityResultConverter
+final class UTempCheckHandleAvailabilityOutputResultConverter
     implements
         JsonConverter<
-          UTempCheckHandleAvailabilityResult,
+          UTempCheckHandleAvailabilityOutputResult,
           Map<String, dynamic>
         > {
-  const UTempCheckHandleAvailabilityResultConverter();
+  const UTempCheckHandleAvailabilityOutputResultConverter();
 
   @override
-  UTempCheckHandleAvailabilityResult fromJson(Map<String, dynamic> json) {
+  UTempCheckHandleAvailabilityOutputResult fromJson(Map<String, dynamic> json) {
     try {
       if (ResultAvailable.validate(json)) {
-        return UTempCheckHandleAvailabilityResult.resultAvailable(
+        return UTempCheckHandleAvailabilityOutputResult.resultAvailable(
           data: const ResultAvailableConverter().fromJson(json),
         );
       }
       if (ResultUnavailable.validate(json)) {
-        return UTempCheckHandleAvailabilityResult.resultUnavailable(
+        return UTempCheckHandleAvailabilityOutputResult.resultUnavailable(
           data: const ResultUnavailableConverter().fromJson(json),
         );
       }
 
-      return UTempCheckHandleAvailabilityResult.unknown(data: json);
+      return UTempCheckHandleAvailabilityOutputResult.unknown(data: json);
     } catch (_) {
-      return UTempCheckHandleAvailabilityResult.unknown(data: json);
+      return UTempCheckHandleAvailabilityOutputResult.unknown(data: json);
     }
   }
 
   @override
-  Map<String, dynamic> toJson(UTempCheckHandleAvailabilityResult object) =>
-      object.when(
-        resultAvailable: (data) =>
-            const ResultAvailableConverter().toJson(data),
-        resultUnavailable: (data) =>
-            const ResultUnavailableConverter().toJson(data),
+  Map<String, dynamic> toJson(
+    UTempCheckHandleAvailabilityOutputResult object,
+  ) => object.when(
+    resultAvailable: (data) => const ResultAvailableConverter().toJson(data),
+    resultUnavailable: (data) =>
+        const ResultUnavailableConverter().toJson(data),
 
-        unknown: (data) => data,
-      );
+    unknown: (data) => data,
+  );
 }

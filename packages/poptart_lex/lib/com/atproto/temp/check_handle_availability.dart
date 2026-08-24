@@ -13,4 +13,4 @@ export 'check_handle_availability/output.dart';
 export 'check_handle_availability/result_available.dart';
 export 'check_handle_availability/result_unavailable.dart';
 export 'check_handle_availability/suggestion.dart';
-export 'check_handle_availability/union_main_result.dart';
+export 'check_handle_availability/union_main_output_result.dart';

@@ -1,5 +1,9 @@
 # Release Note
 
+## v0.2.0
+
+- **BREAKING**: Regenerate lexicon models with role-scoped nested parameter, input, and output type names.
+
 ## v0.1.0
 
 - Initial Poptart fork release under the new `poptart_*` package name.
